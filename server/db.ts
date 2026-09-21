@@ -1,6 +1,7 @@
-import { and, desc, eq, gt, inArray } from "drizzle-orm";
+import { and, desc, eq, gt, gte, inArray } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
+import { buildDateWindow, dateKeyInTimeZone } from "../shared/rankTrend";
 import { ENV } from "./_core/env";
 import { mergeOrderedSubset, type SalesCategory } from "./listingOrganization";
 
@@ -142,10 +143,12 @@ export async function getListingKeywords(listingId: number) {
 export async function getRankSnapshots(listingId: number) {
   const db = await getDb();
   if (!db) return [];
+  const today = dateKeyInTimeZone(new Date(), "Asia/Shanghai");
+  const startDate = buildDateWindow(today, 7)[0]!;
   return db
     .select()
     .from(dailyRankSnapshots)
-    .where(eq(dailyRankSnapshots.listingId, listingId))
+    .where(and(eq(dailyRankSnapshots.listingId, listingId), gte(dailyRankSnapshots.snapshotDate, startDate)))
     .orderBy(dailyRankSnapshots.snapshotDate);
 }
 

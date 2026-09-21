@@ -9,6 +9,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { buildSevenDayRankTrend, dateKeyInTimeZone } from "@shared/rankTrend";
+import { CartesianGrid, Line, LineChart as RechartsLineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { toast } from "sonner";
 import {
   ArrowDownRight,
@@ -24,7 +26,6 @@ import {
   Globe2,
   GripVertical,
   Layers,
-  LineChart,
   Minus,
   PlusCircle,
   RefreshCw,
@@ -74,6 +75,7 @@ export default function Home() {
   const [salesCategoryFilter, setSalesCategoryFilter] = useState<SalesCategory | "all">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedListingId, setSelectedListingId] = useState<number | null>(null);
+  const [trendKeywordId, setTrendKeywordId] = useState<string>("average");
 
   // Quick Action States
   const [isFollowUpModalOpen, setIsFollowUpModalOpen] = useState(false);
@@ -111,11 +113,6 @@ export default function Home() {
   );
 
   const listingsQuery = trpc.dashboard.listings.useQuery(listingsInput);
-
-  const detailQuery = trpc.dashboard.listingDetail.useQuery(
-    { id: selectedListingId ?? (listingsQuery.data?.[0]?.id ?? 1) },
-    { enabled: !!(selectedListingId || listingsQuery.data?.[0]?.id) }
-  );
 
   const refreshMutation = trpc.dashboard.triggerDailyRefresh.useMutation({
     onSuccess: (data) => {
@@ -198,10 +195,6 @@ export default function Home() {
     },
   });
 
-  const currentDetail = detailQuery.data && listingsQuery.data?.some(item => item.id === detailQuery.data?.listing.id)
-    ? detailQuery.data
-    : null;
-
   // Filter listings by search
   const filteredListings = useMemo(() => {
     if (!listingsQuery.data) return [];
@@ -212,7 +205,36 @@ export default function Home() {
     });
   }, [listingsQuery.data, salesCategoryFilter, searchQuery]);
 
-  const activeListingId = selectedListingId ?? listingsQuery.data?.[0]?.id;
+  const effectiveListingId = selectedListingId && filteredListings.some(item => item.id === selectedListingId)
+    ? selectedListingId
+    : filteredListings[0]?.id;
+  const detailQuery = trpc.dashboard.listingDetail.useQuery(
+    { id: effectiveListingId ?? 1 },
+    { enabled: !!effectiveListingId }
+  );
+  const currentDetail = detailQuery.data && filteredListings.some(item => item.id === detailQuery.data?.listing.id)
+    ? detailQuery.data
+    : null;
+  const activeListingId = effectiveListingId;
+  const validTrendKeywordId = currentDetail?.keywords.some(keyword => String(keyword.id) === trendKeywordId)
+    ? Number(trendKeywordId)
+    : undefined;
+  const trendSelectorValue = validTrendKeywordId ? trendKeywordId : "average";
+  const sevenDayTrend = useMemo(() => {
+    if (!currentDetail) return [];
+    return buildSevenDayRankTrend({
+      snapshots: currentDetail.snapshots,
+      keywordIds: currentDetail.keywords.map(keyword => keyword.id),
+      selectedKeywordId: validTrendKeywordId,
+      anchorDate: dateKeyInTimeZone(new Date(), "Asia/Shanghai"),
+    });
+  }, [currentDetail, validTrendKeywordId]);
+  const trendObservedDays = sevenDayTrend.filter(point => point.rank !== null).length;
+  const latestTrendPoint = [...sevenDayTrend].reverse().find(point => point.rank !== null);
+  const firstTrendPoint = sevenDayTrend.find(point => point.rank !== null);
+  const sevenDayChange = firstTrendPoint && latestTrendPoint && firstTrendPoint.date !== latestTrendPoint.date
+    ? Number((firstTrendPoint.rank! - latestTrendPoint.rank!).toFixed(1))
+    : null;
   const visibleIds = filteredListings.map(item => item.id);
   const allVisibleSelected = visibleIds.length > 0 && visibleIds.every(id => selectedListingIds.has(id));
 
@@ -465,21 +487,6 @@ export default function Home() {
               </SelectContent>
             </Select>
 
-            <Select value={salesCategoryFilter} onValueChange={(value: SalesCategory | "all") => setSalesCategoryFilter(value)}>
-              <SelectTrigger className="w-[150px] text-xs h-9 bg-slate-50">
-                <SelectValue placeholder="销售分类" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">全部销售分类</SelectItem>
-                <SelectItem value="unclassified">未分类</SelectItem>
-                <SelectItem value="new_product">新品</SelectItem>
-                <SelectItem value="key_product">重点产品</SelectItem>
-                <SelectItem value="long_tail">长尾产品</SelectItem>
-                <SelectItem value="regular">常规产品</SelectItem>
-                <SelectItem value="discontinued">DISCONTINUED</SelectItem>
-                <SelectItem value="custom">自定义分类</SelectItem>
-              </SelectContent>
-            </Select>
           </div>
 
           <div className="relative w-full sm:w-72">
@@ -562,12 +569,27 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column: Listings Master Table */}
           <div className="lg:col-span-5 space-y-3">
-            <div className="flex items-center justify-between px-1">
+            <div className="flex items-center justify-between gap-3 px-1">
               <h2 className="text-sm font-semibold text-slate-800 flex items-center gap-2">
                 <span>在售 Listing 列表</span>
                 <span className="text-xs text-slate-400 font-normal">({filteredListings.length} 个)</span>
               </h2>
-              <span className="text-[11px] text-slate-400">拖拽排序 · 颜色区分销售分类</span>
+              <Select value={salesCategoryFilter} onValueChange={(value: SalesCategory | "all") => setSalesCategoryFilter(value)}>
+                <SelectTrigger className="h-8 w-[152px] border-slate-200 bg-white text-[11px] shadow-xs">
+                  <Tags className="mr-1 h-3.5 w-3.5 text-slate-400" />
+                  <SelectValue placeholder="右侧筛选分类" />
+                </SelectTrigger>
+                <SelectContent align="end">
+                  <SelectItem value="all">全部销售分类</SelectItem>
+                  <SelectItem value="regular">常规产品</SelectItem>
+                  <SelectItem value="key_product">重点产品</SelectItem>
+                  <SelectItem value="long_tail">长尾产品</SelectItem>
+                  <SelectItem value="discontinued">DISCONTINUED</SelectItem>
+                  <SelectItem value="custom">自定义分类</SelectItem>
+                  <SelectItem value="new_product">新品</SelectItem>
+                  <SelectItem value="unclassified">未分类</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
             <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2">
@@ -891,6 +913,109 @@ export default function Home() {
                       <span className="text-slate-700 italic">
                         {currentDetail.listing.notes || "暂无最新复盘备注"}
                       </span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Seven-day real organic rank trend */}
+                <Card className="border-slate-200 bg-white shadow-xs">
+                  <CardHeader className="gap-3 p-4 pb-2 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <CardTitle className="flex items-center gap-2 text-sm font-bold text-slate-900">
+                        <BarChart3 className="h-4 w-4 text-blue-600" />
+                        最近 7 天真实自然位趋势
+                      </CardTitle>
+                      <CardDescription className="mt-1 text-xs text-slate-500">
+                        按北京时间展示每日 Sorftime 自然位快照；排名数值越低越好，缺失日期保持空白且不补造数据
+                      </CardDescription>
+                    </div>
+                    <div className="flex flex-wrap items-center justify-end gap-2">
+                      <Badge variant="outline" className="bg-slate-50 text-[10px] text-slate-600">
+                        已有 {trendObservedDays}/7 天
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className={`text-[10px] ${
+                          sevenDayChange === null
+                            ? "bg-slate-50 text-slate-500"
+                            : sevenDayChange > 0
+                            ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                            : sevenDayChange < 0
+                            ? "border-rose-200 bg-rose-50 text-rose-700"
+                            : "bg-slate-50 text-slate-600"
+                        }`}
+                      >
+                        {sevenDayChange === null
+                          ? "7日变化待积累"
+                          : sevenDayChange > 0
+                          ? `7日改善 +${sevenDayChange}`
+                          : sevenDayChange < 0
+                          ? `7日下滑 ${sevenDayChange}`
+                          : "7日持平"}
+                      </Badge>
+                      <Select value={trendSelectorValue} onValueChange={setTrendKeywordId}>
+                        <SelectTrigger className="h-8 w-[210px] bg-slate-50 text-[11px]">
+                          <SelectValue placeholder="选择趋势关键词" />
+                        </SelectTrigger>
+                        <SelectContent align="end">
+                          <SelectItem value="average">全部核心词平均自然位</SelectItem>
+                          {currentDetail.keywords.map(keyword => (
+                            <SelectItem key={keyword.id} value={String(keyword.id)}>
+                              {keyword.keyword}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="px-3 pb-3 pt-1">
+                    {trendObservedDays > 0 ? (
+                      <div className="h-[230px] w-full">
+                        <ResponsiveContainer width="100%" height="100%">
+                          <RechartsLineChart data={sevenDayTrend} margin={{ top: 12, right: 18, left: -14, bottom: 2 }}>
+                            <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="#e2e8f0" />
+                            <XAxis dataKey="label" axisLine={false} tickLine={false} tick={{ fill: "#64748b", fontSize: 11 }} />
+                            <YAxis
+                              reversed
+                              domain={[1, 61]}
+                              ticks={[1, 10, 20, 30, 40, 50, 61]}
+                              axisLine={false}
+                              tickLine={false}
+                              tick={{ fill: "#64748b", fontSize: 11 }}
+                              tickFormatter={value => (value === 61 ? "60+" : `#${value}`)}
+                            />
+                            <Tooltip
+                              cursor={{ stroke: "#cbd5e1", strokeDasharray: "4 4" }}
+                              contentStyle={{ borderRadius: 10, borderColor: "#e2e8f0", fontSize: 12 }}
+                              labelFormatter={label => `日期 ${label}`}
+                              formatter={value => {
+                                const numeric = Number(value);
+                                return [
+                                  numeric >= 61 ? "未进前3页" : `#${numeric}`,
+                                  validTrendKeywordId ? "关键词自然位" : "核心词平均自然位",
+                                ];
+                              }}
+                            />
+                            <Line
+                              type="monotone"
+                              dataKey="rank"
+                              connectNulls={false}
+                              stroke="#2563eb"
+                              strokeWidth={2.5}
+                              dot={{ r: 4, fill: "#ffffff", stroke: "#2563eb", strokeWidth: 2 }}
+                              activeDot={{ r: 6, fill: "#2563eb", stroke: "#ffffff", strokeWidth: 2 }}
+                            />
+                          </RechartsLineChart>
+                        </ResponsiveContainer>
+                      </div>
+                    ) : (
+                      <div className="flex h-[190px] items-center justify-center rounded-lg border border-dashed border-slate-200 bg-slate-50/60 text-xs text-slate-500">
+                        尚无最近 7 天真实快照；下一次每日 07:00 采集后开始显示趋势
+                      </div>
+                    )}
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 px-2 pt-2 text-[10px] text-slate-400">
+                      <span>“60+”仅用于图表刻度，代表该词当天未进入前三页；数据库仍保留真实内部状态 999。</span>
+                      <span>{validTrendKeywordId ? "当前：单关键词趋势" : "当前：全部核心词每日平均自然位"}</span>
                     </div>
                   </CardContent>
                 </Card>
