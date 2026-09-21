@@ -1,0 +1,1 @@
+ALTER TABLE `keywords` ADD `selectionBasis` enum('sqp_purchase','sqp_cart','sqp_click','title_fallback','manual_review') DEFAULT 'manual_review' NOT NULL;

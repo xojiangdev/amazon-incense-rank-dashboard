@@ -1,0 +1,2883 @@
+{
+  "generatedAt": "2026-09-21T13:41:34.559Z",
+  "targetKeywordRows": 478,
+  "uniqueKeywordQueries": 399,
+  "byMarketplace": {
+    "CA": 82,
+    "US": 317
+  },
+  "targets": [
+    {
+      "marketplace": "CA",
+      "keyword": "agarbati",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "agarbatti",
+      "asins": [
+        "B0FY67W88Z",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "agarbatti chandan",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "agarbatti holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "agarbatti stand",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "armoise encens",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "bakhoor burner",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "blitz citronella incense sticks",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "brass incense holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "brûle-encens",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "camphor incense sticks",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "charcoal free pine cone incense sticks",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "charcoal incense",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "chinese incense",
+      "asins": [
+        "B0FY6MK2D4",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "chinese incense stick",
+      "asins": [
+        "B0GWVLF81Y",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "citronella incense sticks",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "coconut latte incense",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "dhoop dani",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "dhoop stand",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "dhoop stick stand",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "dhoop sticks",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "encens",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "encens bois de santal",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "encens egyptian musk",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "encensoir",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "frankincense & myrrh",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "hem mugwort masala incense sticks",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "herbal diffuser pen with smoke",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "home decor",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense",
+      "asins": [
+        "B0FY67W88Z",
+        "B0FY6MK2D4",
+        "B0GWVLF81Y",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense burner",
+      "asins": [
+        "B0FY67W88Z",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense cone holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense cones mugwort",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense holder",
+      "asins": [
+        "B0FY67W88Z",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense holder for sticks",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense sandalwood",
+      "asins": [
+        "B0FY6JR3NK",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense stick",
+      "asins": [
+        "B0FY6JR3NK",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense stick gonesh",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense stick holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense sticks bulk",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "incense sticks case",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "insense stick",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "insincere",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "japanese incense",
+      "asins": [
+        "B0GWVLF81Y",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "joss sticks chinese",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "long burning pine cone incense",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "low smoke incense",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "meditation tools",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort",
+      "asins": [
+        "B0FY6MK2D4",
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort bundle",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort burner",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort herb",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort incense",
+      "asins": [
+        "B0FY6MK2D4",
+        "B0GWVLF81Y",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort incense non toxic",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort incense sticks",
+      "asins": [
+        "B0FY6MK2D4",
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort organic",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugwort smudge",
+      "asins": [
+        "B0FY6MK2D4",
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "mugworth",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "natural incense sticks",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "natural pine cone incense sticks",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "non toxic incense sticks",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "organic essence stick",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "organic incense sticks",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "patchouli",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "patchouli incense",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "pine cone incense",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "pine cone incense sticks",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "pine cone incense sticks for meditation",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "pooja items",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "pure sandalwood incense",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "rosemary incense",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "sandal wood",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "sandalwood",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "sandalwood incense",
+      "asins": [
+        "B0FY6JR3NK",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "sandalwood incense sticks",
+      "asins": [
+        "B0FY6JR3NK",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "sandalwood sticks",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "sandlewood",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "smokeless incense",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "smudge",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "stick incense holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "vintage decor",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "keyword": "white sandalwood incemse",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "￼chinese incense bulk",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "10/20/30/50-pack organic mugwort scented incense sticks slow burn aromatherapy for indoors, home fragrance, dailyconsumer use, natural herbal incense for living outdoor/room/bathroom/balcony/warehouse",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "2 in one incense and candle holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "400 count incense sticks",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "aasha",
+      "asins": [
+        "B0GZDGRVCP"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "afengau , sandalwood incense sticks",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "afengau , sandalwood incense sticks,40 count",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "afengau palo santo",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "agarbatti holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "agarbatti stand",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "agarbatti stand with ash catcher",
+      "asins": [
+        "B0FY67YPSM",
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "agarwood",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "agarwood incense",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "agarwood incense kit",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "agarwood incense sticks",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "agarwood incense sticks natural relaxing charcoal free 40 pack",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "ambergris incense",
+      "asins": [
+        "B0FG7CCVCB"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "ambergris incense sticks",
+      "asins": [
+        "B0FG7CCVCB"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "ambergris incense sticks for meditation",
+      "asins": [
+        "B0FG7CCVCB"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "aromatizante para bano de jardin",
+      "asins": [
+        "B0FY6MCXS7"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "artemesia incene",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "artemisa imsienzo",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "artemisa incienso",
+      "asins": [
+        "B0GDKDTB6C",
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "asin b0fy6hb74x",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "asli phool",
+      "asins": [
+        "B0FY6MCXS7"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "b0fy6hb74x",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "bamboo charcoal incense",
+      "asins": [
+        "B0GZDG7K98"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "bamboo forest incense",
+      "asins": [
+        "B0GZDRB1TX"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "bamboo forest incense sticks",
+      "asins": [
+        "B0GZDRB1TX"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "bamboo splits for incense making",
+      "asins": [
+        "B0GZDRB1TX"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "best quality incense with tapered end oud",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "black agarwood incense",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "blonde hinoki hi-fi incense",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "brass incense holder",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "celadon incense",
+      "asins": [
+        "B0H6WKJKSG"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "ceramic incense storage box",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chan luen hing incense",
+      "asins": [
+        "B0GZDKBPXK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "charcoal free ambergris incense sticks",
+      "asins": [
+        "B0FG7CCVCB"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "charcoal free lavender incense sticks",
+      "asins": [
+        "B0H7R483PY"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "charcoal free mugwort incense sticks",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "charcoal free pine cone incense sticks",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "cherry blossom incense",
+      "asins": [
+        "B0GZDCC4MC"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "cherry blossom incense sticks",
+      "asins": [
+        "B0GZDCC4MC"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "cherry blossom scented incense sticks",
+      "asins": [
+        "B0GZDCC4MC"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "china incense long jumbo glitter",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese agarwood incense",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese cypress incense",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese extra long incense",
+      "asins": [
+        "B0FY59TXJK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese incense",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese incense for negative",
+      "asins": [
+        "B0FY59TXJK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese incense holder",
+      "asins": [
+        "B0FY1T38P1",
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese joss sticks incense",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese mugwort insence",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese night falls agarwood incense",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "chinese smoke aroma",
+      "asins": [
+        "B0GZDN4VR8"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "cleansing meditation",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "cone holder incense",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "cone incense burner",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless cherry blossom incense sticks",
+      "asins": [
+        "B0GZDCC4MC"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless chinese insence",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless incense",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless incense binder",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless incense sticks",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless japanese incense",
+      "asins": [
+        "B0GZDGRVCP"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless magnolia incense sticks",
+      "asins": [
+        "B0GZDTNZWT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless osmanthus incense sticks",
+      "asins": [
+        "B0GZDKBPXK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "coreless plum blossom incense sticks",
+      "asins": [
+        "B0GZDN4VR8"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "cypress wood",
+      "asins": [
+        "B0H7WPJDP1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "dhoop dani brass",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "dried sage leaves",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "dynasty designs incense",
+      "asins": [
+        "B0FY5K8HMT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "for blessing and cleansing: old mountain sandalwood (老山檀香)m",
+      "asins": [
+        "B0GWVQTGQT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "glass incense holder tray",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "gods agarbatti holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "golden osmanthus incense",
+      "asins": [
+        "B0FY55B96L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "gonesh wisteria incense sticks",
+      "asins": [
+        "B0GZDGRVCP"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "goose pear aromatherapy incense",
+      "asins": [
+        "B0FDQ3L67K"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "goose pear incense",
+      "asins": [
+        "B0FDQ3L67K"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "goose pear incense sticks",
+      "asins": [
+        "B0FDQ3L67K"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "goose pear incense sticks for meditation",
+      "asins": [
+        "B0FDQ3L67K"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "hainan agarwood",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "haldi kumkum holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "hanging incense holder",
+      "asins": [
+        "B0FY5P2M4S"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "hibi 10 minutes aroma incense matches",
+      "asins": [
+        "B0GZDCC4MC"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "high quality japanese incense hinoki",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "hinoki false cypress",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "hinoki incense",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "hinoki incense for morning air home purification",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "hinoki incense sticks",
+      "asins": [
+        "B0H7WPJDP1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "hinoki sticks",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "i h incense house +",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "imperial palace incense",
+      "asins": [
+        "B0FY5K8HMT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "imperial palace incense sticks",
+      "asins": [
+        "B0FY5K8HMT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "imperial palace incense sticks for meditation",
+      "asins": [
+        "B0FY5K8HMT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "in sense stick",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense",
+      "asins": [
+        "B0FY6QW1LV",
+        "B0FY67W88Z",
+        "B0FY6JR3NK",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense ash catcher",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense bamboo sticks",
+      "asins": [
+        "B0GZDRB1TX"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense bix",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense box",
+      "asins": [
+        "B0FY1T38P1",
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense box burner",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense box green",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense box storage",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense box with a lid made of a piece of wood.",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense burner",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense burner box",
+      "asins": [
+        "B0FY1T38P1",
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense burner box chinese",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense burner bulk",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense burner holder box black and gold",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense burner with storage",
+      "asins": [
+        "B0FY1T38P1",
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense ceramic stick burner with ash catcher",
+      "asins": [
+        "B0H6WKJKSG"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense chinese",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense coffin",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense cone burner",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense cones holder",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense coreless",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense herbal",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holder",
+      "asins": [
+        "B0H6WKJKSG",
+        "B0FY67YPSM",
+        "B0FY1T38P1",
+        "B0FY1RZGZH",
+        "B0FY5P2M4S",
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holder and storage",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holder box",
+      "asins": [
+        "B0FY1T38P1",
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holder for big sticks",
+      "asins": [
+        "B0H6WKJKSG"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holder for sticks",
+      "asins": [
+        "B0H6WKJKSG",
+        "B0FY67YPSM",
+        "B0FY5P2M4S"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holder storage box",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holder with ash catcher",
+      "asins": [
+        "B0H6WKJKSG",
+        "B0FY5P2M4S"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holder with cover",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense holders",
+      "asins": [
+        "B0FY67YPSM",
+        "B0FY1T38P1",
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense sage",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense stick box",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense stick burner",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense stick holder",
+      "asins": [
+        "B0FY67YPSM",
+        "B0FY5P2M4S",
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense stick storage",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense sticks",
+      "asins": [
+        "B0GZDG7K98",
+        "B0FY6JQRB9"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense sticks agarwood",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense sticks and holder set",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense sticks for sleep",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense sticks stickless coreless no stick",
+      "asins": [
+        "B0GZDRB1TX"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense storage",
+      "asins": [
+        "B0FY1T38P1",
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense storage box",
+      "asins": [
+        "B0FY1T38P1",
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense tray with lid",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incense wood",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incents holders",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incienso",
+      "asins": [
+        "B0H6WKJKSG",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incienso artesanal chino",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incienso chino",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incienso de artemisa",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "incienso de salvia blanca",
+      "asins": [
+        "B0FY6R869L",
+        "B0FY6MCXS7"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "insense burner and box",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "inxrnse holdwr",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese agarwood incense",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese coreless incense",
+      "asins": [
+        "B0FY6QW1LV"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese hinoki incense long burn time",
+      "asins": [
+        "B0H7WPJDP1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese hinoki wood",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese incense",
+      "asins": [
+        "B0H7WPJDP1",
+        "B0FY67YPSM",
+        "B0FY6JR3NK",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese incense holder",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese incense sticks mugwort",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese low smoke incense",
+      "asins": [
+        "B0GZDG7K98"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese oud incense",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "japanese wisteria",
+      "asins": [
+        "B0GZDGRVCP"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "kayuragi sandalwood",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lakawood",
+      "asins": [
+        "B0FY59TXJK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lakawood incense",
+      "asins": [
+        "B0GZDJVS2P",
+        "B0FY59TXJK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "laoshan sandalwood incense sticks",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lavendar incense",
+      "asins": [
+        "B0FY6JQRB9"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lavender air freshener on stick you light with fire",
+      "asins": [
+        "B0FY6JQRB9"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lavender aromatherapy incense",
+      "asins": [
+        "B0FXW2KHWZ"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lavender incense",
+      "asins": [
+        "B0H7R483PY",
+        "B0FXW2KHWZ",
+        "B0FY6JQRB9"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lavender incense sticks",
+      "asins": [
+        "B0H7R483PY",
+        "B0FXW2KHWZ",
+        "B0FY6JQRB9"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lavender incense sticks for meditation",
+      "asins": [
+        "B0H7R483PY",
+        "B0FXW2KHWZ"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "leaf incense holder",
+      "asins": [
+        "B0H6WKJKSG"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "leave holder for incense",
+      "asins": [
+        "B0H6WKJKSG"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lockable incense burner",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "long burning ambergris incense",
+      "asins": [
+        "B0FG7CCVCB"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "long burning goose pear incense",
+      "asins": [
+        "B0FDQ3L67K"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "long burning imperial palace incense",
+      "asins": [
+        "B0FY5K8HMT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "long burning lavender incense",
+      "asins": [
+        "B0FXW2KHWZ"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "long burning pine cone incense",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "long burning sandalwood incense",
+      "asins": [
+        "B0GWVQTGQT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lotus incense burner",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "lotus incense holder",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "magnolia champaca stick",
+      "asins": [
+        "B0GZDTNZWT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "magnolia incense",
+      "asins": [
+        "B0GZDTNZWT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "magnolia incense sticks",
+      "asins": [
+        "B0GZDTNZWT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "magnolia incense sticks for meditation",
+      "asins": [
+        "B0GZDTNZWT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mantra incense sticks",
+      "asins": [
+        "B0FY6R869L",
+        "B0FY6MCXS7"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mata palo azufre",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mini smudge sticks",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "morning star incense",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwork",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort",
+      "asins": [
+        "B0GDKDTB6C",
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort cone incense",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort for burning",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense",
+      "asins": [
+        "B0H7R483PY",
+        "B0GDKDTB6C",
+        "B0FY6MK2D4",
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense / mugwort smudge stick / mugwort incense sticks",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense cones",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense for sensitive person",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense resin",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense satya",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense stick pack",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense sticks",
+      "asins": [
+        "B0GDKDTB6C",
+        "B0FY6MK2D4",
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort incense sticks from japanese",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort inscrnse stick",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort oud incense",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "​mugwort smudge stick",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort smudge stick",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort smudge sticks",
+      "asins": [
+        "B0GDKDTB6C",
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort stick",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort sticks",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "mugwort sticks for burning",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "multiple stick incense holder",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural ambergris incense sticks",
+      "asins": [
+        "B0FG7CCVCB"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural bamboo forest incense sticks",
+      "asins": [
+        "B0GZDRB1TX"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural cherry blossom incense sticks",
+      "asins": [
+        "B0GZDCC4MC"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural goose pear incense sticks",
+      "asins": [
+        "B0FDQ3L67K"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural imperial palace incense sticks",
+      "asins": [
+        "B0FY5K8HMT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural japanese incense",
+      "asins": [
+        "B0H7WPJDP1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural lavender incense sticks",
+      "asins": [
+        "B0H7R483PY",
+        "B0FXW2KHWZ"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural magnolia incense sticks",
+      "asins": [
+        "B0GZDTNZWT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural mugwort incense sticks",
+      "asins": [
+        "B0GWVLF81Y"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural osmanthus incense sticks",
+      "asins": [
+        "B0GZDKBPXK",
+        "B0FY55B96L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural pine cone incense sticks",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural plum blossom incense sticks",
+      "asins": [
+        "B0GZDN4VR8"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural sandalwood incense",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "natural sandalwood incense sticks",
+      "asins": [
+        "B0GWVQTGQT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "naural plain japanese aloeswood incense",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "nippon kodo hinoki",
+      "asins": [
+        "B0GZDQPWFN"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "non toxic incense",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "offering bowl",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "organic palo santo cone",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "organic palomsanto",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "osmanthus coil organic",
+      "asins": [
+        "B0FY55B96L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "osmanthus incense",
+      "asins": [
+        "B0GZDKBPXK",
+        "B0FY55B96L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "osmanthus incense sticks",
+      "asins": [
+        "B0GZDKBPXK",
+        "B0FY55B96L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "osmanthus incense sticks for meditation",
+      "asins": [
+        "B0GZDKBPXK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "osmanthus roll on",
+      "asins": [
+        "B0FY55B96L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palo de olivo",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palo santo",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palo santo incense",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palo santo incense sticks",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palo santo matches",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palo santo sticks",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palo santo wood",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palosanto",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "palosanto stick",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pine cone incense",
+      "asins": [
+        "B0FG7F3V69",
+        "B0GZDG7K98",
+        "B0GWVDR845"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pine cone incense sticks",
+      "asins": [
+        "B0FG7F3V69",
+        "B0GWVDR845"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pine cone incense sticks for meditation",
+      "asins": [
+        "B0FG7F3V69"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pine cones incense",
+      "asins": [
+        "B0GWVDR845"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pine incense sticks",
+      "asins": [
+        "B0GWVDR845"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pine scented incense",
+      "asins": [
+        "B0GZDG7K98"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pine sticks",
+      "asins": [
+        "B0GZDG7K98"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pinecone incense",
+      "asins": [
+        "B0GZDG7K98"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pinecone incense sticks",
+      "asins": [
+        "B0GWVDR845"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pinecones incense",
+      "asins": [
+        "B0GWVDR845"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "plum blossom incense",
+      "asins": [
+        "B0GZDN4VR8"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "plum blossom incense sticks",
+      "asins": [
+        "B0GZDN4VR8"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "plum sticks",
+      "asins": [
+        "B0GZDN4VR8"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "porta incienso",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "portador de incienso",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "pure mugwort incense",
+      "asins": [
+        "B0FY6MK2D4"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "rosewood incense",
+      "asins": [
+        "B0FY59TXJK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "rue herb spiritual cleansing",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sage",
+      "asins": [
+        "B0FYCG49CK",
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sage for cleansing negative energy",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sage spray for cleansing negative energy and protection",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sage stick",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sage sticks",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sage sticks for cleansing negative energy",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sage sticks holder",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sage to burn for cleansing negativity",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "salvia blanca para limpiar",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sandal wood",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sandalwood",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sandalwood incense",
+      "asins": [
+        "B0GWVQTGQT",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sandalwood incense sticks",
+      "asins": [
+        "B0GWVQTGQT",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sandalwood incense sticks for meditation",
+      "asins": [
+        "B0GWVQTGQT"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sandalwood incense sticks natural",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sandalwood incense wit burner",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sandalwood sticks for burning",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "santo palo sticks",
+      "asins": [
+        "B0FYCG49CK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "savia blanca",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "small cone incense holder",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "smoking incense stick",
+      "asins": [
+        "B0GZDG7K98"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "smudge burning incense",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "soporte de incienso pequeño",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "soporte para incienso",
+      "asins": [
+        "B0FY67W88Z"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "stick incense packs",
+      "asins": [
+        "B0FY6JQRB9"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "sweet grass smudge",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "tcm mugwort sticjs",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "tian ran a1 cao insence",
+      "asins": [
+        "B0FY59TXJK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "tradionally made chinese incense",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "unscented charcoal punk sticks",
+      "asins": [
+        "B0GZDG7K98"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "white sage bundles",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "white sage incense",
+      "asins": [
+        "B0FY6MCXS7"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "white sage incense sticks",
+      "asins": [
+        "B0FY6MCXS7"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "white sage stick",
+      "asins": [
+        "B0FY67YPSM"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "wisteria incense",
+      "asins": [
+        "B0GZDGRVCP"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "wisteria incense sticks",
+      "asins": [
+        "B0GZDGRVCP"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "wooden box incense holder",
+      "asins": [
+        "B0FY1RZGZH"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "wooden incense box with storage",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "wooden incense holder",
+      "asins": [
+        "B0FY5P2M4S"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "wooden incense stick holder with ash catcher",
+      "asins": [
+        "B0FY1T38P1"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "wuchen incense",
+      "asins": [
+        "B0GZDJVS2P",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "yinjiyue",
+      "asins": [
+        "B0H7WPJDP1",
+        "B0GZDGRVCP"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "yinjiyue agarwood/oud incense",
+      "asins": [
+        "B0GZDJVS2P"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "yinjiyue charcoal-free pine incense",
+      "asins": [
+        "B0GZDG7K98"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "yinjiyue mugwort incense sticks – charcoal-free / low smoke",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "供佛香",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "古城牌香",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "无烟香",
+      "asins": [
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "檀香",
+      "asins": [
+        "B0FYCG49CK",
+        "B0FY6JR3NK",
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "檀香线香",
+      "asins": [
+        "B0FYCG49CK",
+        "B0FY6JR3NK"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "沉香线香",
+      "asins": [
+        "B0FY6HB74X"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "熏香棒",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "线香",
+      "asins": [
+        "B0FY6R869L"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "線香 日本",
+      "asins": [
+        "B0GZDGRVCP"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "艾草熏香",
+      "asins": [
+        "B0GDKDTB6C"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "keyword": "艾草香",
+      "asins": [
+        "B0GDKDTB6C",
+        "B0FY6MK2D4",
+        "B0FY6JR3NK"
+      ]
+    }
+  ]
+}

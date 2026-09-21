@@ -2,755 +2,618 @@
   "source": "GET_BRAND_ANALYTICS_SEARCH_QUERY_PERFORMANCE_REPORT",
   "sourcePeriod": "2026-08-01 to 2026-08-31",
   "sourceRows": 1265,
+  "selectionPolicy": "purchase > cart > click; no-click SQP impressions are excluded; title fallback is explicitly labeled and only fills the 6-keyword minimum",
   "listingCount": 42,
-  "listingsWithSqpData": 36,
-  "listingsWithAtLeastSixTerms": 28,
-  "listingsWithPurchaseTerms": 20,
-  "totalImportedTerms": 196,
+  "totalImportedTerms": 370,
+  "byBasis": {
+    "sqp_purchase": 78,
+    "sqp_cart": 68,
+    "sqp_click": 91,
+    "title_fallback": 133
+  },
   "listingResults": [
     {
       "marketplace": "US",
-      "asin": "B0GWVDR845",
-      "sku": "pineconehy",
-      "sqpRows": 9,
-      "importedTerms": 6,
-      "purchaseTerms": 2,
-      "topTerms": [
+      "asin": "B0FY1T38P1",
+      "sku": "ihcloud",
+      "sqpRows": 56,
+      "importedTerms": 20,
+      "byBasis": {
+        "sqp_purchase": 5,
+        "sqp_cart": 6,
+        "sqp_click": 9,
+        "title_fallback": 0
+      },
+      "terms": [
         {
-          "query": "pine cone incense",
+          "query": "incense holder box",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
-          "carts": 3,
-          "clicks": 11,
-          "volume": 91
+          "carts": 5,
+          "clicks": 13,
+          "impressions": 484,
+          "volume": 1781,
+          "conversionRate": 7.69
         },
         {
-          "query": "pinecone incense sticks",
-          "purchases": 1,
-          "carts": 3,
-          "clicks": 9,
-          "volume": 28
-        },
-        {
-          "query": "pine cone incense sticks",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 16
-        },
-        {
-          "query": "pine incense sticks",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 335
-        },
-        {
-          "query": "pine cones incense",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 5
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0GWVQTGQT",
-      "sku": "sandalhy",
-      "sqpRows": 1,
-      "importedTerms": 1,
-      "purchaseTerms": 0,
-      "topTerms": [
-        {
-          "query": "for blessing and cleansing: old mountain sandalwood (老山檀香)m",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 1
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY59TXJK",
-      "sku": "lakawood",
-      "sqpRows": 6,
-      "importedTerms": 6,
-      "purchaseTerms": 0,
-      "topTerms": [
-        {
-          "query": "chinese extra long incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 8
-        },
-        {
-          "query": "lakawood incense",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 38
-        },
-        {
-          "query": "chinese incense for negative",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 8
-        },
-        {
-          "query": "rosewood incense",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 17
-        },
-        {
-          "query": "lakawood",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 4
-        }
-      ]
-    },
-    {
-      "marketplace": "CA",
-      "asin": "B0FY6HB74X",
-      "sku": "sandalwood40",
-      "sqpRows": 72,
-      "importedTerms": 6,
-      "purchaseTerms": 2,
-      "topTerms": [
-        {
-          "query": "incense stick",
+          "query": "japanese incense holder",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 2,
-          "clicks": 19,
-          "volume": 7188
+          "clicks": 5,
+          "impressions": 259,
+          "volume": 3128,
+          "conversionRate": 20
         },
         {
-          "query": "mugwort incense",
+          "query": "incense burner box chinese",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 1,
-          "volume": 78
+          "impressions": 2,
+          "volume": 2,
+          "conversionRate": 100
         },
         {
-          "query": "sandalwood incense",
-          "purchases": 0,
-          "carts": 2,
-          "clicks": 9,
-          "volume": 904
-        },
-        {
-          "query": "incense",
-          "purchases": 0,
-          "carts": 2,
+          "query": "incense stick burner",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
           "clicks": 4,
-          "volume": 16675
+          "impressions": 159,
+          "volume": 2302,
+          "conversionRate": 25
         },
         {
-          "query": "dhoop sticks",
-          "purchases": 0,
-          "carts": 2,
-          "clicks": 3,
-          "volume": 262
-        }
-      ]
-    },
-    {
-      "marketplace": "CA",
-      "asin": "B0FY6JR3NK",
-      "sku": "sandalwood300",
-      "sqpRows": 100,
-      "importedTerms": 9,
-      "purchaseTerms": 9,
-      "topTerms": [
-        {
-          "query": "sandalwood incense",
-          "purchases": 2,
-          "carts": 9,
-          "clicks": 17,
-          "volume": 904
-        },
-        {
-          "query": "chinese incense",
-          "purchases": 2,
-          "carts": 3,
-          "clicks": 6,
-          "volume": 170
-        },
-        {
-          "query": "agarbatti chandan",
+          "query": "incense box burner",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 2,
-          "volume": 5
+          "impressions": 223,
+          "volume": 455,
+          "conversionRate": 50
         },
-        {
-          "query": "incense stick gonesh",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 18
-        },
-        {
-          "query": "insincere",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 7
-        }
-      ]
-    },
-    {
-      "marketplace": "CA",
-      "asin": "B0GWVLF81Y",
-      "sku": "mugworthy",
-      "sqpRows": 100,
-      "importedTerms": 6,
-      "purchaseTerms": 1,
-      "topTerms": [
-        {
-          "query": "mugwort",
-          "purchases": 1,
-          "carts": 4,
-          "clicks": 9,
-          "volume": 1699
-        },
-        {
-          "query": "mugwort incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 4,
-          "volume": 78
-        },
-        {
-          "query": "smudge",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 404
-        },
-        {
-          "query": "mugwort burner",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 4
-        },
-        {
-          "query": "japanese incense",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 3,
-          "volume": 1149
-        }
-      ]
-    },
-    {
-      "marketplace": "CA",
-      "asin": "B0FY6MK2D4",
-      "sku": "mugwort40",
-      "sqpRows": 100,
-      "importedTerms": 9,
-      "purchaseTerms": 9,
-      "topTerms": [
-        {
-          "query": "mugwort incense sticks",
-          "purchases": 2,
-          "carts": 5,
-          "clicks": 7,
-          "volume": 45
-        },
-        {
-          "query": "mugwort incense",
-          "purchases": 2,
-          "carts": 3,
-          "clicks": 5,
-          "volume": 78
-        },
-        {
-          "query": "mugwort bundle",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 5
-        },
-        {
-          "query": "armoise encens",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 1
-        },
-        {
-          "query": "mugwort incense non toxic",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 1
-        }
-      ]
-    },
-    {
-      "marketplace": "CA",
-      "asin": "B0FY67W88Z",
-      "sku": "lotus",
-      "sqpRows": 62,
-      "importedTerms": 6,
-      "purchaseTerms": 5,
-      "topTerms": [
         {
           "query": "incense holder",
-          "purchases": 5,
-          "carts": 26,
-          "clicks": 70,
-          "volume": 27069
-        },
-        {
-          "query": "incense burner",
-          "purchases": 2,
-          "carts": 3,
-          "clicks": 3,
-          "volume": 5877
-        },
-        {
-          "query": "agarbatti stand",
-          "purchases": 1,
-          "carts": 2,
-          "clicks": 5,
-          "volume": 330
-        },
-        {
-          "query": "dhoop stick stand",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 9
-        },
-        {
-          "query": "brass incense holder",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 4,
-          "volume": 342
-        }
-      ]
-    },
-    {
-      "marketplace": "CA",
-      "asin": "B0FG7F3V69",
-      "sku": "PineCone-1.19-DG",
-      "sqpRows": 0,
-      "importedTerms": 0,
-      "purchaseTerms": 0,
-      "topTerms": []
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY6MCXS7",
-      "sku": "whitesage60",
-      "sqpRows": 6,
-      "importedTerms": 6,
-      "purchaseTerms": 0,
-      "topTerms": [
-        {
-          "query": "mantra incense sticks",
+          "selectionBasis": "sqp_cart",
           "purchases": 0,
           "carts": 1,
-          "clicks": 1,
-          "volume": 44
-        },
-        {
-          "query": "incienso de salvia blanca",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 153
-        },
-        {
-          "query": "aromatizante para bano de jardin",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 11
-        },
-        {
-          "query": "asli phool",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 9
-        },
-        {
-          "query": "white sage incense sticks",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 0,
-          "volume": 3346
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY6R869L",
-      "sku": "whitesage20",
-      "sqpRows": 30,
-      "importedTerms": 6,
-      "purchaseTerms": 5,
-      "topTerms": [
-        {
-          "query": "mini smudge sticks",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 102
-        },
-        {
-          "query": "sage to burn for cleansing negativity",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 40
-        },
-        {
-          "query": "sage sticks for cleansing negative energy",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 1318
-        },
-        {
-          "query": "sage stick",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 1230
-        },
-        {
-          "query": "sage spray for cleansing negative energy and protection",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 1685
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY6HB74X",
-      "sku": "sandalwood40",
-      "sqpRows": 11,
-      "importedTerms": 6,
-      "purchaseTerms": 0,
-      "topTerms": [
-        {
-          "query": "b0fy6hb74x",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 3,
-          "volume": 12
-        },
-        {
-          "query": "asin b0fy6hb74x",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 3
-        },
-        {
-          "query": "incense",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 2,
-          "volume": 143366
-        },
-        {
-          "query": "檀香",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 473
-        },
-        {
-          "query": "japanese incense",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 8403
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY6JR3NK",
-      "sku": "sandalwood300",
-      "sqpRows": 30,
-      "importedTerms": 6,
-      "purchaseTerms": 2,
-      "topTerms": [
-        {
-          "query": "檀香线香",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 137
-        },
-        {
-          "query": "sandalwood incense sticks natural",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 254
-        },
-        {
-          "query": "檀香",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 6,
-          "volume": 473
-        },
-        {
-          "query": "sandalwood incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 3,
-          "volume": 8310
-        },
-        {
-          "query": "400 count incense sticks",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 3
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY1RZGZH",
-      "sku": "ihlotusflower",
-      "sqpRows": 75,
-      "importedTerms": 6,
-      "purchaseTerms": 1,
-      "topTerms": [
-        {
-          "query": "incense box green",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 8
-        },
-        {
-          "query": "incense box",
-          "purchases": 0,
-          "carts": 2,
           "clicks": 8,
-          "volume": 2534
+          "impressions": 378,
+          "volume": 257829,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner with storage",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 5,
+          "impressions": 26,
+          "volume": 65,
+          "conversionRate": 0
+        },
+        {
+          "query": "wooden incense stick holder with ash catcher",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 4,
+          "volume": 157,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holders",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 22,
+          "volume": 10250,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder and storage",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 34,
+          "volume": 149,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder storage box",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 7,
+          "volume": 11,
+          "conversionRate": 0
         },
         {
           "query": "incense burner box",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
-          "carts": 1,
-          "clicks": 7,
-          "volume": 689
-        },
-        {
-          "query": "incense holder box",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 6,
-          "volume": 1781
-        },
-        {
-          "query": "incense holder",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 3,
-          "volume": 257829
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FYCG49CK",
-      "sku": "palosanto",
-      "sqpRows": 29,
-      "importedTerms": 6,
-      "purchaseTerms": 2,
-      "topTerms": [
-        {
-          "query": "palo santo sticks",
-          "purchases": 3,
-          "carts": 5,
-          "clicks": 13,
-          "volume": 26497
-        },
-        {
-          "query": "palo santo",
-          "purchases": 2,
-          "carts": 3,
-          "clicks": 7,
-          "volume": 49382
-        },
-        {
-          "query": "organic palomsanto",
-          "purchases": 0,
-          "carts": 3,
-          "clicks": 3,
-          "volume": 2
-        },
-        {
-          "query": "palo santo incense sticks",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 3,
-          "volume": 2923
-        },
-        {
-          "query": "palo santo wood",
-          "purchases": 0,
-          "carts": 1,
+          "carts": 0,
           "clicks": 2,
-          "volume": 573
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY55B96L",
-      "sku": "osmanthus",
-      "sqpRows": 5,
-      "importedTerms": 5,
-      "purchaseTerms": 0,
-      "topTerms": [
+          "impressions": 264,
+          "volume": 689,
+          "conversionRate": 0
+        },
         {
-          "query": "osmanthus incense sticks",
+          "query": "insense burner and box",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
-          "carts": 1,
+          "carts": 0,
           "clicks": 2,
-          "volume": 77
+          "impressions": 7,
+          "volume": 7,
+          "conversionRate": 0
         },
         {
-          "query": "osmanthus incense",
+          "query": "chinese incense holder",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 1,
-          "volume": 142
+          "impressions": 81,
+          "volume": 362,
+          "conversionRate": 0
         },
         {
-          "query": "osmanthus roll on",
+          "query": "incense burner",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 1,
-          "volume": 8
+          "impressions": 29,
+          "volume": 62584,
+          "conversionRate": 0
         },
         {
-          "query": "osmanthus coil organic",
+          "query": "box incense burner",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 1,
-          "volume": 5
+          "impressions": 38,
+          "volume": 76,
+          "conversionRate": 0
         },
         {
-          "query": "golden osmanthus incense",
+          "query": "incense holder for sticks",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 1,
-          "volume": 5
+          "impressions": 9,
+          "volume": 17953,
+          "conversionRate": 0
+        },
+        {
+          "query": "wooden incense holder box with storage",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 27,
+          "volume": 54,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense box holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 23,
+          "volume": 127,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner stick",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 16,
+          "volume": 640,
+          "conversionRate": 0
         }
       ]
     },
     {
-      "marketplace": "US",
-      "asin": "B0GWVLF81Y",
-      "sku": "mugworthy",
-      "sqpRows": 6,
-      "importedTerms": 6,
-      "purchaseTerms": 1,
-      "topTerms": [
-        {
-          "query": "mugwort incense",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 3,
-          "volume": 1146
-        },
-        {
-          "query": "mugwort incense for sensitive person",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 2
-        },
-        {
-          "query": "mugwort sticks for burning",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 14
-        },
-        {
-          "query": "mugwort incense sticks",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 0,
-          "volume": 234
-        },
-        {
-          "query": "mugwort",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 0,
-          "volume": 15663
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
+      "marketplace": "CA",
       "asin": "B0FY6MK2D4",
       "sku": "mugwort40",
-      "sqpRows": 35,
-      "importedTerms": 6,
-      "purchaseTerms": 6,
-      "topTerms": [
-        {
-          "query": "mugwort incense",
-          "purchases": 4,
-          "carts": 10,
-          "clicks": 21,
-          "volume": 1146
-        },
+      "sqpRows": 100,
+      "importedTerms": 16,
+      "byBasis": {
+        "sqp_purchase": 9,
+        "sqp_cart": 3,
+        "sqp_click": 4,
+        "title_fallback": 0
+      },
+      "terms": [
         {
           "query": "mugwort incense sticks",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 2,
+          "carts": 5,
+          "clicks": 7,
+          "impressions": 74,
+          "volume": 45,
+          "conversionRate": 28.57
+        },
+        {
+          "query": "mugwort incense",
+          "selectionBasis": "sqp_purchase",
           "purchases": 2,
           "carts": 3,
-          "clicks": 9,
-          "volume": 234
+          "clicks": 5,
+          "impressions": 92,
+          "volume": 78,
+          "conversionRate": 40
         },
         {
-          "query": "incienso de artemisa",
+          "query": "mugwort bundle",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
-          "carts": 2,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 7,
+          "volume": 5,
+          "conversionRate": 100
+        },
+        {
+          "query": "armoise encens",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 1,
+          "conversionRate": 100
+        },
+        {
+          "query": "mugwort incense non toxic",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 1,
+          "conversionRate": 100
+        },
+        {
+          "query": "incense cones mugwort",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 1,
+          "conversionRate": 100
+        },
+        {
+          "query": "chinese incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 4,
+          "impressions": 97,
+          "volume": 170,
+          "conversionRate": 25
+        },
+        {
+          "query": "mugworth",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 18,
+          "volume": 23,
+          "conversionRate": 100
+        },
+        {
+          "query": "hem mugwort masala incense sticks",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 4,
+          "volume": 2,
+          "conversionRate": 100
+        },
+        {
+          "query": "natural incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 11,
+          "volume": 76,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense sticks bulk",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 49,
+          "conversionRate": 0
+        },
+        {
+          "query": "camphor incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 19,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural incense sticks non toxic",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
           "clicks": 2,
-          "volume": 65
+          "impressions": 115,
+          "volume": 141,
+          "conversionRate": 0
         },
         {
-          "query": "artemesia incene",
+          "query": "non toxic incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 46,
+          "volume": 66,
+          "conversionRate": 0
+        },
+        {
+          "query": "organic incense sticks non toxic",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 29,
+          "volume": 121,
+          "conversionRate": 0
+        },
+        {
+          "query": "frankincense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 18,
+          "volume": 48,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6JR3NK",
+      "sku": "sandalwood300",
+      "sqpRows": 100,
+      "importedTerms": 20,
+      "byBasis": {
+        "sqp_purchase": 9,
+        "sqp_cart": 4,
+        "sqp_click": 7,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "sandalwood incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 2,
+          "carts": 9,
+          "clicks": 17,
+          "impressions": 738,
+          "volume": 904,
+          "conversionRate": 11.76
+        },
+        {
+          "query": "chinese incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 2,
+          "carts": 3,
+          "clicks": 6,
+          "impressions": 79,
+          "volume": 170,
+          "conversionRate": 33.33
+        },
+        {
+          "query": "agarbatti chandan",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 4,
+          "volume": 5,
+          "conversionRate": 50
+        },
+        {
+          "query": "incense stick gonesh",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 1,
-          "volume": 1
+          "impressions": 1,
+          "volume": 18,
+          "conversionRate": 100
         },
         {
-          "query": "艾草香",
+          "query": "insincere",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 1,
-          "volume": 46
+          "impressions": 4,
+          "volume": 7,
+          "conversionRate": 100
+        },
+        {
+          "query": "organic essence stick",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 6,
+          "conversionRate": 100
+        },
+        {
+          "query": "low smoke incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 29,
+          "volume": 113,
+          "conversionRate": 33.33
+        },
+        {
+          "query": "sandalwood incense sticks",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 321,
+          "volume": 320,
+          "conversionRate": 33.33
+        },
+        {
+          "query": "incense sandalwood",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 95,
+          "volume": 121,
+          "conversionRate": 50
+        },
+        {
+          "query": "blitz citronella incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 5,
+          "volume": 11,
+          "conversionRate": 0
+        },
+        {
+          "query": "campfire incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 4,
+          "volume": 25,
+          "conversionRate": 0
+        },
+        {
+          "query": "hinoki incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 13,
+          "conversionRate": 0
+        },
+        {
+          "query": "phool incense sandalwood",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 5,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense japanese sandalwood",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 13,
+          "volume": 13,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural sandalwood incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 13,
+          "volume": 13,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 76,
+          "volume": 2047,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense stick sandalwood",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 51,
+          "volume": 68,
+          "conversionRate": 0
+        },
+        {
+          "query": "japanese sandalwood incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 45,
+          "volume": 74,
+          "conversionRate": 0
+        },
+        {
+          "query": "japanese sandalwood incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 31,
+          "volume": 35,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 24,
+          "volume": 76,
+          "conversionRate": 0
         }
       ]
     },
@@ -759,88 +622,288 @@
       "asin": "B0FY67W88Z",
       "sku": "lotus",
       "sqpRows": 94,
-      "importedTerms": 9,
-      "purchaseTerms": 9,
-      "topTerms": [
+      "importedTerms": 20,
+      "byBasis": {
+        "sqp_purchase": 9,
+        "sqp_cart": 11,
+        "sqp_click": 0,
+        "title_fallback": 0
+      },
+      "terms": [
         {
           "query": "incense holder",
+          "selectionBasis": "sqp_purchase",
           "purchases": 14,
           "carts": 44,
           "clicks": 86,
-          "volume": 257829
+          "impressions": 4809,
+          "volume": 257829,
+          "conversionRate": 16.28
         },
         {
           "query": "agarbatti stand",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 3,
           "clicks": 7,
-          "volume": 3288
+          "impressions": 160,
+          "volume": 3288,
+          "conversionRate": 14.29
         },
         {
           "query": "portador de incienso",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 2,
           "clicks": 2,
-          "volume": 91
+          "impressions": 5,
+          "volume": 91,
+          "conversionRate": 50
         },
         {
           "query": "sandalwood incense wit burner",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 1,
-          "volume": 18
+          "impressions": 1,
+          "volume": 18,
+          "conversionRate": 100
         },
         {
           "query": "gods agarbatti holder",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 1,
-          "volume": 8
+          "impressions": 1,
+          "volume": 8,
+          "conversionRate": 100
+        },
+        {
+          "query": "incents holders",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 6,
+          "conversionRate": 100
+        },
+        {
+          "query": "inxrnse holdwr",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 1,
+          "conversionRate": 100
+        },
+        {
+          "query": "2 in one incense and candle holder",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 34,
+          "conversionRate": 100
+        },
+        {
+          "query": "incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 32,
+          "volume": 143366,
+          "conversionRate": 100
+        },
+        {
+          "query": "incense holders",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 3,
+          "clicks": 6,
+          "impressions": 165,
+          "volume": 10250,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense stick holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 32,
+          "volume": 13871,
+          "conversionRate": 0
+        },
+        {
+          "query": "agarbatti holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 18,
+          "volume": 423,
+          "conversionRate": 0
+        },
+        {
+          "query": "agarbatti stand with ash catcher",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 11,
+          "volume": 291,
+          "conversionRate": 0
+        },
+        {
+          "query": "haldi kumkum holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 6,
+          "volume": 1248,
+          "conversionRate": 0
+        },
+        {
+          "query": "sage sticks holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 4,
+          "volume": 589,
+          "conversionRate": 0
+        },
+        {
+          "query": "burning incense holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 123,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder ￼",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 73,
+          "conversionRate": 0
+        },
+        {
+          "query": "murphys mosquito repellent incense holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 39,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder indian style",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 49,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder for pooja",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 28,
+          "conversionRate": 0
         }
       ]
     },
     {
       "marketplace": "US",
-      "asin": "B0FY1T38P1",
-      "sku": "ihcloud",
-      "sqpRows": 56,
+      "asin": "B0GWVQTGQT",
+      "sku": "sandalhy",
+      "sqpRows": 1,
       "importedTerms": 6,
-      "purchaseTerms": 5,
-      "topTerms": [
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
         {
-          "query": "incense holder box",
-          "purchases": 1,
-          "carts": 5,
-          "clicks": 13,
-          "volume": 1781
+          "query": "sandalwood incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "japanese incense holder",
-          "purchases": 1,
-          "carts": 2,
-          "clicks": 5,
-          "volume": 3128
+          "query": "sandalwood incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "incense burner box chinese",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 2
+          "query": "natural sandalwood incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "incense stick burner",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 4,
-          "volume": 2302
+          "query": "sandalwood incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "incense box burner",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 455
+          "query": "long burning sandalwood incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "sandalwood aromatherapy incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
@@ -850,62 +913,824 @@
       "sku": "lavender02",
       "sqpRows": 7,
       "importedTerms": 6,
-      "purchaseTerms": 2,
-      "topTerms": [
+      "byBasis": {
+        "sqp_purchase": 2,
+        "sqp_cart": 1,
+        "sqp_click": 1,
+        "title_fallback": 2
+      },
+      "terms": [
         {
           "query": "lavender air freshener on stick you light with fire",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 1,
-          "volume": 1
+          "impressions": 1,
+          "volume": 1,
+          "conversionRate": 100
         },
         {
           "query": "lavender incense sticks",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 2,
-          "volume": 4258
+          "impressions": 311,
+          "volume": 4258,
+          "conversionRate": 50
         },
         {
           "query": "lavender incense",
+          "selectionBasis": "sqp_cart",
           "purchases": 0,
           "carts": 3,
           "clicks": 4,
-          "volume": 2317
+          "impressions": 147,
+          "volume": 2317,
+          "conversionRate": 0
         },
         {
-          "query": "stick incense packs",
+          "query": "incense sticks",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
-          "carts": 1,
+          "carts": 0,
           "clicks": 1,
-          "volume": 223
+          "impressions": 70,
+          "volume": 157334,
+          "conversionRate": 0
         },
         {
-          "query": "lavendar incense",
+          "query": "natural lavender incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 117
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "lavender incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
     {
       "marketplace": "US",
-      "asin": "B0FY5P2M4S",
-      "sku": "incenseholder17cm",
+      "asin": "B0FY6HB74X",
+      "sku": "sandalwood40",
+      "sqpRows": 11,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 1,
+        "title_fallback": 5
+      },
+      "terms": [
+        {
+          "query": "incense sticks for sleep",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 20,
+          "conversionRate": 0
+        },
+        {
+          "query": "sandalwood incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "sandalwood incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural sandalwood incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "sandalwood incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning sandalwood incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FG7F3V69",
+      "sku": "PineCone-1.19-DG",
       "sqpRows": 0,
-      "importedTerms": 0,
-      "purchaseTerms": 0,
-      "topTerms": []
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
+        {
+          "query": "pine cone incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "pine cone incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural pine cone incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "charcoal free pine cone incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "pine cone incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning pine cone incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
     },
     {
       "marketplace": "US",
-      "asin": "B0FXW2KHWZ",
-      "sku": "lavender01",
-      "sqpRows": 0,
-      "importedTerms": 0,
-      "purchaseTerms": 0,
-      "topTerms": []
+      "asin": "B0FY1RZGZH",
+      "sku": "ihlotusflower",
+      "sqpRows": 75,
+      "importedTerms": 20,
+      "byBasis": {
+        "sqp_purchase": 1,
+        "sqp_cart": 7,
+        "sqp_click": 12,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "incense box green",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 8,
+          "conversionRate": 100
+        },
+        {
+          "query": "incense burner box",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 7,
+          "impressions": 147,
+          "volume": 689,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder box",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 6,
+          "impressions": 288,
+          "volume": 1781,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 250,
+          "volume": 257829,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense ash catcher",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 10,
+          "volume": 971,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder with cover",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 10,
+          "volume": 87,
+          "conversionRate": 0
+        },
+        {
+          "query": "glass incense holder tray",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 30,
+          "conversionRate": 0
+        },
+        {
+          "query": "lockable incense burner",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 1,
+          "conversionRate": 0
+        },
+        {
+          "query": "wooden box incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 25,
+          "volume": 49,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner with storage",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 10,
+          "volume": 65,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner holder box black and gold",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 13,
+          "volume": 17,
+          "conversionRate": 0
+        },
+        {
+          "query": "chinese incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 92,
+          "volume": 362,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense stick holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 23,
+          "volume": 13871,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder black",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 32,
+          "volume": 877,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense stick burner box",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 29,
+          "volume": 55,
+          "conversionRate": 0
+        },
+        {
+          "query": "glass incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 4,
+          "volume": 2677,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner holder box",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 20,
+          "volume": 45,
+          "conversionRate": 0
+        },
+        {
+          "query": "modern incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 575,
+          "conversionRate": 0
+        },
+        {
+          "query": "wooden incense holder box",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 13,
+          "volume": 27,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner box with drawer storage",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 12,
+          "volume": 34,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "sku": "YJY-IH-CELADON-LEAF-US",
+      "sqpRows": 100,
+      "importedTerms": 7,
+      "byBasis": {
+        "sqp_purchase": 1,
+        "sqp_cart": 2,
+        "sqp_click": 4,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "incense ceramic stick burner with ash catcher",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 4,
+          "conversionRate": 100
+        },
+        {
+          "query": "incense holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 2,
+          "clicks": 7,
+          "impressions": 1219,
+          "volume": 257829,
+          "conversionRate": 0
+        },
+        {
+          "query": "leave holder for incense",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 5,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder for sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 3,
+          "impressions": 331,
+          "volume": 17953,
+          "conversionRate": 0
+        },
+        {
+          "query": "leaf incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 41,
+          "volume": 170,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder with ash catcher",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 33,
+          "volume": 811,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder for big sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 65,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "sku": "whitesage60",
+      "sqpRows": 6,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 1,
+        "sqp_click": 0,
+        "title_fallback": 5
+      },
+      "terms": [
+        {
+          "query": "mantra incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 8,
+          "volume": 44,
+          "conversionRate": 0
+        },
+        {
+          "query": "white sage incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "white sage incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural white sage incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "white sage incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning white sage incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "sku": "mugworthy",
+      "sqpRows": 6,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 1,
+        "sqp_cart": 1,
+        "sqp_click": 0,
+        "title_fallback": 4
+      },
+      "terms": [
+        {
+          "query": "mugwort incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 310,
+          "volume": 1146,
+          "conversionRate": 33.33
+        },
+        {
+          "query": "mugwort incense for sensitive person",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 2,
+          "conversionRate": 0
+        },
+        {
+          "query": "mugwort incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural mugwort incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "charcoal free mugwort incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "mugwort incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "sku": "pineconehy",
+      "sqpRows": 9,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 2,
+        "sqp_cart": 1,
+        "sqp_click": 1,
+        "title_fallback": 2
+      },
+      "terms": [
+        {
+          "query": "pine cone incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 3,
+          "clicks": 11,
+          "impressions": 114,
+          "volume": 91,
+          "conversionRate": 9.09
+        },
+        {
+          "query": "pinecone incense sticks",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 3,
+          "clicks": 9,
+          "impressions": 40,
+          "volume": 28,
+          "conversionRate": 11.11
+        },
+        {
+          "query": "pine cone incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 28,
+          "volume": 16,
+          "conversionRate": 0
+        },
+        {
+          "query": "pine incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 61,
+          "volume": 335,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural pine cone incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "charcoal free pine cone incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "sku": "lakawood",
+      "sqpRows": 6,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 1,
+        "title_fallback": 5
+      },
+      "terms": [
+        {
+          "query": "lakawood incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 38,
+          "conversionRate": 0
+        },
+        {
+          "query": "lakawood incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural lakawood incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "lakawood incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning lakawood incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "lakawood aromatherapy incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
     },
     {
       "marketplace": "US",
@@ -913,201 +1738,147 @@
       "sku": "C0-7SML-QGMM",
       "sqpRows": 75,
       "importedTerms": 6,
-      "purchaseTerms": 0,
-      "topTerms": [
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 1,
+        "title_fallback": 5
+      },
+      "terms": [
         {
           "query": "mugwort incense",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 1,
-          "volume": 1146
-        },
-        {
-          "query": "mugwort incense sticks",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 0,
-          "volume": 234
-        },
-        {
-          "query": "incense matches",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 0,
-          "volume": 11558
+          "impressions": 135,
+          "volume": 1146,
+          "conversionRate": 0
         },
         {
           "query": "lavender incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
           "clicks": 0,
-          "volume": 4258
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "agarwood incense",
+          "query": "lavender incense",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
           "clicks": 0,
-          "volume": 2541
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural lavender incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "charcoal free lavender incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "lavender incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
     {
       "marketplace": "US",
-      "asin": "B0GZDQPWFN",
-      "sku": "YJY-INC-HINOKI-60-US",
-      "sqpRows": 14,
-      "importedTerms": 6,
-      "purchaseTerms": 2,
-      "topTerms": [
-        {
-          "query": "hinoki incense for morning air home purification",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 3
-        },
-        {
-          "query": "hinoki incense",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 3,
-          "volume": 987
-        },
-        {
-          "query": "chinese cypress incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 2
-        },
-        {
-          "query": "hinoki sticks",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 45
-        },
-        {
-          "query": "japanese hinoki wood",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 61
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY67YPSM",
-      "sku": "blueih",
-      "sqpRows": 21,
-      "importedTerms": 6,
-      "purchaseTerms": 0,
-      "topTerms": [
-        {
-          "query": "incense holder",
-          "purchases": 0,
-          "carts": 3,
-          "clicks": 15,
-          "volume": 257829
-        },
-        {
-          "query": "incense burner",
-          "purchases": 0,
-          "carts": 2,
-          "clicks": 5,
-          "volume": 62584
-        },
-        {
-          "query": "incense cone burner",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 2,
-          "volume": 4285
-        },
-        {
-          "query": "lotus incense holder",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 2298
-        },
-        {
-          "query": "incense holders",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 10250
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0GZDCC4MC",
-      "sku": "YJY-INC-CHERRY-100-US",
+      "asin": "B0GZDKBPXK",
+      "sku": "YJY-INC-OSMANTHUS-110-US",
       "sqpRows": 2,
-      "importedTerms": 2,
-      "purchaseTerms": 0,
-      "topTerms": [
-        {
-          "query": "hibi 10 minutes aroma incense matches",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 87
-        },
-        {
-          "query": "cherry blossom scented incense sticks",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 1
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0GZDGRVCP",
-      "sku": "YJY-INC-WISTERIA-60-US",
-      "sqpRows": 9,
       "importedTerms": 6,
-      "purchaseTerms": 0,
-      "topTerms": [
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 1,
+        "title_fallback": 5
+      },
+      "terms": [
         {
-          "query": "wisteria incense",
+          "query": "osmanthus incense",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
-          "carts": 5,
-          "clicks": 8,
-          "volume": 114
-        },
-        {
-          "query": "wisteria incense sticks",
-          "purchases": 0,
-          "carts": 1,
+          "carts": 0,
           "clicks": 2,
-          "volume": 41
+          "impressions": 47,
+          "volume": 142,
+          "conversionRate": 0
         },
         {
-          "query": "gonesh wisteria incense sticks",
+          "query": "osmanthus incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 26
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "japanese wisteria",
+          "query": "natural osmanthus incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 75
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "coreless japanese incense",
+          "query": "coreless osmanthus incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 12
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "osmanthus incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning osmanthus incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
@@ -1116,22 +1887,73 @@
       "asin": "B0GZDN4VR8",
       "sku": "YJY-INC-PLUM-110-US",
       "sqpRows": 2,
-      "importedTerms": 2,
-      "purchaseTerms": 0,
-      "topTerms": [
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
         {
-          "query": "plum sticks",
+          "query": "plum blossom incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 1,
-          "volume": 9
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "chinese smoke aroma",
+          "query": "plum blossom incense",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 1,
-          "volume": 2
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural plum blossom incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "coreless plum blossom incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "plum blossom incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning plum blossom incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
@@ -1141,129 +1963,147 @@
       "sku": "YJY-INC-PINE-60-US",
       "sqpRows": 18,
       "importedTerms": 6,
-      "purchaseTerms": 0,
-      "topTerms": [
-        {
-          "query": "pine cone incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 91
-        },
-        {
-          "query": "pine scented incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 67
-        },
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 1,
+        "title_fallback": 5
+      },
+      "terms": [
         {
           "query": "incense sticks",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 1,
-          "volume": 157334
+          "impressions": 6,
+          "volume": 157334,
+          "conversionRate": 0
         },
         {
-          "query": "pine sticks",
+          "query": "natural incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 1,
-          "volume": 114
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "smoking incense stick",
+          "query": "natural incense",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 1,
-          "volume": 14
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural natural incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "coreless natural incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0GZDKBPXK",
-      "sku": "YJY-INC-OSMANTHUS-110-US",
-      "sqpRows": 2,
-      "importedTerms": 2,
-      "purchaseTerms": 0,
-      "topTerms": [
-        {
-          "query": "osmanthus incense",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 2,
-          "volume": 142
-        },
-        {
-          "query": "chan luen hing incense",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 1
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FG7CCVCB",
-      "sku": "Ambergris-1.19-DG",
-      "sqpRows": 0,
-      "importedTerms": 0,
-      "purchaseTerms": 0,
-      "topTerms": []
     },
     {
       "marketplace": "US",
       "asin": "B0FDQ3L67K",
       "sku": "1688-GPIncense-1.32-DG",
       "sqpRows": 0,
-      "importedTerms": 0,
-      "purchaseTerms": 0,
-      "topTerms": []
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FY6QW1LV",
-      "sku": "argarwood40",
-      "sqpRows": 30,
-      "importedTerms": 7,
-      "purchaseTerms": 7,
-      "topTerms": [
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
         {
-          "query": "chinese incense",
-          "purchases": 5,
-          "carts": 6,
-          "clicks": 11,
-          "volume": 1484
+          "query": "goose pear incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "incense chinese",
-          "purchases": 1,
-          "carts": 2,
-          "clicks": 3,
-          "volume": 114
+          "query": "goose pear incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "hainan agarwood",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 7
+          "query": "natural goose pear incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "￼chinese incense bulk",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 5
+          "query": "goose pear incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "chinese agarwood incense",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 29
+          "query": "long burning goose pear incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "goose pear aromatherapy incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
@@ -1272,22 +2112,148 @@
       "asin": "B0GZDTNZWT",
       "sku": "YJY-INC-MAGNOLIA-110-US",
       "sqpRows": 2,
-      "importedTerms": 2,
-      "purchaseTerms": 0,
-      "topTerms": [
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
         {
-          "query": "magnolia champaca stick",
-          "purchases": 0,
-          "carts": 0,
-          "clicks": 1,
-          "volume": 5
-        },
-        {
-          "query": "yulan magnolia",
+          "query": "magnolia incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
           "clicks": 0,
-          "volume": 72
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "magnolia incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural magnolia incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "coreless magnolia incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "magnolia incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning magnolia incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDCC4MC",
+      "sku": "YJY-INC-CHERRY-100-US",
+      "sqpRows": 2,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
+        {
+          "query": "cherry blossom incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "cherry blossom incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural cherry blossom incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "coreless cherry blossom incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "cherry blossom incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning cherry blossom incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
@@ -1296,29 +2262,73 @@
       "asin": "B0GZDRB1TX",
       "sku": "YJY-INC-BAMBOO-60-US",
       "sqpRows": 3,
-      "importedTerms": 3,
-      "purchaseTerms": 0,
-      "topTerms": [
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 1,
+        "sqp_click": 0,
+        "title_fallback": 5
+      },
+      "terms": [
         {
           "query": "incense sticks stickless coreless no stick",
+          "selectionBasis": "sqp_cart",
           "purchases": 0,
           "carts": 1,
           "clicks": 1,
-          "volume": 8
+          "impressions": 4,
+          "volume": 8,
+          "conversionRate": 0
         },
         {
-          "query": "bamboo splits for incense making",
+          "query": "bamboo forest incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 1,
-          "volume": 92
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "incense bamboo sticks",
+          "query": "bamboo forest incense",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 1,
-          "volume": 22
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural bamboo forest incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "coreless bamboo forest incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "bamboo forest incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
@@ -1328,141 +2338,72 @@
       "sku": "YJY-INC-AGARWOOD-40-US",
       "sqpRows": 13,
       "importedTerms": 6,
-      "purchaseTerms": 0,
-      "topTerms": [
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
         {
-          "query": "agarwood",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 2141
-        },
-        {
-          "query": "lakawood incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 38
-        },
-        {
-          "query": "naural plain japanese aloeswood incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 1
-        },
-        {
-          "query": "tradionally made chinese incense",
+          "query": "agarwood incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 2,
-          "volume": 3
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "japanese agarwood incense",
+          "query": "agarwood incense",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 1,
-          "volume": 47
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0H6WKJKSG",
-      "sku": "YJY-IH-CELADON-LEAF-US",
-      "sqpRows": 100,
-      "importedTerms": 6,
-      "purchaseTerms": 1,
-      "topTerms": [
-        {
-          "query": "incense ceramic stick burner with ash catcher",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 4
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "incense holder",
-          "purchases": 0,
-          "carts": 2,
-          "clicks": 7,
-          "volume": 257829
-        },
-        {
-          "query": "leave holder for incense",
-          "purchases": 0,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 5
-        },
-        {
-          "query": "incense holder for sticks",
+          "query": "natural agarwood incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 3,
-          "volume": 17953
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "leaf incense holder",
+          "query": "charcoal free agarwood incense sticks",
+          "selectionBasis": "title_fallback",
           "purchases": 0,
           "carts": 0,
-          "clicks": 1,
-          "volume": 170
-        }
-      ]
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0FG7F3V69",
-      "sku": "PineCone-1.19-DG",
-      "sqpRows": 0,
-      "importedTerms": 0,
-      "purchaseTerms": 0,
-      "topTerms": []
-    },
-    {
-      "marketplace": "US",
-      "asin": "B0GDKDTB6C",
-      "sku": "JD-C07S-HKF4",
-      "sqpRows": 39,
-      "importedTerms": 6,
-      "purchaseTerms": 6,
-      "topTerms": [
-        {
-          "query": "mugwort incense",
-          "purchases": 4,
-          "carts": 27,
-          "clicks": 50,
-          "volume": 1146
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "mugwort incense sticks",
-          "purchases": 1,
-          "carts": 5,
-          "clicks": 8,
-          "volume": 234
+          "query": "agarwood incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         },
         {
-          "query": "mugwort inscrnse stick",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 2,
-          "volume": 2
-        },
-        {
-          "query": "10/20/30/50-pack organic mugwort scented incense sticks slow burn aromatherapy for indoors, home fragrance, dailyconsumer use, natural herbal incense for living outdoor/room/bathroom/balcony/warehouse",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 3
-        },
-        {
-          "query": "mugwort incense resin",
-          "purchases": 1,
-          "carts": 1,
-          "clicks": 1,
-          "volume": 2
+          "query": "long burning agarwood incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
@@ -1471,15 +2412,363 @@
       "asin": "B0FY5K8HMT",
       "sku": "ImperialPalace",
       "sqpRows": 1,
-      "importedTerms": 1,
-      "purchaseTerms": 0,
-      "topTerms": [
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
         {
-          "query": "dynasty designs incense",
+          "query": "imperial palace incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "imperial palace incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural imperial palace incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "imperial palace incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning imperial palace incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "imperial palace aromatherapy incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "sku": "lotus",
+      "sqpRows": 62,
+      "importedTerms": 20,
+      "byBasis": {
+        "sqp_purchase": 5,
+        "sqp_cart": 6,
+        "sqp_click": 9,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "incense holder",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 5,
+          "carts": 26,
+          "clicks": 70,
+          "impressions": 4137,
+          "volume": 27069,
+          "conversionRate": 7.14
+        },
+        {
+          "query": "incense burner",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 2,
+          "carts": 3,
+          "clicks": 3,
+          "impressions": 628,
+          "volume": 5877,
+          "conversionRate": 66.67
+        },
+        {
+          "query": "agarbatti stand",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 2,
+          "clicks": 5,
+          "impressions": 100,
+          "volume": 330,
+          "conversionRate": 20
+        },
+        {
+          "query": "dhoop stick stand",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 9,
+          "conversionRate": 100
+        },
+        {
+          "query": "brass incense holder",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 4,
+          "impressions": 85,
+          "volume": 342,
+          "conversionRate": 25
+        },
+        {
+          "query": "incense stick holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 10,
+          "impressions": 513,
+          "volume": 3453,
+          "conversionRate": 0
+        },
+        {
+          "query": "agarbatti holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 7,
+          "impressions": 153,
+          "volume": 755,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder for sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 143,
+          "volume": 909,
+          "conversionRate": 0
+        },
+        {
+          "query": "stick incense holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 20,
+          "volume": 192,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense cone holder",
+          "selectionBasis": "sqp_cart",
           "purchases": 0,
           "carts": 1,
           "clicks": 1,
-          "volume": 2
+          "impressions": 123,
+          "volume": 1154,
+          "conversionRate": 0
+        },
+        {
+          "query": "bakhoor burner",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 14,
+          "volume": 4954,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 4,
+          "impressions": 111,
+          "volume": 705,
+          "conversionRate": 0
+        },
+        {
+          "query": "lotus incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 87,
+          "volume": 164,
+          "conversionRate": 0
+        },
+        {
+          "query": "ceramic incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 48,
+          "volume": 513,
+          "conversionRate": 0
+        },
+        {
+          "query": "japanese incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 22,
+          "volume": 381,
+          "conversionRate": 0
+        },
+        {
+          "query": "insense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 23,
+          "volume": 122,
+          "conversionRate": 0
+        },
+        {
+          "query": "lotus flower incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 16,
+          "volume": 38,
+          "conversionRate": 0
+        },
+        {
+          "query": "brass incense burner",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 80,
+          "volume": 247,
+          "conversionRate": 0
+        },
+        {
+          "query": "agarbatti stand with ash catcher",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 49,
+          "volume": 179,
+          "conversionRate": 0
+        },
+        {
+          "query": "ash catcher",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 38,
+          "volume": 229,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "sku": "YJY-INC-HINOKI-60-US",
+      "sqpRows": 14,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 2,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 4
+      },
+      "terms": [
+        {
+          "query": "hinoki incense for morning air home purification",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 6,
+          "volume": 3,
+          "conversionRate": 100
+        },
+        {
+          "query": "hinoki incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 867,
+          "volume": 987,
+          "conversionRate": 33.33
+        },
+        {
+          "query": "hinoki incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural hinoki incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "hinoki incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning hinoki incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     },
@@ -1489,42 +2778,1567 @@
       "sku": "HINOKI",
       "sqpRows": 100,
       "importedTerms": 6,
-      "purchaseTerms": 1,
-      "topTerms": [
+      "byBasis": {
+        "sqp_purchase": 1,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 5
+      },
+      "terms": [
         {
           "query": "japanese incense",
+          "selectionBasis": "sqp_purchase",
           "purchases": 1,
           "carts": 1,
           "clicks": 1,
-          "volume": 8403
+          "impressions": 96,
+          "volume": 8403,
+          "conversionRate": 100
         },
         {
-          "query": "cypress wood",
+          "query": "hinoki incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "hinoki incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural hinoki incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "hinoki incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning hinoki incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY55B96L",
+      "sku": "osmanthus",
+      "sqpRows": 5,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 1,
+        "sqp_click": 1,
+        "title_fallback": 4
+      },
+      "terms": [
+        {
+          "query": "osmanthus incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 15,
+          "volume": 77,
+          "conversionRate": 0
+        },
+        {
+          "query": "osmanthus incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 14,
+          "volume": 142,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural osmanthus incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "osmanthus incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning osmanthus incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "osmanthus aromatherapy incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "sku": "incenseholder17cm",
+      "sqpRows": 0,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
+        {
+          "query": "incense holder",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder for sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense stick holder",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "wooden incense holder",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "hanging incense holder",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder with ash catcher",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FXW2KHWZ",
+      "sku": "lavender01",
+      "sqpRows": 0,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
+        {
+          "query": "lavender incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "lavender incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural lavender incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "lavender incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning lavender incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "lavender aromatherapy incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67YPSM",
+      "sku": "blueih",
+      "sqpRows": 21,
+      "importedTerms": 16,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 2,
+        "sqp_click": 14,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "incense holder",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 3,
+          "clicks": 15,
+          "impressions": 913,
+          "volume": 257829,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 2,
+          "clicks": 5,
+          "impressions": 128,
+          "volume": 62584,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense cone burner",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 36,
+          "volume": 4285,
+          "conversionRate": 0
+        },
+        {
+          "query": "lotus incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 64,
+          "volume": 2298,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holders",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 56,
+          "volume": 10250,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense holder for sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 36,
+          "volume": 17953,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense stick holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 28,
+          "volume": 13871,
+          "conversionRate": 0
+        },
+        {
+          "query": "cone incense burner",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 14,
+          "volume": 4346,
+          "conversionRate": 0
+        },
+        {
+          "query": "brass incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 17,
+          "volume": 1232,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense cones holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 11,
+          "volume": 2673,
+          "conversionRate": 0
+        },
+        {
+          "query": "lotus incense burner",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 14,
+          "volume": 302,
+          "conversionRate": 0
+        },
+        {
+          "query": "agarbatti stand with ash catcher",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 8,
+          "volume": 291,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense burner bulk",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 172,
+          "conversionRate": 0
+        },
+        {
+          "query": "small cone incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 3,
+          "volume": 85,
+          "conversionRate": 0
+        },
+        {
+          "query": "multiple stick incense holder",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 47,
+          "conversionRate": 0
+        },
+        {
+          "query": "cone holder incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 37,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "sku": "argarwood40",
+      "sqpRows": 30,
+      "importedTerms": 15,
+      "byBasis": {
+        "sqp_purchase": 7,
+        "sqp_cart": 1,
+        "sqp_click": 7,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "chinese incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 5,
+          "carts": 6,
+          "clicks": 11,
+          "impressions": 772,
+          "volume": 1484,
+          "conversionRate": 45.45
+        },
+        {
+          "query": "incense chinese",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 2,
+          "clicks": 3,
+          "impressions": 64,
+          "volume": 114,
+          "conversionRate": 33.33
+        },
+        {
+          "query": "hainan agarwood",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 7,
+          "conversionRate": 100
+        },
+        {
+          "query": "￼chinese incense bulk",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 5,
+          "conversionRate": 100
+        },
+        {
+          "query": "chinese agarwood incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 16,
+          "volume": 29,
+          "conversionRate": 50
+        },
+        {
+          "query": "incienso chino",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 13,
+          "volume": 29,
+          "conversionRate": 100
+        },
+        {
+          "query": "chinese joss sticks incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 10,
+          "volume": 32,
+          "conversionRate": 50
+        },
+        {
+          "query": "incense sticks agarwood",
+          "selectionBasis": "sqp_cart",
           "purchases": 0,
           "carts": 1,
           "clicks": 1,
-          "volume": 242
+          "impressions": 4,
+          "volume": 20,
+          "conversionRate": 0
         },
         {
-          "query": "yinjiyue",
+          "query": "agarwood incense sticks",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 3,
-          "volume": 11
+          "impressions": 125,
+          "volume": 611,
+          "conversionRate": 0
         },
         {
-          "query": "natural japanese incense",
+          "query": "coreless incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 70,
+          "volume": 164,
+          "conversionRate": 0
+        },
+        {
+          "query": "agarwood incense",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 1,
-          "volume": 52
+          "impressions": 157,
+          "volume": 2541,
+          "conversionRate": 0
         },
         {
-          "query": "japanese hinoki incense long burn time",
+          "query": "coreless incense sticks",
+          "selectionBasis": "sqp_click",
           "purchases": 0,
           "carts": 0,
           "clicks": 1,
-          "volume": 4
+          "impressions": 68,
+          "volume": 280,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense coreless",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 8,
+          "volume": 23,
+          "conversionRate": 0
+        },
+        {
+          "query": "black agarwood incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 7,
+          "volume": 22,
+          "conversionRate": 0
+        },
+        {
+          "query": "agarwood incense kit",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 3,
+          "volume": 32,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MK2D4",
+      "sku": "mugwort40",
+      "sqpRows": 35,
+      "importedTerms": 11,
+      "byBasis": {
+        "sqp_purchase": 6,
+        "sqp_cart": 4,
+        "sqp_click": 1,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "mugwort incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 4,
+          "carts": 10,
+          "clicks": 21,
+          "impressions": 1032,
+          "volume": 1146,
+          "conversionRate": 19.05
+        },
+        {
+          "query": "mugwort incense sticks",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 2,
+          "carts": 3,
+          "clicks": 9,
+          "impressions": 239,
+          "volume": 234,
+          "conversionRate": 22.22
+        },
+        {
+          "query": "incienso de artemisa",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 2,
+          "clicks": 2,
+          "impressions": 18,
+          "volume": 65,
+          "conversionRate": 50
+        },
+        {
+          "query": "artemesia incene",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 1,
+          "conversionRate": 100
+        },
+        {
+          "query": "艾草香",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 46,
+          "conversionRate": 100
+        },
+        {
+          "query": "mugwort incense cones",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 70,
+          "volume": 67,
+          "conversionRate": 100
+        },
+        {
+          "query": "mugwort incense satya",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 6,
+          "volume": 5,
+          "conversionRate": 0
+        },
+        {
+          "query": "mugwort incense stick pack",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 11,
+          "conversionRate": 0
+        },
+        {
+          "query": "pure mugwort incense",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 2,
+          "volume": 1,
+          "conversionRate": 0
+        },
+        {
+          "query": "mugwort incense sticks from japanese",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 1,
+          "conversionRate": 0
+        },
+        {
+          "query": "mugwort oud incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 2,
+          "volume": 2,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "sku": "PineCone-1.19-DG",
+      "sqpRows": 0,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
+        {
+          "query": "pine cone incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "pine cone incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural pine cone incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "charcoal free pine cone incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "pine cone incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning pine cone incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GDKDTB6C",
+      "sku": "JD-C07S-HKF4",
+      "sqpRows": 39,
+      "importedTerms": 9,
+      "byBasis": {
+        "sqp_purchase": 6,
+        "sqp_cart": 3,
+        "sqp_click": 0,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "mugwort incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 4,
+          "carts": 27,
+          "clicks": 50,
+          "impressions": 1272,
+          "volume": 1146,
+          "conversionRate": 8
+        },
+        {
+          "query": "mugwort incense sticks",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 5,
+          "clicks": 8,
+          "impressions": 292,
+          "volume": 234,
+          "conversionRate": 12.5
+        },
+        {
+          "query": "mugwort inscrnse stick",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 4,
+          "volume": 2,
+          "conversionRate": 50
+        },
+        {
+          "query": "10/20/30/50-pack organic mugwort scented incense sticks slow burn aromatherapy for indoors, home fragrance, dailyconsumer use, natural herbal incense for living outdoor/room/bathroom/balcony/warehouse",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 6,
+          "volume": 3,
+          "conversionRate": 100
+        },
+        {
+          "query": "mugwort incense resin",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 2,
+          "conversionRate": 100
+        },
+        {
+          "query": "艾草香",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 3,
+          "volume": 46,
+          "conversionRate": 100
+        },
+        {
+          "query": "japanese incense sticks mugwort",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 2,
+          "clicks": 2,
+          "impressions": 12,
+          "volume": 7,
+          "conversionRate": 0
+        },
+        {
+          "query": "yinjiyue mugwort incense sticks – charcoal-free / low smoke",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 3,
+          "volume": 3,
+          "conversionRate": 0
+        },
+        {
+          "query": "mugwort incense / mugwort smudge stick / mugwort incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 4,
+          "volume": 2,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "sku": "sandalwood300",
+      "sqpRows": 30,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 2,
+        "sqp_cart": 2,
+        "sqp_click": 2,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "檀香线香",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 67,
+          "volume": 137,
+          "conversionRate": 100
+        },
+        {
+          "query": "sandalwood incense sticks natural",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 254,
+          "conversionRate": 100
+        },
+        {
+          "query": "sandalwood incense",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 72,
+          "volume": 8310,
+          "conversionRate": 0
+        },
+        {
+          "query": "400 count incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 2,
+          "volume": 3,
+          "conversionRate": 0
+        },
+        {
+          "query": "sandalwood incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 28,
+          "volume": 2578,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural sandalwood incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 35,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "sku": "mugworthy",
+      "sqpRows": 100,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 1,
+        "sqp_cart": 1,
+        "sqp_click": 2,
+        "title_fallback": 2
+      },
+      "terms": [
+        {
+          "query": "mugwort",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 4,
+          "clicks": 9,
+          "impressions": 1306,
+          "volume": 1699,
+          "conversionRate": 11.11
+        },
+        {
+          "query": "mugwort incense",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 4,
+          "impressions": 91,
+          "volume": 78,
+          "conversionRate": 0
+        },
+        {
+          "query": "mugwort incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 71,
+          "volume": 45,
+          "conversionRate": 0
+        },
+        {
+          "query": "non toxic incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 9,
+          "volume": 66,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural mugwort incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "charcoal free mugwort incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "sku": "whitesage20",
+      "sqpRows": 30,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 5,
+        "sqp_cart": 0,
+        "sqp_click": 1,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "mini smudge sticks",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 20,
+          "volume": 102,
+          "conversionRate": 100
+        },
+        {
+          "query": "sage to burn for cleansing negativity",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 40,
+          "conversionRate": 100
+        },
+        {
+          "query": "sage sticks for cleansing negative energy",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 129,
+          "volume": 1318,
+          "conversionRate": 50
+        },
+        {
+          "query": "sage stick",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 49,
+          "volume": 1230,
+          "conversionRate": 50
+        },
+        {
+          "query": "sage spray for cleansing negative energy and protection",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 33,
+          "volume": 1685,
+          "conversionRate": 100
+        },
+        {
+          "query": "mantra incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 44,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "sku": "sandalwood40",
+      "sqpRows": 72,
+      "importedTerms": 16,
+      "byBasis": {
+        "sqp_purchase": 2,
+        "sqp_cart": 5,
+        "sqp_click": 9,
+        "title_fallback": 0
+      },
+      "terms": [
+        {
+          "query": "incense stick",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 2,
+          "clicks": 19,
+          "impressions": 1479,
+          "volume": 7188,
+          "conversionRate": 5.26
+        },
+        {
+          "query": "mugwort incense",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 1,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 21,
+          "volume": 78,
+          "conversionRate": 100
+        },
+        {
+          "query": "sandalwood incense",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 2,
+          "clicks": 9,
+          "impressions": 555,
+          "volume": 904,
+          "conversionRate": 0
+        },
+        {
+          "query": "organic incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 31,
+          "volume": 77,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense sandalwood",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 78,
+          "volume": 121,
+          "conversionRate": 0
+        },
+        {
+          "query": "citronella incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 24,
+          "volume": 755,
+          "conversionRate": 0
+        },
+        {
+          "query": "pure sandalwood incense",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 5,
+          "volume": 5,
+          "conversionRate": 0
+        },
+        {
+          "query": "sandalwood incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 7,
+          "impressions": 243,
+          "volume": 320,
+          "conversionRate": 0
+        },
+        {
+          "query": "sandalwood incense, made in japan",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 3,
+          "impressions": 11,
+          "volume": 12,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 324,
+          "volume": 2047,
+          "conversionRate": 0
+        },
+        {
+          "query": "gonesh incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 44,
+          "volume": 332,
+          "conversionRate": 0
+        },
+        {
+          "query": "japanese incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 43,
+          "volume": 250,
+          "conversionRate": 0
+        },
+        {
+          "query": "japanese sandalwood incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 37,
+          "volume": 74,
+          "conversionRate": 0
+        },
+        {
+          "query": "cedar incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 19,
+          "volume": 70,
+          "conversionRate": 0
+        },
+        {
+          "query": "bakhoor incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 12,
+          "volume": 76,
+          "conversionRate": 0
+        },
+        {
+          "query": "pine incense sticks",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 4,
+          "volume": 21,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "sku": "palosanto",
+      "sqpRows": 29,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 2,
+        "sqp_cart": 1,
+        "sqp_click": 2,
+        "title_fallback": 1
+      },
+      "terms": [
+        {
+          "query": "palo santo sticks",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 3,
+          "carts": 5,
+          "clicks": 13,
+          "impressions": 873,
+          "volume": 26497,
+          "conversionRate": 23.08
+        },
+        {
+          "query": "palo santo",
+          "selectionBasis": "sqp_purchase",
+          "purchases": 2,
+          "carts": 3,
+          "clicks": 7,
+          "impressions": 538,
+          "volume": 49382,
+          "conversionRate": 28.57
+        },
+        {
+          "query": "palo santo incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 3,
+          "impressions": 200,
+          "volume": 2923,
+          "conversionRate": 0
+        },
+        {
+          "query": "palo santo incense",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 2,
+          "impressions": 64,
+          "volume": 6480,
+          "conversionRate": 0
+        },
+        {
+          "query": "incense sticks and holder set",
+          "selectionBasis": "sqp_click",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 1,
+          "impressions": 1,
+          "volume": 150,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural palo santo incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "sku": "YJY-INC-WISTERIA-60-US",
+      "sqpRows": 9,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 4,
+        "sqp_click": 0,
+        "title_fallback": 2
+      },
+      "terms": [
+        {
+          "query": "wisteria incense",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 5,
+          "clicks": 8,
+          "impressions": 123,
+          "volume": 114,
+          "conversionRate": 0
+        },
+        {
+          "query": "wisteria incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 37,
+          "volume": 41,
+          "conversionRate": 0
+        },
+        {
+          "query": "gonesh wisteria incense sticks",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 2,
+          "impressions": 17,
+          "volume": 26,
+          "conversionRate": 0
+        },
+        {
+          "query": "coreless japanese incense",
+          "selectionBasis": "sqp_cart",
+          "purchases": 0,
+          "carts": 1,
+          "clicks": 1,
+          "impressions": 14,
+          "volume": 12,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural wisteria incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "coreless wisteria incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        }
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7CCVCB",
+      "sku": "Ambergris-1.19-DG",
+      "sqpRows": 0,
+      "importedTerms": 6,
+      "byBasis": {
+        "sqp_purchase": 0,
+        "sqp_cart": 0,
+        "sqp_click": 0,
+        "title_fallback": 6
+      },
+      "terms": [
+        {
+          "query": "ambergris incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "ambergris incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "natural ambergris incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "charcoal free ambergris incense sticks",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "ambergris incense sticks for meditation",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
+        },
+        {
+          "query": "long burning ambergris incense",
+          "selectionBasis": "title_fallback",
+          "purchases": 0,
+          "carts": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "volume": 0,
+          "conversionRate": 0
         }
       ]
     }

@@ -41,6 +41,7 @@ type Marketplace = "US" | "CA" | "JP";
 type MarketplaceFilter = Marketplace | "ALL";
 type SalesCategory = "unclassified" | "new_product" | "key_product" | "long_tail" | "regular" | "discontinued" | "custom";
 type DesktopAdFilter = "all" | "has_any" | "ad_only" | "sbv_only" | "not_found";
+type KeywordSelectionBasis = "sqp_purchase" | "sqp_cart" | "sqp_click" | "title_fallback" | "manual_review";
 
 const SALES_CATEGORY_CONFIG: Record<SalesCategory, { label: string; className: string }> = {
   unclassified: { label: "未分类", className: "bg-slate-100 text-slate-600 border-slate-200" },
@@ -127,6 +128,14 @@ function hasDesktopPlacement(rank: number | null | undefined) {
 function isDesktopFirstPage(rank: number | null | undefined) {
   // DataForSEO rank_absolute is the desktop SERP order; the first 48 result slots are treated as page one.
   return typeof rank === "number" && rank > 0 && rank < 999 && rank <= 48;
+}
+
+function keywordEvidencePresentation(basis: KeywordSelectionBasis) {
+  if (basis === "sqp_purchase") return { label: "SQP购买", className: "border-emerald-200 bg-emerald-50 text-emerald-700", title: "SQP 已记录实际购买：可优先用于转化型广告" };
+  if (basis === "sqp_cart") return { label: "SQP加购", className: "border-amber-200 bg-amber-50 text-amber-700", title: "SQP 已记录加购但未形成购买：可作为高意图测试词" };
+  if (basis === "sqp_click") return { label: "SQP点击", className: "border-sky-200 bg-sky-50 text-sky-700", title: "SQP 有合格点击证据：需在广告中验证转化" };
+  if (basis === "title_fallback") return { label: "待验证", className: "border-slate-200 bg-slate-100 text-slate-600", title: "标题强相关补充词：没有SQP漏斗证据，不应直接视为高转化词" };
+  return { label: "人工审核", className: "border-violet-200 bg-violet-50 text-violet-700", title: "需销售或广告人员确认的人工选词" };
 }
 
 export default function Home() {
@@ -388,32 +397,32 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50/50 text-slate-900 pb-16">
       {/* Top Header */}
-      <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur-md px-6 py-4">
-        <div className="mx-auto flex w-full max-w-[1600px] flex-col justify-between gap-4 md:flex-row md:items-center">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700">
-              <Flame className="h-6 w-6" />
+      <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/95 px-3 py-3 backdrop-blur-md sm:px-6 sm:py-4">
+        <div className="mx-auto flex w-full max-w-[1600px] flex-col justify-between gap-3 md:flex-row md:items-center">
+          <div className="flex items-start gap-2.5 sm:items-center sm:gap-3">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-600/10 text-amber-700 sm:h-10 sm:w-10">
+              <Flame className="h-5 w-5 sm:h-6 sm:w-6" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-xl font-bold tracking-tight text-slate-900">Amazon 美加日线香香炉核心词每日排名看板</h1>
-                <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200 text-xs">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <h1 className="text-base font-bold tracking-tight text-slate-900 sm:text-xl">Amazon 美加日线香香炉核心词每日排名看板</h1>
+                <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-[10px] text-emerald-700 sm:text-xs">
                   每日 07:00 自动更新
                 </Badge>
               </div>
-              <p className="text-xs text-slate-500 mt-0.5">
-                仅限美国、加拿大、日本站线香（Sticks）与香炉香插（Burner/Holder）FBA 在售有库存商品 | 每个 Listing 锁定 6-20 个高价值词
+              <p className="mt-0.5 hidden text-xs text-slate-500 sm:block">
+                仅限美国、加拿大、日本站线香（Sticks）与香炉香插（Burner/Holder）FBA 在售有库存商品 | 每个 Listing 维护 6–20 个分级核心词：SQP购买优先，其他证据透明标注
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="grid grid-cols-2 items-center gap-2 sm:flex sm:gap-2.5">
             <Button
               variant="outline"
               size="sm"
               onClick={() => refreshMutation.mutate({})}
               disabled={refreshMutation.isPending}
-              className="gap-1.5 text-xs bg-white"
+              className="h-8 w-full gap-1 bg-white text-[11px] sm:h-9 sm:w-auto sm:gap-1.5 sm:text-xs"
             >
               <RefreshCw className={`h-3.5 w-3.5 ${refreshMutation.isPending ? "animate-spin" : ""}`} />
               立即抓取今日最新排名
@@ -421,7 +430,7 @@ export default function Home() {
 
             <Dialog open={isImportModalOpen} onOpenChange={setIsImportModalOpen}>
               <DialogTrigger asChild>
-                <Button size="sm" className="gap-1.5 text-xs bg-slate-900 text-white hover:bg-slate-800">
+                <Button size="sm" className="h-8 w-full gap-1 bg-slate-900 text-[11px] text-white hover:bg-slate-800 sm:h-9 sm:w-auto sm:gap-1.5 sm:text-xs">
                   <PlusCircle className="h-3.5 w-3.5" />
                   手动录入/同步商品
                 </Button>
@@ -516,27 +525,27 @@ export default function Home() {
       </header>
 
       {/* Main Container */}
-      <main className="mx-auto w-full max-w-[1600px] px-4 pt-5 space-y-5 sm:px-6">
+      <main className="mx-auto w-full max-w-[1600px] space-y-3 px-3 pt-3 sm:space-y-5 sm:px-6 sm:pt-5">
         {/* Marketplace & Category Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
-          <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-col justify-between gap-3 rounded-xl border border-slate-200/80 bg-white p-3 shadow-xs sm:flex-row sm:items-center sm:gap-4 sm:p-4">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <Tabs value={marketplace} onValueChange={(v) => { setMarketplace(v as MarketplaceFilter); setSelectedListingId(null); }} className="w-auto">
-              <TabsList className="bg-slate-100">
-                <TabsTrigger value="ALL" className="text-xs">全部站点</TabsTrigger>
-                <TabsTrigger value="US" className="text-xs flex items-center gap-1.5">
+              <TabsList className="h-auto flex-wrap bg-slate-100 p-1">
+                <TabsTrigger value="ALL" className="h-7 px-2 text-[10px] sm:h-8 sm:px-3 sm:text-xs">全部站点</TabsTrigger>
+                <TabsTrigger value="US" className="flex h-7 items-center gap-1 px-2 text-[10px] sm:h-8 sm:gap-1.5 sm:px-3 sm:text-xs">
                   <span className="text-sm">🇺🇸</span> 美国站
                 </TabsTrigger>
-                <TabsTrigger value="CA" className="text-xs flex items-center gap-1.5">
+                <TabsTrigger value="CA" className="flex h-7 items-center gap-1 px-2 text-[10px] sm:h-8 sm:gap-1.5 sm:px-3 sm:text-xs">
                   <span className="text-sm">🇨🇦</span> 加拿大站
                 </TabsTrigger>
-                <TabsTrigger value="JP" className="text-xs flex items-center gap-1.5">
+                <TabsTrigger value="JP" className="flex h-7 items-center gap-1 px-2 text-[10px] sm:h-8 sm:gap-1.5 sm:px-3 sm:text-xs">
                   <span className="text-sm">🇯🇵</span> 日本站
                 </TabsTrigger>
               </TabsList>
             </Tabs>
 
             <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-              <SelectTrigger className="w-[180px] text-xs h-9 bg-slate-50">
+              <SelectTrigger className="h-8 w-[152px] bg-slate-50 text-[11px] sm:h-9 sm:w-[180px] sm:text-xs">
                 <SelectValue placeholder="筛选品类" />
               </SelectTrigger>
               <SelectContent>
@@ -550,10 +559,10 @@ export default function Home() {
           </div>
 
           <div className="relative w-full sm:w-72">
-            <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+            <Search className="absolute left-3 top-2 h-4 w-4 text-slate-400 sm:top-2.5" />
             <Input
               placeholder="搜索 ASIN、标题、分类、备注..."
-              className="pl-9 text-xs h-9 bg-slate-50"
+              className="h-8 bg-slate-50 pl-9 text-[11px] sm:h-9 sm:text-xs"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -561,64 +570,64 @@ export default function Home() {
         </div>
 
         {/* Metric KPI Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-4">
           <Card className="border-slate-200 shadow-xs">
-            <CardContent className="p-4 flex items-center justify-between">
+            <CardContent className="flex items-center justify-between p-3 sm:p-4">
               <div>
                 <p className="text-xs font-medium text-slate-500">在售监控 LISTING</p>
-                <div className="text-2xl font-bold mt-1 text-slate-900">{overviewQuery.data?.totalListings ?? 0}</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">
+                <div className="mt-1 text-xl font-bold text-slate-900 sm:text-2xl">{overviewQuery.data?.totalListings ?? 0}</div>
+                <div className="mt-0.5 text-[10px] text-slate-400 sm:text-[11px]">
                   线香 {overviewQuery.data?.incenseSticksCount ?? 0} | 香炉 {overviewQuery.data?.burnerCount ?? 0} | 香插 {overviewQuery.data?.holderCount ?? 0}
                 </div>
               </div>
-              <div className="h-10 w-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600 sm:h-10 sm:w-10">
                 <Layers className="h-5 w-5" />
               </div>
             </CardContent>
           </Card>
 
           <Card className="border-slate-200 shadow-xs">
-            <CardContent className="p-4 flex items-center justify-between">
+            <CardContent className="flex items-center justify-between p-3 sm:p-4">
               <div>
                 <p className="text-xs font-medium text-slate-500">核心词跟踪总量</p>
-                <div className="text-2xl font-bold mt-1 text-slate-900">{overviewQuery.data?.totalKeywordsTracked ?? 0}</div>
-                <div className="text-[11px] text-emerald-600 font-medium mt-0.5">
+                <div className="mt-1 text-xl font-bold text-slate-900 sm:text-2xl">{overviewQuery.data?.totalKeywordsTracked ?? 0}</div>
+                <div className="mt-0.5 text-[10px] font-medium text-emerald-600 sm:text-[11px]">
                   首页 Top 10 占 {overviewQuery.data?.top10Count ?? 0} 个词
                 </div>
               </div>
-              <div className="h-10 w-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600 sm:h-10 sm:w-10">
                 <BarChart3 className="h-5 w-5" />
               </div>
             </CardContent>
           </Card>
 
           <Card className="border-slate-200 shadow-xs">
-            <CardContent className="p-4 flex items-center justify-between">
+            <CardContent className="flex items-center justify-between p-3 sm:p-4">
               <div>
                 <p className="text-xs font-medium text-slate-500">今日排名上升词数</p>
-                <div className="text-2xl font-bold mt-1 text-emerald-600 flex items-center gap-1">
+                <div className="mt-1 flex items-center gap-1 text-xl font-bold text-emerald-600 sm:text-2xl">
                   {overviewQuery.data?.risenCount ?? 0}
                   <TrendingUp className="h-4 w-4" />
                 </div>
-                <div className="text-[11px] text-slate-400 mt-0.5">自然权重与转化正向提升</div>
+                <div className="mt-0.5 text-[10px] text-slate-400 sm:text-[11px]">自然权重与转化正向提升</div>
               </div>
-              <div className="h-10 w-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 sm:h-10 sm:w-10">
                 <ArrowUpRight className="h-5 w-5" />
               </div>
             </CardContent>
           </Card>
 
           <Card className="border-slate-200 shadow-xs">
-            <CardContent className="p-4 flex items-center justify-between">
+            <CardContent className="flex items-center justify-between p-3 sm:p-4">
               <div>
                 <p className="text-xs font-medium text-slate-500">今日排名下滑预警</p>
-                <div className="text-2xl font-bold mt-1 text-rose-600 flex items-center gap-1">
+                <div className="mt-1 flex items-center gap-1 text-xl font-bold text-rose-600 sm:text-2xl">
                   {overviewQuery.data?.droppedCount ?? 0}
                   <TrendingDown className="h-4 w-4" />
                 </div>
-                <div className="text-[11px] text-rose-500 font-medium mt-0.5">建议销售优先介入跟进</div>
+                <div className="mt-0.5 text-[10px] font-medium text-rose-500 sm:text-[11px]">建议销售优先介入跟进</div>
               </div>
-              <div className="h-10 w-10 rounded-lg bg-rose-50 flex items-center justify-center text-rose-600">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-rose-50 text-rose-600 sm:h-10 sm:w-10">
                 <ArrowDownRight className="h-5 w-5" />
               </div>
             </CardContent>
@@ -626,7 +635,7 @@ export default function Home() {
         </div>
 
         {/* Master & Detail Layout */}
-        <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-[360px_minmax(0,1fr)]">
+        <div className="grid grid-cols-1 items-start gap-3 lg:gap-5 lg:grid-cols-[360px_minmax(0,1fr)]">
           {/* Left Column: Listings Master Table */}
           <div className="space-y-2.5">
             <div className="flex items-center justify-between gap-3 px-1">
@@ -835,7 +844,7 @@ export default function Home() {
               <>
                 {/* Active Listing Profile Card */}
                 <Card className="border-slate-200 shadow-xs bg-white">
-                  <CardHeader className="p-4 pb-3 flex flex-row items-start justify-between gap-4 border-b border-slate-100">
+                  <CardHeader className="flex flex-col items-start justify-between gap-3 border-b border-slate-100 p-3 pb-3 sm:flex-row sm:gap-4 sm:p-4 sm:pb-3">
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         <Badge variant="outline" className="text-xs bg-amber-50 text-amber-800 border-amber-200 font-semibold">
@@ -844,29 +853,29 @@ export default function Home() {
                         <span className="text-xs font-mono font-bold text-slate-800">{currentDetail.listing.asin}</span>
                         <span className="text-xs text-slate-500">| {currentDetail.listing.categoryName}</span>
                       </div>
-                      <h2 className="text-sm font-semibold text-slate-900 leading-snug line-clamp-2">
+                      <h2 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900">
                         {currentDetail.listing.title}
                       </h2>
                     </div>
 
-                    <div className="flex items-center gap-2 shrink-0">
+                    <div className="flex w-full flex-wrap items-center gap-1.5 sm:w-auto sm:gap-2">
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={() => openOrganizationEditor(currentDetail.listing)}
-                        className="text-xs h-8 gap-1.5"
+                        className="h-8 gap-1 px-2 text-[11px] sm:gap-1.5 sm:px-3 sm:text-xs"
                       >
                         <Tags className="h-3.5 w-3.5" />
                         分类 / 备注
                       </Button>
-                      <Button variant="outline" size="sm" onClick={handleExportCSV} className="text-xs h-8 gap-1.5">
+                      <Button variant="outline" size="sm" onClick={handleExportCSV} className="h-8 gap-1 px-2 text-[11px] sm:gap-1.5 sm:px-3 sm:text-xs">
                         <Download className="h-3.5 w-3.5" />
                         导出排名表
                       </Button>
 
                       <Dialog open={isFollowUpModalOpen} onOpenChange={setIsFollowUpModalOpen}>
                         <DialogTrigger asChild>
-                          <Button size="sm" className="text-xs h-8 bg-amber-600 hover:bg-amber-700 text-white gap-1.5">
+                          <Button size="sm" className="h-8 gap-1 bg-amber-600 px-2 text-[11px] text-white hover:bg-amber-700 sm:gap-1.5 sm:px-3 sm:text-xs">
                             <UserCheck className="h-3.5 w-3.5" />
                             登记销售跟进
                           </Button>
@@ -931,7 +940,7 @@ export default function Home() {
                     </div>
                   </CardHeader>
 
-                  <CardContent className="p-4 pt-3 flex flex-wrap gap-4 text-xs text-slate-600 bg-slate-50/50">
+                  <CardContent className="flex flex-wrap gap-x-3 gap-y-2 bg-slate-50/50 p-3 pt-3 text-[11px] text-slate-600 sm:gap-4 sm:p-4 sm:pt-3 sm:text-xs">
                     <div>
                       <span className="text-slate-400">产品分类：</span>
                       <Badge className={`text-[10px] px-1.5 py-0 ${SALES_CATEGORY_CONFIG[currentDetail.listing.salesCategory].className}`}>
@@ -949,7 +958,7 @@ export default function Home() {
                     <div>
                       <span className="text-slate-400">FBA在途库存：</span>
                       <span className="font-medium text-blue-700">{currentDetail.listing.fbaInboundTotal} 件</span>
-                      <span className="ml-1 text-[10px] text-slate-400">
+                      <span className="ml-1 hidden text-[10px] text-slate-400 sm:inline">
                         (Working {currentDetail.listing.fbaInboundWorking} / Shipped {currentDetail.listing.fbaInboundShipped} / Receiving {currentDetail.listing.fbaInboundReceiving})
                       </span>
                     </div>
@@ -979,21 +988,21 @@ export default function Home() {
 
                 {/* Keywords Ranking Statistics Table (Core 6-20) */}
                 <Card className="border-slate-200 shadow-xs bg-white">
-                  <CardHeader className="p-4 pb-2 flex flex-row items-center justify-between">
-                    <div>
+                  <CardHeader className="flex flex-col items-start justify-between gap-3 p-3 pb-2 sm:flex-row sm:items-center sm:p-4 sm:pb-2">
+                    <div className="min-w-0">
                       <CardTitle className="text-sm font-bold text-slate-900">
                       核心关键词每日排名统计表 (共 {currentDetail.keywords.length} 个)
                       </CardTitle>
-                      <CardDescription className="text-xs text-slate-500 mt-0.5">
-                        自然位仅采用 Sorftime latest_organic_position；CPR 为自然第 21–30 位商品月销推算的 8 天需求，广告位单独展示。
+                      <CardDescription className="mt-0.5 text-[11px] leading-relaxed text-slate-500 sm:text-xs">
+                        选词证据：SQP购买优先；SQP加购/点击仅作高意图测试；“待验证”是标题强相关补足，不能直接视为高转化词。自然位、CPR与PC广告位分别独立采集。
                       </CardDescription>
                     </div>
-                    <div className="flex shrink-0 items-center gap-2">
-                      <Badge variant="secondary" className="text-xs bg-amber-50 text-amber-700 whitespace-nowrap">
+                    <div className="flex w-full items-center gap-2 sm:w-auto">
+                      <Badge variant="secondary" className="hidden whitespace-nowrap bg-amber-50 text-xs text-amber-700 sm:inline-flex">
                         高价值转化导向
                       </Badge>
                       <Select value={desktopAdFilter} onValueChange={(value: DesktopAdFilter) => setDesktopAdFilter(value)}>
-                        <SelectTrigger className="h-8 w-[188px] bg-white text-xs">
+                        <SelectTrigger className="h-8 w-full bg-white text-[11px] sm:w-[188px] sm:text-xs">
                           <SelectValue placeholder="广告位筛选" />
                         </SelectTrigger>
                         <SelectContent>
@@ -1007,7 +1016,7 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <div className="overflow-hidden">
+                    <div className="hidden overflow-hidden lg:block">
                       <table className="w-full table-fixed text-left text-[11px]">
                         <colgroup>
                           <col className="w-[15%]" />
@@ -1059,6 +1068,7 @@ export default function Home() {
                             const isRisen = change > 0;
                             const isDropped = change < 0;
                             const sparklineRanks = trendDates.map(date => snapshotRanks.get(`${kw.id}:${date}`) ?? null);
+                            const evidence = keywordEvidencePresentation(kw.selectionBasis as KeywordSelectionBasis);
                             return (
                               <tr key={kw.id} className="hover:bg-amber-50/30 transition-colors">
                                 <td className="px-2 py-2 font-semibold leading-snug text-slate-900">
@@ -1076,21 +1086,8 @@ export default function Home() {
                                   </div>
                                 </td>
                                 <td className="px-1.5 py-2">
-                                  <Badge
-                                    variant="outline"
-                                    className={`text-[10px] px-1 py-0 ${
-                                      kw.source === "sqp_converting"
-                                        ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-                                        : kw.source === "ads_converting"
-                                        ? "bg-purple-50 text-purple-700 border-purple-200"
-                                        : "bg-blue-50 text-blue-700 border-blue-200"
-                                    }`}
-                                  >
-                                    {kw.source === "sqp_converting"
-                                      ? "SQP"
-                                      : kw.source === "ads_converting"
-                                      ? "广告"
-                                      : "自然"}
+                                  <Badge variant="outline" className={`whitespace-nowrap px-1 py-0 text-[10px] ${evidence.className}`} title={evidence.title}>
+                                    {evidence.label}
                                   </Badge>
                                 </td>
                                 <td className="px-1.5 py-2 font-mono text-slate-600">
@@ -1120,7 +1117,7 @@ export default function Home() {
                                     ) : null}
                                   </div>
                                 </td>
-                                <td className="px-1.5 py-2" title={kw.cprEstimate === null || kw.cprEstimate === undefined ? "等待 Sorftime 第21–30名自然位月销数据" : `CPR = 月销均值 ${kw.cprMonthlySalesAverage} ÷ 30 × 8；样本 ${kw.cprSampleCount}/10`}>
+                                <td className="px-1.5 py-2" title={kw.cprEstimate === null || kw.cprEstimate === undefined ? "等待真实自然位第21–30名商品月销样本" : `CPR = 月销均值 ${kw.cprMonthlySalesAverage} ÷ 30 × 8；样本 ${kw.cprSampleCount}/10`}>
                                   {kw.cprEstimate === null || kw.cprEstimate === undefined ? (
                                     <span className="text-[10px] text-slate-400">待计算</span>
                                   ) : (
@@ -1183,6 +1180,69 @@ export default function Home() {
                           })}
                         </tbody>
                       </table>
+                    </div>
+                    <div className="divide-y divide-slate-100 lg:hidden">
+                      {visibleKeywords.length === 0 ? (
+                        <div className="px-4 py-8 text-center text-sm text-slate-500">当前筛选下没有符合条件的核心词。</div>
+                      ) : visibleKeywords.map(kw => {
+                        const currentRank = kw.currentRank ?? 0;
+                        const previousRank = kw.previousRank ?? 0;
+                        const change = kw.rankChange ?? 0;
+                        const hasPcAd = hasDesktopPlacement(kw.pcAdRank);
+                        const hasPcSbv = hasDesktopPlacement(kw.pcSbvRank);
+                        const dualFirstPage = currentRank > 0 && currentRank <= 48 && (isDesktopFirstPage(kw.pcAdRank) || isDesktopFirstPage(kw.pcSbvRank));
+                        const adLabel = kw.pcAdRank === null || kw.pcAdRank === undefined ? "待采" : kw.pcAdRank === 999 ? "3页外" : `#${kw.pcAdRank}`;
+                        const sbvLabel = kw.pcSbvRank === null || kw.pcSbvRank === undefined ? "待采" : kw.pcSbvRank === 999 ? "3页外" : `#${kw.pcSbvRank}`;
+                        const evidence = keywordEvidencePresentation(kw.selectionBasis as KeywordSelectionBasis);
+                        return (
+                          <article key={kw.id} className="space-y-2.5 px-3 py-3.5">
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="min-w-0">
+                                <p className="break-words text-sm font-semibold leading-snug text-slate-900">{kw.keyword}</p>
+                                <div className="mt-1 flex flex-wrap items-center gap-1.5">
+                                  <Badge variant="outline" className={`px-1.5 py-0 text-[10px] ${evidence.className}`} title={evidence.title}>
+                                    {evidence.label}
+                                  </Badge>
+                                  <span className="text-[10px] text-slate-500">月搜 {kw.searchVolume?.toLocaleString() ?? "—"} · CVR {kw.conversionRate}%</span>
+                                </div>
+                              </div>
+                              {dualFirstPage ? <Badge className="shrink-0 border border-emerald-200 bg-emerald-50 px-1.5 py-0 text-[10px] text-emerald-700">双首页</Badge> : null}
+                            </div>
+
+                            <div className="grid grid-cols-3 gap-2 rounded-lg bg-slate-50 p-2.5">
+                              <div>
+                                <p className="text-[10px] text-slate-500">今日自然位</p>
+                                <p className="mt-0.5 font-mono text-sm font-bold text-slate-900">{currentRank === 0 ? "待采" : currentRank === 999 ? "3页外" : `#${currentRank}`}</p>
+                              </div>
+                              <div>
+                                <p className="text-[10px] text-slate-500">CPR · 8天</p>
+                                <p className="mt-0.5 font-mono text-sm font-bold text-cyan-700">{kw.cprEstimate === null || kw.cprEstimate === undefined ? "待算" : `≈${kw.cprEstimate}`}</p>
+                              </div>
+                              <div>
+                                <p className="text-[10px] text-slate-500">7日自然趋势</p>
+                                <div className="mt-0.5"><KeywordRankSparkline ranks={trendDates.map(date => snapshotRanks.get(`${kw.id}:${date}`) ?? null)} /></div>
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-2">
+                              <div className={`rounded-lg border px-2.5 py-2 ${hasPcAd ? "border-purple-200 bg-purple-50" : "border-slate-200 bg-slate-50"}`}>
+                                <p className="text-[10px] text-slate-500">广告位 · PC</p>
+                                <p className={`mt-0.5 font-mono text-sm font-semibold ${hasPcAd ? "text-purple-700" : "text-slate-500"}`}>{adLabel}</p>
+                              </div>
+                              <div className={`rounded-lg border px-2.5 py-2 ${hasPcSbv ? "border-indigo-200 bg-indigo-50" : "border-slate-200 bg-slate-50"}`}>
+                                <p className="text-[10px] text-slate-500">SBV 位 · PC</p>
+                                <p className={`mt-0.5 font-mono text-sm font-semibold ${hasPcSbv ? "text-indigo-700" : "text-slate-500"}`}>{sbvLabel}</p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center justify-between text-[11px] text-slate-500">
+                              <span>昨日 {previousRank === 0 ? "—" : previousRank === 999 ? "3页外" : `#${previousRank}`}</span>
+                              <span className={change > 0 ? "font-semibold text-emerald-600" : change < 0 ? "font-semibold text-rose-600" : "text-slate-500"}>日变化 {change > 0 ? `+${change}` : change}</span>
+                              <span>最佳 {(kw.bestRank ?? 0) === 0 ? "—" : `#${kw.bestRank}`}</span>
+                            </div>
+                          </article>
+                        );
+                      })}
                     </div>
                   </CardContent>
                 </Card>

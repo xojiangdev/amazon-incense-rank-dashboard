@@ -81,6 +81,7 @@ export const keywords = mysqlTable("keywords", {
   relevanceScore: int("relevanceScore").default(85),
   isCore: boolean("isCore").default(true).notNull(),
   source: mysqlEnum("source", ["sqp_converting", "ads_converting", "organic_high_value", "manual_selected"]).default("sqp_converting").notNull(),
+  selectionBasis: mysqlEnum("selectionBasis", ["sqp_purchase", "sqp_cart", "sqp_click", "title_fallback", "manual_review"]).default("manual_review").notNull(),
   currentRank: int("currentRank").default(0),
   previousRank: int("previousRank").default(0),
   rankChange: int("rankChange").default(0),

@@ -393,14 +393,14 @@ export type CprEstimateInput = {
   cprEstimate: number | null;
   monthlySalesAverage: number | null;
   sampleCount: number;
-  source: "sorftime_keyword_search_results";
+  source: "sorftime_keyword_search_results" | "dataforseo_amazon_pc_serp";
 };
 
 const rankTargetKey = (marketplace: string, asin: string, keyword: string) =>
   `${marketplace}:${asin.trim().toUpperCase()}:${keyword.trim().normalize("NFKC").toLowerCase()}`;
 
 /**
- * Stores CPR proxies derived from real Sorftime organic results.  A null CPR is a valid,
+ * Stores CPR proxies derived from real organic SERP results. A null CPR is a valid,
  * explicitly auditable result when the provider returned fewer than five usable sales samples.
  */
 export async function applyCprEstimates(metrics: CprEstimateInput[], observedAt: Date) {
