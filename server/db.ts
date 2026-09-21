@@ -386,8 +386,81 @@ export type PcAdvertisingRankInput = {
   source: "dataforseo_amazon_pc_serp";
 };
 
+export type CprEstimateInput = {
+  marketplace: "US" | "CA" | "JP";
+  asin: string;
+  keyword: string;
+  cprEstimate: number | null;
+  monthlySalesAverage: number | null;
+  sampleCount: number;
+  source: "sorftime_keyword_search_results";
+};
+
 const rankTargetKey = (marketplace: string, asin: string, keyword: string) =>
   `${marketplace}:${asin.trim().toUpperCase()}:${keyword.trim().normalize("NFKC").toLowerCase()}`;
+
+/**
+ * Stores CPR proxies derived from real Sorftime organic results.  A null CPR is a valid,
+ * explicitly auditable result when the provider returned fewer than five usable sales samples.
+ */
+export async function applyCprEstimates(metrics: CprEstimateInput[], observedAt: Date) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const liveListings = await db
+    .select()
+    .from(listings)
+    .where(and(eq(listings.fulfillmentChannel, "FBA"), eq(listings.inventoryStatus, "Active"), gt(listings.fbaStock, 0)));
+  const listingIds = liveListings.map(item => item.id);
+  const coreKeywords = listingIds.length
+    ? await db.select().from(keywords).where(and(inArray(keywords.listingId, listingIds), eq(keywords.isCore, true)))
+    : [];
+  const listingById = new Map(liveListings.map(item => [item.id, item] as const));
+  const expected = new Map(coreKeywords.map(keyword => {
+    const listing = listingById.get(keyword.listingId);
+    if (!listing) throw new Error(`Missing Listing for CPR keyword ${keyword.id}`);
+    return [rankTargetKey(listing.marketplace, listing.asin, keyword.keyword), keyword] as const;
+  }));
+  const keys = metrics.map(metric => rankTargetKey(metric.marketplace, metric.asin, metric.keyword));
+  if (keys.length !== expected.size || new Set(keys).size !== keys.length) {
+    throw new Error(`CPR batch mismatch: expected ${expected.size}, received ${keys.length}, unique=${new Set(keys).size}`);
+  }
+  const missing = Array.from(expected.keys()).filter(key => !keys.includes(key));
+  const extra = keys.filter(key => !expected.has(key));
+  if (missing.length || extra.length) throw new Error(`CPR target mismatch: missing=${missing.length}, extra=${extra.length}`);
+
+  const prepared = metrics.map(metric => {
+    const keyword = expected.get(rankTargetKey(metric.marketplace, metric.asin, metric.keyword));
+    if (!keyword) throw new Error(`Unknown CPR target ${metric.marketplace}/${metric.asin}/${metric.keyword}`);
+    const sampleCount = Math.trunc(metric.sampleCount);
+    if (sampleCount < 0 || sampleCount > 10) throw new Error(`Invalid CPR sample count for ${metric.keyword}`);
+    const cprEstimate = metric.cprEstimate === null ? null : Math.trunc(metric.cprEstimate);
+    const monthlySalesAverage = metric.monthlySalesAverage === null ? null : Math.trunc(metric.monthlySalesAverage);
+    if (cprEstimate !== null && (cprEstimate < 1 || monthlySalesAverage === null || monthlySalesAverage < 0 || sampleCount < 5)) {
+      throw new Error(`Invalid CPR estimate for ${metric.keyword}`);
+    }
+    if (cprEstimate === null && monthlySalesAverage !== null) throw new Error(`Partial CPR evidence for ${metric.keyword}`);
+    return { keyword, cprEstimate, monthlySalesAverage, sampleCount, source: metric.source };
+  });
+
+  await db.transaction(async tx => {
+    for (const item of prepared) {
+      await tx.update(keywords).set({
+        cprEstimate: item.cprEstimate,
+        cprMonthlySalesAverage: item.monthlySalesAverage,
+        cprSampleCount: item.sampleCount,
+        cprSource: item.source,
+        cprUpdatedAt: observedAt,
+        updatedAt: observedAt,
+      }).where(eq(keywords.id, item.keyword.id));
+    }
+  });
+  return {
+    expected: expected.size,
+    updated: prepared.length,
+    calculated: prepared.filter(item => item.cprEstimate !== null).length,
+    insufficientEvidence: prepared.filter(item => item.cprEstimate === null).length,
+  };
+}
 
 /**
  * Updates desktop advertising ranks without touching the already-collected natural rank,

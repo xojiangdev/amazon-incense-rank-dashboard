@@ -355,7 +355,7 @@ export default function Home() {
   const handleExportCSV = () => {
     if (!currentDetail) return;
     const rows = [
-      ["Listing ASIN", "站点", "销售分类", "销售自由备注", "核心关键词", "今日自然排名", "广告排名(PC)", "SBV广告排名(PC)", "昨日排名", "变化", "日搜索量", "历史转化数", "转化率(%)"],
+      ["Listing ASIN", "站点", "销售分类", "销售自由备注", "核心关键词", "今日自然排名", "CPR(8天)", "广告排名(PC)", "SBV广告排名(PC)", "昨日排名", "变化", "日搜索量", "历史转化数", "转化率(%)"],
       ...currentDetail.keywords.map((kw) => [
         currentDetail.listing.asin,
         currentDetail.listing.marketplace,
@@ -363,6 +363,7 @@ export default function Home() {
         currentDetail.listing.salesNotes ?? "",
         kw.keyword,
         kw.currentRank,
+        kw.cprEstimate ?? "",
         kw.pcAdRank ?? "",
         kw.pcSbvRank ?? "",
         kw.previousRank,
@@ -388,7 +389,7 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50/50 text-slate-900 pb-16">
       {/* Top Header */}
       <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur-md px-6 py-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="mx-auto flex w-full max-w-[1600px] flex-col justify-between gap-4 md:flex-row md:items-center">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700">
               <Flame className="h-6 w-6" />
@@ -515,7 +516,7 @@ export default function Home() {
       </header>
 
       {/* Main Container */}
-      <main className="max-w-7xl mx-auto px-6 pt-6 space-y-6">
+      <main className="mx-auto w-full max-w-[1600px] px-4 pt-5 space-y-5 sm:px-6">
         {/* Marketplace & Category Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
           <div className="flex flex-wrap items-center gap-3">
@@ -625,9 +626,9 @@ export default function Home() {
         </div>
 
         {/* Master & Detail Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-[360px_minmax(0,1fr)]">
           {/* Left Column: Listings Master Table */}
-          <div className="lg:col-span-5 space-y-3">
+          <div className="space-y-2.5">
             <div className="flex items-center justify-between gap-3 px-1">
               <h2 className="text-sm font-semibold text-slate-800 flex items-center gap-2">
                 <span>在售 Listing 列表</span>
@@ -695,13 +696,13 @@ export default function Home() {
                       dropListingBefore(item.id);
                     }}
                     onClick={() => setSelectedListingId(item.id)}
-                    className={`cursor-pointer rounded-xl border border-l-4 p-3 transition-all hover:border-amber-400/80 hover:shadow-xs ${SALES_CATEGORY_CARD_CLASS[item.salesCategory]} ${
+                    className={`cursor-pointer rounded-lg border border-l-4 p-2.5 transition-all hover:border-amber-400/80 hover:shadow-xs ${SALES_CATEGORY_CARD_CLASS[item.salesCategory]} ${
                       draggedListingId === item.id ? "opacity-55" : "opacity-100"
                     } ${dragOverListingId === item.id && draggedListingId !== item.id ? "border-sky-400 ring-2 ring-sky-400/15" : ""} ${
                       isSelected ? "border-amber-500 ring-2 ring-amber-500/10 shadow-sm" : "border-slate-200"
                     }`}
                   >
-                    <div className="flex gap-3">
+                    <div className="flex gap-2">
                       <div className="flex shrink-0 items-start pt-0.5" onClick={event => event.stopPropagation()}>
                         <Checkbox
                           checked={selectedListingIds.has(item.id)}
@@ -736,11 +737,11 @@ export default function Home() {
                         <img
                           src={item.imageUrl}
                           alt={item.title}
-                          className="h-16 w-16 rounded-lg object-cover border border-slate-100 shrink-0"
+                          className="h-14 w-14 shrink-0 rounded-md border border-slate-100 object-cover"
                         />
                       ) : (
-                        <div className="h-16 w-16 rounded-lg border border-amber-100 bg-amber-50 text-amber-700 shrink-0 flex items-center justify-center">
-                          <Flame className="h-7 w-7" aria-hidden="true" />
+                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md border border-amber-100 bg-amber-50 text-amber-700">
+                          <Flame className="h-6 w-6" aria-hidden="true" />
                           <span className="sr-only">暂无商品图片</span>
                         </div>
                       )}
@@ -829,7 +830,7 @@ export default function Home() {
           </div>
 
           {/* Right Column: Keyword Rank Statistics & Sales Action Detail */}
-          <div className="lg:col-span-7 space-y-4">
+          <div className="min-w-0 space-y-4">
             {currentDetail ? (
               <>
                 {/* Active Listing Profile Card */}
@@ -984,10 +985,10 @@ export default function Home() {
                       核心关键词每日排名统计表 (共 {currentDetail.keywords.length} 个)
                       </CardTitle>
                       <CardDescription className="text-xs text-slate-500 mt-0.5">
-                        每个 Listing 追踪 6–20 个高价值词；仅采用 Sorftime latest_organic_position 自然位，广告位不计入
+                        自然位仅采用 Sorftime latest_organic_position；CPR 为自然第 21–30 位商品月销推算的 8 天需求，广告位单独展示。
                       </CardDescription>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex shrink-0 items-center gap-2">
                       <Badge variant="secondary" className="text-xs bg-amber-50 text-amber-700 whitespace-nowrap">
                         高价值转化导向
                       </Badge>
@@ -1006,28 +1007,44 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-left text-xs">
+                    <div className="overflow-hidden">
+                      <table className="w-full table-fixed text-left text-[11px]">
+                        <colgroup>
+                          <col className="w-[15%]" />
+                          <col className="w-[8%]" />
+                          <col className="w-[5%]" />
+                          <col className="w-[5%]" />
+                          <col className="w-[5%]" />
+                          <col className="w-[8%]" />
+                          <col className="w-[6%]" />
+                          <col className="w-[7%]" />
+                          <col className="w-[7%]" />
+                          <col className="w-[6%]" />
+                          <col className="w-[6%]" />
+                          <col className="w-[12%]" />
+                          <col className="w-[5%]" />
+                        </colgroup>
                         <thead className="bg-slate-50 border-y border-slate-200 text-slate-600 font-medium">
                           <tr>
-                            <th className="py-2.5 px-3">核心关键词 (Keyword)</th>
-                            <th className="py-2.5 px-3">来源标签</th>
-                            <th className="py-2.5 px-3">月搜索量</th>
-                            <th className="py-2.5 px-3">历史转化数</th>
-                            <th className="py-2.5 px-3">转化率</th>
-                            <th className="py-2.5 px-3">今日自然位</th>
-                            <th className="py-2.5 px-3 whitespace-nowrap">广告排名 (PC)</th>
-                            <th className="py-2.5 px-3 whitespace-nowrap">SBV广告排名 (PC)</th>
-                            <th className="py-2.5 px-3">昨日自然位</th>
-                            <th className="py-2.5 px-3">日环比趋势</th>
-                            <th className="py-2.5 px-3 whitespace-nowrap">近 7 天趋势</th>
-                            <th className="py-2.5 px-3">历史最佳</th>
+                            <th className="px-2 py-2">核心关键词</th>
+                            <th className="px-1.5 py-2">来源</th>
+                            <th className="px-1.5 py-2">月搜</th>
+                            <th className="px-1.5 py-2">转化</th>
+                            <th className="px-1.5 py-2">CVR</th>
+                            <th className="px-1.5 py-2">今日自然位</th>
+                            <th className="px-1.5 py-2" title="基于自然位第21–30名产品月销均值推算的8天订单需求">CPR<br/><span className="font-normal text-[9px]">8天估算</span></th>
+                            <th className="px-1.5 py-2">广告位<br/><span className="font-normal text-[9px]">PC</span></th>
+                            <th className="px-1.5 py-2">SBV 位<br/><span className="font-normal text-[9px]">PC</span></th>
+                            <th className="px-1.5 py-2">昨日自然</th>
+                            <th className="px-1.5 py-2">日变化</th>
+                            <th className="px-1.5 py-2 whitespace-nowrap">7日趋势</th>
+                            <th className="px-1.5 py-2">最佳</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100">
                           {visibleKeywords.length === 0 ? (
                             <tr>
-                              <td colSpan={12} className="px-4 py-8 text-center text-sm text-slate-500">
+                              <td colSpan={13} className="px-4 py-8 text-center text-sm text-slate-500">
                                 当前筛选下没有符合条件的核心词。
                               </td>
                             </tr>
@@ -1044,21 +1061,21 @@ export default function Home() {
                             const sparklineRanks = trendDates.map(date => snapshotRanks.get(`${kw.id}:${date}`) ?? null);
                             return (
                               <tr key={kw.id} className="hover:bg-amber-50/30 transition-colors">
-                                <td className="py-2.5 px-3 font-semibold text-slate-900">
+                                <td className="px-2 py-2 font-semibold leading-snug text-slate-900">
                                   <div className="flex flex-col items-start gap-1">
-                                    <span>{kw.keyword}</span>
+                                    <span className="break-words">{kw.keyword}</span>
                                     {isDualFirstPage ? (
                                       <Badge className="border border-emerald-200 bg-emerald-50 px-1.5 py-0 text-[10px] font-semibold text-emerald-700 hover:bg-emerald-50">
                                         双首页占位
                                       </Badge>
                                     ) : notFoundInDesktopAds ? (
-                                      <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-500">
-                                        前三页未检索到广告 · 可补精准防御
+                                      <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[9px] font-medium text-slate-500" title="前三页未检索到桌面端广告或 SBV 广告；可评估精准广告防御">
+                                        未检广告 · 防御
                                       </span>
                                     ) : null}
                                   </div>
                                 </td>
-                                <td className="py-2.5 px-3">
+                                <td className="px-1.5 py-2">
                                   <Badge
                                     variant="outline"
                                     className={`text-[10px] px-1 py-0 ${
@@ -1070,25 +1087,25 @@ export default function Home() {
                                     }`}
                                   >
                                     {kw.source === "sqp_converting"
-                                      ? "SQP高转化词"
+                                      ? "SQP"
                                       : kw.source === "ads_converting"
-                                      ? "广告出单词"
-                                      : "自然高价值词"}
+                                      ? "广告"
+                                      : "自然"}
                                   </Badge>
                                 </td>
-                                <td className="py-2.5 px-3 text-slate-600 font-mono">
+                                <td className="px-1.5 py-2 font-mono text-slate-600">
                                   {kw.searchVolume?.toLocaleString()}
                                 </td>
-                                <td className="py-2.5 px-3 text-slate-700 font-medium font-mono">
-                                  {kw.historicalConversionCount} 单
+                                <td className="px-1.5 py-2 font-mono font-medium text-slate-700">
+                                  {kw.historicalConversionCount}
                                 </td>
-                                <td className="py-2.5 px-3 text-slate-600 font-mono">
+                                <td className="px-1.5 py-2 font-mono text-slate-600">
                                   {kw.conversionRate}%
                                 </td>
-                                <td className="py-2.5 px-3">
+                                <td className="px-1.5 py-2">
                                   <div className="flex flex-col items-start gap-0.5">
                                     <span
-                                      className={`inline-flex items-center justify-center font-bold px-2 py-0.5 rounded text-xs ${
+                                      className={`inline-flex items-center justify-center whitespace-nowrap rounded px-1.5 py-0.5 font-bold text-[11px] ${
                                         currentRank > 0 && currentRank <= 3
                                           ? "bg-amber-100 text-amber-900 border border-amber-300"
                                           : currentRank <= 10 && currentRank > 0
@@ -1096,59 +1113,69 @@ export default function Home() {
                                           : "bg-slate-100 text-slate-700"
                                       }`}
                                     >
-                                      {currentRank === 0 ? "待采集" : currentRank === 999 ? "未进前3页" : `# ${currentRank}`}
+                                      {currentRank === 0 ? "待采集" : currentRank === 999 ? "3页外" : `#${currentRank}`}
                                     </span>
                                     {currentRank > 0 && currentRank !== 999 ? (
-                                      <span className="text-[10px] text-slate-400">Amazon 第 {kw.pageNumber} 页</span>
+                                      <span className="text-[9px] text-slate-400">P{kw.pageNumber}</span>
                                     ) : null}
                                   </div>
                                 </td>
-                                <td className="py-2.5 px-3">
-                                  {kw.pcAdRank === null || kw.pcAdRank === undefined ? (
-                                    <span className="text-slate-400 font-mono text-[11px]">等待采集</span>
-                                  ) : kw.pcAdRank === 999 ? (
-                                    <span className="inline-flex items-center rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-slate-600">未入前3页</span>
+                                <td className="px-1.5 py-2" title={kw.cprEstimate === null || kw.cprEstimate === undefined ? "等待 Sorftime 第21–30名自然位月销数据" : `CPR = 月销均值 ${kw.cprMonthlySalesAverage} ÷ 30 × 8；样本 ${kw.cprSampleCount}/10`}>
+                                  {kw.cprEstimate === null || kw.cprEstimate === undefined ? (
+                                    <span className="text-[10px] text-slate-400">待计算</span>
                                   ) : (
-                                    <span className="inline-flex items-center rounded bg-purple-50 px-2 py-0.5 font-mono text-xs font-semibold text-purple-700 border border-purple-200">
+                                    <div className="leading-tight">
+                                      <span className="font-mono text-xs font-semibold text-cyan-700">≈{kw.cprEstimate}</span>
+                                      <span className="block text-[9px] text-slate-400">{kw.cprSampleCount}/10样本</span>
+                                    </div>
+                                  )}
+                                </td>
+                                <td className="px-1.5 py-2">
+                                  {kw.pcAdRank === null || kw.pcAdRank === undefined ? (
+                                    <span className="text-[10px] text-slate-400">待采</span>
+                                  ) : kw.pcAdRank === 999 ? (
+                                    <span className="inline-flex items-center rounded bg-slate-100 px-1 py-0.5 text-[9px] text-slate-600">3页外</span>
+                                  ) : (
+                                    <span className="inline-flex items-center rounded border border-purple-200 bg-purple-50 px-1.5 py-0.5 font-mono text-[11px] font-semibold text-purple-700">
                                       #{kw.pcAdRank}
                                     </span>
                                   )}
                                 </td>
-                                <td className="py-2.5 px-3">
+                                <td className="px-1.5 py-2">
                                   {kw.pcSbvRank === null || kw.pcSbvRank === undefined ? (
-                                    <span className="text-slate-400 font-mono text-[11px]">等待采集</span>
+                                    <span className="text-[10px] text-slate-400">待采</span>
                                   ) : kw.pcSbvRank === 999 ? (
-                                    <span className="inline-flex items-center rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-slate-600">未入前3页</span>
+                                    <span className="inline-flex items-center rounded bg-slate-100 px-1 py-0.5 text-[9px] text-slate-600">3页外</span>
                                   ) : (
-                                    <span className="inline-flex items-center rounded bg-indigo-50 px-2 py-0.5 font-mono text-xs font-semibold text-indigo-700 border border-indigo-200">
+                                    <span className="inline-flex items-center rounded border border-indigo-200 bg-indigo-50 px-1.5 py-0.5 font-mono text-[11px] font-semibold text-indigo-700">
                                       #{kw.pcSbvRank}
                                     </span>
                                   )}
                                 </td>
-                                <td className="py-2.5 px-3 text-slate-400 font-mono">
-                                  {previousRank === 0 ? "—" : previousRank === 999 ? "未进前3页" : `# ${previousRank}`}
+                                <td className="px-1.5 py-2 font-mono text-slate-400">
+                                  {previousRank === 0 ? "—" : previousRank === 999 ? "3页外" : `#${previousRank}`}
                                 </td>
-                                <td className="py-2.5 px-3">
+                                <td className="px-1.5 py-2">
                                   {currentRank === 0 ? (
-                                    <span className="inline-flex items-center text-slate-400 gap-0.5">等待首次采集</span>
+                                    <span className="text-[10px] text-slate-400">待采</span>
                                   ) : isRisen ? (
                                     <span className="inline-flex items-center text-emerald-600 font-bold gap-0.5">
-                                      <TrendingUp className="h-3.5 w-3.5" /> +{change}
+                                      <TrendingUp className="h-3.5 w-3.5" />+{change}
                                     </span>
                                   ) : isDropped ? (
                                     <span className="inline-flex items-center text-rose-600 font-bold gap-0.5">
-                                      <TrendingDown className="h-3.5 w-3.5" /> {change}
+                                      <TrendingDown className="h-3.5 w-3.5" />{change}
                                     </span>
                                   ) : (
                                     <span className="inline-flex items-center text-slate-400 gap-0.5">
-                                      <Minus className="h-3.5 w-3.5" /> 持平
+                                      <Minus className="h-3.5 w-3.5" />0
                                     </span>
                                   )}
                                 </td>
-                                <td className="py-2.5 px-3">
+                                <td className="px-1.5 py-2">
                                   <KeywordRankSparkline ranks={sparklineRanks} />
                                 </td>
-                                <td className="py-2.5 px-3 text-slate-500 font-mono">
+                                <td className="px-1.5 py-2 font-mono text-slate-500">
                                   {(kw.bestRank ?? 0) === 0 ? "—" : `#${kw.bestRank}`}
                                 </td>
                               </tr>
