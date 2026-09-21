@@ -1,4 +1,4 @@
-import { and, desc, eq, inArray } from "drizzle-orm";
+import { and, desc, eq, gt, inArray } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
 import { ENV } from "./_core/env";
@@ -70,12 +70,51 @@ export async function updateStoreSettings(payload: {
 export async function getListings(marketplace?: "US" | "CA" | "JP", category?: string, status?: string) {
   const db = await getDb();
   if (!db) return [];
-  const conditions = [];
+  const conditions = [
+    eq(listings.fulfillmentChannel, "FBA"),
+    eq(listings.inventoryStatus, "Active"),
+    gt(listings.fbaStock, 0),
+  ];
   if (marketplace) conditions.push(eq(listings.marketplace, marketplace));
   if (category && category !== "all") conditions.push(eq(listings.category, category as any));
   if (status && status !== "all") conditions.push(eq(listings.inventoryStatus, status as any));
   const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
-  return db.select().from(listings).where(whereClause).orderBy(desc(listings.updatedAt));
+  const listingRows = await db.select().from(listings).where(whereClause).orderBy(desc(listings.updatedAt));
+  if (!listingRows.length) return [];
+  const keywordRows = await db.select().from(keywords).where(inArray(keywords.listingId, listingRows.map(item => item.id)));
+  const statusWeight = { action_needed: 10000, watch: 7000, optimizing: 4000, normal: 0 } as const;
+  return listingRows
+    .map(listing => {
+      const ownKeywords = keywordRows.filter(keyword => keyword.listingId === listing.id);
+      const conversionValue = ownKeywords.reduce((sum, keyword) => sum + (keyword.historicalConversionCount ?? 0), 0);
+      const droppedCount = ownKeywords.filter(keyword => (keyword.rankChange ?? 0) < 0).length;
+      const stockRisk = (listing.fbaStock ?? 0) <= 30 ? 1200 : (listing.fbaStock ?? 0) <= 60 ? 600 : 0;
+      const importanceScore = statusWeight[listing.salesFollowUpStatus] + droppedCount * 500 + stockRisk + Math.min(conversionValue * 10, 3000);
+      return { ...listing, importanceScore };
+    })
+    .sort((a, b) => b.importanceScore - a.importanceScore || b.updatedAt.getTime() - a.updatedAt.getTime());
+}
+
+export async function deactivateListingsMissingFromSync(
+  marketplace: "US" | "CA" | "JP",
+  activeKeys: string[]
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const current = await db.select().from(listings).where(eq(listings.marketplace, marketplace));
+  const activeSet = new Set(activeKeys);
+  let deactivated = 0;
+  for (const item of current) {
+    const key = `${item.asin}:${item.sku ?? ""}`;
+    if (!activeSet.has(key)) {
+      await db
+        .update(listings)
+        .set({ inventoryStatus: "Inactive", fbaStock: 0, updatedAt: new Date() })
+        .where(eq(listings.id, item.id));
+      deactivated += 1;
+    }
+  }
+  return deactivated;
 }
 
 export async function getListingById(id: number) {
@@ -144,8 +183,13 @@ export async function getDashboardOverview(marketplace?: "US" | "CA" | "JP") {
   };
   if (!db) return empty;
 
-  const listingFilter = marketplace ? eq(listings.marketplace, marketplace) : undefined;
-  const allListings = await db.select().from(listings).where(listingFilter);
+  const liveConditions = [
+    eq(listings.fulfillmentChannel, "FBA"),
+    eq(listings.inventoryStatus, "Active"),
+    gt(listings.fbaStock, 0),
+  ];
+  if (marketplace) liveConditions.push(eq(listings.marketplace, marketplace));
+  const allListings = await db.select().from(listings).where(and(...liveConditions));
   const listingIds = allListings.map(l => l.id);
   if (listingIds.length === 0) return empty;
 
@@ -204,6 +248,7 @@ export type RankSnapshotInput = {
   asin: string;
   keyword: string;
   rank: number;
+  page?: number;
 };
 
 export async function applyRealRankSnapshots(snapshotDate: string, snapshots: RankSnapshotInput[]) {
@@ -227,12 +272,13 @@ export async function applyRealRankSnapshots(snapshotDate: string, snapshots: Ra
     if (!listing) throw new Error(`Unknown listing ${item.marketplace}/${item.asin}`);
     const keyword = keywordByKey.get(`${item.marketplace}:${item.asin}:${item.keyword.trim().toLowerCase()}`);
     if (!keyword) throw new Error(`Unknown tracked keyword ${item.marketplace}/${item.asin}/${item.keyword}`);
-    const rank = Math.max(1, Math.min(61, Math.trunc(item.rank)));
-    const oldRank = keyword.currentRank && keyword.currentRank > 0 ? keyword.currentRank : rank;
-    const change = oldRank - rank;
+    const rank = Math.max(1, Math.min(999, Math.trunc(item.rank)));
+    const oldRank = keyword.currentRank && keyword.currentRank > 0 ? keyword.currentRank : 0;
+    const change = oldRank > 0 ? oldRank - rank : 0;
     const oldBest = keyword.bestRank ?? 0;
-    const bestRank = rank <= 60 ? (oldBest > 0 ? Math.min(oldBest, rank) : rank) : oldBest;
-    return { listing, keyword, rank, oldRank, change, bestRank, page: rank <= 60 ? Math.ceil(rank / 20) : 4 };
+    const bestRank = rank < 999 ? (oldBest > 0 ? Math.min(oldBest, rank) : rank) : oldBest;
+    const page = item.page ? Math.max(1, Math.min(4, Math.trunc(item.page))) : rank === 999 ? 4 : Math.ceil(rank / 48);
+    return { listing, keyword, rank, oldRank, change, bestRank, page };
   });
 
   const snapshotKeywordIds = Array.from(new Set(prepared.map(item => item.keyword.id)));
@@ -280,7 +326,7 @@ export async function applyRealRankSnapshots(snapshotDate: string, snapshots: Ra
       author: "真实自然位监控",
       actionType: "排名下滑告警",
       content: `${snapshotDate} 检测到 ${alerts.length} 个核心词自然位下滑至少 3 位：${alerts.map((item: { keyword: string; drop: number }) => `${item.keyword} (↓${item.drop})`).join("、")}`,
-      suggestedAction: "建议销售检查库存、价格、广告防守和竞品变化；排名 61 表示未进入前三页。",
+      suggestedAction: "建议销售检查库存、价格、广告防守和竞品变化；排名 999 表示未进入前三页。",
     });
   }
 

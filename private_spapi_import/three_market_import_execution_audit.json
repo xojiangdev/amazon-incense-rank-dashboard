@@ -1,0 +1,311 @@
+{
+  "executedAt": "2026-09-21T07:59:29.690Z",
+  "candidateCount": 42,
+  "candidatesByMarket": {
+    "US": 36,
+    "CA": 6,
+    "JP": 0
+  },
+  "liveDatabaseCount": 42,
+  "imported": 0,
+  "updated": 42,
+  "skipped": 0,
+  "deactivated": 0,
+  "rows": [
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "sku": "1688-GPIncense-1.32-DG",
+      "status": "imported_or_updated",
+      "fbaStock": 1
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7CCVCB",
+      "sku": "Ambergris-1.19-DG",
+      "status": "imported_or_updated",
+      "fbaStock": 64
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H7R483PY",
+      "sku": "C0-7SML-QGMM",
+      "status": "imported_or_updated",
+      "fbaStock": 95
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H7WPJDP1",
+      "sku": "HINOKI",
+      "status": "imported_or_updated",
+      "fbaStock": 41
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "sku": "ImperialPalace",
+      "status": "imported_or_updated",
+      "fbaStock": 17
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GDKDTB6C",
+      "sku": "JD-C07S-HKF4",
+      "status": "imported_or_updated",
+      "fbaStock": 70
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "sku": "PineCone-1.19-DG",
+      "status": "imported_or_updated",
+      "fbaStock": 74
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "sku": "YJY-IH-CELADON-LEAF-US",
+      "status": "imported_or_updated",
+      "fbaStock": 22
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "sku": "YJY-INC-AGARWOOD-40-US",
+      "status": "imported_or_updated",
+      "fbaStock": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "sku": "YJY-INC-BAMBOO-60-US",
+      "status": "imported_or_updated",
+      "fbaStock": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDCC4MC",
+      "sku": "YJY-INC-CHERRY-100-US",
+      "status": "imported_or_updated",
+      "fbaStock": 14
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "sku": "YJY-INC-HINOKI-60-US",
+      "status": "imported_or_updated",
+      "fbaStock": 49
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDTNZWT",
+      "sku": "YJY-INC-MAGNOLIA-110-US",
+      "status": "imported_or_updated",
+      "fbaStock": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "sku": "YJY-INC-OSMANTHUS-110-US",
+      "status": "imported_or_updated",
+      "fbaStock": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "sku": "YJY-INC-PINE-60-US",
+      "status": "imported_or_updated",
+      "fbaStock": 19
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDN4VR8",
+      "sku": "YJY-INC-PLUM-110-US",
+      "status": "imported_or_updated",
+      "fbaStock": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "sku": "YJY-INC-WISTERIA-60-US",
+      "status": "imported_or_updated",
+      "fbaStock": 1
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "sku": "argarwood40",
+      "status": "imported_or_updated",
+      "fbaStock": 77
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67YPSM",
+      "sku": "blueih",
+      "status": "imported_or_updated",
+      "fbaStock": 43
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "sku": "ihcloud",
+      "status": "imported_or_updated",
+      "fbaStock": 22
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "sku": "ihlotusflower",
+      "status": "imported_or_updated",
+      "fbaStock": 22
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "sku": "incenseholder17cm",
+      "status": "imported_or_updated",
+      "fbaStock": 37
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "sku": "lakawood",
+      "status": "imported_or_updated",
+      "fbaStock": 12
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FXW2KHWZ",
+      "sku": "lavender01",
+      "status": "imported_or_updated",
+      "fbaStock": 34
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "sku": "lavender02",
+      "status": "imported_or_updated",
+      "fbaStock": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "sku": "lotus",
+      "status": "imported_or_updated",
+      "fbaStock": 28
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MK2D4",
+      "sku": "mugwort40",
+      "status": "imported_or_updated",
+      "fbaStock": 70
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "sku": "mugworthy",
+      "status": "imported_or_updated",
+      "fbaStock": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY55B96L",
+      "sku": "osmanthus",
+      "status": "imported_or_updated",
+      "fbaStock": 45
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "sku": "palosanto",
+      "status": "imported_or_updated",
+      "fbaStock": 92
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "sku": "pineconehy",
+      "status": "imported_or_updated",
+      "fbaStock": 17
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVQTGQT",
+      "sku": "sandalhy",
+      "status": "imported_or_updated",
+      "fbaStock": 16
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "sku": "sandalwood300",
+      "status": "imported_or_updated",
+      "fbaStock": 101
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "sku": "sandalwood40",
+      "status": "imported_or_updated",
+      "fbaStock": 23
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "sku": "whitesage20",
+      "status": "imported_or_updated",
+      "fbaStock": 86
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "sku": "whitesage60",
+      "status": "imported_or_updated",
+      "fbaStock": 1
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FG7F3V69",
+      "sku": "PineCone-1.19-DG",
+      "status": "imported_or_updated",
+      "fbaStock": 241
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "sku": "lotus",
+      "status": "imported_or_updated",
+      "fbaStock": 12
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "sku": "mugwort40",
+      "status": "imported_or_updated",
+      "fbaStock": 15
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "sku": "mugworthy",
+      "status": "imported_or_updated",
+      "fbaStock": 6
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6JR3NK",
+      "sku": "sandalwood300",
+      "status": "imported_or_updated",
+      "fbaStock": 55
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "sku": "sandalwood40",
+      "status": "imported_or_updated",
+      "fbaStock": 88
+    }
+  ],
+  "postImportViolations": 0
+}

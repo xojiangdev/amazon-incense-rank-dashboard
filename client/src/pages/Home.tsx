@@ -394,7 +394,7 @@ export default function Home() {
                 <span>在售 Listing 列表</span>
                 <span className="text-xs text-slate-400 font-normal">({filteredListings.length} 个)</span>
               </h2>
-              <span className="text-[11px] text-slate-400">点击选中查看 6-20 个核心词每日趋势</span>
+              <span className="text-[11px] text-slate-400">按销售优先级排序 · 点击查看 6-20 个核心词趋势</span>
             </div>
 
             <div className="space-y-2.5">
@@ -590,7 +590,7 @@ export default function Home() {
                       核心关键词每日排名统计表 (共 {currentDetail.keywords.length} 个)
                       </CardTitle>
                       <CardDescription className="text-xs text-slate-500 mt-0.5">
-                        每个 Listing 至少追踪 6 个词；有充足高价值转化词时扩展至 20 个，按历史转化量、高转化率及搜索量优选
+                        每个 Listing 追踪 6–20 个高价值词；仅采用 Sorftime latest_organic_position 自然位，广告位不计入
                       </CardDescription>
                     </div>
                     <Badge variant="secondary" className="text-xs bg-amber-50 text-amber-700">
@@ -653,20 +653,25 @@ export default function Home() {
                                   {kw.conversionRate}%
                                 </td>
                                 <td className="py-2.5 px-3">
-                                  <span
-                                    className={`inline-flex items-center justify-center font-bold px-2 py-0.5 rounded text-xs ${
-                                      currentRank > 0 && currentRank <= 3
-                                        ? "bg-amber-100 text-amber-900 border border-amber-300"
-                                        : currentRank <= 10 && currentRank > 0
-                                        ? "bg-emerald-100 text-emerald-800"
-                                        : "bg-slate-100 text-slate-700"
-                                    }`}
-                                  >
-                                    {currentRank === 0 ? "待采集" : currentRank > 60 ? "> 60" : `# ${currentRank}`}
-                                  </span>
+                                  <div className="flex flex-col items-start gap-0.5">
+                                    <span
+                                      className={`inline-flex items-center justify-center font-bold px-2 py-0.5 rounded text-xs ${
+                                        currentRank > 0 && currentRank <= 3
+                                          ? "bg-amber-100 text-amber-900 border border-amber-300"
+                                          : currentRank <= 10 && currentRank > 0
+                                          ? "bg-emerald-100 text-emerald-800"
+                                          : "bg-slate-100 text-slate-700"
+                                      }`}
+                                    >
+                                      {currentRank === 0 ? "待采集" : currentRank === 999 ? "未进前3页" : `# ${currentRank}`}
+                                    </span>
+                                    {currentRank > 0 && currentRank !== 999 ? (
+                                      <span className="text-[10px] text-slate-400">Amazon 第 {kw.pageNumber} 页</span>
+                                    ) : null}
+                                  </div>
                                 </td>
                                 <td className="py-2.5 px-3 text-slate-400 font-mono">
-                                  {previousRank === 0 ? "—" : previousRank > 60 ? "> 60" : `# ${previousRank}`}
+                                  {previousRank === 0 ? "—" : previousRank === 999 ? "未进前3页" : `# ${previousRank}`}
                                 </td>
                                 <td className="py-2.5 px-3">
                                   {currentRank === 0 ? (

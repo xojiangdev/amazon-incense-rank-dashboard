@@ -7,12 +7,12 @@ describe("rankPayloadSchema", () => {
       snapshotDate: "2026-09-21",
       snapshots: [
         { marketplace: "US", asin: "B0GWVDR845", keyword: "pine cone incense", rank: 7 },
-        { marketplace: "CA", asin: "B0FY6HB74X", keyword: "sandalwood incense sticks", rank: 61 },
-        { marketplace: "JP", asin: "B0H7WQKSMR", keyword: "ヒノキ 線香", rank: 12 },
+        { marketplace: "CA", asin: "B0FY6HB74X", keyword: "sandalwood incense sticks", rank: 999, page: 4 },
+        { marketplace: "JP", asin: "B0H7WQKSMR", keyword: "ヒノキ 線香", rank: 136, page: 3 },
       ],
     });
     expect(parsed.snapshots).toHaveLength(3);
-    expect(parsed.snapshots[1]?.rank).toBe(61);
+    expect(parsed.snapshots[1]?.rank).toBe(999);
   });
 
   it("rejects invalid dates, marketplaces, ASINs, and ranks", () => {

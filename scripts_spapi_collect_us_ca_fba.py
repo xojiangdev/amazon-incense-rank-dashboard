@@ -265,6 +265,16 @@ def get_fba_candidates(marketplace: str, config: dict[str, str], report_rows: li
                 "reason": "FBA active listing outside target incense category",
             })
             continue
+        fulfillable = int(inventory.get("fulfillable_quantity") or 0)
+        if fulfillable <= 0:
+            excluded.append({
+                "marketplace": marketplace,
+                "sku": sku,
+                "asin": asin or str(inventory.get("asin") or ""),
+                "title": title or str(inventory.get("product_name") or sku),
+                "reason": "FBA active target listing has no fulfillable inventory",
+            })
+            continue
         candidates.append(ListingCandidate(
             marketplace=marketplace,
             asin=asin or str(inventory.get("asin") or ""),
@@ -275,7 +285,7 @@ def get_fba_candidates(marketplace: str, config: dict[str, str], report_rows: li
             image_url=row.get("image-url", "").strip(),
             price=row.get("price", "").strip(),
             currency=config["currency"],
-            fba_stock=int(inventory.get("fulfillable_quantity") or 0),
+            fba_stock=fulfillable,
             fulfillment_channel="FBA",
             listing_status=status,
             source_report_id=report_id,

@@ -20,8 +20,8 @@ export async function scheduledRankTargetsHandler(req: Request, res: Response) {
       rules: {
         source: "Sorftime Amazon reverse ASIN traffic terms",
         organicOnly: true,
-        trackedRange: "top 60",
-        notInTop60Rank: 61,
+        trackedRange: "first 3 Amazon search-result pages",
+        notInFirst3PagesRank: 999,
         exactKeywordMatch: true,
       },
       totals: {
@@ -45,7 +45,8 @@ export const rankPayloadSchema = z.object({
       marketplace: z.enum(["US", "CA", "JP"]),
       asin: z.string().min(10).max(10),
       keyword: z.string().min(1).max(255),
-      rank: z.number().int().min(1).max(61),
+      rank: z.number().int().min(1).max(999),
+      page: z.number().int().min(1).max(4).optional(),
     })
   ).min(1).max(1000),
 });
