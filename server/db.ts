@@ -377,6 +377,97 @@ export type RankSnapshotInput = {
   pcSbvRank?: number | null;
 };
 
+export type PcAdvertisingRankInput = {
+  marketplace: "US" | "CA" | "JP";
+  asin: string;
+  keyword: string;
+  pcAdRank: number;
+  pcSbvRank: number;
+  source: "dataforseo_amazon_pc_serp";
+};
+
+const rankTargetKey = (marketplace: string, asin: string, keyword: string) =>
+  `${marketplace}:${asin.trim().toUpperCase()}:${keyword.trim().normalize("NFKC").toLowerCase()}`;
+
+/**
+ * Updates desktop advertising ranks without touching the already-collected natural rank,
+ * previous natural rank, daily natural change, or historical best natural rank.
+ */
+export async function applyPcAdvertisingRanks(snapshotDate: string, positions: PcAdvertisingRankInput[]) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+
+  const liveListings = await db
+    .select()
+    .from(listings)
+    .where(and(eq(listings.fulfillmentChannel, "FBA"), eq(listings.inventoryStatus, "Active"), gt(listings.fbaStock, 0)));
+  const listingById = new Map(liveListings.map(item => [item.id, item] as const));
+  const listingIds = liveListings.map(item => item.id);
+  const coreKeywords = listingIds.length
+    ? await db.select().from(keywords).where(and(inArray(keywords.listingId, listingIds), eq(keywords.isCore, true)))
+    : [];
+  const expectedByKey = new Map(
+    coreKeywords.map(keyword => {
+      const listing = listingById.get(keyword.listingId);
+      if (!listing) throw new Error(`Missing listing for keyword ${keyword.id}`);
+      return [rankTargetKey(listing.marketplace, listing.asin, keyword.keyword), { listing, keyword }] as const;
+    })
+  );
+  if (!expectedByKey.size) throw new Error("No active FBA core-keyword targets available for PC advertising rank ingestion");
+
+  const actualKeys = positions.map(item => rankTargetKey(item.marketplace, item.asin, item.keyword));
+  if (actualKeys.length !== expectedByKey.size || new Set(actualKeys).size !== actualKeys.length) {
+    throw new Error(`PC advertising batch mismatch: expected ${expectedByKey.size}, received ${actualKeys.length}, unique=${new Set(actualKeys).size}`);
+  }
+  const missing = Array.from(expectedByKey.keys()).filter(key => !actualKeys.includes(key));
+  const extra = actualKeys.filter(key => !expectedByKey.has(key));
+  if (missing.length || extra.length) {
+    throw new Error(`PC advertising target mismatch: missing=${missing.length}, extra=${extra.length}`);
+  }
+
+  const prepared = positions.map(position => {
+    const target = expectedByKey.get(rankTargetKey(position.marketplace, position.asin, position.keyword));
+    if (!target) throw new Error(`Unknown PC advertising target ${position.marketplace}/${position.asin}/${position.keyword}`);
+    const pcAdRank = Math.trunc(position.pcAdRank);
+    const pcSbvRank = Math.trunc(position.pcSbvRank);
+    if (pcAdRank < 1 || pcAdRank > 999 || pcSbvRank < 1 || pcSbvRank > 999) {
+      throw new Error(`Invalid PC advertising rank ${position.marketplace}/${position.asin}/${position.keyword}`);
+    }
+    return { ...target, pcAdRank, pcSbvRank };
+  });
+
+  const keywordIds = prepared.map(item => item.keyword.id);
+  const snapshotRows = await db
+    .select({ keywordId: dailyRankSnapshots.keywordId })
+    .from(dailyRankSnapshots)
+    .where(and(eq(dailyRankSnapshots.snapshotDate, snapshotDate), inArray(dailyRankSnapshots.keywordId, keywordIds)));
+  if (snapshotRows.length !== keywordIds.length) {
+    throw new Error(`Natural-rank snapshot prerequisite missing: expected ${keywordIds.length}, found ${snapshotRows.length} for ${snapshotDate}`);
+  }
+
+  await db.transaction(async tx => {
+    for (const item of prepared) {
+      await tx
+        .update(keywords)
+        .set({ pcAdRank: item.pcAdRank, pcSbvRank: item.pcSbvRank, updatedAt: new Date() })
+        .where(eq(keywords.id, item.keyword.id));
+      await tx
+        .update(dailyRankSnapshots)
+        .set({ pcAdRank: item.pcAdRank, pcSbvRank: item.pcSbvRank })
+        .where(and(eq(dailyRankSnapshots.keywordId, item.keyword.id), eq(dailyRankSnapshots.snapshotDate, snapshotDate)));
+    }
+  });
+
+  return {
+    snapshotDate,
+    expected: expectedByKey.size,
+    updated: prepared.length,
+    pcAdFound: prepared.filter(item => item.pcAdRank < 999).length,
+    pcSbvFound: prepared.filter(item => item.pcSbvRank < 999).length,
+    neitherFound: prepared.filter(item => item.pcAdRank === 999 && item.pcSbvRank === 999).length,
+  };
+}
+
 export async function applyRealRankSnapshots(snapshotDate: string, snapshots: RankSnapshotInput[]) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");

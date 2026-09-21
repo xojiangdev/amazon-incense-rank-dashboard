@@ -1,0 +1,40 @@
+{
+  "success": false,
+  "stage": "dataforseo_collection",
+  "message": "Collection aborted: one or more required DataForSEO merchant_amazon_products_live_advanced calls failed with transport error 'unexpected nil response'. Per strict failure rules, no success result file was created and no database was updated.",
+  "expected": 220,
+  "failedKeywords": [
+    "long burning ambergris incense",
+    "mugwort incense sticks",
+    "lavender incense sticks",
+    "japanese incense"
+  ],
+  "failures": [
+    {
+      "keyword": "long burning ambergris incense",
+      "location_name": "United States",
+      "language_code": "en_US",
+      "error": "transport error: unexpected nil response"
+    },
+    {
+      "keyword": "mugwort incense sticks",
+      "location_name": "United States",
+      "language_code": "en_US",
+      "error": "transport error: unexpected nil response"
+    },
+    {
+      "keyword": "lavender incense sticks",
+      "location_name": "United States",
+      "language_code": "en_US",
+      "error": "transport error: unexpected nil response"
+    },
+    {
+      "keyword": "japanese incense",
+      "location_name": "United States",
+      "language_code": "en_US",
+      "error": "transport error: unexpected nil response"
+    }
+  ],
+  "successFile": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/pc_ad_results_us.json",
+  "databaseUpdated": false
+}

@@ -1,0 +1,15 @@
+{
+  "success": false,
+  "marketplace": "CA",
+  "expected": 42,
+  "written": 0,
+  "error": "DataForSEO collection aborted: one or more required merchant_amazon_products_live_advanced calls returned a transport error ('unexpected nil response'). Per the required atomic failure rule, no successful result file was created and no database update was performed.",
+  "failedKeywords": [
+    "mugwort incense",
+    "mugwort bundle",
+    "armoise encens",
+    "incense cones mugwort"
+  ],
+  "failedCallCount": 4,
+  "source": "dataforseo_amazon_pc_serp"
+}

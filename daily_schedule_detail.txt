@@ -6,6 +6,6 @@
 
 第三阶段——维护核心词：运行 python3 /home/ubuntu/amazon-incense-rank-dashboard/scripts_collect_sqp_keywords.py、npx tsx scripts_import_sqp_keywords.ts、npx tsx scripts_fill_keyword_minimum.ts，使每个合格 Listing 维护6–20个核心词，优先官方 SQP 出单词，其次广告出单词，最后用透明标注的自然高价值词补足，禁止把补充词标成出单词。
 
-第四阶段——采集真实自然位、PC端广告排名与PC端SBV广告排名：读取全部排名目标；调用 Sorftime MCP product_traffic_terms 与搜索位采集工具（指定桌面端 PC 环境），对每个 ASIN 和核心词采集第1至第3页。关键词 Unicode NFKC、去首尾空格、转小写后精确匹配。自然位采用 latest_organic_position（解析为 1–60，未进前三页记 999、page=4）。同时提取该 ASIN 在 PC 端搜索结果中的常规广告曝光位（pcAdRank，SP/SB 广告，未进前三页记 999）与视频广告位（pcSbvRank，Sponsored Brands Video 广告，未进前三页记 999）。写入前必须验证 expected=actual、missing=0、extra=0、duplicates=0、invalid=0，再原子写入北京时间当日全部结果。首日 previousRank 留空/0、change=0。
+第四阶段——采集真实自然位、PC端广告排名与PC端SBV广告排名：读取全部排名目标；自然位调用 Sorftime MCP product_traffic_terms，对每个 ASIN 和核心词采集第1至第3页。关键词 Unicode NFKC、去首尾空格、转小写后精确匹配。自然位采用 latest_organic_position（解析为 1–60，未进前三页记 999、page=4）。PC 广告位调用 DataForSEO merchant_amazon_products_live_advanced，按站点精确传 United States/en_US、Canada/en_CA 或 Japan/ja_JP，读取桌面 Amazon SERP 返回结果。仅以 type=amazon_paid 的 exact data_asin 匹配为广告曝光：rank_absolute 写入 pcAdRank；url 含 sbv_search 或 sponsored brands video 的广告写入 pcSbvRank。各类重复曝光取最小 rank_absolute；在已返回桌面 SERP 未找到该类广告时写 999。禁止用自然位、广告报表、不同站点数据或推测数据代替。写入前必须验证 expected=actual、missing=0、extra=0、duplicates=0、invalid=0，再原子写入北京时间当日全部结果。首日 previousRank 留空/0、change=0。
 
 完成后报告 US/CA/JP Listing 数、FBA可售库存合计、Working/Shipped/Receiving/在途合计、评分同步成功数、无评分数、核心词数、Top10、Top50、上升、下降、未进前三页数量、PC端在投广告词数与SBV在投词数，以及源报告与原子写入审计结果。

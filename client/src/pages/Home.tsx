@@ -40,6 +40,7 @@ import {
 type Marketplace = "US" | "CA" | "JP";
 type MarketplaceFilter = Marketplace | "ALL";
 type SalesCategory = "unclassified" | "new_product" | "key_product" | "long_tail" | "regular" | "discontinued" | "custom";
+type DesktopAdFilter = "all" | "has_any" | "ad_only" | "sbv_only" | "not_found";
 
 const SALES_CATEGORY_CONFIG: Record<SalesCategory, { label: string; className: string }> = {
   unclassified: { label: "未分类", className: "bg-slate-100 text-slate-600 border-slate-200" },
@@ -119,10 +120,20 @@ function KeywordRankSparkline({ ranks }: { ranks: Array<number | null> }) {
   );
 }
 
+function hasDesktopPlacement(rank: number | null | undefined) {
+  return typeof rank === "number" && rank > 0 && rank < 999;
+}
+
+function isDesktopFirstPage(rank: number | null | undefined) {
+  // DataForSEO rank_absolute is the desktop SERP order; the first 48 result slots are treated as page one.
+  return typeof rank === "number" && rank > 0 && rank < 999 && rank <= 48;
+}
+
 export default function Home() {
   const [marketplace, setMarketplace] = useState<MarketplaceFilter>("ALL");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [salesCategoryFilter, setSalesCategoryFilter] = useState<SalesCategory | "all">("all");
+  const [desktopAdFilter, setDesktopAdFilter] = useState<DesktopAdFilter>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedListingId, setSelectedListingId] = useState<number | null>(null);
 
@@ -264,6 +275,18 @@ export default function Home() {
   const currentDetail = detailQuery.data && filteredListings.some(item => item.id === detailQuery.data?.listing.id)
     ? detailQuery.data
     : null;
+  const visibleKeywords = useMemo(() => {
+    const allKeywords = currentDetail?.keywords ?? [];
+    return allKeywords.filter(keyword => {
+      const hasAd = hasDesktopPlacement(keyword.pcAdRank);
+      const hasSbv = hasDesktopPlacement(keyword.pcSbvRank);
+      if (desktopAdFilter === "has_any") return hasAd || hasSbv;
+      if (desktopAdFilter === "ad_only") return hasAd;
+      if (desktopAdFilter === "sbv_only") return hasSbv;
+      if (desktopAdFilter === "not_found") return keyword.pcAdRank === 999 && keyword.pcSbvRank === 999;
+      return true;
+    });
+  }, [currentDetail?.keywords, desktopAdFilter]);
   const activeListingId = effectiveListingId;
   const trendDates = useMemo(() => buildDateWindow(dateKeyInTimeZone(new Date(), "Asia/Shanghai"), 7), []);
   const snapshotRanks = useMemo(() => new Map(
@@ -964,9 +987,23 @@ export default function Home() {
                         每个 Listing 追踪 6–20 个高价值词；仅采用 Sorftime latest_organic_position 自然位，广告位不计入
                       </CardDescription>
                     </div>
-                    <Badge variant="secondary" className="text-xs bg-amber-50 text-amber-700">
-                      高价值转化导向
-                    </Badge>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="text-xs bg-amber-50 text-amber-700 whitespace-nowrap">
+                        高价值转化导向
+                      </Badge>
+                      <Select value={desktopAdFilter} onValueChange={(value: DesktopAdFilter) => setDesktopAdFilter(value)}>
+                        <SelectTrigger className="h-8 w-[188px] bg-white text-xs">
+                          <SelectValue placeholder="广告位筛选" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="all">全部核心词</SelectItem>
+                          <SelectItem value="has_any">仅看有广告 / SBV</SelectItem>
+                          <SelectItem value="ad_only">仅看常规广告位</SelectItem>
+                          <SelectItem value="sbv_only">仅看 SBV 广告位</SelectItem>
+                          <SelectItem value="not_found">前三页未检索到广告</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </CardHeader>
                   <CardContent className="p-0">
                     <div className="overflow-x-auto">
@@ -988,17 +1025,38 @@ export default function Home() {
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100">
-                          {currentDetail.keywords.map((kw) => {
+                          {visibleKeywords.length === 0 ? (
+                            <tr>
+                              <td colSpan={12} className="px-4 py-8 text-center text-sm text-slate-500">
+                                当前筛选下没有符合条件的核心词。
+                              </td>
+                            </tr>
+                          ) : visibleKeywords.map((kw) => {
                             const change = kw.rankChange ?? 0;
                             const currentRank = kw.currentRank ?? 0;
                             const previousRank = kw.previousRank ?? 0;
+                            const hasPcAd = hasDesktopPlacement(kw.pcAdRank);
+                            const hasPcSbv = hasDesktopPlacement(kw.pcSbvRank);
+                            const isDualFirstPage = currentRank > 0 && currentRank <= 48 && (isDesktopFirstPage(kw.pcAdRank) || isDesktopFirstPage(kw.pcSbvRank));
+                            const notFoundInDesktopAds = kw.pcAdRank === 999 && kw.pcSbvRank === 999;
                             const isRisen = change > 0;
                             const isDropped = change < 0;
                             const sparklineRanks = trendDates.map(date => snapshotRanks.get(`${kw.id}:${date}`) ?? null);
                             return (
                               <tr key={kw.id} className="hover:bg-amber-50/30 transition-colors">
                                 <td className="py-2.5 px-3 font-semibold text-slate-900">
-                                  {kw.keyword}
+                                  <div className="flex flex-col items-start gap-1">
+                                    <span>{kw.keyword}</span>
+                                    {isDualFirstPage ? (
+                                      <Badge className="border border-emerald-200 bg-emerald-50 px-1.5 py-0 text-[10px] font-semibold text-emerald-700 hover:bg-emerald-50">
+                                        双首页占位
+                                      </Badge>
+                                    ) : notFoundInDesktopAds ? (
+                                      <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-500">
+                                        前三页未检索到广告 · 可补精准防御
+                                      </span>
+                                    ) : null}
+                                  </div>
                                 </td>
                                 <td className="py-2.5 px-3">
                                   <Badge
@@ -1047,7 +1105,7 @@ export default function Home() {
                                 </td>
                                 <td className="py-2.5 px-3">
                                   {kw.pcAdRank === null || kw.pcAdRank === undefined ? (
-                                    <span className="text-slate-400 font-mono text-[11px]">—</span>
+                                    <span className="text-slate-400 font-mono text-[11px]">等待采集</span>
                                   ) : kw.pcAdRank === 999 ? (
                                     <span className="inline-flex items-center rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-slate-600">未入前3页</span>
                                   ) : (
@@ -1058,7 +1116,7 @@ export default function Home() {
                                 </td>
                                 <td className="py-2.5 px-3">
                                   {kw.pcSbvRank === null || kw.pcSbvRank === undefined ? (
-                                    <span className="text-slate-400 font-mono text-[11px]">—</span>
+                                    <span className="text-slate-400 font-mono text-[11px]">等待采集</span>
                                   ) : kw.pcSbvRank === 999 ? (
                                     <span className="inline-flex items-center rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-slate-600">未入前3页</span>
                                   ) : (
