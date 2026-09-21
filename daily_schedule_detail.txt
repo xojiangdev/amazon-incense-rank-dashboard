@@ -6,6 +6,6 @@
 
 第三阶段——维护核心词：运行 python3 /home/ubuntu/amazon-incense-rank-dashboard/scripts_collect_sqp_keywords.py、npx tsx scripts_import_sqp_keywords.ts、npx tsx scripts_fill_keyword_minimum.ts，使每个合格 Listing 维护6–20个核心词，优先官方 SQP 出单词，其次广告出单词，最后用透明标注的自然高价值词补足，禁止把补充词标成出单词。
 
-第四阶段——采集真实自然位：读取全部排名目标；对每个 ASIN 调用 Sorftime MCP product_traffic_terms，amz_site 对应 US、CA、JP。先读第1页，仅返回满页时继续第2页，第2页仍满页时继续第3页。关键词 Unicode NFKC、去首尾空格、转小写后精确匹配，只采用 latest_organic_position，严禁广告位。解析 Page X, Pos Y/Z 为 page=X、rank=(X-1)*Z+Y；未匹配记 rank=999、page=4。写入前必须验证 expected=actual、missing=0、extra=0、duplicates=0、invalid=0，再原子写入北京时间当日全部结果。首日 previousRank 留空/0、change=0。
+第四阶段——采集真实自然位、PC端广告排名与PC端SBV广告排名：读取全部排名目标；调用 Sorftime MCP product_traffic_terms 与搜索位采集工具（指定桌面端 PC 环境），对每个 ASIN 和核心词采集第1至第3页。关键词 Unicode NFKC、去首尾空格、转小写后精确匹配。自然位采用 latest_organic_position（解析为 1–60，未进前三页记 999、page=4）。同时提取该 ASIN 在 PC 端搜索结果中的常规广告曝光位（pcAdRank，SP/SB 广告，未进前三页记 999）与视频广告位（pcSbvRank，Sponsored Brands Video 广告，未进前三页记 999）。写入前必须验证 expected=actual、missing=0、extra=0、duplicates=0、invalid=0，再原子写入北京时间当日全部结果。首日 previousRank 留空/0、change=0。
 
-完成后报告 US/CA/JP Listing 数、FBA可售库存合计、Working/Shipped/Receiving/在途合计、评分同步成功数、无评分数、核心词数、Top10、Top50、上升、下降、未进前三页数量，以及源报告与原子写入审计结果。
+完成后报告 US/CA/JP Listing 数、FBA可售库存合计、Working/Shipped/Receiving/在途合计、评分同步成功数、无评分数、核心词数、Top10、Top50、上升、下降、未进前三页数量、PC端在投广告词数与SBV在投词数，以及源报告与原子写入审计结果。

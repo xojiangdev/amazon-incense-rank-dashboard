@@ -6,13 +6,15 @@ describe("rankPayloadSchema", () => {
     const parsed = rankPayloadSchema.parse({
       snapshotDate: "2026-09-21",
       snapshots: [
-        { marketplace: "US", asin: "B0GWVDR845", keyword: "pine cone incense", rank: 7 },
+        { marketplace: "US", asin: "B0GWVDR845", keyword: "pine cone incense", rank: 7, pcAdRank: 2, pcSbvRank: null },
         { marketplace: "CA", asin: "B0FY6HB74X", keyword: "sandalwood incense sticks", rank: 999, page: 4 },
-        { marketplace: "JP", asin: "B0H7WQKSMR", keyword: "ヒノキ 線香", rank: 136, page: 3 },
+        { marketplace: "JP", asin: "B0H7WQKSMR", keyword: "ヒノキ 線香", rank: 136, page: 3, pcAdRank: 5, pcSbvRank: 1 },
       ],
     });
     expect(parsed.snapshots).toHaveLength(3);
     expect(parsed.snapshots[1]?.rank).toBe(999);
+    expect(parsed.snapshots[0]?.pcAdRank).toBe(2);
+    expect(parsed.snapshots[2]?.pcSbvRank).toBe(1);
   });
 
   it("rejects invalid dates, marketplaces, ASINs, and ranks", () => {

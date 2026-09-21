@@ -332,7 +332,7 @@ export default function Home() {
   const handleExportCSV = () => {
     if (!currentDetail) return;
     const rows = [
-      ["Listing ASIN", "站点", "销售分类", "销售自由备注", "核心关键词", "今日自然排名", "昨日排名", "变化", "日搜索量", "历史转化数", "转化率(%)"],
+      ["Listing ASIN", "站点", "销售分类", "销售自由备注", "核心关键词", "今日自然排名", "广告排名(PC)", "SBV广告排名(PC)", "昨日排名", "变化", "日搜索量", "历史转化数", "转化率(%)"],
       ...currentDetail.keywords.map((kw) => [
         currentDetail.listing.asin,
         currentDetail.listing.marketplace,
@@ -340,6 +340,8 @@ export default function Home() {
         currentDetail.listing.salesNotes ?? "",
         kw.keyword,
         kw.currentRank,
+        kw.pcAdRank ?? "",
+        kw.pcSbvRank ?? "",
         kw.previousRank,
         (kw.rankChange ?? 0) > 0 ? `+${kw.rankChange}` : `${kw.rankChange}`,
         kw.searchVolume,
@@ -977,6 +979,8 @@ export default function Home() {
                             <th className="py-2.5 px-3">历史转化数</th>
                             <th className="py-2.5 px-3">转化率</th>
                             <th className="py-2.5 px-3">今日自然位</th>
+                            <th className="py-2.5 px-3 whitespace-nowrap">广告排名 (PC)</th>
+                            <th className="py-2.5 px-3 whitespace-nowrap">SBV广告排名 (PC)</th>
                             <th className="py-2.5 px-3">昨日自然位</th>
                             <th className="py-2.5 px-3">日环比趋势</th>
                             <th className="py-2.5 px-3 whitespace-nowrap">近 7 天趋势</th>
@@ -1040,6 +1044,28 @@ export default function Home() {
                                       <span className="text-[10px] text-slate-400">Amazon 第 {kw.pageNumber} 页</span>
                                     ) : null}
                                   </div>
+                                </td>
+                                <td className="py-2.5 px-3">
+                                  {kw.pcAdRank === null || kw.pcAdRank === undefined ? (
+                                    <span className="text-slate-400 font-mono text-[11px]">—</span>
+                                  ) : kw.pcAdRank === 999 ? (
+                                    <span className="inline-flex items-center rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-slate-600">未入前3页</span>
+                                  ) : (
+                                    <span className="inline-flex items-center rounded bg-purple-50 px-2 py-0.5 font-mono text-xs font-semibold text-purple-700 border border-purple-200">
+                                      #{kw.pcAdRank}
+                                    </span>
+                                  )}
+                                </td>
+                                <td className="py-2.5 px-3">
+                                  {kw.pcSbvRank === null || kw.pcSbvRank === undefined ? (
+                                    <span className="text-slate-400 font-mono text-[11px]">—</span>
+                                  ) : kw.pcSbvRank === 999 ? (
+                                    <span className="inline-flex items-center rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-slate-600">未入前3页</span>
+                                  ) : (
+                                    <span className="inline-flex items-center rounded bg-indigo-50 px-2 py-0.5 font-mono text-xs font-semibold text-indigo-700 border border-indigo-200">
+                                      #{kw.pcSbvRank}
+                                    </span>
+                                  )}
                                 </td>
                                 <td className="py-2.5 px-3 text-slate-400 font-mono">
                                   {previousRank === 0 ? "—" : previousRank === 999 ? "未进前3页" : `# ${previousRank}`}

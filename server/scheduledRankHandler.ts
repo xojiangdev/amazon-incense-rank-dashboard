@@ -47,6 +47,8 @@ export const rankPayloadSchema = z.object({
       keyword: z.string().min(1).max(255),
       rank: z.number().int().min(1).max(999),
       page: z.number().int().min(1).max(4).optional(),
+      pcAdRank: z.number().int().min(1).max(999).nullable().optional(),
+      pcSbvRank: z.number().int().min(1).max(999).nullable().optional(),
     })
   ).min(1).max(1000),
 });

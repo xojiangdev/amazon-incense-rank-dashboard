@@ -373,6 +373,8 @@ export type RankSnapshotInput = {
   keyword: string;
   rank: number;
   page?: number;
+  pcAdRank?: number | null;
+  pcSbvRank?: number | null;
 };
 
 export async function applyRealRankSnapshots(snapshotDate: string, snapshots: RankSnapshotInput[]) {
@@ -402,7 +404,9 @@ export async function applyRealRankSnapshots(snapshotDate: string, snapshots: Ra
     const oldBest = keyword.bestRank ?? 0;
     const bestRank = rank < 999 ? (oldBest > 0 ? Math.min(oldBest, rank) : rank) : oldBest;
     const page = item.page ? Math.max(1, Math.min(4, Math.trunc(item.page))) : rank === 999 ? 4 : Math.ceil(rank / 48);
-    return { listing, keyword, rank, oldRank, change, bestRank, page };
+    const pcAdRank = item.pcAdRank === undefined ? null : item.pcAdRank === null ? null : Math.max(1, Math.min(999, Math.trunc(item.pcAdRank)));
+    const pcSbvRank = item.pcSbvRank === undefined ? null : item.pcSbvRank === null ? null : Math.max(1, Math.min(999, Math.trunc(item.pcSbvRank)));
+    return { listing, keyword, rank, oldRank, change, bestRank, page, pcAdRank, pcSbvRank };
   });
 
   const snapshotKeywordIds = Array.from(new Set(prepared.map(item => item.keyword.id)));
@@ -422,6 +426,8 @@ export async function applyRealRankSnapshots(snapshotDate: string, snapshots: Ra
         rankChange: item.change,
         bestRank: item.bestRank,
         pageNumber: item.page,
+        pcAdRank: item.pcAdRank,
+        pcSbvRank: item.pcSbvRank,
         updatedAt: new Date(),
       })
       .where(eq(keywords.id, item.keyword.id));
@@ -432,6 +438,8 @@ export async function applyRealRankSnapshots(snapshotDate: string, snapshots: Ra
       snapshotDate,
       rank: item.rank,
       page: item.page,
+      pcAdRank: item.pcAdRank,
+      pcSbvRank: item.pcSbvRank,
       changeFromYesterday: item.change,
       isTop10: item.rank <= 10,
       isTop50: item.rank <= 50,

@@ -86,6 +86,8 @@ export const keywords = mysqlTable("keywords", {
   rankChange: int("rankChange").default(0),
   bestRank: int("bestRank").default(0),
   pageNumber: int("pageNumber").default(0),
+  pcAdRank: int("pcAdRank"),
+  pcSbvRank: int("pcSbvRank"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
@@ -98,6 +100,8 @@ export const dailyRankSnapshots = mysqlTable("daily_rank_snapshots", {
   snapshotDate: varchar("snapshotDate", { length: 20 }).notNull(),
   rank: int("rank").notNull(),
   page: int("page").default(1).notNull(),
+  pcAdRank: int("pcAdRank"),
+  pcSbvRank: int("pcSbvRank"),
   changeFromYesterday: int("changeFromYesterday").default(0),
   isTop10: boolean("isTop10").default(false).notNull(),
   isTop50: boolean("isTop50").default(false).notNull(),
