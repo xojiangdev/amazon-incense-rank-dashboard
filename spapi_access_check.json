@@ -1,0 +1,90 @@
+{
+  "read_only": true,
+  "results": [
+    {
+      "region": "North America",
+      "endpoint": "https://sellingpartnerapi-na.amazon.com",
+      "token": {
+        "http_status": 200,
+        "has_access_token": true,
+        "error": null
+      },
+      "marketplaces_requested": {
+        "US": "ATVPDKIKX0DER",
+        "CA": "A2EUQ1WTGCTBG2"
+      },
+      "marketplace_participations": {
+        "http_status": 200,
+        "accessible_marketplaces": [
+          {
+            "id": "A1AM78C64UM0Y8",
+            "name": "Amazon.com.mx",
+            "countryCode": "MX"
+          },
+          {
+            "id": "A1MQXOICRS2Z7M",
+            "name": "Non-Amazon CA",
+            "countryCode": "CA"
+          },
+          {
+            "id": "A2EUQ1WTGCTBG2",
+            "name": "Amazon.ca",
+            "countryCode": "CA"
+          },
+          {
+            "id": "A2Q3Y263D00KWC",
+            "name": "Amazon.com.br",
+            "countryCode": "BR"
+          },
+          {
+            "id": "A2ZV50J4W1RKNI",
+            "name": "Non-Amazon US",
+            "countryCode": "US"
+          },
+          {
+            "id": "A3H6HPSLHAK3XG",
+            "name": "Non-Amazon MX",
+            "countryCode": "MX"
+          },
+          {
+            "id": "AHRY1CZE9ZY4H",
+            "name": "Amazon.com Invoicing Shadow Marketplace",
+            "countryCode": "US"
+          },
+          {
+            "id": "ATVPDKIKX0DER",
+            "name": "Amazon.com",
+            "countryCode": "US"
+          }
+        ]
+      }
+    },
+    {
+      "region": "Japan",
+      "endpoint": "https://sellingpartnerapi-fe.amazon.com",
+      "token": {
+        "http_status": 200,
+        "has_access_token": true,
+        "error": null
+      },
+      "marketplaces_requested": {
+        "JP": "A1VC38T7YXB528"
+      },
+      "marketplace_participations": {
+        "http_status": 200,
+        "accessible_marketplaces": [
+          {
+            "id": "A1VC38T7YXB528",
+            "name": "Amazon.co.jp",
+            "countryCode": "JP"
+          },
+          {
+            "id": "A1VN0HAN483KP2",
+            "name": "Non-Amazon JP",
+            "countryCode": "JP"
+          }
+        ]
+      }
+    }
+  ]
+}

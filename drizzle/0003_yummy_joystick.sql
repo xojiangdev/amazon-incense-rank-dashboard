@@ -1,0 +1,1 @@
+ALTER TABLE `keywords` MODIFY COLUMN `source` enum('sqp_converting','ads_converting','organic_high_value','manual_selected') NOT NULL DEFAULT 'sqp_converting';

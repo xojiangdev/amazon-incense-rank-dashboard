@@ -1,0 +1,74 @@
+[
+  {
+    "marketplace": "US",
+    "batch_no": 1,
+    "asins": [
+      "B0FDQ3L67K",
+      "B0FG7CCVCB",
+      "B0FG7F3V69",
+      "B0FXW2KHWZ",
+      "B0FY1RZGZH",
+      "B0FY1T38P1",
+      "B0FY55B96L",
+      "B0FY59TXJK",
+      "B0FY5K8HMT",
+      "B0FY5P2M4S",
+      "B0FY67W88Z",
+      "B0FY67YPSM",
+      "B0FY6HB74X",
+      "B0FY6JQRB9",
+      "B0FY6JR3NK",
+      "B0FY6MCXS7",
+      "B0FY6MK2D4",
+      "B0FY6QW1LV"
+    ],
+    "report_id": "833067020717",
+    "document_id": "amzn1.spdoc.1.4.na.894e80bb-7248-4817-a1a9-d905925bfb05.T1I1R83FQUOHY7.23000",
+    "row_count": 377,
+    "raw_file": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/sqp_us_833067020717.json"
+  },
+  {
+    "marketplace": "US",
+    "batch_no": 2,
+    "asins": [
+      "B0FY6R869L",
+      "B0FYCG49CK",
+      "B0GDKDTB6C",
+      "B0GWVDR845",
+      "B0GWVLF81Y",
+      "B0GWVQTGQT",
+      "B0GZDCC4MC",
+      "B0GZDG7K98",
+      "B0GZDGRVCP",
+      "B0GZDJVS2P",
+      "B0GZDKBPXK",
+      "B0GZDN4VR8",
+      "B0GZDQPWFN",
+      "B0GZDRB1TX",
+      "B0GZDTNZWT",
+      "B0H6WKJKSG",
+      "B0H7R483PY",
+      "B0H7WPJDP1"
+    ],
+    "report_id": "833068020717",
+    "document_id": "amzn1.spdoc.1.4.na.e7c30d18-12d8-4d02-aa36-2810e65bd3bd.T1KPK32D6015AU.23000",
+    "row_count": 454,
+    "raw_file": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/sqp_us_833068020717.json"
+  },
+  {
+    "marketplace": "CA",
+    "batch_no": 1,
+    "asins": [
+      "B0FG7F3V69",
+      "B0FY67W88Z",
+      "B0FY6HB74X",
+      "B0FY6JR3NK",
+      "B0FY6MK2D4",
+      "B0GWVLF81Y"
+    ],
+    "report_id": "833069020717",
+    "document_id": "amzn1.spdoc.1.4.na.f29ade2f-ac90-4376-8ec0-3a3117a2c1d1.T1YNYLYJ3V76M1.23000",
+    "row_count": 434,
+    "raw_file": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/sqp_ca_833069020717.json"
+  }
+]

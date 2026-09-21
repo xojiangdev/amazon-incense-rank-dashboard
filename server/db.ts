@@ -1,11 +1,10 @@
-import { eq } from "drizzle-orm";
+import { and, desc, eq, inArray } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
-import { ENV } from './_core/env';
+import { dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
+import { ENV } from "./_core/env";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
-// Lazily create the drizzle instance so local tooling can run without a DB.
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
@@ -19,74 +18,276 @@ export async function getDb() {
 }
 
 export async function upsertUser(user: InsertUser): Promise<void> {
-  if (!user.openId) {
-    throw new Error("User openId is required for upsert");
-  }
-
+  if (!user.openId) throw new Error("User openId is required for upsert");
   const db = await getDb();
-  if (!db) {
-    console.warn("[Database] Cannot upsert user: database not available");
-    return;
-  }
-
-  try {
-    const values: InsertUser = {
-      openId: user.openId,
-    };
-    const updateSet: Record<string, unknown> = {};
-
-    const textFields = ["name", "email", "loginMethod"] as const;
-    type TextField = (typeof textFields)[number];
-
-    const assignNullable = (field: TextField) => {
-      const value = user[field];
-      if (value === undefined) return;
-      const normalized = value ?? null;
-      values[field] = normalized;
-      updateSet[field] = normalized;
-    };
-
-    textFields.forEach(assignNullable);
-
-    if (user.lastSignedIn !== undefined) {
-      values.lastSignedIn = user.lastSignedIn;
-      updateSet.lastSignedIn = user.lastSignedIn;
-    }
-    if (user.role !== undefined) {
-      values.role = user.role;
-      updateSet.role = user.role;
-    } else if (user.openId === ENV.ownerOpenId) {
-      values.role = 'admin';
-      updateSet.role = 'admin';
-    }
-
-    if (!values.lastSignedIn) {
-      values.lastSignedIn = new Date();
-    }
-
-    if (Object.keys(updateSet).length === 0) {
-      updateSet.lastSignedIn = new Date();
-    }
-
-    await db.insert(users).values(values).onDuplicateKeyUpdate({
-      set: updateSet,
-    });
-  } catch (error) {
-    console.error("[Database] Failed to upsert user:", error);
-    throw error;
-  }
+  if (!db) return;
+  const values: InsertUser = { openId: user.openId };
+  if (user.name) values.name = user.name;
+  if (user.email) values.email = user.email;
+  if (user.role) values.role = user.role;
+  else if (user.openId === ENV.ownerOpenId) values.role = "admin";
+  await db.insert(users).values(values).onDuplicateKeyUpdate({ set: values });
 }
 
 export async function getUserByOpenId(openId: string) {
   const db = await getDb();
-  if (!db) {
-    console.warn("[Database] Cannot get user: database not available");
-    return undefined;
-  }
-
+  if (!db) return undefined;
   const result = await db.select().from(users).where(eq(users.openId, openId)).limit(1);
-
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+export async function getStoreSettings() {
+  const db = await getDb();
+  if (!db) return null;
+  const list = await db.select().from(stores).limit(1);
+  if (list.length > 0) return list[0];
+  const [created] = await db.insert(stores).values({
+    name: "Amazon US & CA Official Store",
+    sellerId: "",
+    adsProfileUs: "898659032586056",
+    adsProfileCa: "673034626677273",
+    syncStatus: "idle",
+  });
+  const res = await db.select().from(stores).where(eq(stores.id, created.insertId)).limit(1);
+  return res[0] || null;
+}
+
+export async function updateStoreSettings(payload: {
+  sellerId?: string;
+  spapiRefreshToken?: string;
+  adsProfileUs?: string;
+  adsProfileCa?: string;
+}) {
+  const db = await getDb();
+  if (!db) return null;
+  const store = await getStoreSettings();
+  if (!store) return null;
+  await db.update(stores).set({ ...payload, updatedAt: new Date() }).where(eq(stores.id, store.id));
+  const updated = await db.select().from(stores).where(eq(stores.id, store.id)).limit(1);
+  return updated[0];
+}
+
+export async function getListings(marketplace?: "US" | "CA", category?: string, status?: string) {
+  const db = await getDb();
+  if (!db) return [];
+  const conditions = [];
+  if (marketplace) conditions.push(eq(listings.marketplace, marketplace));
+  if (category && category !== "all") conditions.push(eq(listings.category, category as any));
+  if (status && status !== "all") conditions.push(eq(listings.inventoryStatus, status as any));
+  const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+  return db.select().from(listings).where(whereClause).orderBy(desc(listings.updatedAt));
+}
+
+export async function getListingById(id: number) {
+  const db = await getDb();
+  if (!db) return null;
+  const rows = await db.select().from(listings).where(eq(listings.id, id)).limit(1);
+  return rows[0] || null;
+}
+
+export async function getListingKeywords(listingId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(keywords).where(eq(keywords.listingId, listingId)).orderBy(desc(keywords.isCore), desc(keywords.historicalConversionCount));
+}
+
+export async function getRankSnapshots(listingId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db
+    .select()
+    .from(dailyRankSnapshots)
+    .where(eq(dailyRankSnapshots.listingId, listingId))
+    .orderBy(dailyRankSnapshots.snapshotDate);
+}
+
+export async function addSalesLog(listingId: number, author: string, content: string, actionType: string = "销售跟进", suggestedAction?: string) {
+  const db = await getDb();
+  if (!db) return null;
+  const [created] = await db.insert(salesLogs).values({
+    listingId,
+    author,
+    actionType,
+    content,
+    suggestedAction: suggestedAction || null,
+  });
+  return created.insertId;
+}
+
+export async function getSalesLogs(listingId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(salesLogs).where(eq(salesLogs.listingId, listingId)).orderBy(desc(salesLogs.createdAt));
+}
+
+export async function updateListingFollowUp(listingId: number, status: "normal" | "watch" | "action_needed" | "optimizing", notes?: string) {
+  const db = await getDb();
+  if (!db) return null;
+  const payload: any = { salesFollowUpStatus: status, updatedAt: new Date() };
+  if (notes !== undefined) payload.notes = notes;
+  await db.update(listings).set(payload).where(eq(listings.id, listingId));
+  return getListingById(listingId);
+}
+
+export async function getDashboardOverview(marketplace?: "US" | "CA") {
+  const db = await getDb();
+  const empty = {
+    totalListings: 0,
+    incenseSticksCount: 0,
+    burnerCount: 0,
+    holderCount: 0,
+    totalKeywordsTracked: 0,
+    top10Count: 0,
+    top50Count: 0,
+    droppedCount: 0,
+    risenCount: 0,
+  };
+  if (!db) return empty;
+
+  const listingFilter = marketplace ? eq(listings.marketplace, marketplace) : undefined;
+  const allListings = await db.select().from(listings).where(listingFilter);
+  const listingIds = allListings.map(l => l.id);
+  if (listingIds.length === 0) return empty;
+
+  const allKeywords = await db.select().from(keywords).where(inArray(keywords.listingId, listingIds));
+  let top10 = 0;
+  let top50 = 0;
+  let risen = 0;
+  let dropped = 0;
+  for (const kw of allKeywords) {
+    const curr = kw.currentRank ?? 0;
+    const change = kw.rankChange ?? 0;
+    if (curr > 0 && curr <= 10) top10++;
+    if (curr > 0 && curr <= 50) top50++;
+    if (change > 0) risen++;
+    if (change < 0) dropped++;
+  }
+
+  return {
+    totalListings: allListings.length,
+    incenseSticksCount: allListings.filter(l => l.category === "incense_sticks").length,
+    burnerCount: allListings.filter(l => l.category === "incense_burner").length,
+    holderCount: allListings.filter(l => l.category === "incense_holder").length,
+    totalKeywordsTracked: allKeywords.length,
+    top10Count: top10,
+    top50Count: top50,
+    droppedCount: dropped,
+    risenCount: risen,
+  };
+}
+
+export async function getRankTrackingTargets() {
+  const db = await getDb();
+  if (!db) return [];
+  const liveListings = await db
+    .select()
+    .from(listings)
+    .where(and(eq(listings.fulfillmentChannel, "FBA"), eq(listings.inventoryStatus, "Active")));
+  const result = [];
+  for (const listing of liveListings.filter(item => (item.fbaStock ?? 0) > 0)) {
+    const listingKeywords = await db
+      .select({ keyword: keywords.keyword })
+      .from(keywords)
+      .where(and(eq(keywords.listingId, listing.id), eq(keywords.isCore, true)));
+    result.push({
+      marketplace: listing.marketplace,
+      asin: listing.asin,
+      sku: listing.sku,
+      keywords: listingKeywords.map(row => row.keyword),
+    });
+  }
+  return result;
+}
+
+export type RankSnapshotInput = {
+  marketplace: "US" | "CA";
+  asin: string;
+  keyword: string;
+  rank: number;
+};
+
+export async function applyRealRankSnapshots(snapshotDate: string, snapshots: RankSnapshotInput[]) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const liveListings = await db.select().from(listings);
+  const relevantIds = liveListings.map(item => item.id);
+  const liveKeywords = relevantIds.length
+    ? await db.select().from(keywords).where(inArray(keywords.listingId, relevantIds))
+    : [];
+  const listingByKey = new Map(liveListings.map(item => [`${item.marketplace}:${item.asin}`, item]));
+  const keywordByKey = new Map(
+    liveKeywords.map(item => {
+      const listing = liveListings.find(row => row.id === item.listingId)!;
+      return [`${listing.marketplace}:${listing.asin}:${item.keyword.trim().toLowerCase()}`, item] as const;
+    })
+  );
+
+  const prepared = snapshots.map(item => {
+    const listing = listingByKey.get(`${item.marketplace}:${item.asin}`);
+    if (!listing) throw new Error(`Unknown listing ${item.marketplace}/${item.asin}`);
+    const keyword = keywordByKey.get(`${item.marketplace}:${item.asin}:${item.keyword.trim().toLowerCase()}`);
+    if (!keyword) throw new Error(`Unknown tracked keyword ${item.marketplace}/${item.asin}/${item.keyword}`);
+    const rank = Math.max(1, Math.min(61, Math.trunc(item.rank)));
+    const oldRank = keyword.currentRank && keyword.currentRank > 0 ? keyword.currentRank : rank;
+    const change = oldRank - rank;
+    const oldBest = keyword.bestRank ?? 0;
+    const bestRank = rank <= 60 ? (oldBest > 0 ? Math.min(oldBest, rank) : rank) : oldBest;
+    return { listing, keyword, rank, oldRank, change, bestRank, page: rank <= 60 ? Math.ceil(rank / 20) : 4 };
+  });
+
+  const snapshotKeywordIds = Array.from(new Set(prepared.map(item => item.keyword.id)));
+  if (snapshotKeywordIds.length) {
+    await db
+      .delete(dailyRankSnapshots)
+      .where(and(eq(dailyRankSnapshots.snapshotDate, snapshotDate), inArray(dailyRankSnapshots.keywordId, snapshotKeywordIds)));
+  }
+
+  const alertMap = new Map<number, Array<{ keyword: string; drop: number }>>();
+  for (const item of prepared) {
+    await db
+      .update(keywords)
+      .set({
+        previousRank: item.oldRank,
+        currentRank: item.rank,
+        rankChange: item.change,
+        bestRank: item.bestRank,
+        pageNumber: item.page,
+        updatedAt: new Date(),
+      })
+      .where(eq(keywords.id, item.keyword.id));
+    await db.insert(dailyRankSnapshots).values({
+      keywordId: item.keyword.id,
+      listingId: item.listing.id,
+      marketplace: item.listing.marketplace,
+      snapshotDate,
+      rank: item.rank,
+      page: item.page,
+      changeFromYesterday: item.change,
+      isTop10: item.rank <= 10,
+      isTop50: item.rank <= 50,
+    });
+    if (item.change <= -3) {
+      const current = alertMap.get(item.listing.id) ?? [];
+      current.push({ keyword: item.keyword.keyword, drop: Math.abs(item.change) });
+      alertMap.set(item.listing.id, current);
+    }
+  }
+
+  for (const [listingId, alerts] of Array.from(alertMap.entries())) {
+    await db.update(listings).set({ salesFollowUpStatus: "action_needed", updatedAt: new Date() }).where(eq(listings.id, listingId));
+    await db.insert(salesLogs).values({
+      listingId,
+      author: "真实自然位监控",
+      actionType: "排名下滑告警",
+      content: `${snapshotDate} 检测到 ${alerts.length} 个核心词自然位下滑至少 3 位：${alerts.map((item: { keyword: string; drop: number }) => `${item.keyword} (↓${item.drop})`).join("、")}`,
+      suggestedAction: "建议销售检查库存、价格、广告防守和竞品变化；排名 61 表示未进入前三页。",
+    });
+  }
+
+  return {
+    snapshotDate,
+    received: snapshots.length,
+    updated: prepared.length,
+    alerts: Array.from(alertMap.values()).reduce((sum, rows) => sum + rows.length, 0),
+  };
+}

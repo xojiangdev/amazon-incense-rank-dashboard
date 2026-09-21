@@ -1,0 +1,27 @@
+{
+  "run_type": "read_only_source_collection",
+  "markets": {
+    "US": {
+      "report_rows": 59,
+      "active_listing_rows": 43,
+      "fba_inventory_skus": 50,
+      "active_fba_matches": 9,
+      "target_candidates": 6,
+      "excluded_non_target_fba_active": 3,
+      "report_id": "833063020717",
+      "report_document_id": "amzn1.spdoc.1.4.na.6e33a48c-bedf-4afa-a82b-abaa6124f2af.T2DWZJLH80ACBV.47700",
+      "raw_report_file": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/us_all_listings_833063020717.tsv"
+    },
+    "CA": {
+      "report_rows": 21,
+      "active_listing_rows": 7,
+      "fba_inventory_skus": 50,
+      "active_fba_matches": 2,
+      "target_candidates": 2,
+      "excluded_non_target_fba_active": 0,
+      "report_id": "833064020717",
+      "report_document_id": "amzn1.spdoc.1.4.na.24770171-14f1-455d-a5f8-5a25d016c873.T1RALJ5YLQZPZQ.47700",
+      "raw_report_file": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/ca_all_listings_833064020717.tsv"
+    }
+  }
+}

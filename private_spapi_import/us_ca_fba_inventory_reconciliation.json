@@ -1,0 +1,108 @@
+{
+  "method": "source_report_active_fba_plus_explicit_sku_inventory",
+  "markets": {
+    "US": {
+      "all_report_rows": 59,
+      "source_active_fba_rows": 43,
+      "target_active_fba_rows": 39,
+      "non_target_active_fba_rows": 4,
+      "target_skus_inventory_queried": 39,
+      "target_skus_returned_by_inventory": 39,
+      "target_active_fba_with_fulfillable_stock": 36,
+      "target_active_fba_without_fulfillable_stock": 3,
+      "target_active_fba_missing_inventory_summary": 0,
+      "no_stock_records": [
+        {
+          "sku": "YJY-INC-YUZU-60-US",
+          "asin": "B0GZDNRYX7",
+          "title": "AFENGAU Yuzu Incense Sticks - 200 Sticks Natural Japanese Citrus Coreless, Refreshing Uplifting Aroma for Meditation, Yoga & Energy",
+          "product_name": "AFENGAU Yuzu Incense Sticks - 200 Sticks Natural Japanese Citrus Coreless, Refreshing Uplifting Aroma for Meditation, Yoga & Energy",
+          "fulfillable_quantity": 0,
+          "total_quantity": 0,
+          "inbound_working_quantity": 0,
+          "inbound_shipped_quantity": 30,
+          "inbound_receiving_quantity": 0,
+          "reserved_quantity": 0,
+          "unfulfillable_quantity": 0
+        },
+        {
+          "sku": "incenseholder20cm",
+          "asin": "B0GDKRTTJ1",
+          "title": "AFENGAU Incense Holder for Sticks with Glass Ash Catcher, Upside Down Anti-Ash Incense Burner, Modern Vertical Incense Stick Holder for Home Decor, Yoga, Meditation Room, and Spa",
+          "product_name": "AFENGAU Incense Holder for Sticks with Glass Ash Catcher, Upside Down Anti-Ash Incense Burner, Modern Vertical Incense Stick Holder for Home Decor, Yoga, Meditation Room, and Spa",
+          "fulfillable_quantity": 0,
+          "total_quantity": 0,
+          "inbound_working_quantity": 0,
+          "inbound_shipped_quantity": 0,
+          "inbound_receiving_quantity": 0,
+          "reserved_quantity": 300,
+          "unfulfillable_quantity": 4
+        },
+        {
+          "sku": "mugwort",
+          "asin": "B0FY5DT9BR",
+          "title": "AFENGAU Natural Mugwort Incense Sticks for Calming Meditation, Yoga, Relaxation. Natural Sleep Aid, Stress Relief and Air Purifying Herbal Incense (Mugwort)",
+          "product_name": "AFENGAU Natural Mugwort Incense Sticks for Calming Meditation, Yoga, Relaxation. Natural Sleep Aid, Stress Relief and Air Purifying Herbal Incense (Mugwort)",
+          "fulfillable_quantity": 0,
+          "total_quantity": 0,
+          "inbound_working_quantity": 0,
+          "inbound_shipped_quantity": 100,
+          "inbound_receiving_quantity": 0,
+          "reserved_quantity": 0,
+          "unfulfillable_quantity": 0
+        }
+      ],
+      "missing_inventory_records": [],
+      "non_target_records": [
+        {
+          "sku": "S1-WEYZ-1LN0",
+          "asin": "B0H3J6LR1K",
+          "title": "Yinjiyue Sandalwood Essential Oil 10ml, Pure Natural Aromatherapy Oil for Diffuser Humidifier and Massage"
+        },
+        {
+          "sku": "Sleeping Mask",
+          "asin": "B0HJ1GPC2S",
+          "title": "yinjiyue Weighted Eye Mask for Sleeping, Reversible Cool-Touch & Plush Sleep Mask, Quiet Adjustable Closure, Contoured Nose Fit for Bedtime, Naps & Travel, Navy"
+        },
+        {
+          "sku": "whitesagebundle",
+          "asin": "B0FYCTS187",
+          "title": "AFENGAU Natural White Sage Smudge Sticks (4-Inch) - California Grown Sage Bundles for Cleansing House of Negative Energy, Spiritual Purification, Meditation & Smudging Rituals"
+        },
+        {
+          "sku": "whitesagebundle2",
+          "asin": "B0GDLQ6Z6M",
+          "title": "AFENGAU Natural White Sage Smudge Sticks (4-Inch) - California Grown Sage Bundles for Cleansing House of Negative Energy, Spiritual Purification, Meditation & Smudging Rituals"
+        }
+      ]
+    },
+    "CA": {
+      "all_report_rows": 21,
+      "source_active_fba_rows": 7,
+      "target_active_fba_rows": 7,
+      "non_target_active_fba_rows": 0,
+      "target_skus_inventory_queried": 7,
+      "target_skus_returned_by_inventory": 7,
+      "target_active_fba_with_fulfillable_stock": 6,
+      "target_active_fba_without_fulfillable_stock": 1,
+      "target_active_fba_missing_inventory_summary": 0,
+      "no_stock_records": [
+        {
+          "sku": "C07S-HKF4",
+          "asin": "B0H86P4L8B",
+          "title": "Yinjiyue Natural Mugwort Incense Sticks, Charcoal-Free, Air Purifying, Meditation & Yoga, Relaxation, Sleep Aid, Stress Relief, Indoor Home Incense new Package",
+          "product_name": "Natural Mugwort Incense Sticks, Charcoal-Free, Air Purifying, Meditation & Yoga, Relaxation, Sleep Aid, Stress Relief, Indoor Home Incense new Package",
+          "fulfillable_quantity": 0,
+          "total_quantity": 0,
+          "inbound_working_quantity": 0,
+          "inbound_shipped_quantity": 150,
+          "inbound_receiving_quantity": 0,
+          "reserved_quantity": 0,
+          "unfulfillable_quantity": 0
+        }
+      ],
+      "missing_inventory_records": [],
+      "non_target_records": []
+    }
+  }
+}
