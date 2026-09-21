@@ -1,13 +1,6 @@
 [
   {
     "marketplace": "US",
-    "sku": "1688-GPIncense-1.32-DG",
-    "asin": "B0FDQ3L67K",
-    "title": "Natural Incense – Stick & Coil – Goose Pear, Sandalwood, Nha Trang Agarwood – Aromatherapy for Home, Meditation, Relaxation (400 Sticks)",
-    "reason": "FBA active listing outside target incense category"
-  },
-  {
-    "marketplace": "US",
     "sku": "S1-WEYZ-1LN0",
     "asin": "B0H3J6LR1K",
     "title": "Yinjiyue Sandalwood Essential Oil 10ml, Pure Natural Aromatherapy Oil for Diffuser Humidifier and Massage",
@@ -19,5 +12,47 @@
     "asin": "B0HJ1GPC2S",
     "title": "yinjiyue Weighted Eye Mask for Sleeping, Reversible Cool-Touch & Plush Sleep Mask, Quiet Adjustable Closure, Contoured Nose Fit for Bedtime, Naps & Travel, Navy",
     "reason": "FBA active listing outside target incense category"
+  },
+  {
+    "marketplace": "US",
+    "sku": "YJY-INC-YUZU-60-US",
+    "asin": "B0GZDNRYX7",
+    "title": "AFENGAU Yuzu Incense Sticks - 200 Sticks Natural Japanese Citrus Coreless, Refreshing Uplifting Aroma for Meditation, Yoga & Energy",
+    "reason": "FBA active target listing has no fulfillable inventory"
+  },
+  {
+    "marketplace": "US",
+    "sku": "incenseholder20cm",
+    "asin": "B0GDKRTTJ1",
+    "title": "AFENGAU Incense Holder for Sticks with Glass Ash Catcher, Upside Down Anti-Ash Incense Burner, Modern Vertical Incense Stick Holder for Home Decor, Yoga, Meditation Room, and Spa",
+    "reason": "FBA active target listing has no fulfillable inventory"
+  },
+  {
+    "marketplace": "US",
+    "sku": "mugwort",
+    "asin": "B0FY5DT9BR",
+    "title": "AFENGAU Natural Mugwort Incense Sticks for Calming Meditation, Yoga, Relaxation. Natural Sleep Aid, Stress Relief and Air Purifying Herbal Incense (Mugwort)",
+    "reason": "FBA active target listing has no fulfillable inventory"
+  },
+  {
+    "marketplace": "US",
+    "sku": "whitesagebundle",
+    "asin": "B0FYCTS187",
+    "title": "AFENGAU Natural White Sage Smudge Sticks (4-Inch) - California Grown Sage Bundles for Cleansing House of Negative Energy, Spiritual Purification, Meditation & Smudging Rituals",
+    "reason": "FBA active listing outside target incense category"
+  },
+  {
+    "marketplace": "US",
+    "sku": "whitesagebundle2",
+    "asin": "B0GDLQ6Z6M",
+    "title": "AFENGAU Natural White Sage Smudge Sticks (4-Inch) - California Grown Sage Bundles for Cleansing House of Negative Energy, Spiritual Purification, Meditation & Smudging Rituals",
+    "reason": "FBA active listing outside target incense category"
+  },
+  {
+    "marketplace": "CA",
+    "sku": "C07S-HKF4",
+    "asin": "B0H86P4L8B",
+    "title": "Yinjiyue Natural Mugwort Incense Sticks, Charcoal-Free, Air Purifying, Meditation & Yoga, Relaxation, Sleep Aid, Stress Relief, Indoor Home Incense new Package",
+    "reason": "FBA active target listing has no fulfillable inventory"
   }
 ]

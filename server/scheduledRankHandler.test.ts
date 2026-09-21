@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { rankPayloadSchema } from "./scheduledRankHandler";
+import { productMetricsPayloadSchema, rankPayloadSchema } from "./scheduledRankHandler";
 
 describe("rankPayloadSchema", () => {
   it("accepts a valid real organic rank payload", () => {
@@ -25,6 +25,27 @@ describe("rankPayloadSchema", () => {
 
   it("rejects empty batches so scheduled retries cannot erase a valid day", () => {
     const result = rankPayloadSchema.safeParse({ snapshotDate: "2026-09-21", snapshots: [] });
+    expect(result.success).toBe(false);
+  });
+});
+
+describe("productMetricsPayloadSchema", () => {
+  it("accepts exact marketplace review metrics and explicit no-review values", () => {
+    const parsed = productMetricsPayloadSchema.parse({
+      observedAt: "2026-09-21T08:45:00.000Z",
+      metrics: [
+        { marketplace: "US", asin: "B0FY67W88Z", rating: 4.2, reviewCount: 18, source: "sorftime_product_detail" },
+        { marketplace: "JP", asin: "B0H7WQKSMR", rating: null, reviewCount: null, source: "sorftime_product_detail" },
+      ],
+    });
+    expect(parsed.metrics).toHaveLength(2);
+  });
+
+  it("rejects ratings above five and negative review counts", () => {
+    const result = productMetricsPayloadSchema.safeParse({
+      observedAt: "2026-09-21T08:45:00.000Z",
+      metrics: [{ marketplace: "US", asin: "B0FY67W88Z", rating: 5.5, reviewCount: -1, source: "sorftime_product_detail" }],
+    });
     expect(result.success).toBe(false);
   });
 });

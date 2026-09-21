@@ -1,0 +1,34 @@
+{
+  "auditedAt": "2026-09-21T09:13:00.387Z",
+  "listingCount": 42,
+  "byMarketplace": {
+    "US": 36,
+    "CA": 6,
+    "JP": 0
+  },
+  "inventory": {
+    "fulfillableTotal": 1650,
+    "inboundWorkingTotal": 0,
+    "inboundShippedTotal": 1186,
+    "inboundReceivingTotal": 0,
+    "inboundTotal": 1186,
+    "listingsWithInbound": 10,
+    "inboundMismatchCount": 0
+  },
+  "reviews": {
+    "synchronized": 42,
+    "withRating": 31,
+    "noRating": 11,
+    "reviewCountTotal": 331,
+    "averageRating": 3.66
+  },
+  "salesCategories": {
+    "unclassified": 0,
+    "new_product": 0,
+    "key_product": 9,
+    "long_tail": 19,
+    "regular": 10,
+    "discontinued": 4,
+    "custom": 0
+  }
+}

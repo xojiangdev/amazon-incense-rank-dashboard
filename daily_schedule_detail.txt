@@ -1,0 +1,11 @@
+每天北京时间07:00完整执行 Amazon 美国、加拿大、日本三站动态监控，所有数据必须真实可审计，任何阶段失败不得写入推测值。
+
+第一阶段——同步 Listing 与库存：依次运行 python3 /home/ubuntu/amazon-incense-rank-dashboard/scripts_spapi_collect_us_ca_fba.py、python3 /home/ubuntu/amazon-incense-rank-dashboard/scripts_spapi_collect_jp_fba.py、cd /home/ubuntu/amazon-incense-rank-dashboard && npx tsx scripts_import_verified_fba.ts。北美和日本必须分别使用隔离的 SP-API 凭证。只保留 fulfillmentChannel=FBA、inventoryStatus=Active、fulfillableQuantity>0 且属于线香/香炉/香插的商品。同步 fbaStock，并同步 FBA Inventory API 的 inboundWorkingQuantity、inboundShippedQuantity、inboundReceivingQuantity；fbaInboundTotal 必须等于三项之和。缺失于最新完整合格清单的旧商品转 Inactive；任一区域采集或审计失败时禁止做停用同步。日本站 0 条合格商品允许，但必须报告来源行数和排除原因。
+
+第二阶段——同步 Review Rating 和评价数：运行 cd /home/ubuntu/amazon-incense-rank-dashboard && npx tsx scripts_export_product_metric_targets.ts，读取 private_spapi_import/product_metric_targets.json。对每一个 marketplace+ASIN 调用已连接的 Sorftime MCP product_detail，amz_site 按 US、CA、JP 精确传入。只接受返回 data.asin 与目标 ASIN 完全一致的结果；rating 取 data.star_rating，reviewCount 取 data.review_count，source 固定为 sorftime_product_detail。若准确返回 ASIN 但没有评分数据，可将 rating 和 reviewCount 都记为 null；任一调用失败、ASIN 不匹配、重复或遗漏时整批停止，不得部分写入。全部成功后把北京时间当前时间作为 observedAt，保存 JSON 到 /home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/product_metrics_latest.json，格式为 {observedAt,metrics:[{marketplace,asin,rating,reviewCount,source}]}，再运行 cd /home/ubuntu/amazon-incense-rank-dashboard && npx tsx scripts_import_product_metrics.ts。核对 updated 必须等于目标 Listing 总数。评分/评价数是公开商品详情指标，禁止描述为 SP-API 指标。
+
+第三阶段——维护核心词：运行 python3 /home/ubuntu/amazon-incense-rank-dashboard/scripts_collect_sqp_keywords.py、npx tsx scripts_import_sqp_keywords.ts、npx tsx scripts_fill_keyword_minimum.ts，使每个合格 Listing 维护6–20个核心词，优先官方 SQP 出单词，其次广告出单词，最后用透明标注的自然高价值词补足，禁止把补充词标成出单词。
+
+第四阶段——采集真实自然位：读取全部排名目标；对每个 ASIN 调用 Sorftime MCP product_traffic_terms，amz_site 对应 US、CA、JP。先读第1页，仅返回满页时继续第2页，第2页仍满页时继续第3页。关键词 Unicode NFKC、去首尾空格、转小写后精确匹配，只采用 latest_organic_position，严禁广告位。解析 Page X, Pos Y/Z 为 page=X、rank=(X-1)*Z+Y；未匹配记 rank=999、page=4。写入前必须验证 expected=actual、missing=0、extra=0、duplicates=0、invalid=0，再原子写入北京时间当日全部结果。首日 previousRank 留空/0、change=0。
+
+完成后报告 US/CA/JP Listing 数、FBA可售库存合计、Working/Shipped/Receiving/在途合计、评分同步成功数、无评分数、核心词数、Top10、Top50、上升、下降、未进前三页数量，以及源报告与原子写入审计结果。

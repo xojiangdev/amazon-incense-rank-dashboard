@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { z } from "zod";
-import { applyRealRankSnapshots, getRankTrackingTargets } from "./db";
+import { applyProductReviewMetrics, applyRealRankSnapshots, getListings, getRankTrackingTargets } from "./db";
 import { sdk } from "./_core/sdk";
 
 async function authorizeCronOrAdmin(req: Request) {
@@ -59,6 +59,48 @@ export async function scheduledRankRefreshHandler(req: Request, res: Response) {
     return res.json({ ok: true, result });
   } catch (error: any) {
     console.error("[ScheduledTask] Error in real rank refresh:", error);
+    return res.status(error?.statusCode || (error instanceof z.ZodError ? 400 : 500)).json({
+      error: error?.message || "Internal server error",
+      issues: error instanceof z.ZodError ? error.issues : undefined,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+export async function scheduledProductMetricTargetsHandler(req: Request, res: Response) {
+  try {
+    await authorizeCronOrAdmin(req);
+    const rows = await getListings();
+    return res.json({
+      ok: true,
+      totals: { listings: rows.length },
+      targets: rows.map(item => ({ marketplace: item.marketplace, asin: item.asin })),
+    });
+  } catch (error: any) {
+    return res.status(error?.statusCode || 500).json({ error: error?.message || "Internal server error" });
+  }
+}
+
+export const productMetricsPayloadSchema = z.object({
+  observedAt: z.string().datetime(),
+  metrics: z.array(
+    z.object({
+      marketplace: z.enum(["US", "CA", "JP"]),
+      asin: z.string().min(10).max(10),
+      rating: z.number().min(0).max(5).nullable(),
+      reviewCount: z.number().int().min(0).nullable(),
+      source: z.enum(["sorftime_product_detail", "dataforseo_amazon_asin"]),
+    })
+  ).min(1).max(500),
+});
+
+export async function scheduledProductMetricsRefreshHandler(req: Request, res: Response) {
+  try {
+    await authorizeCronOrAdmin(req);
+    const input = productMetricsPayloadSchema.parse(req.body);
+    const result = await applyProductReviewMetrics(input.metrics, new Date(input.observedAt));
+    return res.json({ ok: true, result });
+  } catch (error: any) {
     return res.status(error?.statusCode || (error instanceof z.ZodError ? 400 : 500)).json({
       error: error?.message || "Internal server error",
       issues: error instanceof z.ZodError ? error.issues : undefined,

@@ -5,6 +5,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import {
   addSalesLog,
+  bulkUpdateListingOrganization,
   getDashboardOverview,
   getListingById,
   getListingKeywords,
@@ -17,7 +18,7 @@ import {
   updateListingOrganization,
   updateStoreSettings,
 } from "./db";
-import { listingOrganizationInputSchema, reorderListingsInputSchema } from "./listingOrganization";
+import { bulkListingOrganizationInputSchema, listingOrganizationInputSchema, reorderListingsInputSchema } from "./listingOrganization";
 import { runDailyRankSnapshot, upsertSyncedListing } from "./rankEngine";
 
 export const appRouter = router({
@@ -129,6 +130,12 @@ export const appRouter = router({
           "商品分类与备注"
         );
         return updated;
+      }),
+
+    bulkUpdateListingOrganization: publicProcedure
+      .input(bulkListingOrganizationInputSchema)
+      .mutation(async ({ input }) => {
+        return bulkUpdateListingOrganization(input);
       }),
 
     addSalesNote: publicProcedure

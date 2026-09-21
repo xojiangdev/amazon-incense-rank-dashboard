@@ -216,6 +216,79 @@ export async function updateListingOrganization(
   return getListingById(listingId);
 }
 
+export async function bulkUpdateListingOrganization(input: {
+  listingIds: number[];
+  salesCategory?: SalesCategory;
+  customCategoryLabel?: string;
+  notesAction: "keep" | "append" | "replace" | "clear";
+  salesNotes?: string;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const current = await db.select().from(listings).where(inArray(listings.id, input.listingIds));
+  if (current.length !== input.listingIds.length) throw new Error("部分 Listing 不存在，批量修改已取消");
+  const now = new Date();
+  await db.transaction(async tx => {
+    for (const item of current) {
+      const payload: Record<string, unknown> = { updatedAt: now };
+      if (input.salesCategory) {
+        payload.salesCategory = input.salesCategory;
+        payload.customCategoryLabel = input.salesCategory === "custom" ? input.customCategoryLabel?.trim() || null : null;
+      }
+      if (input.notesAction === "clear") payload.salesNotes = null;
+      if (input.notesAction === "replace") payload.salesNotes = input.salesNotes?.trim() || null;
+      if (input.notesAction === "append") {
+        const addition = input.salesNotes?.trim() || "";
+        payload.salesNotes = item.salesNotes?.trim() ? `${item.salesNotes.trim()}\n${addition}` : addition;
+      }
+      await tx.update(listings).set(payload).where(eq(listings.id, item.id));
+      await tx.insert(salesLogs).values({
+        listingId: item.id,
+        author: "销售团队",
+        actionType: "批量分类与备注",
+        content: `批量处理：${input.salesCategory ? `分类=${input.salesCategory}` : "分类保持不变"}；备注操作=${input.notesAction}`,
+      });
+    }
+  });
+  return { updated: current.length };
+}
+
+export type ProductReviewMetricInput = {
+  marketplace: "US" | "CA" | "JP";
+  asin: string;
+  rating: number | null;
+  reviewCount: number | null;
+  source: string;
+};
+
+export async function applyProductReviewMetrics(metrics: ProductReviewMetricInput[], observedAt: Date) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const liveListings = await getListings();
+  const expectedKeys = new Set(liveListings.map(item => `${item.marketplace}:${item.asin}`));
+  const actualKeys = metrics.map(item => `${item.marketplace}:${item.asin}`);
+  if (actualKeys.length !== expectedKeys.size || new Set(actualKeys).size !== actualKeys.length) {
+    throw new Error(`Review metric batch mismatch: expected ${expectedKeys.size}, received ${actualKeys.length}`);
+  }
+  const missing = Array.from(expectedKeys).filter(key => !actualKeys.includes(key));
+  const extra = actualKeys.filter(key => !expectedKeys.has(key));
+  if (missing.length || extra.length) throw new Error(`Review metric keys mismatch: missing=${missing.length}, extra=${extra.length}`);
+  await db.transaction(async tx => {
+    for (const metric of metrics) {
+      await tx
+        .update(listings)
+        .set({
+          reviewRating: metric.rating === null ? null : metric.rating.toFixed(2),
+          reviewCount: metric.reviewCount,
+          reviewMetricsSource: metric.source,
+          reviewMetricsUpdatedAt: observedAt,
+        })
+        .where(and(eq(listings.marketplace, metric.marketplace), eq(listings.asin, metric.asin)));
+    }
+  });
+  return { updated: metrics.length };
+}
+
 export async function getDashboardOverview(marketplace?: "US" | "CA" | "JP") {
   const db = await getDb();
   const empty = {

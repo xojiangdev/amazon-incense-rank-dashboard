@@ -4,7 +4,12 @@ import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
-import { scheduledRankRefreshHandler, scheduledRankTargetsHandler } from "../scheduledRankHandler";
+import {
+  scheduledProductMetricsRefreshHandler,
+  scheduledProductMetricTargetsHandler,
+  scheduledRankRefreshHandler,
+  scheduledRankTargetsHandler,
+} from "../scheduledRankHandler";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
@@ -39,6 +44,8 @@ async function startServer() {
   registerOAuthRoutes(app);
   app.get("/api/scheduled/rankTargets", scheduledRankTargetsHandler);
   app.post("/api/scheduled/refreshDailyRank", scheduledRankRefreshHandler);
+  app.get("/api/scheduled/productMetricTargets", scheduledProductMetricTargetsHandler);
+  app.post("/api/scheduled/refreshProductMetrics", scheduledProductMetricsRefreshHandler);
   // tRPC API
   app.use(
     "/api/trpc",

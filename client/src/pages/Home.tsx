@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -29,6 +30,7 @@ import {
   RefreshCw,
   Search,
   ShieldCheck,
+  Star,
   Tags,
   TrendingDown,
   TrendingUp,
@@ -47,6 +49,16 @@ const SALES_CATEGORY_CONFIG: Record<SalesCategory, { label: string; className: s
   regular: { label: "常规产品", className: "bg-emerald-100 text-emerald-700 border-emerald-200" },
   discontinued: { label: "DISCONTINUED", className: "bg-rose-100 text-rose-700 border-rose-200" },
   custom: { label: "自定义", className: "bg-cyan-100 text-cyan-700 border-cyan-200" },
+};
+
+const SALES_CATEGORY_CARD_CLASS: Record<SalesCategory, string> = {
+  unclassified: "border-l-slate-300",
+  new_product: "border-l-sky-500 bg-sky-50/25",
+  key_product: "border-l-amber-500 bg-amber-50/35",
+  long_tail: "border-l-violet-500 bg-violet-50/25",
+  regular: "border-l-emerald-500 bg-emerald-50/20",
+  discontinued: "border-l-rose-500 bg-rose-50/40",
+  custom: "border-l-cyan-500 bg-cyan-50/25",
 };
 
 function salesCategoryLabel(category: SalesCategory, customLabel?: string | null) {
@@ -74,6 +86,12 @@ export default function Home() {
   const [salesNotes, setSalesNotes] = useState("");
   const [draggedListingId, setDraggedListingId] = useState<number | null>(null);
   const [dragOverListingId, setDragOverListingId] = useState<number | null>(null);
+  const [selectedListingIds, setSelectedListingIds] = useState<Set<number>>(() => new Set());
+  const [isBulkOrganizationModalOpen, setIsBulkOrganizationModalOpen] = useState(false);
+  const [bulkSalesCategory, setBulkSalesCategory] = useState<SalesCategory | "keep">("keep");
+  const [bulkCustomCategoryLabel, setBulkCustomCategoryLabel] = useState("");
+  const [bulkNotesAction, setBulkNotesAction] = useState<"keep" | "append" | "replace" | "clear">("keep");
+  const [bulkSalesNotes, setBulkSalesNotes] = useState("");
 
   // Sync / Import Modal
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
@@ -152,6 +170,20 @@ export default function Home() {
     onError: error => toast.error(`保存失败：${error.message}`),
   });
 
+  const bulkUpdateOrganizationMutation = trpc.dashboard.bulkUpdateListingOrganization.useMutation({
+    onSuccess: data => {
+      toast.success(`已批量更新 ${data.updated} 个 Listing`);
+      setIsBulkOrganizationModalOpen(false);
+      setSelectedListingIds(new Set());
+      setBulkSalesCategory("keep");
+      setBulkCustomCategoryLabel("");
+      setBulkNotesAction("keep");
+      setBulkSalesNotes("");
+      utils.dashboard.invalidate();
+    },
+    onError: error => toast.error(`批量修改失败：${error.message}`),
+  });
+
   const importMutation = trpc.dashboard.importListingManual.useMutation({
     onSuccess: () => {
       toast.success("新 Listing 已成功录入跟踪库！");
@@ -181,6 +213,26 @@ export default function Home() {
   }, [listingsQuery.data, salesCategoryFilter, searchQuery]);
 
   const activeListingId = selectedListingId ?? listingsQuery.data?.[0]?.id;
+  const visibleIds = filteredListings.map(item => item.id);
+  const allVisibleSelected = visibleIds.length > 0 && visibleIds.every(id => selectedListingIds.has(id));
+
+  const toggleListingSelection = (listingId: number) => {
+    setSelectedListingIds(current => {
+      const next = new Set(current);
+      if (next.has(listingId)) next.delete(listingId);
+      else next.add(listingId);
+      return next;
+    });
+  };
+
+  const toggleAllVisibleListings = () => {
+    setSelectedListingIds(current => {
+      const next = new Set(current);
+      if (allVisibleSelected) visibleIds.forEach(id => next.delete(id));
+      else visibleIds.forEach(id => next.add(id));
+      return next;
+    });
+  };
 
   const openOrganizationEditor = (item: {
     id: number;
@@ -515,7 +567,30 @@ export default function Home() {
                 <span>在售 Listing 列表</span>
                 <span className="text-xs text-slate-400 font-normal">({filteredListings.length} 个)</span>
               </h2>
-              <span className="text-[11px] text-slate-400">拖拽或点上下箭头自由排序 · 自动保存</span>
+              <span className="text-[11px] text-slate-400">拖拽排序 · 颜色区分销售分类</span>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2">
+              <label className="flex cursor-pointer items-center gap-2 text-xs text-slate-600">
+                <Checkbox checked={allVisibleSelected} onCheckedChange={toggleAllVisibleListings} />
+                选择当前筛选结果
+              </label>
+              <div className="flex items-center gap-2">
+                <span className="text-[11px] text-slate-500">已选 {selectedListingIds.size} 个</span>
+                {selectedListingIds.size > 0 ? (
+                  <Button variant="ghost" size="sm" className="h-7 text-[11px]" onClick={() => setSelectedListingIds(new Set())}>
+                    清空
+                  </Button>
+                ) : null}
+                <Button
+                  size="sm"
+                  className="h-7 bg-slate-900 px-3 text-[11px] text-white hover:bg-slate-800"
+                  disabled={selectedListingIds.size === 0}
+                  onClick={() => setIsBulkOrganizationModalOpen(true)}
+                >
+                  <Tags className="mr-1 h-3.5 w-3.5" /> 批量分类 / 备注
+                </Button>
+              </div>
             </div>
 
             <div className="space-y-2.5">
@@ -539,13 +614,20 @@ export default function Home() {
                       dropListingBefore(item.id);
                     }}
                     onClick={() => setSelectedListingId(item.id)}
-                    className={`cursor-pointer rounded-xl border p-3 transition-all bg-white hover:border-amber-400/80 hover:shadow-xs ${
+                    className={`cursor-pointer rounded-xl border border-l-4 p-3 transition-all hover:border-amber-400/80 hover:shadow-xs ${SALES_CATEGORY_CARD_CLASS[item.salesCategory]} ${
                       draggedListingId === item.id ? "opacity-55" : "opacity-100"
                     } ${dragOverListingId === item.id && draggedListingId !== item.id ? "border-sky-400 ring-2 ring-sky-400/15" : ""} ${
                       isSelected ? "border-amber-500 ring-2 ring-amber-500/10 shadow-sm" : "border-slate-200"
                     }`}
                   >
                     <div className="flex gap-3">
+                      <div className="flex shrink-0 items-start pt-0.5" onClick={event => event.stopPropagation()}>
+                        <Checkbox
+                          checked={selectedListingIds.has(item.id)}
+                          onCheckedChange={() => toggleListingSelection(item.id)}
+                          aria-label={`选择 ${item.asin}`}
+                        />
+                      </div>
                       <div className="flex w-6 shrink-0 flex-col items-center gap-1 text-slate-400" onClick={event => event.stopPropagation()}>
                         <GripVertical className="h-4 w-4 cursor-grab active:cursor-grabbing" aria-label="拖拽排序" />
                         <button
@@ -614,12 +696,26 @@ export default function Home() {
                         <h3 className="text-xs font-medium text-slate-800 line-clamp-2 mt-1 leading-snug">
                           {item.title}
                         </h3>
-                        <div className="flex items-center justify-between text-[11px] text-slate-500 mt-2">
+                        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-500">
                           <span className="font-semibold text-slate-700">
                             {item.currency} {item.price}
                           </span>
-                          <span>FBA在售库存: {item.fbaStock}</span>
-                          <span className="text-slate-400">负责销售: {item.assignedSales}</span>
+                          <span className="inline-flex items-center gap-1 font-medium text-amber-700">
+                            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                            {item.reviewRating === null || (item.reviewCount ?? 0) === 0
+                              ? "暂无评分"
+                              : `${Number(item.reviewRating).toFixed(1)} (${item.reviewCount})`}
+                          </span>
+                          <span>FBA可售: {item.fbaStock}</span>
+                          <span className={item.fbaInboundTotal > 0 ? "font-medium text-blue-700" : "text-slate-400"}>
+                            在途: {item.fbaInboundTotal}
+                          </span>
+                        </div>
+                        <div className="mt-1 flex flex-wrap items-center gap-x-3 text-[10px] text-slate-400">
+                          <span>Working {item.fbaInboundWorking}</span>
+                          <span>Shipped {item.fbaInboundShipped}</span>
+                          <span>Receiving {item.fbaInboundReceiving}</span>
+                          <span className="ml-auto">负责销售: {item.assignedSales}</span>
                         </div>
                         <div className="mt-2 flex items-center justify-between gap-2 border-t border-slate-100 pt-2">
                           <span className="min-w-0 truncate text-[11px] text-slate-500">
@@ -767,6 +863,22 @@ export default function Home() {
                     <div>
                       <span className="text-slate-400">FBA可售库存：</span>
                       <span className="font-medium text-slate-800">{currentDetail.listing.fbaStock} 件</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400">FBA在途库存：</span>
+                      <span className="font-medium text-blue-700">{currentDetail.listing.fbaInboundTotal} 件</span>
+                      <span className="ml-1 text-[10px] text-slate-400">
+                        (Working {currentDetail.listing.fbaInboundWorking} / Shipped {currentDetail.listing.fbaInboundShipped} / Receiving {currentDetail.listing.fbaInboundReceiving})
+                      </span>
+                    </div>
+                    <div className="inline-flex items-center gap-1">
+                      <span className="text-slate-400">Review Rating：</span>
+                      <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                      <span className="font-medium text-slate-800">
+                        {currentDetail.listing.reviewRating === null || (currentDetail.listing.reviewCount ?? 0) === 0
+                          ? "暂无评分"
+                          : `${Number(currentDetail.listing.reviewRating).toFixed(1)} / 5（${currentDetail.listing.reviewCount ?? 0} 条评价）`}
+                      </span>
                     </div>
                     <div>
                       <span className="text-slate-400">销售自由备注：</span>
@@ -1026,6 +1138,101 @@ export default function Home() {
                 }}
               >
                 保存分类与备注
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
+        <Dialog open={isBulkOrganizationModalOpen} onOpenChange={setIsBulkOrganizationModalOpen}>
+          <DialogContent className="sm:max-w-[540px]">
+            <DialogHeader>
+              <DialogTitle>批量修改 {selectedListingIds.size} 个 Listing</DialogTitle>
+              <DialogDescription>
+                可只修改分类、只处理备注，或两项同时处理；未选择的字段会保持原值。
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 py-2 text-xs">
+              <div>
+                <label className="font-medium text-slate-700">批量产品分类</label>
+                <Select value={bulkSalesCategory} onValueChange={(value: SalesCategory | "keep") => setBulkSalesCategory(value)}>
+                  <SelectTrigger className="mt-1">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="keep">保持各产品原分类</SelectItem>
+                    <SelectItem value="unclassified">未分类</SelectItem>
+                    <SelectItem value="new_product">新品</SelectItem>
+                    <SelectItem value="key_product">重点产品</SelectItem>
+                    <SelectItem value="long_tail">长尾产品</SelectItem>
+                    <SelectItem value="regular">常规产品</SelectItem>
+                    <SelectItem value="discontinued">DISCONTINUED</SelectItem>
+                    <SelectItem value="custom">自定义分类</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              {bulkSalesCategory === "custom" ? (
+                <div>
+                  <label className="font-medium text-slate-700">自定义分类名称</label>
+                  <Input
+                    className="mt-1"
+                    maxLength={80}
+                    placeholder="例：Q4季节性重点、待清仓"
+                    value={bulkCustomCategoryLabel}
+                    onChange={event => setBulkCustomCategoryLabel(event.target.value)}
+                  />
+                </div>
+              ) : null}
+              <div>
+                <label className="font-medium text-slate-700">批量备注处理方式</label>
+                <Select value={bulkNotesAction} onValueChange={(value: "keep" | "append" | "replace" | "clear") => setBulkNotesAction(value)}>
+                  <SelectTrigger className="mt-1">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="keep">保持原备注</SelectItem>
+                    <SelectItem value="append">追加到原备注后</SelectItem>
+                    <SelectItem value="replace">覆盖原备注</SelectItem>
+                    <SelectItem value="clear">清空备注</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              {bulkNotesAction === "append" || bulkNotesAction === "replace" ? (
+                <div>
+                  <div className="flex items-center justify-between">
+                    <label className="font-medium text-slate-700">批量销售备注</label>
+                    <span className="text-[10px] text-slate-400">{bulkSalesNotes.length}/2000</span>
+                  </div>
+                  <Textarea
+                    className="mt-1 min-h-28"
+                    maxLength={2000}
+                    placeholder="输入需要批量追加或覆盖的备注内容"
+                    value={bulkSalesNotes}
+                    onChange={event => setBulkSalesNotes(event.target.value)}
+                  />
+                </div>
+              ) : null}
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setIsBulkOrganizationModalOpen(false)}>取消</Button>
+              <Button
+                disabled={
+                  bulkUpdateOrganizationMutation.isPending ||
+                  selectedListingIds.size === 0 ||
+                  (bulkSalesCategory === "keep" && bulkNotesAction === "keep") ||
+                  (bulkSalesCategory === "custom" && !bulkCustomCategoryLabel.trim()) ||
+                  ((bulkNotesAction === "append" || bulkNotesAction === "replace") && !bulkSalesNotes.trim())
+                }
+                onClick={() =>
+                  bulkUpdateOrganizationMutation.mutate({
+                    listingIds: Array.from(selectedListingIds),
+                    salesCategory: bulkSalesCategory === "keep" ? undefined : bulkSalesCategory,
+                    customCategoryLabel: bulkSalesCategory === "custom" ? bulkCustomCategoryLabel : undefined,
+                    notesAction: bulkNotesAction,
+                    salesNotes: bulkSalesNotes || undefined,
+                  })
+                }
+              >
+                确认批量修改
               </Button>
             </DialogFooter>
           </DialogContent>

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  bulkListingOrganizationInputSchema,
   listingOrganizationInputSchema,
   mergeOrderedSubset,
   reorderListingsInputSchema,
@@ -32,5 +33,22 @@ describe("Listing organization", () => {
         salesNotes: "Q4重点备货",
       }).success
     ).toBe(true);
+  });
+
+  it("accepts batch category changes and rejects no-op or empty note writes", () => {
+    expect(
+      bulkListingOrganizationInputSchema.safeParse({
+        listingIds: [1, 2, 3],
+        salesCategory: "key_product",
+        notesAction: "append",
+        salesNotes: "本周重点跟进",
+      }).success
+    ).toBe(true);
+    expect(
+      bulkListingOrganizationInputSchema.safeParse({ listingIds: [1, 2], notesAction: "keep" }).success
+    ).toBe(false);
+    expect(
+      bulkListingOrganizationInputSchema.safeParse({ listingIds: [1, 2], notesAction: "replace", salesNotes: "" }).success
+    ).toBe(false);
   });
 });

@@ -15,6 +15,10 @@ type Candidate = {
   price: string;
   currency: string;
   fba_stock: number;
+  fba_inbound_working?: number;
+  fba_inbound_shipped?: number;
+  fba_inbound_receiving?: number;
+  fba_inbound_total?: number;
   fulfillment_channel: "FBA";
   listing_status: "Active" | string;
   source_report_id: string;
@@ -79,6 +83,10 @@ async function main() {
       price: normalizedPrice(item.price),
       currency: item.currency,
       fbaStock: item.fba_stock,
+      fbaInboundWorking: item.fba_inbound_working ?? 0,
+      fbaInboundShipped: item.fba_inbound_shipped ?? 0,
+      fbaInboundReceiving: item.fba_inbound_receiving ?? 0,
+      fbaInboundTotal: item.fba_inbound_total ?? 0,
       fulfillmentChannel: "FBA",
       inventoryStatus: "Active",
       assignedSales: "销售组",
@@ -94,11 +102,11 @@ async function main() {
     await addSalesLog(
       listingId,
       "SP-API 实际清单同步",
-      `已从 ${item.marketplace} 站全量报告同步；校验通过：FBA、Active、可售库存 ${item.fba_stock}。`,
+      `已从 ${item.marketplace} 站全量报告同步；校验通过：FBA、Active、可售库存 ${item.fba_stock}、在途库存 ${item.fba_inbound_total ?? 0}。`,
       "真实数据同步",
       `来源报告：${item.source_report_id}；持续按转化优先级维护 6–20 个核心词并追踪自然排名。`
     );
-    result.rows.push({ marketplace: item.marketplace, asin: item.asin, sku: item.sku, status: "imported_or_updated", fbaStock: item.fba_stock });
+    result.rows.push({ marketplace: item.marketplace, asin: item.asin, sku: item.sku, status: "imported_or_updated", fbaStock: item.fba_stock, fbaInboundTotal: item.fba_inbound_total ?? 0 });
   }
 
   for (const marketplace of ["US", "CA", "JP"] as Marketplace[]) {

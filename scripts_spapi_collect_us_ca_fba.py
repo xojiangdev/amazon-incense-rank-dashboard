@@ -57,6 +57,10 @@ class ListingCandidate:
     price: str
     currency: str
     fba_stock: int
+    fba_inbound_working: int
+    fba_inbound_shipped: int
+    fba_inbound_receiving: int
+    fba_inbound_total: int
     fulfillment_channel: str
     listing_status: str
     source_report_id: str
@@ -118,7 +122,13 @@ def collect_fba_inventory(token: str, marketplace_id: str) -> dict[str, dict[str
     page_count = 0
     while True:
         if next_token:
-            query = urllib.parse.urlencode({"nextToken": next_token})
+            query = urllib.parse.urlencode({
+                "details": "true",
+                "granularityType": "Marketplace",
+                "granularityId": marketplace_id,
+                "marketplaceIds": marketplace_id,
+                "nextToken": next_token,
+            })
         else:
             query = urllib.parse.urlencode({
                 "details": "true",
@@ -139,11 +149,14 @@ def collect_fba_inventory(token: str, marketplace_id: str) -> dict[str, dict[str
                 "asin": summary.get("asin") or "",
                 "product_name": summary.get("productName") or "",
                 "fulfillable_quantity": int(details.get("fulfillableQuantity") or 0),
-                "total_quantity": int(details.get("totalQuantity") or 0),
+                "total_quantity": int(summary.get("totalQuantity") or 0),
+                "inbound_working_quantity": int(details.get("inboundWorkingQuantity") or 0),
+                "inbound_shipped_quantity": int(details.get("inboundShippedQuantity") or 0),
+                "inbound_receiving_quantity": int(details.get("inboundReceivingQuantity") or 0),
                 "reserved_quantity": int(details.get("reservedQuantity", {}).get("totalReservedQuantity") or 0),
             }
         page_count += 1
-        next_token = page.get("nextToken")
+        next_token = (payload.get("pagination") or {}).get("nextToken") or page.get("nextToken")
         if not next_token:
             break
         # Amazon expires pagination tokens after 30 seconds; move immediately but avoid burst use.
@@ -266,6 +279,9 @@ def get_fba_candidates(marketplace: str, config: dict[str, str], report_rows: li
             })
             continue
         fulfillable = int(inventory.get("fulfillable_quantity") or 0)
+        inbound_working = int(inventory.get("inbound_working_quantity") or 0)
+        inbound_shipped = int(inventory.get("inbound_shipped_quantity") or 0)
+        inbound_receiving = int(inventory.get("inbound_receiving_quantity") or 0)
         if fulfillable <= 0:
             excluded.append({
                 "marketplace": marketplace,
@@ -286,6 +302,10 @@ def get_fba_candidates(marketplace: str, config: dict[str, str], report_rows: li
             price=row.get("price", "").strip(),
             currency=config["currency"],
             fba_stock=fulfillable,
+            fba_inbound_working=inbound_working,
+            fba_inbound_shipped=inbound_shipped,
+            fba_inbound_receiving=inbound_receiving,
+            fba_inbound_total=inbound_working + inbound_shipped + inbound_receiving,
             fulfillment_channel="FBA",
             listing_status=status,
             source_report_id=report_id,

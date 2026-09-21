@@ -35,6 +35,38 @@ export const reorderListingsInputSchema = z.object({
     .refine(ids => new Set(ids).size === ids.length, "Listing 排序不能包含重复 ID"),
 });
 
+export const bulkListingOrganizationInputSchema = z
+  .object({
+    listingIds: z
+      .array(z.number().int().positive())
+      .min(1)
+      .max(500)
+      .refine(ids => new Set(ids).size === ids.length, "批量操作不能包含重复 Listing"),
+    salesCategory: salesCategorySchema.optional(),
+    customCategoryLabel: z.string().trim().max(80).optional(),
+    notesAction: z.enum(["keep", "append", "replace", "clear"]).default("keep"),
+    salesNotes: z.string().trim().max(2000).optional(),
+  })
+  .superRefine((value, ctx) => {
+    if (!value.salesCategory && value.notesAction === "keep") {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: "请至少修改分类或备注" });
+    }
+    if (value.salesCategory === "custom" && !value.customCategoryLabel?.trim()) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["customCategoryLabel"],
+        message: "自定义分类名称不能为空",
+      });
+    }
+    if (["append", "replace"].includes(value.notesAction) && !value.salesNotes?.trim()) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["salesNotes"],
+        message: "追加或覆盖备注时内容不能为空",
+      });
+    }
+  });
+
 export function mergeOrderedSubset(currentIds: number[], orderedSubset: number[]) {
   const currentSet = new Set(currentIds);
   if (orderedSubset.some(id => !currentSet.has(id))) {

@@ -168,8 +168,10 @@ def inventory_by_sku(access_token: str, skus: list[str]) -> dict[str, dict[str, 
                 "asin": summary.get("asin") or "",
                 "product_name": summary.get("productName") or "",
                 "fulfillable_quantity": int(details.get("fulfillableQuantity") or 0),
-                "total_quantity": int(details.get("totalQuantity") or 0),
+                "total_quantity": int(summary.get("totalQuantity") or 0),
+                "inbound_working_quantity": int(details.get("inboundWorkingQuantity") or 0),
                 "inbound_shipped_quantity": int(details.get("inboundShippedQuantity") or 0),
+                "inbound_receiving_quantity": int(details.get("inboundReceivingQuantity") or 0),
                 "reserved_quantity": int((details.get("reservedQuantity") or {}).get("totalReservedQuantity") or 0),
             }
         time.sleep(0.55)
@@ -202,6 +204,9 @@ def main() -> int:
             missing_inventory.append({"sku": sku, "asin": row.get("asin1", ""), "title": row.get("item-name", "")})
             continue
         fulfillable = int(stock.get("fulfillable_quantity") or 0)
+        inbound_working = int(stock.get("inbound_working_quantity") or 0)
+        inbound_shipped = int(stock.get("inbound_shipped_quantity") or 0)
+        inbound_receiving = int(stock.get("inbound_receiving_quantity") or 0)
         if fulfillable <= 0:
             zero_stock.append({"sku": sku, "asin": row.get("asin1", "") or stock.get("asin", ""), "title": row.get("item-name", ""), **stock})
             continue
@@ -216,6 +221,10 @@ def main() -> int:
             "price": row.get("price", ""),
             "currency": "JPY",
             "fba_stock": fulfillable,
+            "fba_inbound_working": inbound_working,
+            "fba_inbound_shipped": inbound_shipped,
+            "fba_inbound_receiving": inbound_receiving,
+            "fba_inbound_total": inbound_working + inbound_shipped + inbound_receiving,
             "fulfillment_channel": "FBA",
             "listing_status": "Active",
             "source_fulfillment_channel": row.get("fulfillment-channel", ""),

@@ -26,6 +26,10 @@ export interface SyncListingInput {
   categoryName?: string;
   imageUrl?: string;
   fbaStock?: number;
+  fbaInboundWorking?: number;
+  fbaInboundShipped?: number;
+  fbaInboundReceiving?: number;
+  fbaInboundTotal?: number;
   fulfillmentChannel?: "FBA" | "FBM";
   inventoryStatus?: "Active" | "Inactive" | "Out of Stock";
   assignedSales?: string;
@@ -73,6 +77,10 @@ export async function upsertSyncedListing(item: SyncListingInput) {
         imageUrl: item.imageUrl ?? target.imageUrl,
         fulfillmentChannel: "FBA",
         fbaStock: item.fbaStock ?? target.fbaStock,
+        fbaInboundWorking: item.fbaInboundWorking ?? target.fbaInboundWorking,
+        fbaInboundShipped: item.fbaInboundShipped ?? target.fbaInboundShipped,
+        fbaInboundReceiving: item.fbaInboundReceiving ?? target.fbaInboundReceiving,
+        fbaInboundTotal: item.fbaInboundTotal ?? target.fbaInboundTotal,
         inventoryStatus: "Active",
         updatedAt: new Date(),
       })
@@ -94,6 +102,10 @@ export async function upsertSyncedListing(item: SyncListingInput) {
     fulfillmentChannel: "FBA",
     inventoryStatus: "Active",
     fbaStock: item.fbaStock ?? 100,
+    fbaInboundWorking: item.fbaInboundWorking ?? 0,
+    fbaInboundShipped: item.fbaInboundShipped ?? 0,
+    fbaInboundReceiving: item.fbaInboundReceiving ?? 0,
+    fbaInboundTotal: item.fbaInboundTotal ?? 0,
     salesFollowUpStatus: "normal",
     assignedSales: item.assignedSales || "销售组",
   });

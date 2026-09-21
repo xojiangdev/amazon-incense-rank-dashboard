@@ -43,6 +43,13 @@
       "when": 1789979266718,
       "tag": "0005_sweet_victor_mancha",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1789980178418,
+      "tag": "0006_flashy_lady_mastermind",
+      "breakpoints": true
     }
   ]
 }
