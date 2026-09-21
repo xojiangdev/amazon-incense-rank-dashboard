@@ -2,6 +2,7 @@ import { and, desc, eq, gt, inArray } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
 import { ENV } from "./_core/env";
+import { mergeOrderedSubset, type SalesCategory } from "./listingOrganization";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
@@ -83,7 +84,7 @@ export async function getListings(marketplace?: "US" | "CA" | "JP", category?: s
   if (!listingRows.length) return [];
   const keywordRows = await db.select().from(keywords).where(inArray(keywords.listingId, listingRows.map(item => item.id)));
   const statusWeight = { action_needed: 10000, watch: 7000, optimizing: 4000, normal: 0 } as const;
-  return listingRows
+  const enriched = listingRows
     .map(listing => {
       const ownKeywords = keywordRows.filter(keyword => keyword.listingId === listing.id);
       const conversionValue = ownKeywords.reduce((sum, keyword) => sum + (keyword.historicalConversionCount ?? 0), 0);
@@ -91,8 +92,16 @@ export async function getListings(marketplace?: "US" | "CA" | "JP", category?: s
       const stockRisk = (listing.fbaStock ?? 0) <= 30 ? 1200 : (listing.fbaStock ?? 0) <= 60 ? 600 : 0;
       const importanceScore = statusWeight[listing.salesFollowUpStatus] + droppedCount * 500 + stockRisk + Math.min(conversionValue * 10, 3000);
       return { ...listing, importanceScore };
-    })
-    .sort((a, b) => b.importanceScore - a.importanceScore || b.updatedAt.getTime() - a.updatedAt.getTime());
+    });
+  const hasManualOrder = enriched.some(item => item.manualSortOrder > 0);
+  return enriched.sort((a, b) => {
+    if (hasManualOrder) {
+      const aOrder = a.manualSortOrder > 0 ? a.manualSortOrder : Number.MAX_SAFE_INTEGER;
+      const bOrder = b.manualSortOrder > 0 ? b.manualSortOrder : Number.MAX_SAFE_INTEGER;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+    }
+    return b.importanceScore - a.importanceScore || b.updatedAt.getTime() - a.updatedAt.getTime();
+  });
 }
 
 export async function deactivateListingsMissingFromSync(
@@ -165,6 +174,45 @@ export async function updateListingFollowUp(listingId: number, status: "normal" 
   const payload: any = { salesFollowUpStatus: status, updatedAt: new Date() };
   if (notes !== undefined) payload.notes = notes;
   await db.update(listings).set(payload).where(eq(listings.id, listingId));
+  return getListingById(listingId);
+}
+
+export async function reorderListings(orderedIds: number[]) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const current = await getListings();
+  const mergedIds = mergeOrderedSubset(current.map(item => item.id), orderedIds);
+  await db.transaction(async tx => {
+    for (let index = 0; index < mergedIds.length; index += 1) {
+      const id = mergedIds[index]!;
+      await tx
+        .update(listings)
+        .set({ manualSortOrder: (index + 1) * 10 })
+        .where(eq(listings.id, id));
+    }
+  });
+  return { updated: mergedIds.length, orderedIds: mergedIds };
+}
+
+export async function updateListingOrganization(
+  listingId: number,
+  salesCategory: SalesCategory,
+  customCategoryLabel?: string,
+  salesNotes?: string
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const normalizedCustomLabel = salesCategory === "custom" ? customCategoryLabel?.trim() || null : null;
+  const normalizedNotes = salesNotes?.trim() || null;
+  await db
+    .update(listings)
+    .set({
+      salesCategory,
+      customCategoryLabel: normalizedCustomLabel,
+      salesNotes: normalizedNotes,
+      updatedAt: new Date(),
+    })
+    .where(eq(listings.id, listingId));
   return getListingById(listingId);
 }
 

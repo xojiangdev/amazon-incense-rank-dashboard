@@ -15,10 +15,13 @@ import {
   BarChart3,
   Calendar,
   CheckCircle2,
+  ChevronDown,
+  ChevronUp,
   Clock,
   Download,
   Flame,
   Globe2,
+  GripVertical,
   Layers,
   LineChart,
   Minus,
@@ -26,6 +29,7 @@ import {
   RefreshCw,
   Search,
   ShieldCheck,
+  Tags,
   TrendingDown,
   TrendingUp,
   UserCheck,
@@ -33,6 +37,21 @@ import {
 
 type Marketplace = "US" | "CA" | "JP";
 type MarketplaceFilter = Marketplace | "ALL";
+type SalesCategory = "unclassified" | "new_product" | "key_product" | "long_tail" | "regular" | "discontinued" | "custom";
+
+const SALES_CATEGORY_CONFIG: Record<SalesCategory, { label: string; className: string }> = {
+  unclassified: { label: "未分类", className: "bg-slate-100 text-slate-600 border-slate-200" },
+  new_product: { label: "新品", className: "bg-sky-100 text-sky-700 border-sky-200" },
+  key_product: { label: "重点产品", className: "bg-amber-100 text-amber-800 border-amber-200" },
+  long_tail: { label: "长尾产品", className: "bg-violet-100 text-violet-700 border-violet-200" },
+  regular: { label: "常规产品", className: "bg-emerald-100 text-emerald-700 border-emerald-200" },
+  discontinued: { label: "DISCONTINUED", className: "bg-rose-100 text-rose-700 border-rose-200" },
+  custom: { label: "自定义", className: "bg-cyan-100 text-cyan-700 border-cyan-200" },
+};
+
+function salesCategoryLabel(category: SalesCategory, customLabel?: string | null) {
+  return category === "custom" && customLabel ? customLabel : SALES_CATEGORY_CONFIG[category].label;
+}
 
 const marketplaceLabel = (marketplace: Marketplace) =>
   marketplace === "US" ? "🇺🇸 美国站" : marketplace === "CA" ? "🇨🇦 加拿大站" : "🇯🇵 日本站";
@@ -40,6 +59,7 @@ const marketplaceLabel = (marketplace: Marketplace) =>
 export default function Home() {
   const [marketplace, setMarketplace] = useState<MarketplaceFilter>("ALL");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
+  const [salesCategoryFilter, setSalesCategoryFilter] = useState<SalesCategory | "all">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedListingId, setSelectedListingId] = useState<number | null>(null);
 
@@ -48,6 +68,12 @@ export default function Home() {
   const [followUpStatus, setFollowUpStatus] = useState<"normal" | "watch" | "action_needed" | "optimizing">("action_needed");
   const [followUpNotes, setFollowUpNotes] = useState("");
   const [salesName, setSalesName] = useState("销售组");
+  const [isOrganizationModalOpen, setIsOrganizationModalOpen] = useState(false);
+  const [salesCategory, setSalesCategory] = useState<SalesCategory>("unclassified");
+  const [customCategoryLabel, setCustomCategoryLabel] = useState("");
+  const [salesNotes, setSalesNotes] = useState("");
+  const [draggedListingId, setDraggedListingId] = useState<number | null>(null);
+  const [dragOverListingId, setDragOverListingId] = useState<number | null>(null);
 
   // Sync / Import Modal
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
@@ -57,15 +83,16 @@ export default function Home() {
   const [newPrice, setNewPrice] = useState("");
 
   const utils = trpc.useUtils();
+  const listingsInput = useMemo(
+    () => ({ marketplace: marketplace === "ALL" ? undefined : marketplace, category: categoryFilter }),
+    [marketplace, categoryFilter]
+  );
 
   const overviewQuery = trpc.dashboard.overview.useQuery(
     marketplace === "ALL" ? undefined : { marketplace }
   );
 
-  const listingsQuery = trpc.dashboard.listings.useQuery({
-    marketplace: marketplace === "ALL" ? undefined : marketplace,
-    category: categoryFilter,
-  });
+  const listingsQuery = trpc.dashboard.listings.useQuery(listingsInput);
 
   const detailQuery = trpc.dashboard.listingDetail.useQuery(
     { id: selectedListingId ?? (listingsQuery.data?.[0]?.id ?? 1) },
@@ -90,6 +117,41 @@ export default function Home() {
     },
   });
 
+  const reorderListingsMutation = trpc.dashboard.reorderListings.useMutation({
+    onMutate: async ({ orderedIds }) => {
+      await utils.dashboard.listings.cancel(listingsInput);
+      const previous = utils.dashboard.listings.getData(listingsInput);
+      utils.dashboard.listings.setData(listingsInput, old => {
+        if (!old) return old;
+        const requestedSet = new Set(orderedIds);
+        const byId = new Map(old.map(item => [item.id, item] as const));
+        let cursor = 0;
+        return old.map(item => {
+          if (!requestedSet.has(item.id)) return item;
+          const replacement = byId.get(orderedIds[cursor]);
+          cursor += 1;
+          return replacement ?? item;
+        });
+      });
+      return { previous };
+    },
+    onError: (error, _input, context) => {
+      if (context?.previous) utils.dashboard.listings.setData(listingsInput, context.previous);
+      toast.error(`排序保存失败：${error.message}`);
+    },
+    onSuccess: () => toast.success("Listing 顺序已保存"),
+    onSettled: () => utils.dashboard.listings.invalidate(listingsInput),
+  });
+
+  const updateOrganizationMutation = trpc.dashboard.updateListingOrganization.useMutation({
+    onSuccess: () => {
+      toast.success("产品分类和销售备注已保存");
+      setIsOrganizationModalOpen(false);
+      utils.dashboard.invalidate();
+    },
+    onError: error => toast.error(`保存失败：${error.message}`),
+  });
+
   const importMutation = trpc.dashboard.importListingManual.useMutation({
     onSuccess: () => {
       toast.success("新 Listing 已成功录入跟踪库！");
@@ -112,20 +174,62 @@ export default function Home() {
   const filteredListings = useMemo(() => {
     if (!listingsQuery.data) return [];
     return listingsQuery.data.filter((item) => {
-      const matchText = `${item.asin} ${item.sku} ${item.title} ${item.assignedSales}`.toLowerCase();
+      if (salesCategoryFilter !== "all" && item.salesCategory !== salesCategoryFilter) return false;
+      const matchText = `${item.asin} ${item.sku} ${item.title} ${item.assignedSales} ${salesCategoryLabel(item.salesCategory, item.customCategoryLabel)} ${item.salesNotes ?? ""}`.toLowerCase();
       return matchText.includes(searchQuery.toLowerCase());
     });
-  }, [listingsQuery.data, searchQuery]);
+  }, [listingsQuery.data, salesCategoryFilter, searchQuery]);
 
   const activeListingId = selectedListingId ?? listingsQuery.data?.[0]?.id;
+
+  const openOrganizationEditor = (item: {
+    id: number;
+    salesCategory: SalesCategory;
+    customCategoryLabel: string | null;
+    salesNotes: string | null;
+  }) => {
+    setSelectedListingId(item.id);
+    setSalesCategory(item.salesCategory);
+    setCustomCategoryLabel(item.customCategoryLabel ?? "");
+    setSalesNotes(item.salesNotes ?? "");
+    setIsOrganizationModalOpen(true);
+  };
+
+  const moveListing = (listingId: number, direction: -1 | 1) => {
+    const ids = filteredListings.map(item => item.id);
+    const currentIndex = ids.indexOf(listingId);
+    const nextIndex = currentIndex + direction;
+    if (currentIndex < 0 || nextIndex < 0 || nextIndex >= ids.length) return;
+    [ids[currentIndex], ids[nextIndex]] = [ids[nextIndex]!, ids[currentIndex]!];
+    reorderListingsMutation.mutate({ orderedIds: ids });
+  };
+
+  const dropListingBefore = (targetId: number) => {
+    if (!draggedListingId || draggedListingId === targetId) {
+      setDraggedListingId(null);
+      setDragOverListingId(null);
+      return;
+    }
+    const ids = filteredListings.map(item => item.id);
+    const fromIndex = ids.indexOf(draggedListingId);
+    const targetIndex = ids.indexOf(targetId);
+    if (fromIndex < 0 || targetIndex < 0) return;
+    ids.splice(fromIndex, 1);
+    ids.splice(targetIndex, 0, draggedListingId);
+    reorderListingsMutation.mutate({ orderedIds: ids });
+    setDraggedListingId(null);
+    setDragOverListingId(null);
+  };
 
   const handleExportCSV = () => {
     if (!currentDetail) return;
     const rows = [
-      ["Listing ASIN", "站点", "核心关键词", "今日自然排名", "昨日排名", "变化", "日搜索量", "历史转化数", "转化率(%)"],
+      ["Listing ASIN", "站点", "销售分类", "销售自由备注", "核心关键词", "今日自然排名", "昨日排名", "变化", "日搜索量", "历史转化数", "转化率(%)"],
       ...currentDetail.keywords.map((kw) => [
         currentDetail.listing.asin,
         currentDetail.listing.marketplace,
+        salesCategoryLabel(currentDetail.listing.salesCategory, currentDetail.listing.customCategoryLabel),
+        currentDetail.listing.salesNotes ?? "",
         kw.keyword,
         kw.currentRank,
         kw.previousRank,
@@ -135,7 +239,8 @@ export default function Home() {
         kw.conversionRate,
       ]),
     ];
-    const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + rows.map((e) => e.join(",")).join("\n");
+    const escapeCsvCell = (value: unknown) => `"${String(value ?? "").replaceAll('"', '""')}"`;
+    const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + rows.map(row => row.map(escapeCsvCell).join(",")).join("\n");
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
@@ -280,7 +385,7 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-6 pt-6 space-y-6">
         {/* Marketplace & Category Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Tabs value={marketplace} onValueChange={(v) => { setMarketplace(v as MarketplaceFilter); setSelectedListingId(null); }} className="w-auto">
               <TabsList className="bg-slate-100">
                 <TabsTrigger value="ALL" className="text-xs">全部站点</TabsTrigger>
@@ -307,12 +412,28 @@ export default function Home() {
                 <SelectItem value="incense_holder">香插 / 香托盘</SelectItem>
               </SelectContent>
             </Select>
+
+            <Select value={salesCategoryFilter} onValueChange={(value: SalesCategory | "all") => setSalesCategoryFilter(value)}>
+              <SelectTrigger className="w-[150px] text-xs h-9 bg-slate-50">
+                <SelectValue placeholder="销售分类" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">全部销售分类</SelectItem>
+                <SelectItem value="unclassified">未分类</SelectItem>
+                <SelectItem value="new_product">新品</SelectItem>
+                <SelectItem value="key_product">重点产品</SelectItem>
+                <SelectItem value="long_tail">长尾产品</SelectItem>
+                <SelectItem value="regular">常规产品</SelectItem>
+                <SelectItem value="discontinued">DISCONTINUED</SelectItem>
+                <SelectItem value="custom">自定义分类</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="relative w-full sm:w-72">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
             <Input
-              placeholder="搜索 ASIN、标题或销售姓名..."
+              placeholder="搜索 ASIN、标题、分类、备注..."
               className="pl-9 text-xs h-9 bg-slate-50"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -394,21 +515,60 @@ export default function Home() {
                 <span>在售 Listing 列表</span>
                 <span className="text-xs text-slate-400 font-normal">({filteredListings.length} 个)</span>
               </h2>
-              <span className="text-[11px] text-slate-400">按销售优先级排序 · 点击查看 6-20 个核心词趋势</span>
+              <span className="text-[11px] text-slate-400">拖拽或点上下箭头自由排序 · 自动保存</span>
             </div>
 
             <div className="space-y-2.5">
-              {filteredListings.map((item) => {
+              {filteredListings.map((item, index) => {
                 const isSelected = item.id === activeListingId;
                 return (
                   <div
                     key={item.id}
+                    draggable
+                    onDragStart={() => setDraggedListingId(item.id)}
+                    onDragEnd={() => {
+                      setDraggedListingId(null);
+                      setDragOverListingId(null);
+                    }}
+                    onDragOver={event => {
+                      event.preventDefault();
+                      setDragOverListingId(item.id);
+                    }}
+                    onDrop={event => {
+                      event.preventDefault();
+                      dropListingBefore(item.id);
+                    }}
                     onClick={() => setSelectedListingId(item.id)}
-                    className={`cursor-pointer rounded-xl border p-3.5 transition-all bg-white hover:border-amber-400/80 hover:shadow-xs ${
+                    className={`cursor-pointer rounded-xl border p-3 transition-all bg-white hover:border-amber-400/80 hover:shadow-xs ${
+                      draggedListingId === item.id ? "opacity-55" : "opacity-100"
+                    } ${dragOverListingId === item.id && draggedListingId !== item.id ? "border-sky-400 ring-2 ring-sky-400/15" : ""} ${
                       isSelected ? "border-amber-500 ring-2 ring-amber-500/10 shadow-sm" : "border-slate-200"
                     }`}
                   >
                     <div className="flex gap-3">
+                      <div className="flex w-6 shrink-0 flex-col items-center gap-1 text-slate-400" onClick={event => event.stopPropagation()}>
+                        <GripVertical className="h-4 w-4 cursor-grab active:cursor-grabbing" aria-label="拖拽排序" />
+                        <button
+                          type="button"
+                          aria-label="上移 Listing"
+                          title="上移"
+                          disabled={index === 0 || reorderListingsMutation.isPending}
+                          onClick={() => moveListing(item.id, -1)}
+                          className="rounded p-0.5 hover:bg-slate-100 hover:text-slate-700 disabled:opacity-25"
+                        >
+                          <ChevronUp className="h-3.5 w-3.5" />
+                        </button>
+                        <button
+                          type="button"
+                          aria-label="下移 Listing"
+                          title="下移"
+                          disabled={index === filteredListings.length - 1 || reorderListingsMutation.isPending}
+                          onClick={() => moveListing(item.id, 1)}
+                          className="rounded p-0.5 hover:bg-slate-100 hover:text-slate-700 disabled:opacity-25"
+                        >
+                          <ChevronDown className="h-3.5 w-3.5" />
+                        </button>
+                      </div>
                       {item.imageUrl ? (
                         <img
                           src={item.imageUrl}
@@ -428,6 +588,9 @@ export default function Home() {
                           </Badge>
                           <span className="text-xs font-mono font-medium text-slate-700">{item.asin}</span>
                           <span className="text-[11px] text-slate-400 truncate max-w-[100px]">{item.sku}</span>
+                          <Badge className={`text-[10px] px-1.5 py-0 ${SALES_CATEGORY_CONFIG[item.salesCategory].className}`}>
+                            {salesCategoryLabel(item.salesCategory, item.customCategoryLabel)}
+                          </Badge>
                           <Badge
                             className={`text-[10px] ml-auto px-1.5 py-0 ${
                               item.salesFollowUpStatus === "action_needed"
@@ -457,6 +620,23 @@ export default function Home() {
                           </span>
                           <span>FBA在售库存: {item.fbaStock}</span>
                           <span className="text-slate-400">负责销售: {item.assignedSales}</span>
+                        </div>
+                        <div className="mt-2 flex items-center justify-between gap-2 border-t border-slate-100 pt-2">
+                          <span className="min-w-0 truncate text-[11px] text-slate-500">
+                            {item.salesNotes || "暂无销售自由备注"}
+                          </span>
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="sm"
+                            className="h-6 shrink-0 gap-1 px-2 text-[10px] text-slate-600"
+                            onClick={event => {
+                              event.stopPropagation();
+                              openOrganizationEditor(item);
+                            }}
+                          >
+                            <Tags className="h-3 w-3" /> 分类 / 备注
+                          </Button>
                         </div>
                       </div>
                     </div>
@@ -492,6 +672,15 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-center gap-2 shrink-0">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => openOrganizationEditor(currentDetail.listing)}
+                        className="text-xs h-8 gap-1.5"
+                      >
+                        <Tags className="h-3.5 w-3.5" />
+                        分类 / 备注
+                      </Button>
                       <Button variant="outline" size="sm" onClick={handleExportCSV} className="text-xs h-8 gap-1.5">
                         <Download className="h-3.5 w-3.5" />
                         导出排名表
@@ -566,6 +755,12 @@ export default function Home() {
 
                   <CardContent className="p-4 pt-3 flex flex-wrap gap-4 text-xs text-slate-600 bg-slate-50/50">
                     <div>
+                      <span className="text-slate-400">产品分类：</span>
+                      <Badge className={`text-[10px] px-1.5 py-0 ${SALES_CATEGORY_CONFIG[currentDetail.listing.salesCategory].className}`}>
+                        {salesCategoryLabel(currentDetail.listing.salesCategory, currentDetail.listing.customCategoryLabel)}
+                      </Badge>
+                    </div>
+                    <div>
                       <span className="text-slate-400">负责销售：</span>
                       <span className="font-medium text-slate-800">{currentDetail.listing.assignedSales}</span>
                     </div>
@@ -574,7 +769,13 @@ export default function Home() {
                       <span className="font-medium text-slate-800">{currentDetail.listing.fbaStock} 件</span>
                     </div>
                     <div>
-                      <span className="text-slate-400">最新销售备注：</span>
+                      <span className="text-slate-400">销售自由备注：</span>
+                      <span className="text-slate-700 italic">
+                        {currentDetail.listing.salesNotes || "暂无自由备注"}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400">最新跟进备注：</span>
                       <span className="text-slate-700 italic">
                         {currentDetail.listing.notes || "暂无最新复盘备注"}
                       </span>
@@ -751,6 +952,84 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        <Dialog open={isOrganizationModalOpen} onOpenChange={setIsOrganizationModalOpen}>
+          <DialogContent className="sm:max-w-[500px]">
+            <DialogHeader>
+              <DialogTitle>产品分类与销售自由备注</DialogTitle>
+              <DialogDescription>
+                分类和备注由销售团队维护，不会被每天的 SP-API 商品同步覆盖。
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 py-2 text-xs">
+              <div>
+                <label className="font-medium text-slate-700">产品分类</label>
+                <Select value={salesCategory} onValueChange={(value: SalesCategory) => setSalesCategory(value)}>
+                  <SelectTrigger className="mt-1">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="unclassified">未分类</SelectItem>
+                    <SelectItem value="new_product">新品</SelectItem>
+                    <SelectItem value="key_product">重点产品</SelectItem>
+                    <SelectItem value="long_tail">长尾产品</SelectItem>
+                    <SelectItem value="regular">常规产品</SelectItem>
+                    <SelectItem value="discontinued">DISCONTINUED</SelectItem>
+                    <SelectItem value="custom">自定义分类</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              {salesCategory === "custom" ? (
+                <div>
+                  <label className="font-medium text-slate-700">自定义分类名称</label>
+                  <Input
+                    className="mt-1"
+                    maxLength={80}
+                    placeholder="例：Q4季节性重点、清仓观察"
+                    value={customCategoryLabel}
+                    onChange={event => setCustomCategoryLabel(event.target.value)}
+                  />
+                </div>
+              ) : null}
+              <div>
+                <div className="flex items-center justify-between">
+                  <label className="font-medium text-slate-700">销售自由备注</label>
+                  <span className="text-[10px] text-slate-400">{salesNotes.length}/2000</span>
+                </div>
+                <Textarea
+                  className="mt-1 min-h-32"
+                  maxLength={2000}
+                  placeholder="例：新品冷启动期；重点维护 sandalwood incense；10月补货；暂不增加广告预算……"
+                  value={salesNotes}
+                  onChange={event => setSalesNotes(event.target.value)}
+                />
+              </div>
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setIsOrganizationModalOpen(false)}>
+                取消
+              </Button>
+              <Button
+                disabled={
+                  updateOrganizationMutation.isPending ||
+                  !selectedListingId ||
+                  (salesCategory === "custom" && !customCategoryLabel.trim())
+                }
+                onClick={() => {
+                  if (!selectedListingId) return;
+                  updateOrganizationMutation.mutate({
+                    listingId: selectedListingId,
+                    salesCategory,
+                    customCategoryLabel: salesCategory === "custom" ? customCategoryLabel : undefined,
+                    salesNotes,
+                  });
+                }}
+              >
+                保存分类与备注
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </main>
     </div>
   );

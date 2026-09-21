@@ -12,9 +12,12 @@ import {
   getRankSnapshots,
   getSalesLogs,
   getStoreSettings,
+  reorderListings as persistListingOrder,
   updateListingFollowUp,
+  updateListingOrganization,
   updateStoreSettings,
 } from "./db";
+import { listingOrganizationInputSchema, reorderListingsInputSchema } from "./listingOrganization";
 import { runDailyRankSnapshot, upsertSyncedListing } from "./rankEngine";
 
 export const appRouter = router({
@@ -92,6 +95,39 @@ export const appRouter = router({
         if (input.logContent) {
           await addSalesLog(input.listingId, input.salesName || "销售专员", input.logContent, "人工状态更新");
         }
+        return updated;
+      }),
+
+    reorderListings: publicProcedure
+      .input(reorderListingsInputSchema)
+      .mutation(async ({ input }) => {
+        return persistListingOrder(input.orderedIds);
+      }),
+
+    updateListingOrganization: publicProcedure
+      .input(listingOrganizationInputSchema)
+      .mutation(async ({ input }) => {
+        const updated = await updateListingOrganization(
+          input.listingId,
+          input.salesCategory,
+          input.customCategoryLabel,
+          input.salesNotes
+        );
+        const categoryLabels = {
+          unclassified: "未分类",
+          new_product: "新品",
+          key_product: "重点产品",
+          long_tail: "长尾产品",
+          regular: "常规产品",
+          discontinued: "DISCONTINUED",
+          custom: input.customCategoryLabel?.trim() || "自定义",
+        };
+        await addSalesLog(
+          input.listingId,
+          "销售团队",
+          `产品分类：${categoryLabels[input.salesCategory]}${input.salesNotes?.trim() ? `；自由备注：${input.salesNotes.trim()}` : ""}`,
+          "商品分类与备注"
+        );
         return updated;
       }),
 

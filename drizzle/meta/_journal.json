@@ -36,6 +36,13 @@
       "when": 1789976126972,
       "tag": "0004_boring_morlocks",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1789979266718,
+      "tag": "0005_sweet_victor_mancha",
+      "breakpoints": true
     }
   ]
 }
