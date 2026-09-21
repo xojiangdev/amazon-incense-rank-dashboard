@@ -42,7 +42,7 @@ export const rankPayloadSchema = z.object({
   snapshotDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   snapshots: z.array(
     z.object({
-      marketplace: z.enum(["US", "CA"]),
+      marketplace: z.enum(["US", "CA", "JP"]),
       asin: z.string().min(10).max(10),
       keyword: z.string().min(1).max(255),
       rank: z.number().int().min(1).max(61),

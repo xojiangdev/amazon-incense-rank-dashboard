@@ -17,7 +17,7 @@ export function classifyIncenseCategory(title: string, categoryName: string = ""
 }
 
 export interface SyncListingInput {
-  marketplace: "US" | "CA";
+  marketplace: "US" | "CA" | "JP";
   asin: string;
   sku?: string;
   title: string;
@@ -90,7 +90,7 @@ export async function upsertSyncedListing(item: SyncListingInput) {
     categoryName: item.categoryName || "线香与香道用品",
     imageUrl: item.imageUrl || null,
     price: item.price || "19.99",
-    currency: item.currency || (item.marketplace === "US" ? "USD" : "CAD"),
+    currency: item.currency || (item.marketplace === "US" ? "USD" : item.marketplace === "CA" ? "CAD" : "JPY"),
     fulfillmentChannel: "FBA",
     inventoryStatus: "Active",
     fbaStock: item.fbaStock ?? 100,

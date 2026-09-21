@@ -1,0 +1,18 @@
+{
+  "marketplace": "JP",
+  "marketplace_id": "A1VC38T7YXB528",
+  "report_id": "67904020717",
+  "report_document_id": "amzn1.spdoc.1.4.fe.a56cc38c-1242-4901-8d94-3e64d598f442.T37CN3C28VX40D.47700",
+  "all_report_rows": 25,
+  "source_active_fba_rows": 0,
+  "target_active_fba_rows": 0,
+  "target_skus_inventory_returned": 0,
+  "target_active_fba_with_fulfillable_stock": 0,
+  "target_active_fba_without_fulfillable_stock": 0,
+  "target_active_fba_missing_inventory_summary": 0,
+  "non_target_active_fba_rows": 0,
+  "zero_stock_records": [],
+  "missing_inventory_records": [],
+  "non_target_records": [],
+  "raw_report_file": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/jp_all_listings_67904020717.tsv"
+}

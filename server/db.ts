@@ -67,7 +67,7 @@ export async function updateStoreSettings(payload: {
   return updated[0];
 }
 
-export async function getListings(marketplace?: "US" | "CA", category?: string, status?: string) {
+export async function getListings(marketplace?: "US" | "CA" | "JP", category?: string, status?: string) {
   const db = await getDb();
   if (!db) return [];
   const conditions = [];
@@ -129,7 +129,7 @@ export async function updateListingFollowUp(listingId: number, status: "normal" 
   return getListingById(listingId);
 }
 
-export async function getDashboardOverview(marketplace?: "US" | "CA") {
+export async function getDashboardOverview(marketplace?: "US" | "CA" | "JP") {
   const db = await getDb();
   const empty = {
     totalListings: 0,
@@ -200,7 +200,7 @@ export async function getRankTrackingTargets() {
 }
 
 export type RankSnapshotInput = {
-  marketplace: "US" | "CA";
+  marketplace: "US" | "CA" | "JP";
   asin: string;
   keyword: string;
   rank: number;

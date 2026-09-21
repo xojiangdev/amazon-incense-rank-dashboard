@@ -31,7 +31,7 @@ export const stores = mysqlTable("stores", {
 export const listings = mysqlTable("listings", {
   id: int("id").autoincrement().primaryKey(),
   storeId: int("storeId").notNull(),
-  marketplace: mysqlEnum("marketplace", ["US", "CA"]).notNull(),
+  marketplace: mysqlEnum("marketplace", ["US", "CA", "JP"]).notNull(),
   asin: varchar("asin", { length: 20 }).notNull(),
   parentAsin: varchar("parentAsin", { length: 20 }),
   sku: varchar("sku", { length: 100 }),
@@ -74,7 +74,7 @@ export const dailyRankSnapshots = mysqlTable("daily_rank_snapshots", {
   id: int("id").autoincrement().primaryKey(),
   keywordId: int("keywordId").notNull(),
   listingId: int("listingId").notNull(),
-  marketplace: mysqlEnum("marketplace", ["US", "CA"]).notNull(),
+  marketplace: mysqlEnum("marketplace", ["US", "CA", "JP"]).notNull(),
   snapshotDate: varchar("snapshotDate", { length: 20 }).notNull(),
   rank: int("rank").notNull(),
   page: int("page").default(1).notNull(),

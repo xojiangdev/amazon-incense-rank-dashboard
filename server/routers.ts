@@ -33,7 +33,7 @@ export const appRouter = router({
       .input(
         z
           .object({
-            marketplace: z.enum(["US", "CA"]).optional(),
+            marketplace: z.enum(["US", "CA", "JP"]).optional(),
           })
           .optional()
       )
@@ -45,7 +45,7 @@ export const appRouter = router({
       .input(
         z
           .object({
-            marketplace: z.enum(["US", "CA"]).optional(),
+            marketplace: z.enum(["US", "CA", "JP"]).optional(),
             category: z.string().optional(),
             status: z.string().optional(),
           })
@@ -112,7 +112,7 @@ export const appRouter = router({
     importListingManual: publicProcedure
       .input(
         z.object({
-          marketplace: z.enum(["US", "CA"]),
+          marketplace: z.enum(["US", "CA", "JP"]),
           asin: z.string().min(10).max(10),
           sku: z.string().optional(),
           title: z.string().min(5),

@@ -31,8 +31,14 @@ import {
   UserCheck,
 } from "lucide-react";
 
+type Marketplace = "US" | "CA" | "JP";
+type MarketplaceFilter = Marketplace | "ALL";
+
+const marketplaceLabel = (marketplace: Marketplace) =>
+  marketplace === "US" ? "🇺🇸 美国站" : marketplace === "CA" ? "🇨🇦 加拿大站" : "🇯🇵 日本站";
+
 export default function Home() {
-  const [marketplace, setMarketplace] = useState<"US" | "CA" | "ALL">("ALL");
+  const [marketplace, setMarketplace] = useState<MarketplaceFilter>("ALL");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedListingId, setSelectedListingId] = useState<number | null>(null);
@@ -46,7 +52,7 @@ export default function Home() {
   // Sync / Import Modal
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [newAsin, setNewAsin] = useState("");
-  const [newMarketplace, setNewMarketplace] = useState<"US" | "CA">("US");
+  const [newMarketplace, setNewMarketplace] = useState<Marketplace>("US");
   const [newTitle, setNewTitle] = useState("");
   const [newPrice, setNewPrice] = useState("");
 
@@ -98,7 +104,9 @@ export default function Home() {
     },
   });
 
-  const currentDetail = detailQuery.data;
+  const currentDetail = detailQuery.data && listingsQuery.data?.some(item => item.id === detailQuery.data?.listing.id)
+    ? detailQuery.data
+    : null;
 
   // Filter listings by search
   const filteredListings = useMemo(() => {
@@ -149,13 +157,13 @@ export default function Home() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-xl font-bold tracking-tight text-slate-900">Amazon 美加线香香炉核心词每日排名看板</h1>
+                <h1 className="text-xl font-bold tracking-tight text-slate-900">Amazon 美加日线香香炉核心词每日排名看板</h1>
                 <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200 text-xs">
-                  每日 09:00 自动更新
+                  每日 07:00 自动更新
                 </Badge>
               </div>
               <p className="text-xs text-slate-500 mt-0.5">
-                仅限美国、加拿大站线香（Sticks）与香炉香插（Burner/Holder）FBA 在售品类 | 每个 Listing 锁定 6-20 个高价值高转化词
+                仅限美国、加拿大、日本站线香（Sticks）与香炉香插（Burner/Holder）FBA 在售有库存商品 | 每个 Listing 锁定 6-20 个高价值词
               </p>
             </div>
           </div>
@@ -183,20 +191,21 @@ export default function Home() {
                 <DialogHeader>
                   <DialogTitle>录入待跟踪的线香/香炉 Listing</DialogTitle>
                   <DialogDescription>
-                    系统将自动提取该商品在 US/CA 站点的核心高转化搜索词，并纳入每日 09:00 自然位监控体系。
+                    系统将为 US/CA/JP 商品建立核心高价值搜索词，并纳入每日 07:00 自然位监控体系。
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-3 py-2 text-xs">
                   <div className="grid grid-cols-2 gap-2">
                     <div>
                       <label className="font-medium text-slate-700">站点 (Marketplace)</label>
-                      <Select value={newMarketplace} onValueChange={(v: "US" | "CA") => setNewMarketplace(v)}>
+                      <Select value={newMarketplace} onValueChange={(v: Marketplace) => setNewMarketplace(v)}>
                         <SelectTrigger className="mt-1">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="US">美国站 (amazon.com)</SelectItem>
                           <SelectItem value="CA">加拿大站 (amazon.ca)</SelectItem>
+                          <SelectItem value="JP">日本站 (amazon.co.jp)</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -222,7 +231,7 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="font-medium text-slate-700">售价 (USD/CAD)</label>
+                      <label className="font-medium text-slate-700">售价 (USD/CAD/JPY)</label>
                       <Input
                         placeholder="19.99"
                         className="mt-1"
@@ -272,7 +281,7 @@ export default function Home() {
         {/* Marketplace & Category Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
           <div className="flex items-center gap-3">
-            <Tabs value={marketplace} onValueChange={(v: any) => setMarketplace(v)} className="w-auto">
+            <Tabs value={marketplace} onValueChange={(v) => { setMarketplace(v as MarketplaceFilter); setSelectedListingId(null); }} className="w-auto">
               <TabsList className="bg-slate-100">
                 <TabsTrigger value="ALL" className="text-xs">全部站点</TabsTrigger>
                 <TabsTrigger value="US" className="text-xs flex items-center gap-1.5">
@@ -280,6 +289,9 @@ export default function Home() {
                 </TabsTrigger>
                 <TabsTrigger value="CA" className="text-xs flex items-center gap-1.5">
                   <span className="text-sm">🇨🇦</span> 加拿大站
+                </TabsTrigger>
+                <TabsTrigger value="JP" className="text-xs flex items-center gap-1.5">
+                  <span className="text-sm">🇯🇵</span> 日本站
                 </TabsTrigger>
               </TabsList>
             </Tabs>
@@ -412,7 +424,7 @@ export default function Home() {
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2 flex-wrap">
                           <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-slate-100">
-                            {item.marketplace === "US" ? "🇺🇸 美国站" : "🇨🇦 加拿大站"}
+                            {marketplaceLabel(item.marketplace)}
                           </Badge>
                           <span className="text-xs font-mono font-medium text-slate-700">{item.asin}</span>
                           <span className="text-[11px] text-slate-400 truncate max-w-[100px]">{item.sku}</span>
@@ -451,6 +463,11 @@ export default function Home() {
                   </div>
                 );
               })}
+              {filteredListings.length === 0 ? (
+                <div className="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-center text-xs text-slate-500">
+                  当前站点没有同时满足“FBA、Active、有可售库存、线香/香炉/香插类目”的 Listing。
+                </div>
+              ) : null}
             </div>
           </div>
 
