@@ -1,0 +1,1 @@
+2026-09-22T05:04:46Z development dashboard verification: live dashboard returned 41 Active FBA positive-stock listings and displayed the updated category filter label “全品类（香道 + 手动豁免）”. The KPI showed 手动豁免 1, consistent with B0H3J6LR1K being manually approved and imported. B0HJ1GPC2S was intentionally absent because its verified FBA fulfillable inventory was zero.

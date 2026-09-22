@@ -1,6 +1,7 @@
 import { and, desc, eq } from "drizzle-orm";
 import { dailyRankSnapshots, keywords, listings, salesLogs } from "../drizzle/schema";
 import { getDb, getStoreSettings } from "./db";
+import { getManualCategoryException } from "../shared/manualCategoryExceptions";
 
 // 严格限定的品类过滤关键词
 const INCENSE_STICK_KEYWORDS = ["incense stick", "incense sticks", "agarwood", "sandalwood incense", "线香", "香条"];
@@ -33,6 +34,17 @@ export interface SyncListingInput {
   fulfillmentChannel?: "FBA" | "FBM";
   inventoryStatus?: "Active" | "Inactive" | "Out of Stock";
   assignedSales?: string;
+  /** Never set by automated SP-API synchronization; reserved for approved manual imports. */
+  manualCategoryOverride?: boolean;
+}
+
+export function resolveListingCategory(item: Pick<SyncListingInput, "marketplace" | "asin" | "title" | "categoryName" | "manualCategoryOverride">) {
+  const detectedCategory = classifyIncenseCategory(item.title, item.categoryName || "");
+  const exception = item.manualCategoryOverride
+    ? getManualCategoryException(item.marketplace, item.asin)
+    : null;
+  const category = detectedCategory === "other" && exception ? "other" : detectedCategory;
+  return { category, detectedCategory, exception };
 }
 
 export async function upsertSyncedListing(item: SyncListingInput) {
@@ -51,10 +63,15 @@ export async function upsertSyncedListing(item: SyncListingInput) {
   if (item.fbaStock !== undefined && item.fbaStock <= 0) {
     return { skipped: true, reason: "FBA listing has no fulfillable inventory" };
   }
-  const category = classifyIncenseCategory(item.title, item.categoryName || "");
+  const { category, exception } = resolveListingCategory(item);
   if (category === "other") {
-    // 仅限线香和香炉香插类目，非目标品类自动略过
-    return { skipped: true, reason: "Non-incense category" };
+    if (!exception) {
+      // 自动同步与未授权的手动导入仍严格只允许线香、香炉、香插。
+      return { skipped: true, reason: "Non-incense category" };
+    }
+    if (item.fbaStock === undefined || item.fbaStock <= 0) {
+      return { skipped: true, reason: "Manual category exception requires verified positive FBA stock" };
+    }
   }
 
   const existing = await db
@@ -71,7 +88,7 @@ export async function upsertSyncedListing(item: SyncListingInput) {
         title: item.title,
         sku: item.sku ?? target.sku,
         category,
-        categoryName: item.categoryName ?? target.categoryName,
+        categoryName: item.categoryName ?? exception?.categoryName ?? target.categoryName,
         price: item.price ?? target.price,
         currency: item.currency ?? target.currency,
         imageUrl: item.imageUrl ?? target.imageUrl,
@@ -95,7 +112,7 @@ export async function upsertSyncedListing(item: SyncListingInput) {
     sku: item.sku || `SKU-${item.asin}`,
     title: item.title,
     category,
-    categoryName: item.categoryName || "线香与香道用品",
+    categoryName: item.categoryName || exception?.categoryName || "线香与香道用品",
     imageUrl: item.imageUrl || null,
     price: item.price || "19.99",
     currency: item.currency || (item.marketplace === "US" ? "USD" : item.marketplace === "CA" ? "CAD" : "JPY"),

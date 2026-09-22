@@ -174,6 +174,7 @@ export default function Home() {
   const [newMarketplace, setNewMarketplace] = useState<Marketplace>("US");
   const [newTitle, setNewTitle] = useState("");
   const [newPrice, setNewPrice] = useState("");
+  const [newFbaStock, setNewFbaStock] = useState("");
 
   const utils = trpc.useUtils();
   const listingsInput = useMemo(
@@ -262,6 +263,7 @@ export default function Home() {
       setNewAsin("");
       setNewTitle("");
       setNewPrice("");
+      setNewFbaStock("");
       utils.dashboard.invalidate();
     },
     onError: (err) => {
@@ -442,9 +444,9 @@ export default function Home() {
               </DialogTrigger>
               <DialogContent className="sm:max-w-[460px]">
                 <DialogHeader>
-                  <DialogTitle>录入待跟踪的线香/香炉 Listing</DialogTitle>
+                  <DialogTitle>录入待跟踪的 FBA Listing</DialogTitle>
                   <DialogDescription>
-                    系统将为 US/CA/JP 商品建立核心高价值搜索词，并纳入每日 07:35 自然位监控体系。
+                    默认仅接纳线香、香炉与香插。已获人工批准的精油/眼罩 ASIN 可一次性跳过类目守卫，但仍必须是 FBA、Active 且可售库存为正。
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-3 py-2 text-xs">
@@ -474,7 +476,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <label className="font-medium text-slate-700">Listing 标题（用于自动校验香道类目）</label>
+                    <label className="font-medium text-slate-700">Listing 标题（用于自动校验类目）</label>
                     <Input
                       placeholder="例: Natural Sandalwood Incense Sticks 120 Count..."
                       className="mt-1"
@@ -482,7 +484,7 @@ export default function Home() {
                       onChange={(e) => setNewTitle(e.target.value)}
                     />
                   </div>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-3 gap-2">
                     <div>
                       <label className="font-medium text-slate-700">售价 (USD/CAD/JPY)</label>
                       <Input
@@ -490,6 +492,18 @@ export default function Home() {
                         className="mt-1"
                         value={newPrice}
                         onChange={(e) => setNewPrice(e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <label className="font-medium text-slate-700">FBA 可售库存</label>
+                      <Input
+                        type="number"
+                        min="1"
+                        step="1"
+                        placeholder="例: 78"
+                        className="mt-1"
+                        value={newFbaStock}
+                        onChange={(e) => setNewFbaStock(e.target.value)}
                       />
                     </div>
                     <div>
@@ -516,6 +530,7 @@ export default function Home() {
                         asin: newAsin,
                         title: newTitle,
                         price: newPrice || "19.99",
+                        fbaStock: newFbaStock ? Number(newFbaStock) : undefined,
                         assignedSales: salesName,
                       })
                     }
@@ -554,10 +569,11 @@ export default function Home() {
                 <SelectValue placeholder="筛选品类" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">全品类 (线香 & 香炉)</SelectItem>
+                <SelectItem value="all">全品类（香道 + 手动豁免）</SelectItem>
                 <SelectItem value="incense_sticks">线香 / 盘香类</SelectItem>
                 <SelectItem value="incense_burner">香炉 / 倒流炉</SelectItem>
                 <SelectItem value="incense_holder">香插 / 香托盘</SelectItem>
+                <SelectItem value="other">手动豁免品类</SelectItem>
               </SelectContent>
             </Select>
 
@@ -583,6 +599,7 @@ export default function Home() {
                 <div className="mt-1 text-xl font-bold text-slate-900 sm:text-2xl">{overviewQuery.data?.totalListings ?? 0}</div>
                 <div className="mt-0.5 text-[10px] text-slate-400 sm:text-[11px]">
                   线香 {overviewQuery.data?.incenseSticksCount ?? 0} | 香炉 {overviewQuery.data?.burnerCount ?? 0} | 香插 {overviewQuery.data?.holderCount ?? 0}
+                  {(overviewQuery.data?.manualExceptionCount ?? 0) > 0 ? ` | 手动豁免 ${overviewQuery.data?.manualExceptionCount}` : ""}
                 </div>
               </div>
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600 sm:h-10 sm:w-10">
@@ -769,6 +786,11 @@ export default function Home() {
                           <Badge className={`text-[10px] px-1.5 py-0 ${SALES_CATEGORY_CONFIG[item.salesCategory].className}`}>
                             {salesCategoryLabel(item.salesCategory, item.customCategoryLabel)}
                           </Badge>
+                          {item.category === "other" ? (
+                            <Badge className="border-violet-200 bg-violet-50 px-1.5 py-0 text-[10px] text-violet-700">
+                              手动豁免
+                            </Badge>
+                          ) : null}
                           <Badge
                             className={`text-[10px] ml-auto px-1.5 py-0 ${
                               item.salesFollowUpStatus === "action_needed"
@@ -837,7 +859,7 @@ export default function Home() {
               })}
               {filteredListings.length === 0 ? (
                 <div className="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-center text-xs text-slate-500">
-                  当前站点没有同时满足“FBA、Active、有可售库存、线香/香炉/香插类目”的 Listing。
+                  当前站点没有同时满足“FBA、Active、有可售库存”条件的 Listing，或没有符合当前品类筛选的结果。
                 </div>
               ) : null}
             </div>

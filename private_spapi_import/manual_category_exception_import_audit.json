@@ -1,0 +1,24 @@
+{
+  "executedAt": "2026-09-22T05:03:56.722Z",
+  "source": "targeted SP-API FBA inventory verification",
+  "imported": [
+    {
+      "asin": "B0H3J6LR1K",
+      "sku": "S1-WEYZ-1LN0",
+      "fbaStock": 78,
+      "result": {
+        "updated": true,
+        "id": 60001,
+        "asin": "B0H3J6LR1K"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "asin": "B0HJ1GPC2S",
+      "reason": "No verified positive FBA fulfillable stock; no active dashboard Listing was created",
+      "fulfillableQuantity": 0,
+      "inboundShippedQuantity": 50
+    }
+  ]
+}

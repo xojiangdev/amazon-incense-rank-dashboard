@@ -3,6 +3,7 @@ import { drizzle } from "drizzle-orm/mysql2";
 import { cprSyncStates, dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
 import { buildDateWindow, dateKeyInTimeZone } from "../shared/rankTrend";
 import { githubCprSourceVersion, isNewerGitHubCprVersion, type GitHubCprDocument } from "../shared/githubCpr";
+import { isManualCategoryException } from "../shared/manualCategoryExceptions";
 import { ENV } from "./_core/env";
 import { mergeOrderedSubset, type SalesCategory } from "./listingOrganization";
 
@@ -261,6 +262,10 @@ export async function deactivateListingsMissingFromSync(
   const activeSet = new Set(activeKeys);
   let deactivated = 0;
   for (const item of current) {
+    // Explicit, user-approved manual category exceptions are not represented
+    // in the incense-only automatic candidate file. Do not deactivate them
+    // merely because the automatic collector intentionally filtered them out.
+    if (isManualCategoryException(item.marketplace, item.asin)) continue;
     const key = `${item.asin}:${item.sku ?? ""}`;
     if (!activeSet.has(key)) {
       await db
@@ -424,6 +429,7 @@ export async function applyFbaStockSnapshots(snapshots: FbaStockSnapshotInput[],
 
       let deactivated = 0;
       for (const listing of current) {
+        if (isManualCategoryException(listing.marketplace, listing.asin)) continue;
         const activeKey = `${normalizeIngestAsin(listing.asin)}:${listing.sku ?? ""}`;
         if (!activeKeys.has(activeKey)) {
           await tx.update(listings).set({ inventoryStatus: "Inactive", fbaStock: 0, updatedAt: observedAt }).where(eq(listings.id, listing.id));
@@ -769,6 +775,7 @@ export async function getDashboardOverview(marketplace?: "US" | "CA" | "JP") {
     incenseSticksCount: 0,
     burnerCount: 0,
     holderCount: 0,
+    manualExceptionCount: 0,
     totalKeywordsTracked: 0,
     top10Count: 0,
     top50Count: 0,
@@ -806,6 +813,7 @@ export async function getDashboardOverview(marketplace?: "US" | "CA" | "JP") {
     incenseSticksCount: allListings.filter(l => l.category === "incense_sticks").length,
     burnerCount: allListings.filter(l => l.category === "incense_burner").length,
     holderCount: allListings.filter(l => l.category === "incense_holder").length,
+    manualExceptionCount: allListings.filter(l => isManualCategoryException(l.marketplace, l.asin)).length,
     totalKeywordsTracked: allKeywords.length,
     top10Count: top10,
     top50Count: top50,

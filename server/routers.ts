@@ -167,12 +167,15 @@ export const appRouter = router({
           title: z.string().min(5),
           categoryName: z.string().optional(),
           price: z.string().optional(),
-          fbaStock: z.number().optional(),
+          fbaStock: z.number().int().positive().optional(),
           assignedSales: z.string().optional(),
         })
       )
       .mutation(async ({ input }) => {
-        return upsertSyncedListing(input);
+        // Only the explicitly approved ASIN allow-list in rankEngine can use
+        // this manual-only override; every other non-incense ASIN remains
+        // rejected by the category guard.
+        return upsertSyncedListing({ ...input, manualCategoryOverride: true });
       }),
 
     settings: publicProcedure.query(async () => {
