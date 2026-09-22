@@ -5,6 +5,8 @@ import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import {
+  scheduledGitHubCprRefreshHandler,
+  scheduledGitHubCprUnavailableHandler,
   scheduledProductMetricsRefreshHandler,
   scheduledProductMetricTargetsHandler,
   scheduledRankRefreshHandler,
@@ -46,6 +48,8 @@ async function startServer() {
   app.post("/api/scheduled/refreshDailyRank", scheduledRankRefreshHandler);
   app.get("/api/scheduled/productMetricTargets", scheduledProductMetricTargetsHandler);
   app.post("/api/scheduled/refreshProductMetrics", scheduledProductMetricsRefreshHandler);
+  app.post("/api/scheduled/githubCpr", scheduledGitHubCprRefreshHandler);
+  app.post("/api/scheduled/githubCprUnavailable", scheduledGitHubCprUnavailableHandler);
   // tRPC API
   app.use(
     "/api/trpc",

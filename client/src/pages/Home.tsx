@@ -130,6 +130,10 @@ function isDesktopFirstPage(rank: number | null | undefined) {
   return typeof rank === "number" && rank > 0 && rank < 999 && rank <= 48;
 }
 
+function hasRepositoryCpr(keyword: { cprSource?: string | null; cprEstimate?: number | null }) {
+  return Boolean(keyword.cprSource?.startsWith("github_cpr_json:") && keyword.cprEstimate !== null && keyword.cprEstimate !== undefined);
+}
+
 function keywordEvidencePresentation(basis: KeywordSelectionBasis) {
   if (basis === "sqp_purchase") return { label: "SQP购买", className: "border-emerald-200 bg-emerald-50 text-emerald-700", title: "SQP 已记录实际购买：可优先用于转化型广告" };
   if (basis === "sqp_cart") return { label: "SQP加购", className: "border-amber-200 bg-amber-50 text-amber-700", title: "SQP 已记录加购但未形成购买：可作为高意图测试词" };
@@ -182,6 +186,7 @@ export default function Home() {
   );
 
   const listingsQuery = trpc.dashboard.listings.useQuery(listingsInput);
+  const cprSyncStatusQuery = trpc.dashboard.cprSyncStatus.useQuery();
 
   const refreshMutation = trpc.dashboard.triggerDailyRefresh.useMutation({
     onSuccess: (data) => {
@@ -372,7 +377,7 @@ export default function Home() {
         currentDetail.listing.salesNotes ?? "",
         kw.keyword,
         kw.currentRank,
-        kw.cprEstimate ?? "",
+        hasRepositoryCpr(kw) ? kw.cprEstimate : "",
         kw.pcAdRank ?? "",
         kw.pcSbvRank ?? "",
         kw.previousRank,
@@ -407,7 +412,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                 <h1 className="text-base font-bold tracking-tight text-slate-900 sm:text-xl">Amazon 美加日线香香炉核心词每日排名看板</h1>
                 <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-[10px] text-emerald-700 sm:text-xs">
-                  每日 07:00 自动更新
+                  每日 07:35 自动更新
                 </Badge>
               </div>
               <p className="mt-0.5 hidden text-xs text-slate-500 sm:block">
@@ -439,7 +444,7 @@ export default function Home() {
                 <DialogHeader>
                   <DialogTitle>录入待跟踪的线香/香炉 Listing</DialogTitle>
                   <DialogDescription>
-                    系统将为 US/CA/JP 商品建立核心高价值搜索词，并纳入每日 07:00 自然位监控体系。
+                    系统将为 US/CA/JP 商品建立核心高价值搜索词，并纳入每日 07:35 自然位监控体系。
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-3 py-2 text-xs">
@@ -994,8 +999,19 @@ export default function Home() {
                       核心关键词每日排名统计表 (共 {currentDetail.keywords.length} 个)
                       </CardTitle>
                       <CardDescription className="mt-0.5 text-[11px] leading-relaxed text-slate-500 sm:text-xs">
-                        选词证据：SQP购买优先；SQP加购/点击仅作高意图测试；“待验证”是标题强相关补足，不能直接视为高转化词。自然位、CPR与PC广告位分别独立采集。
+                        选词证据：SQP购买优先；SQP加购/点击仅作高意图测试；“待验证”是标题强相关补足，不能直接视为高转化词。自然位与广告位独立采集；CPR(8天)仅显示 GitHub 仓库 `data/cpr.json` 的已同步值。
                       </CardDescription>
+                      <p className="mt-1 text-[10px] text-slate-400">
+                        {cprSyncStatusQuery.data?.lastStatus === "applied"
+                          ? `CPR 仓库已同步：${cprSyncStatusQuery.data.updatedKeywordCount} 个关键词`
+                          : cprSyncStatusQuery.data?.lastStatus === "not_newer"
+                          ? "CPR 仓库文件未更新，保留上次仓库同步值"
+                          : cprSyncStatusQuery.data?.lastStatus === "file_not_found"
+                          ? "等待 GitHub 仓库生成 data/cpr.json；自然位与广告位不受影响"
+                          : cprSyncStatusQuery.data?.lastStatus === "error"
+                          ? "CPR 仓库同步异常，未覆盖现有值"
+                          : "等待 GitHub 仓库 data/cpr.json 首次同步"}
+                      </p>
                     </div>
                     <div className="flex w-full items-center gap-2 sm:w-auto">
                       <Badge variant="secondary" className="hidden whitespace-nowrap bg-amber-50 text-xs text-amber-700 sm:inline-flex">
@@ -1041,7 +1057,7 @@ export default function Home() {
                             <th className="px-1.5 py-2">转化</th>
                             <th className="px-1.5 py-2">CVR</th>
                             <th className="px-1.5 py-2">今日自然位</th>
-                            <th className="px-1.5 py-2" title="基于自然位第21–30名产品月销均值推算的8天订单需求">CPR<br/><span className="font-normal text-[9px]">8天估算</span></th>
+                            <th className="px-1.5 py-2" title="唯一数据源：GitHub 仓库 data/cpr.json；每日 07:35（北京时间）检查更新">CPR(8天)<br/><span className="font-normal text-[9px]">GitHub</span></th>
                             <th className="px-1.5 py-2">广告位<br/><span className="font-normal text-[9px]">PC</span></th>
                             <th className="px-1.5 py-2">SBV 位<br/><span className="font-normal text-[9px]">PC</span></th>
                             <th className="px-1.5 py-2">昨日自然</th>
@@ -1117,13 +1133,13 @@ export default function Home() {
                                     ) : null}
                                   </div>
                                 </td>
-                                <td className="px-1.5 py-2" title={kw.cprEstimate === null || kw.cprEstimate === undefined ? "等待真实自然位第21–30名商品月销样本" : `CPR = 月销均值 ${kw.cprMonthlySalesAverage} ÷ 30 × 8；样本 ${kw.cprSampleCount}/10`}>
-                                  {kw.cprEstimate === null || kw.cprEstimate === undefined ? (
-                                    <span className="text-[10px] text-slate-400">待计算</span>
+                                <td className="px-1.5 py-2" title={hasRepositoryCpr(kw) ? `GitHub data/cpr.json：月销均值 ${kw.cprMonthlySalesAverage ?? "—"}；样本 ${kw.cprSampleCount ?? "—"}` : "等待 GitHub 仓库 data/cpr.json 的对应关键词"}>
+                                  {!hasRepositoryCpr(kw) ? (
+                                    <span className="text-[10px] text-slate-400">待仓库</span>
                                   ) : (
                                     <div className="leading-tight">
-                                      <span className="font-mono text-xs font-semibold text-cyan-700">≈{kw.cprEstimate}</span>
-                                      <span className="block text-[9px] text-slate-400">{kw.cprSampleCount}/10样本</span>
+                                      <span className="font-mono text-xs font-semibold text-cyan-700">{kw.cprEstimate}</span>
+                                      <span className="block text-[9px] text-slate-400">{kw.cprSampleCount ?? "—"}样本</span>
                                     </div>
                                   )}
                                 </td>
@@ -1215,8 +1231,8 @@ export default function Home() {
                                 <p className="mt-0.5 font-mono text-sm font-bold text-slate-900">{currentRank === 0 ? "待采" : currentRank === 999 ? "3页外" : `#${currentRank}`}</p>
                               </div>
                               <div>
-                                <p className="text-[10px] text-slate-500">CPR · 8天</p>
-                                <p className="mt-0.5 font-mono text-sm font-bold text-cyan-700">{kw.cprEstimate === null || kw.cprEstimate === undefined ? "待算" : `≈${kw.cprEstimate}`}</p>
+                                <p className="text-[10px] text-slate-500">CPR(8天) · GitHub</p>
+                                <p className="mt-0.5 font-mono text-sm font-bold text-cyan-700">{hasRepositoryCpr(kw) ? kw.cprEstimate : "待仓库"}</p>
                               </div>
                               <div>
                                 <p className="text-[10px] text-slate-500">7日自然趋势</p>

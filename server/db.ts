@@ -1,11 +1,14 @@
 import { and, desc, eq, gt, gte, inArray } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
+import { cprSyncStates, dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
 import { buildDateWindow, dateKeyInTimeZone } from "../shared/rankTrend";
+import { githubCprSourceVersion, isNewerGitHubCprVersion, type GitHubCprDocument } from "../shared/githubCpr";
 import { ENV } from "./_core/env";
 import { mergeOrderedSubset, type SalesCategory } from "./listingOrganization";
 
 let _db: ReturnType<typeof drizzle> | null = null;
+
+const normalizeCprKeyword = (keyword: string) => keyword.trim().normalize("NFKC").toLowerCase();
 
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
@@ -36,6 +39,149 @@ export async function getUserByOpenId(openId: string) {
   if (!db) return undefined;
   const result = await db.select().from(users).where(eq(users.openId, openId)).limit(1);
   return result.length > 0 ? result[0] : undefined;
+}
+
+export type GitHubCprSyncInput = {
+  sourceKey: string;
+  sourceUrl: string;
+  remoteSha: string;
+  remoteUpdatedAt: Date;
+  document: GitHubCprDocument;
+};
+
+/**
+ * Repository CPR is intentionally keyword-wide: all active core-keyword rows
+ * with the same normalized phrase receive the same repository record. Unlike
+ * rank collection, it neither reads nor changes organic, ad, SBV, or snapshot
+ * fields. A non-new source never writes rows.
+ */
+export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observedAt = new Date()) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const current = (await db.select().from(cprSyncStates).where(eq(cprSyncStates.sourceKey, input.sourceKey)).limit(1))[0];
+  if (!isNewerGitHubCprVersion(input.remoteSha, input.remoteUpdatedAt, current)) {
+    await db.insert(cprSyncStates).values({
+      sourceKey: input.sourceKey,
+      sourceUrl: input.sourceUrl,
+      remoteSha: current?.remoteSha ?? null,
+      remoteUpdatedAt: current?.remoteUpdatedAt ?? null,
+      sourceGeneratedAt: current?.sourceGeneratedAt ?? null,
+      calibration: current?.calibration ?? null,
+      sourceRecordCount: current?.sourceRecordCount ?? 0,
+      matchedKeywordCount: current?.matchedKeywordCount ?? 0,
+      updatedKeywordCount: current?.updatedKeywordCount ?? 0,
+      lastCheckedAt: observedAt,
+      lastAppliedAt: current?.lastAppliedAt ?? null,
+      lastStatus: "not_newer",
+      lastError: null,
+      createdAt: current?.createdAt ?? observedAt,
+      updatedAt: observedAt,
+    }).onDuplicateKeyUpdate({
+      set: { lastCheckedAt: observedAt, lastStatus: "not_newer", lastError: null, updatedAt: observedAt },
+    });
+    return { status: "not_newer" as const, updated: 0, matched: 0, sourceRecords: input.document.records.length };
+  }
+
+  const recordByKeyword = new Map(input.document.records.map(record => [record.normalizedKeyword, record] as const));
+  const activeListings = await db.select().from(listings).where(and(
+    eq(listings.fulfillmentChannel, "FBA"),
+    eq(listings.inventoryStatus, "Active"),
+    gt(listings.fbaStock, 0)
+  ));
+  const activeListingIds = activeListings.map(listing => listing.id);
+  const activeCoreKeywords = activeListingIds.length
+    ? await db.select().from(keywords).where(and(inArray(keywords.listingId, activeListingIds), eq(keywords.isCore, true)))
+    : [];
+  const matched = activeCoreKeywords.flatMap(keyword => {
+    const record = recordByKeyword.get(normalizeCprKeyword(keyword.keyword));
+    return record ? [{ keyword, record }] : [];
+  });
+
+  await db.transaction(async tx => {
+    for (const item of matched) {
+      await tx.update(keywords).set({
+        cprEstimate: item.record.cpr,
+        cprMonthlySalesAverage: item.record.avgMonthlySales,
+        cprSampleCount: item.record.samples,
+        cprSource: githubCprSourceVersion(input.remoteSha),
+        cprUpdatedAt: observedAt,
+        updatedAt: observedAt,
+      }).where(eq(keywords.id, item.keyword.id));
+    }
+    await tx.insert(cprSyncStates).values({
+      sourceKey: input.sourceKey,
+      sourceUrl: input.sourceUrl,
+      remoteSha: input.remoteSha,
+      remoteUpdatedAt: input.remoteUpdatedAt,
+      sourceGeneratedAt: input.document.generatedAt,
+      calibration: input.document.calibration,
+      sourceRecordCount: input.document.records.length,
+      matchedKeywordCount: matched.length,
+      updatedKeywordCount: matched.length,
+      lastCheckedAt: observedAt,
+      lastAppliedAt: observedAt,
+      lastStatus: matched.length ? "applied" : "no_match",
+      lastError: null,
+      createdAt: current?.createdAt ?? observedAt,
+      updatedAt: observedAt,
+    }).onDuplicateKeyUpdate({
+      set: {
+        sourceUrl: input.sourceUrl,
+        remoteSha: input.remoteSha,
+        remoteUpdatedAt: input.remoteUpdatedAt,
+        sourceGeneratedAt: input.document.generatedAt,
+        calibration: input.document.calibration,
+        sourceRecordCount: input.document.records.length,
+        matchedKeywordCount: matched.length,
+        updatedKeywordCount: matched.length,
+        lastCheckedAt: observedAt,
+        lastAppliedAt: observedAt,
+        lastStatus: matched.length ? "applied" : "no_match",
+        lastError: null,
+        updatedAt: observedAt,
+      },
+    });
+  });
+
+  return {
+    status: matched.length ? "applied" as const : "no_match" as const,
+    updated: matched.length,
+    matched: matched.length,
+    sourceRecords: input.document.records.length,
+    sourceGeneratedAt: input.document.generatedAt.toISOString(),
+  };
+}
+
+export async function recordGitHubCprSyncFailure(input: { sourceKey: string; sourceUrl: string; error: string; status?: "error" | "file_not_found"; observedAt?: Date }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const observedAt = input.observedAt ?? new Date();
+  const current = (await db.select().from(cprSyncStates).where(eq(cprSyncStates.sourceKey, input.sourceKey)).limit(1))[0];
+  await db.insert(cprSyncStates).values({
+    sourceKey: input.sourceKey,
+    sourceUrl: input.sourceUrl,
+    remoteSha: current?.remoteSha ?? null,
+    remoteUpdatedAt: current?.remoteUpdatedAt ?? null,
+    sourceGeneratedAt: current?.sourceGeneratedAt ?? null,
+    calibration: current?.calibration ?? null,
+    sourceRecordCount: current?.sourceRecordCount ?? 0,
+    matchedKeywordCount: current?.matchedKeywordCount ?? 0,
+    updatedKeywordCount: current?.updatedKeywordCount ?? 0,
+    lastCheckedAt: observedAt,
+    lastAppliedAt: current?.lastAppliedAt ?? null,
+    lastStatus: input.status ?? "error",
+    lastError: input.error.slice(0, 4000),
+    createdAt: current?.createdAt ?? observedAt,
+    updatedAt: observedAt,
+  }).onDuplicateKeyUpdate({
+    set: { sourceUrl: input.sourceUrl, lastCheckedAt: observedAt, lastStatus: input.status ?? "error", lastError: input.error.slice(0, 4000), updatedAt: observedAt },
+  });
+}
+
+export async function getGitHubCprSyncState(sourceKey: string) {
+  const db = await getDb();
+  if (!db) return null;
+  return (await db.select().from(cprSyncStates).where(eq(cprSyncStates.sourceKey, sourceKey)).limit(1))[0] ?? null;
 }
 
 export async function getStoreSettings() {

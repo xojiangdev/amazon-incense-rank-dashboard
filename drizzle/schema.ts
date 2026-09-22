@@ -114,6 +114,30 @@ export const dailyRankSnapshots = mysqlTable("daily_rank_snapshots", {
   trackedAt: timestamp("trackedAt").defaultNow().notNull(),
 });
 
+/**
+ * A single durable checkpoint for the repository-owned CPR feed. The remote
+ * SHA and generated timestamp make every scheduled poll idempotent and allow
+ * the dashboard to reject stale repository files without touching rank data.
+ */
+export const cprSyncStates = mysqlTable("cpr_sync_states", {
+  id: int("id").autoincrement().primaryKey(),
+  sourceKey: varchar("sourceKey", { length: 255 }).notNull().unique(),
+  sourceUrl: text("sourceUrl").notNull(),
+  remoteSha: varchar("remoteSha", { length: 64 }),
+  remoteUpdatedAt: timestamp("remoteUpdatedAt"),
+  sourceGeneratedAt: timestamp("sourceGeneratedAt"),
+  calibration: text("calibration"),
+  sourceRecordCount: int("sourceRecordCount").default(0).notNull(),
+  matchedKeywordCount: int("matchedKeywordCount").default(0).notNull(),
+  updatedKeywordCount: int("updatedKeywordCount").default(0).notNull(),
+  lastCheckedAt: timestamp("lastCheckedAt").defaultNow().notNull(),
+  lastAppliedAt: timestamp("lastAppliedAt"),
+  lastStatus: varchar("lastStatus", { length: 32 }).default("never").notNull(),
+  lastError: text("lastError"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
 export const salesLogs = mysqlTable("sales_logs", {
   id: int("id").autoincrement().primaryKey(),
   listingId: int("listingId").notNull(),

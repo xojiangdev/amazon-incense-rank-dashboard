@@ -1,4 +1,4 @@
-每天北京时间07:00完整执行 Amazon 美国、加拿大、日本三站动态监控，所有数据必须真实可审计，任何阶段失败不得写入推测值。
+每天北京时间07:35完整执行 Amazon 美国、加拿大、日本三站动态监控，所有数据必须真实可审计，任何阶段失败不得写入推测值。
 
 第一阶段——同步 Listing 与库存：依次运行 python3 /home/ubuntu/amazon-incense-rank-dashboard/scripts_spapi_collect_us_ca_fba.py、python3 /home/ubuntu/amazon-incense-rank-dashboard/scripts_spapi_collect_jp_fba.py、cd /home/ubuntu/amazon-incense-rank-dashboard && npx tsx scripts_import_verified_fba.ts。北美和日本必须分别使用隔离的 SP-API 凭证。只保留 fulfillmentChannel=FBA、inventoryStatus=Active、fulfillableQuantity>0 且属于线香/香炉/香插的商品。同步 fbaStock，并同步 FBA Inventory API 的 inboundWorkingQuantity、inboundShippedQuantity、inboundReceivingQuantity；fbaInboundTotal 必须等于三项之和。缺失于最新完整合格清单的旧商品转 Inactive；任一区域采集或审计失败时禁止做停用同步。日本站 0 条合格商品允许，但必须报告来源行数和排除原因。
 
@@ -7,5 +7,12 @@
 第三阶段——严格维护核心词：运行 python3 /home/ubuntu/amazon-incense-rank-dashboard/scripts_collect_sqp_keywords.py、cd /home/ubuntu/amazon-incense-rank-dashboard && npx tsx scripts_import_sqp_keywords.ts。执行统一证据分层：ASIN级 SQP购买 > 可精确归因至该ASIN的广告购买 > SQP加购 > 合格SQP点击 > 标题强相关补足。购买/加购/点击之外，搜索量只能在同一层级内排序；单次低搜索量点击、跨市场意图、SKU/ASIN片段、品类不相关词及标题噪声必须排除。每个词必须保存并展示 selectionBasis：sqp_purchase 显示“SQP购买”、sqp_cart 显示“SQP加购”、sqp_click 显示“SQP点击”、title_fallback 显示“待验证”。没有可精确归因到 ASIN 的广告报告证据时，不得使用店铺级广告搜索词补充任一Listing。标题补足仅为维持每个Listing至少6词的验证队列，禁止称作高转化词或出单词。
 
 第四阶段——采集真实自然位、PC端广告排名与PC端SBV广告排名：读取全部排名目标；自然位调用 Sorftime MCP product_traffic_terms，对每个 ASIN 和核心词采集第1至第3页。关键词 Unicode NFKC、去首尾空格、转小写后精确匹配。自然位采用 latest_organic_position（解析为 1–60，未进前三页记 999、page=4）。PC 广告位调用 DataForSEO merchant_amazon_products_live_advanced，按站点精确传 United States/en_US、Canada/en_CA 或 Japan/ja_JP，读取桌面 Amazon SERP 返回结果。仅以 type=amazon_paid 的 exact data_asin 匹配为广告曝光：rank_absolute 写入 pcAdRank；url 含 sbv_search 或 sponsored brands video 的广告写入 pcSbvRank。各类重复曝光取最小 rank_absolute；在已返回桌面 SERP 未找到该类广告时写 999。禁止用自然位、广告报表、不同站点数据或推测数据代替。写入前必须验证 expected=actual、missing=0、extra=0、duplicates=0、invalid=0，再原子写入北京时间当日全部结果。首日 previousRank 留空/0、change=0。
+
+第五阶段——同步 GitHub 仓库权威 CPR 数据：
+保持原有排名与广告位采集逻辑不变。在每日 07:30 之后（统一配置为北京时间 07:35），通过已连接 GitHub 访问 `xojiangdev/amazon-incense-rank-dashboard` 的 `main:data/cpr.json`，并读取该文件最近 commit SHA 与 committer 时间。
+文件格式必须为 {"meta":{"generated_at":...,"calib":...},"data":[{"keyword":"...","cpr":数字,"avg_monthly_sales":数字,"samples":数字}]}。只在 commit 更新时间比本地记录更新时，将原始 JSON、commit SHA 和 commit 时间 POST 到：
+`$SCHEDULED_TASK_ENDPOINT_BASE/api/scheduled/githubCpr`
+请求必须带 `Content-Type: application/json` 以及 `Cookie: app_session_id=$SCHEDULED_TASK_COOKIE`。接口只接受上述固定仓库、分支和路径，按 Unicode NFKC+小写匹配关键词后只更新 CPR 字段；不得触碰自然位、广告位、SBV 位或历史快照。
+若远端文件尚未生成或不存在，保留看板当前数据与排名快照，不作覆盖，并 POST 到 `$SCHEDULED_TASK_ENDPOINT_BASE/api/scheduled/githubCprUnavailable`，携带固定 repository 字段、`reason:"file_not_found"` 和简短 detail，以更新看板状态。若文件未更新，保留上次仓库 CPR 值并在本次任务报告中说明。
 
 完成后报告 US/CA/JP Listing 数、FBA可售库存合计、Working/Shipped/Receiving/在途合计、评分同步成功数、无评分数、核心词数、Top10、Top50、上升、下降、未进前三页数量、PC端在投广告词数与SBV在投词数，以及源报告与原子写入审计结果。

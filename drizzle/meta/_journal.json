@@ -71,6 +71,13 @@
       "when": 1789997827375,
       "tag": "0009_stormy_drax",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1790036876278,
+      "tag": "0010_true_quentin_quire",
+      "breakpoints": true
     }
   ]
 }

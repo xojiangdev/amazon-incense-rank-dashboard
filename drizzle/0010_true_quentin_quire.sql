@@ -1,0 +1,20 @@
+CREATE TABLE `cpr_sync_states` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`sourceKey` varchar(255) NOT NULL,
+	`sourceUrl` text NOT NULL,
+	`remoteSha` varchar(64),
+	`remoteUpdatedAt` timestamp,
+	`sourceGeneratedAt` timestamp,
+	`calibration` text,
+	`sourceRecordCount` int NOT NULL DEFAULT 0,
+	`matchedKeywordCount` int NOT NULL DEFAULT 0,
+	`updatedKeywordCount` int NOT NULL DEFAULT 0,
+	`lastCheckedAt` timestamp NOT NULL DEFAULT (now()),
+	`lastAppliedAt` timestamp,
+	`lastStatus` varchar(32) NOT NULL DEFAULT 'never',
+	`lastError` text,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `cpr_sync_states_id` PRIMARY KEY(`id`),
+	CONSTRAINT `cpr_sync_states_sourceKey_unique` UNIQUE(`sourceKey`)
+);

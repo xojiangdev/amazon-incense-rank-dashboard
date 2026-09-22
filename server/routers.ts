@@ -6,6 +6,7 @@ import { publicProcedure, router } from "./_core/trpc";
 import {
   addSalesLog,
   bulkUpdateListingOrganization,
+  getGitHubCprSyncState,
   getDashboardOverview,
   getListingById,
   getListingKeywords,
@@ -20,6 +21,7 @@ import {
 } from "./db";
 import { bulkListingOrganizationInputSchema, listingOrganizationInputSchema, reorderListingsInputSchema } from "./listingOrganization";
 import { runDailyRankSnapshot, upsertSyncedListing } from "./rankEngine";
+import { GITHUB_CPR_SOURCE_KEY } from "../shared/githubCpr";
 
 export const appRouter = router({
   system: systemRouter,
@@ -44,6 +46,10 @@ export const appRouter = router({
       .query(async ({ input }) => {
         return getDashboardOverview(input?.marketplace);
       }),
+
+    cprSyncStatus: publicProcedure.query(async () => {
+      return getGitHubCprSyncState(GITHUB_CPR_SOURCE_KEY);
+    }),
 
     listings: publicProcedure
       .input(
