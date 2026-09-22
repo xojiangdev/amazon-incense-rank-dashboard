@@ -13,6 +13,11 @@ import {
 
 const execFileAsync = promisify(execFile);
 
+// `gh` can inherit terminal colour settings in manual recovery sessions.
+// API payloads must be parsed as plain JSON regardless of those settings.
+const stripAnsi = (value: string) => value.replace(/\u001B\[[0-?]*[ -/]*[@-~]/g, "");
+const parseGhJson = <T>(value: string): T => JSON.parse(stripAnsi(value).trim()) as T;
+
 type GitHubFileMetadata = {
   sha: string;
   size: number;
@@ -61,14 +66,14 @@ export async function runGitHubCprSync(options: { dryRun?: boolean; force?: bool
       };
     }
 
-    const fileMeta = JSON.parse(fileApiOutput.stdout.trim()) as GitHubFileMetadata;
+    const fileMeta = parseGhJson<GitHubFileMetadata>(fileApiOutput.stdout);
     const commitOutput = await execFileAsync("gh", [
       "api",
       `repos/${repoSlug}/commits?path=${encodeURIComponent(GITHUB_CPR_PATH)}&sha=${encodeURIComponent(GITHUB_CPR_BRANCH)}&per_page=1`,
       "--jq",
       ".[0] | {sha:.sha,date:.commit.committer.date,message:.commit.message}",
     ]);
-    const commitMeta = JSON.parse(commitOutput.stdout.trim()) as GitHubCommitMetadata;
+    const commitMeta = parseGhJson<GitHubCommitMetadata>(commitOutput.stdout);
     if (!commitMeta?.date) {
       throw new Error(`Unable to determine commit update time for ${GITHUB_CPR_PATH}`);
     }
@@ -88,7 +93,7 @@ export async function runGitHubCprSync(options: { dryRun?: boolean; force?: bool
         "--jq",
         ".content",
       ]);
-      fileText = Buffer.from(blobOutput.stdout.trim().replace(/\s+/g, ""), "base64").toString("utf8");
+      fileText = Buffer.from(stripAnsi(blobOutput.stdout).trim().replace(/\s+/g, ""), "base64").toString("utf8");
     }
 
     const rawJson = JSON.parse(fileText);
@@ -113,6 +118,7 @@ export async function runGitHubCprSync(options: { dryRun?: boolean; force?: bool
       remoteSha: commitMeta.sha,
       remoteUpdatedAt,
       document,
+      force: options.force,
     });
 
     return {
@@ -122,6 +128,7 @@ export async function runGitHubCprSync(options: { dryRun?: boolean; force?: bool
       remoteUpdatedAt: remoteUpdatedAt.toISOString(),
       updatedKeywords: result.updated,
       matchedKeywords: result.matched,
+      clearedKeywords: result.cleared,
       sourceRecords: result.sourceRecords,
     };
   } catch (error: any) {
@@ -132,7 +139,10 @@ export async function runGitHubCprSync(options: { dryRun?: boolean; force?: bool
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  runGitHubCprSync({ dryRun: process.argv.includes("--dry-run") })
+  runGitHubCprSync({
+    dryRun: process.argv.includes("--dry-run"),
+    force: process.argv.includes("--force"),
+  })
     .then(result => {
       console.log(JSON.stringify(result, null, 2));
       process.exit(0);

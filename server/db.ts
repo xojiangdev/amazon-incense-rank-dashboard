@@ -48,6 +48,8 @@ export type GitHubCprSyncInput = {
   remoteSha: string;
   remoteUpdatedAt: Date;
   document: GitHubCprDocument;
+  /** Local recovery only: reconcile the current authoritative document even when its SHA is unchanged. */
+  force?: boolean;
 };
 
 /**
@@ -60,7 +62,7 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
   const current = (await db.select().from(cprSyncStates).where(eq(cprSyncStates.sourceKey, input.sourceKey)).limit(1))[0];
-  if (!isNewerGitHubCprVersion(input.remoteSha, input.remoteUpdatedAt, current)) {
+  if (!input.force && !isNewerGitHubCprVersion(input.remoteSha, input.remoteUpdatedAt, current)) {
     await db.insert(cprSyncStates).values({
       sourceKey: input.sourceKey,
       sourceUrl: input.sourceUrl,
@@ -80,7 +82,7 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
     }).onDuplicateKeyUpdate({
       set: { lastCheckedAt: observedAt, lastStatus: "not_newer", lastError: null, updatedAt: observedAt },
     });
-    return { status: "not_newer" as const, updated: 0, matched: 0, sourceRecords: input.document.records.length };
+    return { status: "not_newer" as const, updated: 0, matched: 0, cleared: 0, sourceRecords: input.document.records.length };
   }
 
   const recordByKeyword = new Map(input.document.records.map(record => [record.normalizedKeyword, record] as const));
@@ -98,10 +100,14 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
     return record ? [{ keyword, record }] : [];
   });
 
-  // 权威文档不含的关键词 → 清空CPR(防止已从数据文件移除的词残留旧值)
-  const unmatchedIds = activeCoreKeywords
+  // 权威文档不含的关键词 → 清空既有 CPR，防止已移除的词残留旧值。
+  // 已经为空的词不做无效写入，也不刷新其 CPR 时间戳。
+  const clearedKeywordIds = activeCoreKeywords
     .filter(keyword => !recordByKeyword.has(normalizeCprKeyword(keyword.keyword)))
+    .filter(keyword => keyword.cprEstimate !== null || keyword.cprMonthlySalesAverage !== null || keyword.cprSampleCount !== null || keyword.cprSource !== null)
     .map(keyword => keyword.id);
+  const updatedCount = matched.length + clearedKeywordIds.length;
+  const appliedStatus = matched.length > 0 || clearedKeywordIds.length > 0 ? "applied" : "no_match";
   await db.transaction(async tx => {
     for (const item of matched) {
       await tx.update(keywords).set({
@@ -113,7 +119,7 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
         updatedAt: observedAt,
       }).where(eq(keywords.id, item.keyword.id));
     }
-    if (unmatchedIds.length) {
+    if (clearedKeywordIds.length) {
       await tx.update(keywords).set({
         cprEstimate: null,
         cprMonthlySalesAverage: null,
@@ -121,7 +127,7 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
         cprSource: null,
         cprUpdatedAt: observedAt,
         updatedAt: observedAt,
-      }).where(inArray(keywords.id, unmatchedIds));
+      }).where(inArray(keywords.id, clearedKeywordIds));
     }
     await tx.insert(cprSyncStates).values({
       sourceKey: input.sourceKey,
@@ -132,10 +138,10 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
       calibration: input.document.calibration,
       sourceRecordCount: input.document.records.length,
       matchedKeywordCount: matched.length,
-      updatedKeywordCount: matched.length,
+      updatedKeywordCount: updatedCount,
       lastCheckedAt: observedAt,
       lastAppliedAt: observedAt,
-      lastStatus: matched.length ? "applied" : "no_match",
+      lastStatus: appliedStatus,
       lastError: null,
       createdAt: current?.createdAt ?? observedAt,
       updatedAt: observedAt,
@@ -148,10 +154,10 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
         calibration: input.document.calibration,
         sourceRecordCount: input.document.records.length,
         matchedKeywordCount: matched.length,
-        updatedKeywordCount: matched.length,
+        updatedKeywordCount: updatedCount,
         lastCheckedAt: observedAt,
         lastAppliedAt: observedAt,
-        lastStatus: matched.length ? "applied" : "no_match",
+        lastStatus: appliedStatus,
         lastError: null,
         updatedAt: observedAt,
       },
@@ -159,9 +165,10 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
   });
 
   return {
-    status: matched.length ? "applied" as const : "no_match" as const,
-    updated: matched.length,
+    status: appliedStatus,
+    updated: updatedCount,
     matched: matched.length,
+    cleared: clearedKeywordIds.length,
     sourceRecords: input.document.records.length,
     sourceGeneratedAt: input.document.generatedAt.toISOString(),
   };
