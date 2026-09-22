@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6HB74X",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "keyword": "incense sticks for sleep",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 413,
+      "monthlySalesAverage": 1550,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "keyword": "sandalwood incense sticks",
+      "naturalRank": 107,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 47,
+      "monthlySalesAverage": 178,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "keyword": "sandalwood incense",
+      "naturalRank": 139,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 51,
+      "monthlySalesAverage": 190,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "keyword": "natural sandalwood incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 164,
+      "monthlySalesAverage": 615,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "keyword": "sandalwood incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 86,
+      "monthlySalesAverage": 322,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "keyword": "long burning sandalwood incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 378,
+      "monthlySalesAverage": 1419,
+      "cprSampleCount": 8
+    }
+  ]
+}

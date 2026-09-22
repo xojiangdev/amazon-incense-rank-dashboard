@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY59TXJK",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "keyword": "lakawood incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 151,
+      "monthlySalesAverage": 567,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "keyword": "lakawood incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 232,
+      "monthlySalesAverage": 870,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "keyword": "natural lakawood incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "keyword": "lakawood incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 61,
+      "monthlySalesAverage": 228,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "keyword": "long burning lakawood incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 477,
+      "monthlySalesAverage": 1789,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "keyword": "lakawood aromatherapy incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 91,
+      "monthlySalesAverage": 342,
+      "cprSampleCount": 6
+    }
+  ]
+}

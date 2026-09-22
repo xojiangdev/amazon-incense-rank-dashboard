@@ -1,0 +1,15 @@
+{
+  "source": "sorftime product_traffic_terms",
+  "marketplace": "US",
+  "asin": "B0FY6R869L",
+  "pages": [
+    {
+      "page": 1,
+      "data": "collected via MCP; see source response in task log"
+    },
+    {
+      "page": 2,
+      "data": null
+    }
+  ]
+}

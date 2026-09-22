@@ -1,0 +1,28 @@
+{
+  "amz_site": "CA",
+  "asin": "B0FY6HB74X",
+  "source": "Sorftime product_traffic_terms pages 1-3",
+  "pages_fetched": [
+    1,
+    2,
+    3
+  ],
+  "data": {
+    "page1": [
+      {
+        "keyword": "incense stick",
+        "latest_organic_position": "Page 3, Pos 11/48"
+      },
+      {
+        "keyword": "incense sticks",
+        "latest_organic_position": "Page 3, Pos 38/48"
+      },
+      {
+        "keyword": "sandalwood incense",
+        "latest_organic_position": "Page 1, Pos 32/48"
+      }
+    ],
+    "page2": [],
+    "page3": []
+  }
+}

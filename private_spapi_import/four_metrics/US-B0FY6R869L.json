@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6R869L",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "keyword": "mini smudge sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 299,
+      "monthlySalesAverage": 1122,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "keyword": "sage to burn for cleansing negativity",
+      "naturalRank": 144,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 157,
+      "monthlySalesAverage": 590,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "keyword": "sage sticks for cleansing negative energy",
+      "naturalRank": 141,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 147,
+      "monthlySalesAverage": 550,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "keyword": "sage stick",
+      "naturalRank": 127,
+      "page": 3,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": 231,
+      "monthlySalesAverage": 867,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "keyword": "sage spray for cleansing negative energy and protection",
+      "naturalRank": 144,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 19,
+      "monthlySalesAverage": 70,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "keyword": "mantra incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 322,
+      "monthlySalesAverage": 1206,
+      "cprSampleCount": 9
+    }
+  ]
+}

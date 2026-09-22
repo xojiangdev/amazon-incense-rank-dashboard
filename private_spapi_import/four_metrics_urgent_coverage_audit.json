@@ -1,0 +1,125 @@
+{
+  "expectedListings": 40,
+  "expectedRows": 334,
+  "coveredRows": 325,
+  "issueCount": 7,
+  "issues": [
+    {
+      "marketplace": "US",
+      "asin": "B0GDKDTB6C",
+      "source": "fragments",
+      "expected": 9,
+      "received": 9,
+      "missing": [
+        "mugwort incense sticks"
+      ],
+      "extra": [
+        "mugwort"
+      ],
+      "duplicate": []
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "source": "fragments",
+      "expected": 15,
+      "received": 6,
+      "missing": [
+        "￼chinese incense bulk",
+        "chinese joss sticks incense",
+        "incense sticks agarwood",
+        "agarwood incense sticks",
+        "coreless incense",
+        "agarwood incense",
+        "coreless incense sticks",
+        "incense coreless",
+        "black agarwood incense",
+        "agarwood incense kit"
+      ],
+      "extra": [
+        "﻿chinese incense bulk"
+      ],
+      "duplicate": []
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "source": "fragments",
+      "expected": 20,
+      "received": 20,
+      "missing": [
+        "incense burner"
+      ],
+      "extra": [],
+      "duplicate": [
+        "incense holder and storage"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "source": "fragments",
+      "expected": 20,
+      "received": 20,
+      "missing": [
+        "glass incense holder",
+        "incense burner holder box",
+        "modern incense holder",
+        "wooden incense holder box",
+        "incense burner box with drawer storage"
+      ],
+      "extra": [],
+      "duplicate": [
+        "incense burner holder box black and gold",
+        "glass incense holder tray",
+        "lockable incense burner",
+        "wooden box incense holder",
+        "incense burner with storage"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "source": "fragments",
+      "expected": 20,
+      "received": 20,
+      "missing": [
+        "incense holder ￼"
+      ],
+      "extra": [],
+      "duplicate": [
+        "incense holder"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "source": "fragments",
+      "expected": 16,
+      "received": 16,
+      "missing": [
+        "natural incense sticks"
+      ],
+      "extra": [],
+      "duplicate": [
+        "mugwort incense non toxic"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "source": "fragments",
+      "expected": 16,
+      "received": 16,
+      "missing": [
+        "incense sandalwood",
+        "pine incense sticks"
+      ],
+      "extra": [],
+      "duplicate": [
+        "bakhoor incense sticks",
+        "sandalwood incense sticks"
+      ]
+    }
+  ]
+}

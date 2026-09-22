@@ -1,0 +1,67 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY67W88Z",
+  "index": 1,
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "burning incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 561,
+      "monthlySalesAverage": 150,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "incense holder ﻿",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 537,
+      "monthlySalesAverage": 143,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "murphys mosquito repellent incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 1025,
+      "monthlySalesAverage": 273,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "incense holder indian style",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 1114,
+      "monthlySalesAverage": 297,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "incense holder for pooja",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    }
+  ]
+}

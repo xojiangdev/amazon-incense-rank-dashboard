@@ -1,0 +1,29 @@
+{
+  "asin": "B0FY5K8HMT",
+  "amz_site": "US",
+  "page": 1,
+  "data": [
+    {
+      "keyword": "chinese incense",
+      "monthly_search_volume": 156,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00",
+      "exposure_position": "Organic",
+      "latest_organic_position": "Page 1, Pos 9/48",
+      "latest_organic_exposure_time": "2026-09-19 20:11",
+      "latest_ad_position": "",
+      "latest_ad_exposure_time": ""
+    },
+    {
+      "keyword": "mugwort incense",
+      "monthly_search_volume": 142,
+      "recommended_bid": "1.11",
+      "recommended_bid_range": "0.83-1.39",
+      "exposure_position": "Organic",
+      "latest_organic_position": "Page 3, Pos 29/48",
+      "latest_organic_exposure_time": "2026-07-25 02:04",
+      "latest_ad_position": "",
+      "latest_ad_exposure_time": ""
+    }
+  ]
+}

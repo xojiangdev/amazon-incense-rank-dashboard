@@ -1,0 +1,68 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY1RZGZH",
+  "start": 10,
+  "end": 15,
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "incense burner holder box black and gold",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 288,
+      "monthlySalesAverage": 1081,
+      "cprSampleCount": 26
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "chinese incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 288,
+      "monthlySalesAverage": 1081,
+      "cprSampleCount": 26
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "incense stick holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 288,
+      "monthlySalesAverage": 1081,
+      "cprSampleCount": 26
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "incense holder black",
+      "naturalRank": 103,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 288,
+      "monthlySalesAverage": 1081,
+      "cprSampleCount": 26
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "incense stick burner box",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 288,
+      "monthlySalesAverage": 1081,
+      "cprSampleCount": 26
+    }
+  ]
+}

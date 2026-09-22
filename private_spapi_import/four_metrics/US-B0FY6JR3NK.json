@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6JR3NK",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "keyword": "檀香线香",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "keyword": "sandalwood incense sticks natural",
+      "naturalRank": 55,
+      "page": 2,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 337,
+      "monthlySalesAverage": 1265,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "keyword": "sandalwood incense",
+      "naturalRank": 96,
+      "page": 2,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 45,
+      "monthlySalesAverage": 167,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "keyword": "400 count incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 567,
+      "monthlySalesAverage": 2125,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "keyword": "sandalwood incense sticks",
+      "naturalRank": 143,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 338,
+      "monthlySalesAverage": 1267,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "keyword": "natural sandalwood incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 378,
+      "monthlySalesAverage": 1417,
+      "cprSampleCount": 9
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY5K8HMT",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "keyword": "imperial palace incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 421,
+      "monthlySalesAverage": 1578,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "keyword": "imperial palace incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 125,
+      "monthlySalesAverage": 467,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "keyword": "natural imperial palace incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 105,
+      "monthlySalesAverage": 394,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "keyword": "imperial palace incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 291,
+      "monthlySalesAverage": 1090,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "keyword": "long burning imperial palace incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 101,
+      "monthlySalesAverage": 380,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "keyword": "imperial palace aromatherapy incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 55,
+      "monthlySalesAverage": 207,
+      "cprSampleCount": 8
+    }
+  ]
+}

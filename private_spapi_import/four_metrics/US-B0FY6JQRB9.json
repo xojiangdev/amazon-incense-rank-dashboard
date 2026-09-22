@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6JQRB9",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "keyword": "lavender air freshener on stick you light with fire",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 421,
+      "monthlySalesAverage": 1578,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "keyword": "lavender incense sticks",
+      "naturalRank": 94,
+      "page": 2,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "keyword": "lavender incense",
+      "naturalRank": 127,
+      "page": 3,
+      "pcAdRank": 20,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "keyword": "incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 640,
+      "monthlySalesAverage": 2400,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "keyword": "natural lavender incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "keyword": "lavender incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 51,
+      "monthlySalesAverage": 190,
+      "cprSampleCount": 5
+    }
+  ]
+}

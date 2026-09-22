@@ -1,0 +1,78 @@
+{
+  "status": "final_partial_recovery_complete",
+  "snapshotDate": "2026-09-22",
+  "scope": {
+    "expectedListings": 38,
+    "expectedRows": 294,
+    "excluded": [
+      {
+        "marketplace": "CA",
+        "asin": "B0FY6JR3NK",
+        "reason": "User-directed temporary skip after collection task timed out"
+      },
+      {
+        "marketplace": "US",
+        "asin": "B0FY67YPSM",
+        "reason": "User-directed temporary skip to publish all other fully verified Listings immediately"
+      },
+      {
+        "marketplace": "US",
+        "asin": "B0FY67W88Z",
+        "reason": "User-directed temporary skip after two-keyword repair failed closed on a control-character scope violation"
+      },
+      {
+        "marketplace": "US",
+        "asin": "B0FY1RZGZH",
+        "reason": "Temporary skip after five rows failed CPR sample-count validation; must be recollected"
+      }
+    ],
+    "excludedKeywordCount": 76
+  },
+  "import": {
+    "snapshotDate": "2026-09-22",
+    "expected": 294,
+    "updated": 294,
+    "excluded": {
+      "listings": [
+        {
+          "marketplace": "CA",
+          "asin": "B0FY6JR3NK",
+          "reason": "User-directed temporary skip after collection task timed out"
+        },
+        {
+          "marketplace": "US",
+          "asin": "B0FY67YPSM",
+          "reason": "User-directed temporary skip to publish all other fully verified Listings immediately"
+        },
+        {
+          "marketplace": "US",
+          "asin": "B0FY67W88Z",
+          "reason": "User-directed temporary skip after two-keyword repair failed closed on a control-character scope violation"
+        },
+        {
+          "marketplace": "US",
+          "asin": "B0FY1RZGZH",
+          "reason": "Temporary skip after five rows failed CPR sample-count validation; must be recollected"
+        }
+      ],
+      "keywords": 76
+    },
+    "rank": {
+      "updated": 294,
+      "top10": 2,
+      "top50": 14,
+      "outsideTopThreePages": 251
+    },
+    "cpr": {
+      "updated": 294,
+      "calculated": 129,
+      "insufficientEvidence": 165
+    },
+    "ads": {
+      "updated": 294,
+      "pcAdFound": 38,
+      "pcSbvFound": 25,
+      "neitherFound": 237
+    }
+  }
+}

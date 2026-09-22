@@ -1,0 +1,68 @@
+{
+  "marketplace": "CA",
+  "asin": "B0FY6MK2D4",
+  "start": 10,
+  "end": 15,
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "incense sticks bulk",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "camphor incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 82,
+      "monthlySalesAverage": 308,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "natural incense sticks non toxic",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "non toxic incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "organic incense sticks non toxic",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 30,
+      "monthlySalesAverage": 113,
+      "cprSampleCount": 6
+    }
+  ]
+}

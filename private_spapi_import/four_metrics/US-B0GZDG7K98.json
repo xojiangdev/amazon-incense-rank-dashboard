@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0GZDG7K98",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "keyword": "incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 415,
+      "monthlySalesAverage": 1558,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "keyword": "natural incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 296,
+      "monthlySalesAverage": 1111,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "keyword": "natural incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 373,
+      "monthlySalesAverage": 1400,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "keyword": "natural natural incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 188,
+      "monthlySalesAverage": 705,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "keyword": "coreless natural incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 163,
+      "monthlySalesAverage": 613,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "keyword": "natural incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 352,
+      "monthlySalesAverage": 1320,
+      "cprSampleCount": 5
+    }
+  ]
+}

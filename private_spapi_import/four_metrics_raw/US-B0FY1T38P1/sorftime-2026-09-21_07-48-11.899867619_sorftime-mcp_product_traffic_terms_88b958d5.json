@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "exposure_position": "Ad",
+      "keyword": "incense charcoal",
+      "latest_ad_exposure_time": "2026-09-17 13:07",
+      "latest_ad_position": "Page 1, Pos 18/69",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 7736,
+      "recommended_bid": "0.56",
+      "recommended_bid_range": "0.42-0.70"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "agarwood incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-20 19:30",
+      "latest_organic_position": "Page 2, Pos 44/48",
+      "monthly_search_volume": 4277,
+      "recommended_bid": "1.00",
+      "recommended_bid_range": "0.75-1.25"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "agarwood",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-19 12:43",
+      "latest_organic_position": "Page 3, Pos 31/48",
+      "monthly_search_volume": 835,
+      "recommended_bid": "0.85",
+      "recommended_bid_range": "0.61-1.00"
+    },
+    {
+      "exposure_position": "Ad,Organic",
+      "keyword": "chinese incense",
+      "latest_ad_exposure_time": "2026-09-12 05:08",
+      "latest_ad_position": "Page 2, Pos 11/60",
+      "latest_organic_exposure_time": "2026-08-05 23:36",
+      "latest_organic_position": "Page 3, Pos 23/48",
+      "monthly_search_volume": 156,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "agarwood incense sticks",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-07 09:56",
+      "latest_organic_position": "Page 2, Pos 19/50",
+      "monthly_search_volume": 80,
+      "recommended_bid": "1.18",
+      "recommended_bid_range": "0.89-1.48"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "oud incense sticks",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-04 23:52",
+      "latest_organic_position": "Page 3, Pos 22/50",
+      "monthly_search_volume": 94,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

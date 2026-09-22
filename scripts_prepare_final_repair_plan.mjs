@@ -1,0 +1,11 @@
+import fs from "node:fs";
+import path from "node:path";
+const root = path.resolve("private_spapi_import");
+const plan = JSON.parse(fs.readFileSync(path.join(root, "four_metric_correction_plan.json"), "utf8"));
+const omittedKeys = new Set(["US:B0FY67W88Z:a", "US:B0FY1RZGZH:a", "US:B0FY1RZGZH:b"]);
+const jobs = plan.jobs.filter(job => !omittedKeys.has(`${job.marketplace}:${job.asin}:${job.id}`));
+const output = { ...plan, status: "final_metric_correction_plan", jobs, correctedKeywords: jobs.reduce((sum, job) => sum + job.keywords.length, 0), omitted: [...omittedKeys] };
+if (jobs.length !== 6 || output.correctedKeywords !== 19) throw new Error(`Unexpected final repair plan: jobs=${jobs.length}, keywords=${output.correctedKeywords}`);
+const outputPath = path.join(root, "four_metric_final_correction_plan.json");
+fs.writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+console.log(JSON.stringify({ outputPath, jobs: jobs.length, correctedKeywords: output.correctedKeywords }, null, 2));

@@ -1,0 +1,614 @@
+{
+  "status": "ready_partial_recovery_scope",
+  "createdAt": "2026-09-21T23:59:23.866Z",
+  "canonicalTargetFile": "rank_targets.json",
+  "expectedListings": 39,
+  "expectedRows": 314,
+  "excluded": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6JR3NK",
+      "reason": "User-directed temporary skip after collection task timed out"
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67YPSM",
+      "reason": "User-directed temporary skip to publish all other fully verified Listings immediately"
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "reason": "User-directed temporary skip after two-keyword repair failed closed on a control-character scope violation"
+    }
+  ],
+  "excludedKeywordCount": 56,
+  "targets": [
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "sku": "1688-GPIncense-1.32-DG",
+      "keywords": [
+        "goose pear incense sticks",
+        "goose pear incense",
+        "natural goose pear incense sticks",
+        "goose pear incense sticks for meditation",
+        "long burning goose pear incense",
+        "goose pear aromatherapy incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7CCVCB",
+      "sku": "Ambergris-1.19-DG",
+      "keywords": [
+        "ambergris incense sticks",
+        "ambergris incense",
+        "natural ambergris incense sticks",
+        "charcoal free ambergris incense sticks",
+        "ambergris incense sticks for meditation",
+        "long burning ambergris incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H7R483PY",
+      "sku": "C0-7SML-QGMM",
+      "keywords": [
+        "mugwort incense",
+        "lavender incense sticks",
+        "lavender incense",
+        "natural lavender incense sticks",
+        "charcoal free lavender incense sticks",
+        "lavender incense sticks for meditation"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H7WPJDP1",
+      "sku": "HINOKI",
+      "keywords": [
+        "japanese incense",
+        "hinoki incense sticks",
+        "hinoki incense",
+        "natural hinoki incense sticks",
+        "hinoki incense sticks for meditation",
+        "long burning hinoki incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "sku": "ImperialPalace",
+      "keywords": [
+        "imperial palace incense sticks",
+        "imperial palace incense",
+        "natural imperial palace incense sticks",
+        "imperial palace incense sticks for meditation",
+        "long burning imperial palace incense",
+        "imperial palace aromatherapy incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GDKDTB6C",
+      "sku": "JD-C07S-HKF4",
+      "keywords": [
+        "mugwort incense",
+        "mugwort incense sticks",
+        "mugwort inscrnse stick",
+        "10/20/30/50-pack organic mugwort scented incense sticks slow burn aromatherapy for indoors, home fragrance, dailyconsumer use, natural herbal incense for living outdoor/room/bathroom/balcony/warehouse",
+        "mugwort incense resin",
+        "艾草香",
+        "japanese incense sticks mugwort",
+        "yinjiyue mugwort incense sticks – charcoal-free / low smoke",
+        "mugwort incense / mugwort smudge stick / mugwort incense sticks"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "sku": "PineCone-1.19-DG",
+      "keywords": [
+        "pine cone incense sticks",
+        "pine cone incense",
+        "natural pine cone incense sticks",
+        "charcoal free pine cone incense sticks",
+        "pine cone incense sticks for meditation",
+        "long burning pine cone incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "sku": "YJY-IH-CELADON-LEAF-US",
+      "keywords": [
+        "incense ceramic stick burner with ash catcher",
+        "incense holder",
+        "leave holder for incense",
+        "incense holder for sticks",
+        "leaf incense holder",
+        "incense holder with ash catcher",
+        "incense holder for big sticks"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "sku": "YJY-INC-AGARWOOD-40-US",
+      "keywords": [
+        "agarwood incense sticks",
+        "agarwood incense",
+        "natural agarwood incense sticks",
+        "charcoal free agarwood incense sticks",
+        "agarwood incense sticks for meditation",
+        "long burning agarwood incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "sku": "YJY-INC-BAMBOO-60-US",
+      "keywords": [
+        "incense sticks stickless coreless no stick",
+        "bamboo forest incense sticks",
+        "bamboo forest incense",
+        "natural bamboo forest incense sticks",
+        "coreless bamboo forest incense sticks",
+        "bamboo forest incense sticks for meditation"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDCC4MC",
+      "sku": "YJY-INC-CHERRY-100-US",
+      "keywords": [
+        "cherry blossom incense sticks",
+        "cherry blossom incense",
+        "natural cherry blossom incense sticks",
+        "coreless cherry blossom incense sticks",
+        "cherry blossom incense sticks for meditation",
+        "long burning cherry blossom incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "sku": "YJY-INC-HINOKI-60-US",
+      "keywords": [
+        "hinoki incense for morning air home purification",
+        "hinoki incense",
+        "hinoki incense sticks",
+        "natural hinoki incense sticks",
+        "hinoki incense sticks for meditation",
+        "long burning hinoki incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDTNZWT",
+      "sku": "YJY-INC-MAGNOLIA-110-US",
+      "keywords": [
+        "magnolia incense sticks",
+        "magnolia incense",
+        "natural magnolia incense sticks",
+        "coreless magnolia incense sticks",
+        "magnolia incense sticks for meditation",
+        "long burning magnolia incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "sku": "YJY-INC-OSMANTHUS-110-US",
+      "keywords": [
+        "osmanthus incense",
+        "osmanthus incense sticks",
+        "natural osmanthus incense sticks",
+        "coreless osmanthus incense sticks",
+        "osmanthus incense sticks for meditation",
+        "long burning osmanthus incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "sku": "YJY-INC-PINE-60-US",
+      "keywords": [
+        "incense sticks",
+        "natural incense sticks",
+        "natural incense",
+        "natural natural incense sticks",
+        "coreless natural incense sticks",
+        "natural incense sticks for meditation"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDN4VR8",
+      "sku": "YJY-INC-PLUM-110-US",
+      "keywords": [
+        "plum blossom incense sticks",
+        "plum blossom incense",
+        "natural plum blossom incense sticks",
+        "coreless plum blossom incense sticks",
+        "plum blossom incense sticks for meditation",
+        "long burning plum blossom incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "sku": "YJY-INC-WISTERIA-60-US",
+      "keywords": [
+        "wisteria incense",
+        "wisteria incense sticks",
+        "gonesh wisteria incense sticks",
+        "coreless japanese incense",
+        "natural wisteria incense sticks",
+        "coreless wisteria incense sticks"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "sku": "argarwood40",
+      "keywords": [
+        "chinese incense",
+        "incense chinese",
+        "hainan agarwood",
+        "￼chinese incense bulk",
+        "chinese agarwood incense",
+        "incienso chino",
+        "chinese joss sticks incense",
+        "incense sticks agarwood",
+        "agarwood incense sticks",
+        "coreless incense",
+        "agarwood incense",
+        "coreless incense sticks",
+        "incense coreless",
+        "black agarwood incense",
+        "agarwood incense kit"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "sku": "ihcloud",
+      "keywords": [
+        "incense holder box",
+        "japanese incense holder",
+        "incense burner box chinese",
+        "incense stick burner",
+        "incense box burner",
+        "incense holder",
+        "incense burner with storage",
+        "wooden incense stick holder with ash catcher",
+        "incense holders",
+        "incense holder and storage",
+        "incense holder storage box",
+        "incense burner box",
+        "insense burner and box",
+        "chinese incense holder",
+        "incense burner",
+        "box incense burner",
+        "incense holder for sticks",
+        "wooden incense holder box with storage",
+        "incense box holder",
+        "incense burner stick"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "sku": "ihlotusflower",
+      "keywords": [
+        "incense box green",
+        "incense burner box",
+        "incense holder box",
+        "incense holder",
+        "incense ash catcher",
+        "incense holder with cover",
+        "glass incense holder tray",
+        "lockable incense burner",
+        "wooden box incense holder",
+        "incense burner with storage",
+        "incense burner holder box black and gold",
+        "chinese incense holder",
+        "incense stick holder",
+        "incense holder black",
+        "incense stick burner box",
+        "glass incense holder",
+        "incense burner holder box",
+        "modern incense holder",
+        "wooden incense holder box",
+        "incense burner box with drawer storage"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "sku": "incenseholder17cm",
+      "keywords": [
+        "incense holder",
+        "incense holder for sticks",
+        "incense stick holder",
+        "wooden incense holder",
+        "hanging incense holder",
+        "incense holder with ash catcher"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "sku": "lakawood",
+      "keywords": [
+        "lakawood incense",
+        "lakawood incense sticks",
+        "natural lakawood incense sticks",
+        "lakawood incense sticks for meditation",
+        "long burning lakawood incense",
+        "lakawood aromatherapy incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FXW2KHWZ",
+      "sku": "lavender01",
+      "keywords": [
+        "lavender incense sticks",
+        "lavender incense",
+        "natural lavender incense sticks",
+        "lavender incense sticks for meditation",
+        "long burning lavender incense",
+        "lavender aromatherapy incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "sku": "lavender02",
+      "keywords": [
+        "lavender air freshener on stick you light with fire",
+        "lavender incense sticks",
+        "lavender incense",
+        "incense sticks",
+        "natural lavender incense sticks",
+        "lavender incense sticks for meditation"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MK2D4",
+      "sku": "mugwort40",
+      "keywords": [
+        "mugwort incense",
+        "mugwort incense sticks",
+        "incienso de artemisa",
+        "artemesia incene",
+        "艾草香",
+        "mugwort incense cones",
+        "mugwort incense satya",
+        "mugwort incense stick pack",
+        "pure mugwort incense",
+        "mugwort incense sticks from japanese",
+        "mugwort oud incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "sku": "mugworthy",
+      "keywords": [
+        "mugwort incense",
+        "mugwort incense for sensitive person",
+        "mugwort incense sticks",
+        "natural mugwort incense sticks",
+        "charcoal free mugwort incense sticks",
+        "mugwort incense sticks for meditation"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY55B96L",
+      "sku": "osmanthus",
+      "keywords": [
+        "osmanthus incense sticks",
+        "osmanthus incense",
+        "natural osmanthus incense sticks",
+        "osmanthus incense sticks for meditation",
+        "long burning osmanthus incense",
+        "osmanthus aromatherapy incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "sku": "palosanto",
+      "keywords": [
+        "palo santo sticks",
+        "palo santo",
+        "palo santo incense sticks",
+        "palo santo incense",
+        "incense sticks and holder set",
+        "natural palo santo incense sticks"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "sku": "pineconehy",
+      "keywords": [
+        "pine cone incense",
+        "pinecone incense sticks",
+        "pine cone incense sticks",
+        "pine incense sticks",
+        "natural pine cone incense sticks",
+        "charcoal free pine cone incense sticks"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVQTGQT",
+      "sku": "sandalhy",
+      "keywords": [
+        "sandalwood incense sticks",
+        "sandalwood incense",
+        "natural sandalwood incense sticks",
+        "sandalwood incense sticks for meditation",
+        "long burning sandalwood incense",
+        "sandalwood aromatherapy incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "sku": "sandalwood300",
+      "keywords": [
+        "檀香线香",
+        "sandalwood incense sticks natural",
+        "sandalwood incense",
+        "400 count incense sticks",
+        "sandalwood incense sticks",
+        "natural sandalwood incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "sku": "sandalwood40",
+      "keywords": [
+        "incense sticks for sleep",
+        "sandalwood incense sticks",
+        "sandalwood incense",
+        "natural sandalwood incense sticks",
+        "sandalwood incense sticks for meditation",
+        "long burning sandalwood incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "sku": "whitesage20",
+      "keywords": [
+        "mini smudge sticks",
+        "sage to burn for cleansing negativity",
+        "sage sticks for cleansing negative energy",
+        "sage stick",
+        "sage spray for cleansing negative energy and protection",
+        "mantra incense sticks"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "sku": "whitesage60",
+      "keywords": [
+        "mantra incense sticks",
+        "white sage incense sticks",
+        "white sage incense",
+        "natural white sage incense sticks",
+        "white sage incense sticks for meditation",
+        "long burning white sage incense"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FG7F3V69",
+      "sku": "PineCone-1.19-DG",
+      "keywords": [
+        "pine cone incense sticks",
+        "pine cone incense",
+        "natural pine cone incense sticks",
+        "charcoal free pine cone incense sticks",
+        "pine cone incense sticks for meditation",
+        "long burning pine cone incense"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "sku": "lotus",
+      "keywords": [
+        "incense holder",
+        "incense burner",
+        "agarbatti stand",
+        "dhoop stick stand",
+        "brass incense holder",
+        "incense stick holder",
+        "agarbatti holder",
+        "incense holder for sticks",
+        "stick incense holder",
+        "incense cone holder",
+        "bakhoor burner",
+        "incense burner holder",
+        "lotus incense holder",
+        "ceramic incense holder",
+        "japanese incense holder",
+        "insense holder",
+        "lotus flower incense holder",
+        "brass incense burner",
+        "agarbatti stand with ash catcher",
+        "ash catcher"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "sku": "mugwort40",
+      "keywords": [
+        "mugwort incense sticks",
+        "mugwort incense",
+        "mugwort bundle",
+        "armoise encens",
+        "mugwort incense non toxic",
+        "incense cones mugwort",
+        "chinese incense",
+        "mugworth",
+        "hem mugwort masala incense sticks",
+        "natural incense sticks",
+        "incense sticks bulk",
+        "camphor incense sticks",
+        "natural incense sticks non toxic",
+        "non toxic incense sticks",
+        "organic incense sticks non toxic",
+        "frankincense sticks"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "sku": "mugworthy",
+      "keywords": [
+        "mugwort",
+        "mugwort incense",
+        "mugwort incense sticks",
+        "non toxic incense sticks",
+        "natural mugwort incense sticks",
+        "charcoal free mugwort incense sticks"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "sku": "sandalwood40",
+      "keywords": [
+        "incense stick",
+        "mugwort incense",
+        "sandalwood incense",
+        "organic incense sticks",
+        "incense sandalwood",
+        "citronella incense sticks",
+        "pure sandalwood incense",
+        "sandalwood incense sticks",
+        "sandalwood incense, made in japan",
+        "incense sticks",
+        "gonesh incense sticks",
+        "japanese incense sticks",
+        "japanese sandalwood incense sticks",
+        "cedar incense sticks",
+        "bakhoor incense sticks",
+        "pine incense sticks"
+      ]
+    }
+  ]
+}

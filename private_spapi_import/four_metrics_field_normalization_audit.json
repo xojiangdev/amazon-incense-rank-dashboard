@@ -1,0 +1,151 @@
+{
+  "status": "field_alias_normalization_complete",
+  "normalized": [
+    {
+      "file": "CA-B0FG7F3V69.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 5
+    },
+    {
+      "file": "CA-B0GWVLF81Y.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 3
+    },
+    {
+      "file": "US-B0FDQ3L67K.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 5
+    },
+    {
+      "file": "US-B0FG7CCVCB.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 6
+    },
+    {
+      "file": "US-B0FG7F3V69.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 3
+    },
+    {
+      "file": "US-B0FXW2KHWZ.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 6
+    },
+    {
+      "file": "US-B0FY55B96L.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 3
+    },
+    {
+      "file": "US-B0FY59TXJK.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 1
+    },
+    {
+      "file": "US-B0FY5K8HMT.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 0
+    },
+    {
+      "file": "US-B0FY5P2M4S.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 1
+    },
+    {
+      "file": "US-B0FY6HB74X.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 0
+    },
+    {
+      "file": "US-B0FY6JQRB9.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 3
+    },
+    {
+      "file": "US-B0FY6JR3NK.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 1
+    },
+    {
+      "file": "US-B0FY6MCXS7.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 2
+    },
+    {
+      "file": "US-B0FY6R869L.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 0
+    },
+    {
+      "file": "US-B0FYCG49CK.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 6
+    },
+    {
+      "file": "US-B0GWVDR845.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 1
+    },
+    {
+      "file": "US-B0GWVLF81Y.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 3
+    },
+    {
+      "file": "US-B0GWVQTGQT.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 1
+    },
+    {
+      "file": "US-B0GZDCC4MC.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 5
+    },
+    {
+      "file": "US-B0GZDG7K98.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 0
+    },
+    {
+      "file": "US-B0GZDGRVCP.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 0
+    },
+    {
+      "file": "US-B0GZDJVS2P.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 4
+    },
+    {
+      "file": "US-B0GZDKBPXK.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 4
+    },
+    {
+      "file": "US-B0GZDRB1TX.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 1
+    },
+    {
+      "file": "US-B0GZDTNZWT.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 4
+    },
+    {
+      "file": "US-B0H6WKJKSG.json",
+      "rows": 7,
+      "clearedUnsupportedCprValues": 2
+    },
+    {
+      "file": "US-B0H7R483PY.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 4
+    },
+    {
+      "file": "US-B0H7WPJDP1.json",
+      "rows": 6,
+      "clearedUnsupportedCprValues": 1
+    }
+  ],
+  "totalRows": 175
+}

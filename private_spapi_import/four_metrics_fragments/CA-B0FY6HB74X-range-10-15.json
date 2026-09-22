@@ -1,0 +1,68 @@
+{
+  "marketplace": "CA",
+  "asin": "B0FY6HB74X",
+  "start": 10,
+  "end": 15,
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "gonesh incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "japanese incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "japanese sandalwood incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 28,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "cedar incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 30,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "bakhoor incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 37,
+      "monthlySalesAverage": 140,
+      "cprSampleCount": 7
+    }
+  ]
+}

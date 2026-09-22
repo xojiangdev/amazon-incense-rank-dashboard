@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "exposure_position": "Organic",
+      "keyword": "sandalo incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-15 02:20",
+      "latest_organic_position": "Page 3, Pos 8/48",
+      "monthly_search_volume": 46,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "sandalwood incense sticks natural",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-09 10:49",
+      "latest_organic_position": "Page 2, Pos 7/48",
+      "monthly_search_volume": 11,
+      "recommended_bid": "0.72",
+      "recommended_bid_range": "0.54-0.90"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "aesop incense sticks",
+      "latest_ad_exposure_time": "2026-08-08 06:48",
+      "latest_ad_position": "Page 2, Pos 57/57",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 72,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "kayuragi incense",
+      "latest_ad_exposure_time": "2026-09-15 20:14",
+      "latest_ad_position": "Page 3, Pos 55/55",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 425,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "data": [
+    {
+      "exposure_position": "Ad",
+      "keyword": "impossible creatures",
+      "latest_ad_exposure_time": "2026-09-19 05:43",
+      "latest_ad_position": "Page 2, Pos 31/32",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 45660,
+      "recommended_bid": "0.53",
+      "recommended_bid_range": "0.40-0.66"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense matches",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-14 17:43",
+      "latest_organic_position": "Page 2, Pos 13/52",
+      "monthly_search_volume": 29498,
+      "recommended_bid": "0.45",
+      "recommended_bid_range": "0.34-0.56"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "incense stick",
+      "latest_ad_exposure_time": "2026-09-08 14:43",
+      "latest_ad_position": "Page 2, Pos 35/71",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 5064,
+      "recommended_bid": "1.33",
+      "recommended_bid_range": "0.96-1.49"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "mugwort incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-19 11:15",
+      "latest_organic_position": "Page 1, Pos 25/48",
+      "monthly_search_volume": 142,
+      "recommended_bid": "1.11",
+      "recommended_bid_range": "0.83-1.39"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "stick incense",
+      "latest_ad_exposure_time": "2026-09-03 21:32",
+      "latest_ad_position": "Page 3, Pos 30/66",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 1192,
+      "recommended_bid": "1.08",
+      "recommended_bid_range": "0.76-1.52"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "blunt effects incense sticks",
+      "latest_ad_exposure_time": "2026-09-04 02:25",
+      "latest_ad_position": "Page 3, Pos 40/43",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 455,
+      "recommended_bid": "0.99",
+      "recommended_bid_range": "0.51-1.22"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "cedar and zen",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-06 17:27",
+      "latest_organic_position": "Page 1, Pos 15/48",
+      "monthly_search_volume": 1343,
+      "recommended_bid": "1.10",
+      "recommended_bid_range": "0.65-1.38"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

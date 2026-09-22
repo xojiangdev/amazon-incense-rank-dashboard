@@ -1,0 +1,68 @@
+{
+  "marketplace": "CA",
+  "asin": "B0FY6MK2D4",
+  "start": 0,
+  "end": 5,
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "mugwort incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 40,
+      "monthlySalesAverage": 150,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "mugwort incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "mugwort bundle",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 4,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "armoise encens",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "mugwort incense non toxic",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    }
+  ]
+}

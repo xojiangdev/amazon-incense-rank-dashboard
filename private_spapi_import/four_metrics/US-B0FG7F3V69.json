@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FG7F3V69",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "keyword": "pine cone incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 4,
+      "cprEstimate": 40,
+      "monthlySalesAverage": 150,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "keyword": "pine cone incense",
+      "naturalRank": 20,
+      "page": 1,
+      "pcAdRank": 999,
+      "pcSbvRank": 4,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "keyword": "natural pine cone incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 9,
+      "cprEstimate": 134,
+      "monthlySalesAverage": 504,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "keyword": "charcoal free pine cone incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 13,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "keyword": "pine cone incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 20,
+      "cprEstimate": 461,
+      "monthlySalesAverage": 1729,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "keyword": "long burning pine cone incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 13,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    }
+  ]
+}

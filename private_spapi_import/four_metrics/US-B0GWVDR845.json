@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0GWVDR845",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "keyword": "pine cone incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "keyword": "pinecone incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 4,
+      "cprEstimate": 73,
+      "monthlySalesAverage": 275,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "keyword": "pine cone incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 50,
+      "cprEstimate": 102,
+      "monthlySalesAverage": 383,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "keyword": "pine incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 272,
+      "monthlySalesAverage": 1020,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "keyword": "natural pine cone incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 24,
+      "monthlySalesAverage": 90,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "keyword": "charcoal free pine cone incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 4,
+      "cprEstimate": 69,
+      "monthlySalesAverage": 260,
+      "cprSampleCount": 5
+    }
+  ]
+}

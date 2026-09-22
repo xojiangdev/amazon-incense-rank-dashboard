@@ -1,0 +1,1566 @@
+{
+  "id": "09212321-1212-0644-0000-97474481e101",
+  "items": [
+    {
+      "bought_past_month": 6000,
+      "currency": "USD",
+      "data_asin": "B07HY86FRF",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71UzYT5JrlL._AC_UL320_.jpg",
+      "is_amazon_choice": true,
+      "price_from": 12.99,
+      "rank_absolute": 1,
+      "rank_group": 1,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 13800
+      },
+      "title": "Luna Sundara Palo Santo Sticks, 100g Peruvian Smudging Wood",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfYXRmOjMwMDcwNjE0NjE2NjkwMjo6MDo6\u0026url=%2FLuna-Sundara-Smudging-Sustainably-Harvested%2Fdp%2FB07HY86FRF%2Fref%3Dsr_1_1_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 2000,
+      "currency": "USD",
+      "data_asin": "B019G1YO5A",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81W5oiV7ZYL._AC_UL320_.jpg",
+      "price_from": 8.25,
+      "rank_absolute": 2,
+      "rank_group": 2,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 8700
+      },
+      "title": "Palo Santo, 6 Holy Wood Incense Sticks for Smudging - Sustainable \u0026 Ethical",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfYXRmOjMwMTE3MzkwNzU5NzcwMjo6MDo6\u0026url=%2FPalo-Santo-Sticks-Accessories-Sustainably%2Fdp%2FB019G1YO5A%2Fref%3Dsr_1_2_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 700,
+      "currency": "USD",
+      "data_asin": "B0BWX3X6NY",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71baPpFBwLL._AC_UL320_.jpg",
+      "price_from": 17.99,
+      "rank_absolute": 3,
+      "rank_group": 3,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 1500
+      },
+      "title": "Palo Santo Smudging Sticks – 24 Pack (220 Grams | 8 Oz) from Peru Premium High Resin Hand Picked Palo Santo Sticks - Ethically Wild Harvested Sacred Smudging Sticks Sustainable Packaging",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfYXRmOjIwMDE3NTQxNTk3MDI5ODo6MDo6\u0026url=%2FPalo-Santo-Smudging-Sticks-Peru-Sourced%2Fdp%2FB0BWX3X6NY%2Fref%3Dsr_1_3_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-3-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 500,
+      "currency": "USD",
+      "data_asin": "B0CPQVXSHQ",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/9186etc-79L._AC_UL320_.jpg",
+      "price_from": 17.98,
+      "rank_absolute": 4,
+      "rank_group": 4,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 2600
+      },
+      "special_offers": [
+        "Extra 5% off  when you subscribe"
+      ],
+      "title": "Palo Santo Sticks, 20-Pack, Peruvian Incense Wood for Smudging",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfYXRmOjMwMTA3ODgyNTYyNTIwMjo6MDo6\u0026url=%2FAlmaCura-Palo-Santo-Sticks-Pack%2Fdp%2FB0CPQVXSHQ%2Fref%3Dsr_1_4_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26rdc%3D1%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-4-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 6000,
+      "currency": "USD",
+      "data_asin": "B07HY86FRF",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71UzYT5JrlL._AC_UL320_.jpg",
+      "is_amazon_choice": true,
+      "price_from": 12.99,
+      "rank_absolute": 5,
+      "rank_group": 1,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 13800
+      },
+      "title": "Luna Sundara Palo Santo Sticks, 100g Peruvian Smudging Wood",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Luna-Sundara-Smudging-Sustainably-Harvested/dp/B07HY86FRF/ref=sr_1_5?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-5"
+    },
+    {
+      "bought_past_month": 700,
+      "currency": "USD",
+      "data_asin": "B08B9K94XR",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81S41gDEnSL._AC_UL320_.jpg",
+      "price_from": 8.45,
+      "rank_absolute": 6,
+      "rank_group": 2,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 1000
+      },
+      "title": "Ancient VEDA Peruvian Palo Santo Sticks 12 Pack with Smudge Guide – High Resin Content, Sweet Scent Holy Wood for Smudging, Meditation, Energy Cleansing – Sustainably Harvested, Aromatic Incense",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Ancient-Santo-Sticks-Smudge-Guide/dp/B08B9K94XR/ref=sr_1_6?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-6"
+    },
+    {
+      "bought_past_month": 2000,
+      "currency": "USD",
+      "data_asin": "B09L6GFRPT",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81Evw0KGnbL._AC_UL320_.jpg",
+      "price_from": 8.59,
+      "rank_absolute": 7,
+      "rank_group": 3,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 2600
+      },
+      "special_offers": [
+        "Extra 5% off  when you subscribe"
+      ],
+      "title": "Palo Santo Sticks, 8-Pack, Peruvian Incense Wood for Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Ethically-Harvested-AlmaCura-Meditation-Cleansing/dp/B09L6GFRPT/ref=sr_1_7?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026rdc=1\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-7"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B0GJJ6VZTV",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "sponsored-ads.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/616AFuQUGDL._AC_UL640_QL65_.jpg",
+      "price_from": 19.99,
+      "rank_absolute": 8,
+      "rank_group": 5,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 18
+      },
+      "title": "3 in 1 Incense Holder for Sticks \u0026 Palo Santo \u0026 Sage Sticks | Hanging Upside Down Incense Stick Burner with Glass Ash Catcher \u0026 Storage, Upside Down Palo Santo Sage Burner, Ash Free",
+      "type": "amazon_paid",
+      "url": "https://sponsored-ads.amazon.com/clk?p=eAHj8uJo-3HsKpsQr2NIWICLt6d3hIGLa5ASo6GVWH5geVSBs7mld4VhZVlyWblrtqeFRWAQl4WZnompnrGpnkEUU7BTEoeja4iHa5BnsJA4F3tKanF2SX6BEE-oX5Crs7-7n2eUq4uUC5cyVCK-ODWxKDkjviC1KDk_J7EkNT4zLyczLzU-qSRNiCsxN7EqP08vOT9Xiqs4qUwXoliJNTUvPjRYyYyL0UBg2Ybp9w4ecpHigxqoC9GvxG9kYGBgaWRqbG5uaGFpbmjEHBrsYsXsHOCs5S1k7eLk6Fzg5qlr7ljnVAgB6Y51ToGFFmHpFo6ooM4pvc4psM7JEcxIl-JxTnetcHd0Ta8yK081CucKzSgpKSi20tcvLy_XQ7hYP6VA38nA3cvLLCwqJMw-sSg1zdbbMS3LNCK_ILRcrSAlviglPtMWoQQqVJCTkVJkWwIAt7t8rg\u0026v=c1\u0026r=https://www.amazon.com/CrysDeco-Incense-Holder-Sticks-Santo/dp/B0GJJ6VZTV/ref=sxin_16_sbv_search_btf?aref=KAfj5XopUw\u0026content-id=amzn1.sym.48551238-add4-4aa5-b76d-9f01a49ca0eb%3Aamzn1.sym.48551238-add4-4aa5-b76d-9f01a49ca0eb\u0026crid=ZM05O4RE8QVO\u0026cv_ct_cx=palo+santo+sticks\u0026keywords=palo+santo+sticks\u0026pd_rd_i=B0GJJ6VZTV\u0026pd_rd_r=dfddd2b4-564f-4a52-8d95-d666950aae78\u0026pd_rd_w=D4LR0\u0026pd_rd_wg=JW2uz\u0026pf_rd_p=48551238-add4-4aa5-b76d-9f01a49ca0eb\u0026pf_rd_r=Z1DSGPSWGPDNAES9CJFC\u0026qid=1790032902\u0026sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=1-1-9634760c-6951-42cd-a9a5-afc46d7935cc"
+    },
+    {
+      "bought_past_month": 2000,
+      "currency": "USD",
+      "data_asin": "B019G1YO5A",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81W5oiV7ZYL._AC_UL320_.jpg",
+      "price_from": 8.25,
+      "rank_absolute": 9,
+      "rank_group": 4,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 8700
+      },
+      "title": "Palo Santo, 6 Holy Wood Incense Sticks for Smudging - Sustainable \u0026 Ethical",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Sticks-Accessories-Sustainably/dp/B019G1YO5A/ref=sr_1_8?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-8"
+    },
+    {
+      "bought_past_month": 700,
+      "currency": "USD",
+      "data_asin": "B0BWX3X6NY",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71baPpFBwLL._AC_UL320_.jpg",
+      "price_from": 17.99,
+      "rank_absolute": 10,
+      "rank_group": 5,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 1500
+      },
+      "title": "Palo Santo Smudging Sticks – 24 Pack (220 Grams | 8 Oz) from Peru Premium High Resin Hand Picked Palo Santo Sticks - Ethically Wild Harvested Sacred Smudging Sticks Sustainable Packaging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Smudging-Sticks-Peru-Sourced/dp/B0BWX3X6NY/ref=sr_1_9?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-9"
+    },
+    {
+      "bought_past_month": 1000,
+      "currency": "USD",
+      "data_asin": "B084HM4711",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/7140seEu0hL._AC_UL320_.jpg",
+      "price_from": 18.97,
+      "rank_absolute": 11,
+      "rank_group": 6,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 3600
+      },
+      "special_offers": [
+        "Extra 15% off  when you subscribe"
+      ],
+      "title": "Palo Santo Sticks Large Pack (20 Sticks - Approx. 6.3 Oz / 180 g)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Smudging-Sticks-Pack/dp/B084HM4711/ref=sr_1_10?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026rdc=1\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-10"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B0FYCG49CK",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/419dOzre+8L._AC_UL320_.jpg",
+      "price_from": 6.99,
+      "rank_absolute": 12,
+      "rank_group": 6,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 2.2,
+        "votes_count": 4
+      },
+      "title": "Palo Santo Incense Sticks (20 Pack) –Pure Organic \u0026 Natural Hand-Rolled Peruvian Palo Santo Wood for Spiritual Cleansing, Meditation \u0026 Aromatherapy",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfbXRmOjMwMTQ3NTAyNzk4NzIwMjo6MDo6\u0026url=%2FHand-Rolled-Spiritual-Cleansing-Meditation-Aromatherapy%2Fdp%2FB0FYCG49CK%2Fref%3Dsr_1_11_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-11-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 500,
+      "currency": "USD",
+      "data_asin": "B0D9TMW2HM",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81nEiCJz3cL._AC_UL320_.jpg",
+      "price_from": 16.99,
+      "rank_absolute": 13,
+      "rank_group": 7,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 280
+      },
+      "title": "Palo Santo Sticks - Palo Santo Stick - Authentic Real PaloSanto - Premium Palosanto - Smudging - from Peru - Palo - 8 Sticks",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfbXRmOjMwMDQ5NDA0Njk4NTkwMjo6MDo6\u0026url=%2FSticks-Incense-Incienso-Premium-Smudging%2Fdp%2FB0D9TMW2HM%2Fref%3Dsr_1_12_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-12-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B0H29JH7NG",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91Fk+xo7uQL._AC_UL320_.jpg",
+      "price_from": 11.88,
+      "rank_absolute": 14,
+      "rank_group": 8,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4,
+        "votes_count": 12
+      },
+      "title": "Palo Santo Incense Sticks, 100 Sticks, Organic Non Toxic Insence,No Charcoal Clean Burning, 100% Natural sustainably harvested, Spiritual Healing Calming Aroma for Positive Vibes",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfbXRmOjMwMTM0MzEyMjg5NjYwMjo6MDo6\u0026url=%2FCharcoal-sustainably-harvested-Spiritual-Positive%2Fdp%2FB0H29JH7NG%2Fref%3Dsr_1_13_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-13-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B0GVMFNYP9",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71Jf0nk1yVL._AC_UL320_.jpg",
+      "price_from": 17.9,
+      "rank_absolute": 15,
+      "rank_group": 9,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 4
+      },
+      "title": "20 Pack Palo Santo Wood Sticks,200g-Incense for Spiritual Cleansing, Stress Relief, Meditation Accessories, Home Fragrance| Aromatherapy Incense for Meditation, Smudging, Stress Relief",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfbXRmOjMwMTUwNzEyMDM0MjEwMjo6MDo6\u0026url=%2FSanto-200g-Incense-Meditation-Accessories-Aromatherapy%2Fdp%2FB0GVMFNYP9%2Fref%3Dsr_1_14_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-14-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 1000,
+      "currency": "USD",
+      "data_asin": "B07WP6WYCG",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71rV-s07rAL._AC_UL320_.jpg",
+      "price_from": 6.99,
+      "rank_absolute": 16,
+      "rank_group": 7,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 4900
+      },
+      "title": "Palo Santo Sticks, Holy Wood for Smudging and Rituals, 5 Pack",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Sticks-Harvested-Smudging/dp/B07WP6WYCG/ref=sr_1_15?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-15"
+    },
+    {
+      "bought_past_month": 1000,
+      "currency": "USD",
+      "data_asin": "B09DCBKG2N",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/7199IJ9w61L._AC_UL320_.jpg",
+      "price_from": 13.99,
+      "rank_absolute": 17,
+      "rank_group": 8,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 11200
+      },
+      "special_offers": [
+        "Extra 5% off  when you subscribe"
+      ],
+      "title": "CALMVEDA Holy Palo Santo Incense Sticks for Cleansing - 80, Charcoal Free",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/CALMVEDA-Palo-Santo-Incense-Sticks/dp/B09DCBKG2N/ref=sr_1_16?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026rdc=1\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-16"
+    },
+    {
+      "bought_past_month": 500,
+      "currency": "USD",
+      "data_asin": "B0CPQVXSHQ",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/9186etc-79L._AC_UL320_.jpg",
+      "price_from": 17.98,
+      "rank_absolute": 18,
+      "rank_group": 9,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 2600
+      },
+      "special_offers": [
+        "Extra 5% off  when you subscribe"
+      ],
+      "title": "Palo Santo Sticks, 20-Pack, Peruvian Incense Wood for Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/AlmaCura-Palo-Santo-Sticks-Pack/dp/B0CPQVXSHQ/ref=sr_1_17?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026rdc=1\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-17"
+    },
+    {
+      "bought_past_month": 300,
+      "currency": "USD",
+      "data_asin": "B07YMHHJ2W",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/810eaUFIuqL._AC_UL320_.jpg",
+      "price_from": 38.95,
+      "rank_absolute": 19,
+      "rank_group": 10,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 1900
+      },
+      "title": "60 Premium Palo Santo Sticks, Wild Harvested Holy Wood for Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Certified-Authentic-Harvested-Purifying-Cleansing/dp/B07YMHHJ2W/ref=sr_1_18?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-18"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B07T8QCHVS",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81iBVDQQV+L._AC_UL320_.jpg",
+      "price_from": 16.99,
+      "rank_absolute": 20,
+      "rank_group": 10,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 1500
+      },
+      "title": "Bursera Palo Santo Sticks, Tree Planted with Every Order, 100% Natural, Ethical \u0026 Sustainable, 5-Pack Authentic Real Palo Santo Wood Incense Sticks from Peru for Aromatherapy, Smudging",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfbXRmOjIwMDA2MDYyNDM5ODUxMTo6MDo6\u0026url=%2FBursera-Purchase-Sustainable-Aromatherapy-Meditation%2Fdp%2FB07T8QCHVS%2Fref%3Dsr_1_19_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-19-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 1000,
+      "currency": "USD",
+      "data_asin": "B08VKV79RH",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81CLGEeD4DL._AC_UL320_.jpg",
+      "price_from": 7.99,
+      "rank_absolute": 21,
+      "rank_group": 11,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.7,
+        "votes_count": 3000
+      },
+      "title": "White Sage Incense Sticks and Hem De Palo Santo Incense Sticks with Incense Holder Bundle for Smudging Smudge kit Natural Inciensos Aromaticos Home Fragrance",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfbXRmOjMwMDA2MTAxMDQxODQwMjo6MDo6\u0026url=%2FIncense-Sticks-Holder-Smudging-Fragrance%2Fdp%2FB08VKV79RH%2Fref%3Dsr_1_20_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-20-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B0GZ17BWLY",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81PgeF4BGCL._AC_UL320_.jpg",
+      "price_from": 17.99,
+      "rank_absolute": 22,
+      "rank_group": 12,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.7,
+        "votes_count": 10
+      },
+      "title": "Peruvian Palo Santo Sticks (120 Grams Premium Sticks) - High Resin Incense",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfbXRmOjMwMTM0OTY0NjM3NTcwMjo6MDo6\u0026url=%2FPeruvian-Palo-Santo-Sticks-120%2Fdp%2FB0GZ17BWLY%2Fref%3Dsr_1_21_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-21-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B0GCZBKY7H",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81ns5DD1TkL._AC_UL320_.jpg",
+      "price_from": 9.99,
+      "rank_absolute": 23,
+      "rank_group": 13,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.2,
+        "votes_count": 58
+      },
+      "title": "Palo Santo Incense Sticks - Aromatherapy for Space Cleansing, 60 Count",
+      "type": "amazon_paid",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTozMTc3Njg4MjcxNjAyNjAwOjE3OTAwMzI5MDI6c3BfbXRmOjMwMTUyODY2NDAzNTYwMjo6MDo6\u0026url=%2FPalo-Santo-Incense-Sticks-Insence-Sticks%2Fdp%2FB0GCZBKY7H%2Fref%3Dsr_1_22_sspa%3Fcrid%3DZM05O4RE8QVO%26dib%3DeyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ%26dib_tag%3Dse%26keywords%3Dpalo%2Bsanto%2Bsticks%26qid%3D1790032902%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D8-22-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1"
+    },
+    {
+      "bought_past_month": 500,
+      "currency": "USD",
+      "data_asin": "B00ZIX48CA",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/817LLdOor2L._AC_UL320_.jpg",
+      "price_from": 10.99,
+      "rank_absolute": 24,
+      "rank_group": 11,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 12800
+      },
+      "title": "Luna Sundara Palo Santo Smudging Sticks, 8 Wild Harvested Sticks",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Luna-Sundara-Smudging-Sticks-Ecuador/dp/B00ZIX48CA/ref=sr_1_23?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-23"
+    },
+    {
+      "bought_past_month": 300,
+      "currency": "USD",
+      "data_asin": "B0BP9HGTM2",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71Sg7OPssTL._AC_UL320_.jpg",
+      "price_from": 9.97,
+      "rank_absolute": 25,
+      "rank_group": 12,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 1500
+      },
+      "title": "Palo Santo Smudging Sticks – 12 Pack (4 oz / 110 g) from Peru Premium High Resin Hand Picked Palo Santo Sticks - Ethically Wild Harvested Sacred Smudging Sticks Sustainable Packaging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Smudging-Sticks-Peru-Sourced/dp/B0BP9HGTM2/ref=sr_1_24?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-24"
+    },
+    {
+      "bought_past_month": 500,
+      "currency": "USD",
+      "data_asin": "B0D9TMW2HM",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81nEiCJz3cL._AC_UL320_.jpg",
+      "price_from": 16.99,
+      "rank_absolute": 26,
+      "rank_group": 13,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 280
+      },
+      "title": "Palo Santo Sticks - Palo Santo Stick - Authentic Real PaloSanto - Premium Palosanto - Smudging - from Peru - Palo - 8 Sticks",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Sticks-Incense-Incienso-Premium-Smudging/dp/B0D9TMW2HM/ref=sr_1_25?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-25"
+    },
+    {
+      "bought_past_month": 100,
+      "currency": "USD",
+      "data_asin": "B07WPQK27M",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91Woi7a8ewL._AC_UL320_.jpg",
+      "price_from": 21.99,
+      "rank_absolute": 27,
+      "rank_group": 14,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 1900
+      },
+      "title": "30 Premium Palo Santo Sticks, Wild Harvested Holy Wood for Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Certified-Authentic-Harvested-Purifying-Cleansing/dp/B07WPQK27M/ref=sr_1_26?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-26"
+    },
+    {
+      "bought_past_month": 300,
+      "currency": "USD",
+      "data_asin": "B0D31NPB68",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71OSnnURRuL._AC_UL320_.jpg",
+      "price_from": 17.87,
+      "rank_absolute": 28,
+      "rank_group": 15,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.2,
+        "votes_count": 243
+      },
+      "title": "Palo Santo Sticks 20 Pack from Peru Home Fragrance Premium Natural Wood",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Santo-Sticks-Fragrance-Premium-Natural/dp/B0D31NPB68/ref=sr_1_27?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-27"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B09CQBTHY2",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/810eaUFIuqL._AC_UL320_.jpg",
+      "price_from": 63.85,
+      "rank_absolute": 29,
+      "rank_group": 16,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 1900
+      },
+      "title": "120 Premium Palo Santo Sticks, Wild Harvested Holy Wood for Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Certified-Authentic-Harvested-Purifying-Cleansing/dp/B09CQBTHY2/ref=sr_1_28?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-28"
+    },
+    {
+      "bought_past_month": 1000,
+      "currency": "USD",
+      "data_asin": "B01KAQMDX0",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/61FYtWP5lkL._AC_UL320_.jpg",
+      "price_from": 6.99,
+      "rank_absolute": 30,
+      "rank_group": 17,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.7,
+        "votes_count": 6200
+      },
+      "title": "HEM Palo Santo Incense Sticks – (120 Sticks, 6 Boxes Inside) - 9 Inches Long,| Aromatherapy | Long-Lasting Relaxation \u0026 Meditation | Calming \u0026 Cleansing Incense for Home, Yoga \u0026 Spiritual Use.",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/HEM-Incense-Sticks-Bulk-Pack/dp/B01KAQMDX0/ref=sr_1_29?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-29"
+    },
+    {
+      "bought_past_month": 500,
+      "currency": "USD",
+      "data_asin": "B004RZL39Q",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71+p8MJn6tL._AC_UL320_.jpg",
+      "price_from": 6.49,
+      "rank_absolute": 31,
+      "rank_group": 18,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 2100
+      },
+      "title": "Sacred Palo Santo Wood Incense Sticks - New Age Smudges \u0026 Herbs | Harness 'Holy Wood' for Cleansing, Meditation \u0026 Energy | Ethically Sourced, Aromatic | 6 Premium Sticks for Spiritual Enrichment",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Sacred-Palo-Santo-Incense-Sticks/dp/B004RZL39Q/ref=sr_1_30?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-30"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B07YMWF26Z",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/814qLyHG3sL._AC_UL320_.jpg",
+      "price_from": 35.95,
+      "rank_absolute": 32,
+      "rank_group": 19,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 1000
+      },
+      "title": "1 Pound Premium Palo Santo Sticks, Wild Harvested Holy Wood for Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Certified-Authentic-Harvested-Purifying-Meditation/dp/B07YMWF26Z/ref=sr_1_31?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-31"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B091GKHXWX",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/61dylH9XXZS._AC_UL320_.jpg",
+      "price_from": 15.99,
+      "rank_absolute": 33,
+      "rank_group": 20,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 581
+      },
+      "title": "20 Palo Santo Sticks, Premium Natural Wood for Cleansing and Aromatherapy",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Certified-Authentic-Harvested-Purifying-Cleansing/dp/B091GKHXWX/ref=sr_1_32?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-32"
+    },
+    {
+      "bought_past_month": 1000,
+      "currency": "USD",
+      "data_asin": "B07SJZNKK4",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81I3HSzubcL._AC_UL320_.jpg",
+      "price_from": 6.99,
+      "rank_absolute": 34,
+      "rank_group": 21,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.7,
+        "votes_count": 1100
+      },
+      "title": "New Age Smudges and Herbs Smudge Kit - 2 California White Sage Smudge Stick for Cleansing (Salvia Apiana) with 2 Palo Santo Incense Sticks (Holy Wood) - Sage Bundles …",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/New-Age-Smudges-Herbs-Smudge/dp/B07SJZNKK4/ref=sr_1_33?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-33"
+    },
+    {
+      "bought_past_month": 400,
+      "currency": "USD",
+      "data_asin": "B0FLDTWMZP",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/719703bGafL._AC_UL320_.jpg",
+      "price_from": 9.99,
+      "rank_absolute": 35,
+      "rank_group": 22,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 2400
+      },
+      "special_offers": [
+        "Extra 5% off  when you subscribe"
+      ],
+      "title": "Smudge Palo Santo Sticks Incense - for Energy Cleansing Protection, 24-Pack",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Smudge-Palo-Santo-Sticks-Incense/dp/B0FLDTWMZP/ref=sr_1_34?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026rdc=1\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-34"
+    },
+    {
+      "bought_past_month": 400,
+      "currency": "USD",
+      "data_asin": "B0D1CFYVMV",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81fXUfUFMcL._AC_UL320_.jpg",
+      "price_from": 14.99,
+      "rank_absolute": 36,
+      "rank_group": 23,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 280
+      },
+      "title": "Palo Santo Incense Sticks (30 Sticks), 100% Natural sustainably harvested Peruvian Palo Santo, Suitable for Meditation, Relaxation, and Spiritual Purification",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/sustainably-harvested-Meditation-Relaxation-Purification/dp/B0D1CFYVMV/ref=sr_1_35?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-35"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B0F4T4XKT6",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/411RJsEDk3L._AC_UL320_.jpg",
+      "price_from": 7.49,
+      "rank_absolute": 37,
+      "rank_group": 24,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 109
+      },
+      "title": "Pachamama Essentials Palo Santo Incense Sticks (4.0 inches each) 100% Natural and Sustainable, Wild Harvested), for Smudging, Purifying, Energy Cleansing, Meditating, Yoga, Reiki. (5)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Pachamama-Essentials-Palo-Santo-Sustainable/dp/B0F4T4XKT6/ref=sr_1_36?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-36"
+    },
+    {
+      "bought_past_month": 100,
+      "currency": "USD",
+      "data_asin": "B07QMT3FTC",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Oct 7 - 19 on $35 of items shipped by Amazon Or fastest delivery Oct 7 - 17"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71EA8n4JYTL._AC_UL320_.jpg",
+      "price_from": 16.99,
+      "rank_absolute": 38,
+      "rank_group": 25,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 2200
+      },
+      "title": "Premium Palo Santo Sticks Bulk 200g (26-36 Sticks) | Authentic Ecuador Palo Santo Wood, Sustainably Wild Harvested Natural Incense for Smudging, Meditation, Yoga \u0026 Home Cleansing",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Authentic-Sustainably-Meditation/dp/B07QMT3FTC/ref=sr_1_37?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-37"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B09B8V5X6B",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91O-NAd0j6L._AC_UL320_.jpg",
+      "price_from": 7.79,
+      "rank_absolute": 39,
+      "rank_group": 26,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 365
+      },
+      "title": "New Age Imports, Inc.® ~ Premium Palo Santo Holy Wood Hand Rolled Incense Sticks from Peru. Great for Meditation, Smudging, Spiritual Cleansing. (10 Sticks Pack). Burn time 90 mins.",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/New-Age-Imports-Inc-Meditation/dp/B09B8V5X6B/ref=sr_1_38?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-38"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B073QHFJFR",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Tue, Sep 29"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81o1VAjhIfL._AC_UL320_.jpg",
+      "price_from": 12.95,
+      "rank_absolute": 40,
+      "rank_group": 27,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 488
+      },
+      "title": "Palo Santo Sticks – High-Resin Holy Wood | Sustainable Peruvian Incense for Meditation \u0026 Cleansing (15 Count, 2-inch Sticks) - 1 Pack",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Sticks-High%E2%80%91Resin-Sustainable/dp/B073QHFJFR/ref=sr_1_39?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-39"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B0BPWF5XW7",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/712yfnrjsjL._AC_UL320_.jpg",
+      "price_from": 28.49,
+      "rank_absolute": 41,
+      "rank_group": 28,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 118
+      },
+      "title": "Premium Palo Santo Smudge Sticks, 1 lb",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Premium-Wholesale-Sustainable-Collected-Smudge/dp/B0BPWF5XW7/ref=sr_1_40?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-40"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B098849QJ9",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/910RHbh4nNL._AC_UL320_.jpg",
+      "price_from": 35.96,
+      "rank_absolute": 42,
+      "rank_group": 29,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 358
+      },
+      "title": "Palo Santo Bulk 1lb, from Peru (Not Ecuador) Incense for Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Ethically-Harvested-AlmaCura-Meditation-Cleansing/dp/B098849QJ9/ref=sr_1_41?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-41"
+    },
+    {
+      "bought_past_month": 100,
+      "currency": "USD",
+      "data_asin": "B089T5Z3MR",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81cdicAx4-L._AC_UL320_.jpg",
+      "price_from": 39.99,
+      "rank_absolute": 43,
+      "rank_group": 30,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 472
+      },
+      "title": "Luna Sundara Palo Santo Sticks, 1 lb Bulk, High Resin Smudging Wood",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Luna-Sundara-Smudging-Sticks-Ecuador/dp/B089T5Z3MR/ref=sr_1_42?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-42"
+    },
+    {
+      "bought_past_month": 400,
+      "currency": "USD",
+      "data_asin": "B07HH8RNNH",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81qgwH3x2ML._AC_UL320_.jpg",
+      "price_from": 9.29,
+      "rank_absolute": 44,
+      "rank_group": 31,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 1200
+      },
+      "title": "Satya Nag Champa - Palo Santo Incense Sticks | 12 Packs X 15 Grams | Box Of 180 Grams | Export Quality",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Satya-Nag-Champa-Incense-Quality/dp/B07HH8RNNH/ref=sr_1_43?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-43"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B0CM3TZV2Y",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71NbbOQJtXL._AC_UL320_.jpg",
+      "price_from": 8.11,
+      "rank_absolute": 45,
+      "rank_group": 32,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 381
+      },
+      "special_offers": [
+        "Extra 5% off  when you subscribe"
+      ],
+      "title": "Palo Santo Sticks 8 Pack from Peru Home Fragrance Premium Natural Wood",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Santo-Sticks-Fragrance-Premium-Natural/dp/B0CM3TZV2Y/ref=sr_1_44?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026rdc=1\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-44"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B07T8QCHVS",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81iBVDQQV+L._AC_UL320_.jpg",
+      "price_from": 16.99,
+      "rank_absolute": 46,
+      "rank_group": 33,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 1500
+      },
+      "title": "Bursera Palo Santo Sticks, Tree Planted with Every Order, 100% Natural, Ethical \u0026 Sustainable, 5-Pack Authentic Real Palo Santo Wood Incense Sticks from Peru for Aromatherapy, Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Bursera-Purchase-Sustainable-Aromatherapy-Meditation/dp/B07T8QCHVS/ref=sr_1_45?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-45"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B0B4T356RR",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Tue, Sep 29 Or fastest delivery Wed, Sep 23"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91LnrAObiIL._AC_UL320_.jpg",
+      "price_from": 29.99,
+      "rank_absolute": 47,
+      "rank_group": 34,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.7,
+        "votes_count": 30
+      },
+      "title": "Palo Santo 1 LB Bag (75 Sticks Approx - 4+inches Long)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Bag-Sticks-Approx/dp/B0B4T356RR/ref=sr_1_46?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-46"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B09B8RGJMQ",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sun, Sep 27 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91O-NAd0j6L._AC_UL320_.jpg",
+      "price_from": 13.96,
+      "rank_absolute": 48,
+      "rank_group": 35,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 57
+      },
+      "title": "New Age Imports, Inc.® ~ Premium Palo Santo Hand Rolled Incense Sticks 11-12\" Inches Long Sticks from Peru. Great for Meditation, Smudging, Spiritual Cleansing. (10 Sticks Pack)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/New-Age-Imports-Inc-Meditation/dp/B09B8RGJMQ/ref=sr_1_47?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-47"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B07CVR778D",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Mon, Sep 28 Or fastest delivery Wed, Sep 23"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91gYYbg4B8L._AC_UL320_.jpg",
+      "price_from": 39.99,
+      "rank_absolute": 49,
+      "rank_group": 36,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 250
+      },
+      "title": "Palo Santo Ecuadorian Holy Wood Sticks - 100 Sticks(4+inches Long)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Ecuadorian-Holy-Sticks/dp/B07CVR778D/ref=sr_1_48?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-48"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B07NVWMN25",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Tue, Sep 29"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/911DE34tu-L._AC_UL320_.jpg",
+      "price_from": 26.99,
+      "rank_absolute": 50,
+      "rank_group": 37,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 488
+      },
+      "title": "Palo Santo Sticks – High-Resin Holy Wood | Sustainable Peruvian Incense for Meditation \u0026 Cleansing (45 Count, 2-inch Sticks) - 3 Pack",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Sticks-High%E2%80%91Resin-Sustainable/dp/B07NVWMN25/ref=sr_1_49?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-49"
+    },
+    {
+      "bought_past_month": 100,
+      "currency": "USD",
+      "data_asin": "B079H8ZNHJ",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sep 30 - Oct 5 on $35 of items shipped by Amazon Or fastest delivery Sep 30 - Oct 3"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/61vh6nVBQ3L._AC_UL320_.jpg",
+      "price_from": 11.99,
+      "rank_absolute": 51,
+      "rank_group": 38,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 2100
+      },
+      "title": "Luna Sundara Palo Santo Hand Rolled Incense Sticks, 6 Count",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Luna-Sundara-Meditation-Relaxation-Spiritual/dp/B079H8ZNHJ/ref=sr_1_50?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-50"
+    },
+    {
+      "bought_past_month": 1000,
+      "currency": "USD",
+      "data_asin": "B08VKV79RH",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81CLGEeD4DL._AC_UL320_.jpg",
+      "price_from": 7.99,
+      "rank_absolute": 52,
+      "rank_group": 39,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.7,
+        "votes_count": 3000
+      },
+      "title": "White Sage Incense Sticks and Hem De Palo Santo Incense Sticks with Incense Holder Bundle for Smudging Smudge kit Natural Inciensos Aromaticos Home Fragrance",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Incense-Sticks-Holder-Smudging-Fragrance/dp/B08VKV79RH/ref=sr_1_51?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-51"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B0C44BSHQD",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/711gWLjBbnL._AC_UL320_.jpg",
+      "price_from": 33.97,
+      "rank_absolute": 53,
+      "rank_group": 40,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 1500
+      },
+      "title": "Palo Santo Smudging Sticks – 1 Pound (450 Grams | 16 Oz) from Peru Premium High Resin Hand Picked Palo Santo Sticks - Ethically Wild Harvested Sacred Smudging Sticks Sustainable Packaging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Santo-Sticks-Premium-Peruvian-Authentic/dp/B0C44BSHQD/ref=sr_1_52?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-52"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B08B9MLVR7",
+      "delivery_info": {
+        "delivery_message": "$1.99 delivery Tue, Sep 29",
+        "delivery_price": {
+          "currency": "USD",
+          "current": 1.99,
+          "displayed_price": "$1.99"
+        }
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81Tesf3KkBL._AC_UL320_.jpg",
+      "price_from": 8.99,
+      "rank_absolute": 54,
+      "rank_group": 41,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 1500
+      },
+      "title": "Ancient VEDA Peruvian Palo Santo Sticks 6 Pack with Smudge Guide – High Resin Content, Sweet Scent Holy Wood for Smudging, Meditation, Energy Cleansing – Sustainably Harvested, Aromatic Incense",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Ancient-Santo-Sticks-Smudge-Guide/dp/B08B9MLVR7/ref=sr_1_53?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-53"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B094Q34XDZ",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/7114s5JL5XL._AC_UL320_.jpg",
+      "price_from": 14.95,
+      "rank_absolute": 55,
+      "rank_group": 42,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.2,
+        "votes_count": 1900
+      },
+      "title": "LOTS OF ZEN Palo Santo Incense Sticks, Handmade Thick, 8-Inch, 12 Count",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Incense-Sticks-Smudge/dp/B094Q34XDZ/ref=sr_1_54?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-54"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B019G1YO32",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/911tOqN4uyL._AC_UL320_.jpg",
+      "price_from": 13.99,
+      "rank_absolute": 56,
+      "rank_group": 43,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 8700
+      },
+      "title": "Palo Santo - 12 Sustainably Harvested Holy Wood Incense Sticks for Smudging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Palo-Santo-Sticks-Accessories-Sustainably/dp/B019G1YO32/ref=sr_1_55?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-55"
+    },
+    {
+      "bought_past_month": 100,
+      "currency": "USD",
+      "data_asin": "B0B5GYXBDR",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/61i1wB2mnZL._AC_UL320_.jpg",
+      "price_from": 14.99,
+      "rank_absolute": 57,
+      "rank_group": 44,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.2,
+        "votes_count": 386
+      },
+      "title": "Bless-Organic-Palo-Santo 100%-Natural-Handmade-Incense-Sticks",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Bless-Palo-Santo-100-Natural-Handmade-Hand-Dipped-Incense-Sticks-Organic-Chemicals-Free-Purification-Relaxation-Positivity-Yoga-Meditation-Best-Woods-Scent/dp/B0B5GYXBDR/ref=sr_1_56?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-56"
+    },
+    {
+      "bought_past_month": 200,
+      "currency": "USD",
+      "data_asin": "B09B8M56VL",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91O-NAd0j6L._AC_UL320_.jpg",
+      "price_from": 5.9,
+      "rank_absolute": 58,
+      "rank_group": 45,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 957
+      },
+      "title": "New Age Imports, Inc.® ~ Premium Palo Santo Holy Wood 3-4\" Inches Size Hand Rolled Incense Sticks from Peru. Great for Meditation, Smudging Insenses, Spiritual Cleansing Inscent (10 Sticks Pack)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/New-Age-Imports-Inc-Meditation/dp/B09B8M56VL/ref=sr_1_57?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-57"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B085TQKGDF",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/61UWh1wv7pL._AC_UL320_.jpg",
+      "price_from": 11.99,
+      "rank_absolute": 59,
+      "rank_group": 46,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 2000
+      },
+      "title": "Purple Canyon Palo Santo Incense Sticks - 8 Pack | Sustainably Harvested Natural Incense for Smudging, Meditation, Cleansing, and Stress Relief",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/PURPLE-CANYON-Palo-Santo-Sustainably/dp/B085TQKGDF/ref=sr_1_58?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-58"
+    },
+    {
+      "bought_past_month": 50,
+      "currency": "USD",
+      "data_asin": "B0CJ9G9PB7",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Sat, Sep 26 on $35 of items shipped by Amazon"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/81R1sYSeWGL._AC_UL320_.jpg",
+      "price_from": 12.99,
+      "rank_absolute": 60,
+      "rank_group": 47,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.4,
+        "votes_count": 164
+      },
+      "title": "KarmaPledge Palo Santo Incense Sticks, Burn Time 45-60 Min, 100 Sticks",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/KarmaPledge-Santo-Incense-Sticks-45-60/dp/B0CJ9G9PB7/ref=sr_1_59?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-59"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B07DYB226F",
+      "delivery_info": {
+        "delivery_message": "FREE delivery Mon, Sep 28 Or fastest delivery Wed, Sep 23"
+      },
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91LnrAObiIL._AC_UL320_.jpg",
+      "price_from": 16.99,
+      "rank_absolute": 61,
+      "rank_group": 48,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.5,
+        "votes_count": 207
+      },
+      "title": "Palo Santo Holy Wood Incense 1/2 lb Size Bag(4+inches Long) 38 (Sticks Approx)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/Santo-Incense-inches-Sticks-Approx/dp/B07DYB226F/ref=sr_1_60?crid=ZM05O4RE8QVO\u0026dib=eyJ2IjoiMSJ9.9A8IqN-83GnjAyXB7Kk4bXNAU19UL99UfmyLAWO1kvr546rzk7XKgi9gtCaeLnDsBIn2JnoKZNn9EQiBenmV6s7NUA99wnmzFiyhkNo8vYVL-R9DVF_Es0k1VNs-DIYWSaNWn062DZWjx7UJnhsWMaurCmDYbQk-gYEO4JM5L4IZb3LjbHNFan0rJU69B4GfsqKOVbaw46i-gePcZkcYKA-ySWV5zbqsW-IIZv_SXJgsRN189ir0BR8p-Me6gSbaYZnMyNgjeXiOh5XvvzNj9eCH6seQ4ClpT96sm1B9TNY.biKcshbEWGdw79whE8997EhoaqXIMJbzdopG03aeLPQ\u0026dib_tag=se\u0026keywords=palo+santo+sticks\u0026qid=1790032902\u0026sprefix=palo%2Bsanto%2Bsticks%2Caps%2C116\u0026sr=8-60"
+    },
+    {
+      "bought_past_month": 700,
+      "currency": "USD",
+      "data_asin": "B0BWX3X6NY",
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71baPpFBwLL._AC_UL320_.jpg",
+      "price_from": 17.99,
+      "rank_absolute": 62,
+      "rank_group": 49,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 1500
+      },
+      "title": "Palo Santo Smudging Sticks – 24 Pack (220 Grams | 8 Oz) from Peru Premium High Resin Hand Picked Palo Santo Sticks - Ethically Wild Harvested Sacred Smudging Sticks Sustainable Packaging",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTo2NTQ4MDQ1MDIzNzA5NzU3OjE3OTAwMzI5MDI6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjoyMDAxNzU0MTU5NzAyOTg6OjA6Og\u0026url=%2FPalo-Santo-Smudging-Sticks-Peru-Sourced%2Fdp%2FB0BWX3X6NY%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%253Aamzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%26crid%3DZM05O4RE8QVO%26cv_ct_cx%3Dpalo%2Bsanto%2Bsticks%26keywords%3Dpalo%2Bsanto%2Bsticks%26pd_rd_i%3DB0BWX3X6NY%26pd_rd_r%3D4b8cbd1e-787e-41b1-b728-ac380b1301be%26pd_rd_w%3DPKpuu%26pd_rd_wg%3DMn2nM%26pf_rd_p%3D230701df-77c6-4675-b11d-39cf91b8bb1b%26pf_rd_r%3DZ1DSGPSWGPDNAES9CJFC%26qid%3D1790032902%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D1-1-2111c337-e22b-460d-97fe-5be1c77b95e4-spons%26aref%3DyKv5ZA6xGE%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1\u0026aref=yKv5ZA6xGE"
+    },
+    {
+      "bought_past_month": 300,
+      "currency": "USD",
+      "data_asin": "B0D973HC2D",
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/71t9-jWTP4L._AC_UL320_.jpg",
+      "price_from": 23.99,
+      "rank_absolute": 63,
+      "rank_group": 50,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.3,
+        "votes_count": 152
+      },
+      "title": "Palo Santo Mandarin Patchouli, 3-Wick Scented Soy Candle for Home, 15.8 Oz",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTo2NTQ4MDQ1MDIzNzA5NzU3OjE3OTAwMzI5MDI6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjozMDExMDg1OTk4NTE0MDI6OjE6Og\u0026url=%2FPalo-Santo-Mandarin-Patchouli-Candle%2Fdp%2FB0D973HC2D%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%253Aamzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%26crid%3DZM05O4RE8QVO%26cv_ct_cx%3Dpalo%2Bsanto%2Bsticks%26keywords%3Dpalo%2Bsanto%2Bsticks%26pd_rd_i%3DB0D973HC2D%26pd_rd_r%3D4b8cbd1e-787e-41b1-b728-ac380b1301be%26pd_rd_w%3DPKpuu%26pd_rd_wg%3DMn2nM%26pf_rd_p%3D230701df-77c6-4675-b11d-39cf91b8bb1b%26pf_rd_r%3DZ1DSGPSWGPDNAES9CJFC%26qid%3D1790032902%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D1-2-2111c337-e22b-460d-97fe-5be1c77b95e4-spons%26aref%3D6z7CAI1hUr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1\u0026aref=6z7CAI1hUr"
+    },
+    {
+      "currency": "USD",
+      "data_asin": "B0FQCRFH3C",
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/715izKpW4-L._AC_UL320_.jpg",
+      "price_from": 21.99,
+      "rank_absolute": 64,
+      "rank_group": 51,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 47
+      },
+      "title": "Palo Santo Holder, Ceramic Incense Burner for Sticks Sage Holders Cone Burning Smudge Bowl with Ash Brush for Meditation Yoga Spa Room Decor (White)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTo2NTQ4MDQ1MDIzNzA5NzU3OjE3OTAwMzI5MDI6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjozMDEyMjAwNzI5MjA2MDI6OjI6Og\u0026url=%2FGuedawv-Ceramic-Incense-Holders-Meditation%2Fdp%2FB0FQCRFH3C%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%253Aamzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%26crid%3DZM05O4RE8QVO%26cv_ct_cx%3Dpalo%2Bsanto%2Bsticks%26keywords%3Dpalo%2Bsanto%2Bsticks%26pd_rd_i%3DB0FQCRFH3C%26pd_rd_r%3D4b8cbd1e-787e-41b1-b728-ac380b1301be%26pd_rd_w%3DPKpuu%26pd_rd_wg%3DMn2nM%26pf_rd_p%3D230701df-77c6-4675-b11d-39cf91b8bb1b%26pf_rd_r%3DZ1DSGPSWGPDNAES9CJFC%26qid%3D1790032902%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D1-3-2111c337-e22b-460d-97fe-5be1c77b95e4-spons%26aref%3DqPgaih8iHc%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1\u0026aref=qPgaih8iHc"
+    },
+    {
+      "bought_past_month": 4,
+      "currency": "USD",
+      "data_asin": "B0C6FQL9MW",
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/51bdubalkrL._AC_UL320_.jpg",
+      "price_from": 23.99,
+      "rank_absolute": 65,
+      "rank_group": 52,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.2,
+        "votes_count": 27
+      },
+      "title": "Sweet Water Decor Palo Santo Patchouli Reed Diffuser Set, 3.5 fl oz",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTo2NTQ4MDQ1MDIzNzA5NzU3OjE3OTAwMzI5MDI6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjozMDAwNDI5MTQzNTA0MDI6OjM6Og\u0026url=%2FSweet-Water-Decor-Sandalwood-Housewarming%2Fdp%2FB0C6FQL9MW%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%253Aamzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%26crid%3DZM05O4RE8QVO%26cv_ct_cx%3Dpalo%2Bsanto%2Bsticks%26keywords%3Dpalo%2Bsanto%2Bsticks%26pd_rd_i%3DB0C6FQL9MW%26pd_rd_r%3D4b8cbd1e-787e-41b1-b728-ac380b1301be%26pd_rd_w%3DPKpuu%26pd_rd_wg%3DMn2nM%26pf_rd_p%3D230701df-77c6-4675-b11d-39cf91b8bb1b%26pf_rd_r%3DZ1DSGPSWGPDNAES9CJFC%26qid%3D1790032902%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D1-4-2111c337-e22b-460d-97fe-5be1c77b95e4-spons%26aref%3DaVCzPUiK2t%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1\u0026aref=aVCzPUiK2t"
+    },
+    {
+      "bought_past_month": 100,
+      "currency": "USD",
+      "data_asin": "B0FBW9VHYL",
+      "domain": "www.amazon.com",
+      "image_url": "https://m.media-amazon.com/images/I/91PFmEeMNlL._AC_UL320_.jpg",
+      "price_from": 14.99,
+      "rank_absolute": 66,
+      "rank_group": 53,
+      "rating": {
+        "rating_max": 5,
+        "rating_type": "Max5",
+        "type": "rating_element",
+        "value": 4.6,
+        "votes_count": 302
+      },
+      "title": "4 in 1 Incense Holder, Ceramic Incense Stick and Palo Santo Holder,Sage Holder for Burning- 5.5\" Ceramic Ash Catcher Tray for Meditation and Yoga Room (Sand)",
+      "type": "amazon_serp",
+      "url": "https://www.amazon.com/sspa/click?ie=UTF8\u0026spc=MTo2NTQ4MDQ1MDIzNzA5NzU3OjE3OTAwMzI5MDI6c3Bfc2VhcmNoX3RoZW1hdGljX2J0ZjozMDEwNTQzMzMxNzQ4MDI6OjQ6Og\u0026url=%2FGRAMSTORMAX-Incense-Ceramic-Burning-Meditation%2Fdp%2FB0FBW9VHYL%2Fref%3Dsxbs_pa_sp_search_thematic_btf_sspa%3Fcontent-id%3Damzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%253Aamzn1.sym.230701df-77c6-4675-b11d-39cf91b8bb1b%26crid%3DZM05O4RE8QVO%26cv_ct_cx%3Dpalo%2Bsanto%2Bsticks%26keywords%3Dpalo%2Bsanto%2Bsticks%26pd_rd_i%3DB0FBW9VHYL%26pd_rd_r%3D4b8cbd1e-787e-41b1-b728-ac380b1301be%26pd_rd_w%3DPKpuu%26pd_rd_wg%3DMn2nM%26pf_rd_p%3D230701df-77c6-4675-b11d-39cf91b8bb1b%26pf_rd_r%3DZ1DSGPSWGPDNAES9CJFC%26qid%3D1790032902%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dpalo%252Bsanto%252Bsticks%252Caps%252C116%26sr%3D1-5-2111c337-e22b-460d-97fe-5be1c77b95e4-spons%26aref%3Djg2bUH4TNw%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWNfYnRm%26psc%3D1\u0026aref=jg2bUH4TNw"
+    },
+    {
+      "items": [
+        {
+          "title": "palo santo",
+          "type": "related_searches_element",
+          "url": "https://www.amazon.com/s?k=palo+santo\u0026ref=rsl_sug_0_0\u0026pd_rd_w=vLTPg\u0026content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_r=Z1DSGPSWGPDNAES9CJFC\u0026pd_rd_wg=Mn2nM\u0026pd_rd_r=4b8cbd1e-787e-41b1-b728-ac380b1301be\u0026qid=1790032902"
+        },
+        {
+          "title": "sage",
+          "type": "related_searches_element",
+          "url": "https://www.amazon.com/s?k=sage\u0026ref=rsl_sug_0_3\u0026pd_rd_w=vLTPg\u0026content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_r=Z1DSGPSWGPDNAES9CJFC\u0026pd_rd_wg=Mn2nM\u0026pd_rd_r=4b8cbd1e-787e-41b1-b728-ac380b1301be\u0026qid=1790032902"
+        },
+        {
+          "title": "palo santo holder",
+          "type": "related_searches_element",
+          "url": "https://www.amazon.com/s?k=palo+santo+holder\u0026ref=rsl_sug_0_1\u0026pd_rd_w=vLTPg\u0026content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_r=Z1DSGPSWGPDNAES9CJFC\u0026pd_rd_wg=Mn2nM\u0026pd_rd_r=4b8cbd1e-787e-41b1-b728-ac380b1301be\u0026qid=1790032902"
+        },
+        {
+          "title": "palo santo stick holder",
+          "type": "related_searches_element",
+          "url": "https://www.amazon.com/s?k=palo+santo+stick+holder\u0026ref=rsl_sug_0_4\u0026pd_rd_w=vLTPg\u0026content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_r=Z1DSGPSWGPDNAES9CJFC\u0026pd_rd_wg=Mn2nM\u0026pd_rd_r=4b8cbd1e-787e-41b1-b728-ac380b1301be\u0026qid=1790032902"
+        },
+        {
+          "title": "palo santo incense sticks",
+          "type": "related_searches_element",
+          "url": "https://www.amazon.com/s?k=palo+santo+incense+sticks\u0026ref=rsl_sug_0_2\u0026pd_rd_w=vLTPg\u0026content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_r=Z1DSGPSWGPDNAES9CJFC\u0026pd_rd_wg=Mn2nM\u0026pd_rd_r=4b8cbd1e-787e-41b1-b728-ac380b1301be\u0026qid=1790032902"
+        },
+        {
+          "title": "palo santo sticks incense",
+          "type": "related_searches_element",
+          "url": "https://www.amazon.com/s?k=palo+santo+sticks+incense\u0026ref=rsl_sug_0_5\u0026pd_rd_w=vLTPg\u0026content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871\u0026pf_rd_r=Z1DSGPSWGPDNAES9CJFC\u0026pd_rd_wg=Mn2nM\u0026pd_rd_r=4b8cbd1e-787e-41b1-b728-ac380b1301be\u0026qid=1790032902"
+        }
+      ],
+      "rank_absolute": 67,
+      "rank_group": 1,
+      "type": "related_searches"
+    }
+  ],
+  "status_code": 20000,
+  "status_message": "Ok."
+}

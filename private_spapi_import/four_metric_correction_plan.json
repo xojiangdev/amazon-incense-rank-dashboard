@@ -1,0 +1,101 @@
+{
+  "status": "targeted_metric_correction_plan",
+  "scopeFile": "rank_targets_urgent_excluding_CA_B0FY6JR3NK_US_B0FY67YPSM.json",
+  "jobs": [
+    {
+      "marketplace": "US",
+      "asin": "B0GDKDTB6C",
+      "id": "a",
+      "keywords": [
+        "mugwort incense sticks"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "id": "a",
+      "keywords": [
+        "￼chinese incense bulk",
+        "chinese joss sticks incense",
+        "incense sticks agarwood",
+        "agarwood incense sticks",
+        "coreless incense"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "id": "b",
+      "keywords": [
+        "agarwood incense",
+        "coreless incense sticks",
+        "incense coreless",
+        "black agarwood incense",
+        "agarwood incense kit"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "id": "a",
+      "keywords": [
+        "incense burner",
+        "incense holder and storage"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "id": "a",
+      "keywords": [
+        "glass incense holder",
+        "incense burner holder box",
+        "modern incense holder",
+        "wooden incense holder box",
+        "incense burner box with drawer storage"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "id": "b",
+      "keywords": [
+        "incense burner holder box black and gold",
+        "glass incense holder tray",
+        "lockable incense burner",
+        "wooden box incense holder",
+        "incense burner with storage"
+      ]
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "id": "a",
+      "keywords": [
+        "incense holder ￼",
+        "incense holder"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "id": "a",
+      "keywords": [
+        "natural incense sticks",
+        "mugwort incense non toxic"
+      ]
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "id": "a",
+      "keywords": [
+        "incense sandalwood",
+        "pine incense sticks",
+        "bakhoor incense sticks",
+        "sandalwood incense sticks"
+      ]
+    }
+  ],
+  "correctedKeywords": 31
+}

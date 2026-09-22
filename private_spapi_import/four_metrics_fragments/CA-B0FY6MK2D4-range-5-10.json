@@ -1,0 +1,68 @@
+{
+  "marketplace": "CA",
+  "asin": "B0FY6MK2D4",
+  "start": 5,
+  "end": 10,
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "mugwort incense non toxic",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "incense cones mugwort",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "chinese incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 59,
+      "monthlySalesAverage": 220,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "mugworth",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "hem mugwort masala incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 16,
+      "monthlySalesAverage": 60,
+      "cprSampleCount": 5
+    }
+  ]
+}

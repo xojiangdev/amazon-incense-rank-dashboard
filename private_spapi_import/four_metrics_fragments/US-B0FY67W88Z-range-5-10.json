@@ -1,0 +1,68 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY67W88Z",
+  "start": 5,
+  "end": 10,
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "incents holders",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 96,
+      "monthlySalesAverage": 360,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "inxrnse holdwr",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 221,
+      "monthlySalesAverage": 829,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "2 in one incense and candle holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 213,
+      "monthlySalesAverage": 800,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 184,
+      "monthlySalesAverage": 690,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "incense holders",
+      "naturalRank": 117,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 96,
+      "monthlySalesAverage": 360,
+      "cprSampleCount": 10
+    }
+  ]
+}

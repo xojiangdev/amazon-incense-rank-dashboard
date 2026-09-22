@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0GZDJVS2P",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "keyword": "agarwood incense sticks",
+      "naturalRank": 69,
+      "page": 2,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "keyword": "agarwood incense",
+      "naturalRank": 94,
+      "page": 2,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 27,
+      "monthlySalesAverage": 101,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "keyword": "natural agarwood incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 3,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "keyword": "charcoal free agarwood incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "keyword": "agarwood incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "keyword": "long burning agarwood incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 13,
+      "monthlySalesAverage": 50,
+      "cprSampleCount": 7
+    }
+  ]
+}

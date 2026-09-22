@@ -1,0 +1,31 @@
+{
+  "marketplace": "CA",
+  "asin": "B0FY6MK2D4",
+  "id": "a",
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "natural incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 20,
+      "monthlySalesAverage": 75,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "keyword": "mugwort incense non toxic",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    }
+  ]
+}

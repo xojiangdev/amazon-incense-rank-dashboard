@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FDQ3L67K",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "keyword": "goose pear incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "keyword": "goose pear incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "keyword": "natural goose pear incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 160,
+      "monthlySalesAverage": 600,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "keyword": "goose pear incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "keyword": "long burning goose pear incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "keyword": "goose pear aromatherapy incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    }
+  ]
+}

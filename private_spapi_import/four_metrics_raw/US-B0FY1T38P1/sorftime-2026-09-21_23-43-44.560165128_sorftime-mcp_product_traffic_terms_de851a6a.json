@@ -1,0 +1,147 @@
+{
+  "data": [
+    {
+      "exposure_position": "Organic",
+      "keyword": "lotus incense holder",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-17 08:41",
+      "latest_organic_position": "Page 3, Pos 25/48",
+      "monthly_search_volume": 1479,
+      "recommended_bid": "0.71",
+      "recommended_bid_range": "0.50-0.89"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "agarbatti stand",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-07 14:21",
+      "latest_organic_position": "Page 3, Pos 47/48",
+      "monthly_search_volume": 4446,
+      "recommended_bid": "0.51",
+      "recommended_bid_range": "0.38-0.64"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "harathi holder for pooja",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-20 06:20",
+      "latest_organic_position": "Page 2, Pos 38/48",
+      "monthly_search_volume": 65,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "lotus incense holder sculptural",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-10 14:26",
+      "latest_organic_position": "Page 3, Pos 23/48",
+      "monthly_search_volume": 156,
+      "recommended_bid": "0.70",
+      "recommended_bid_range": "0.55-0.79"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "brass catcher",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-04 08:32",
+      "latest_organic_position": "Page 2, Pos 37/48",
+      "monthly_search_volume": 13758,
+      "recommended_bid": "0.81",
+      "recommended_bid_range": "0.61-1.01"
+    },
+    {
+      "exposure_position": "Ad,Organic",
+      "keyword": "incense holders",
+      "latest_ad_exposure_time": "2026-08-19 05:40",
+      "latest_ad_position": "Page 2, Pos 27/68",
+      "latest_organic_exposure_time": "2026-08-21 16:02",
+      "latest_organic_position": "Page 3, Pos 21/48",
+      "monthly_search_volume": 21305,
+      "recommended_bid": "0.43",
+      "recommended_bid_range": "0.32-0.56"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "brass incense burner",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-27 11:23",
+      "latest_organic_position": "Page 3, Pos 34/48",
+      "monthly_search_volume": 1378,
+      "recommended_bid": "0.49",
+      "recommended_bid_range": "0.38-0.66"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "brass incense holder",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-05 06:20",
+      "latest_organic_position": "Page 3, Pos 32/48",
+      "monthly_search_volume": 114,
+      "recommended_bid": "0.72",
+      "recommended_bid_range": "0.47-1.04"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "lotus incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-08 10:34",
+      "latest_organic_position": "Page 3, Pos 25/48",
+      "monthly_search_volume": 156,
+      "recommended_bid": "0.57",
+      "recommended_bid_range": "0.43-0.71"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "dhoop dani brass",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-05 03:38",
+      "latest_organic_position": "Page 2, Pos 43/48",
+      "monthly_search_volume": 122,
+      "recommended_bid": "0.51",
+      "recommended_bid_range": "0.38-0.64"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "metal dhoop burner iron brass",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-16 17:43",
+      "latest_organic_position": "Page 2, Pos 24/48",
+      "monthly_search_volume": 9,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "agarbathi stand for pooja",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-26 18:20",
+      "latest_organic_position": "Page 3, Pos 43/48",
+      "monthly_search_volume": 35,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

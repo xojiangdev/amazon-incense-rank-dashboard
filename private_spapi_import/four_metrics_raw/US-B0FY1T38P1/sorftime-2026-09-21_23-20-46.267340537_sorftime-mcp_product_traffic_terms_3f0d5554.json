@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "exposure_position": "Organic",
+      "keyword": "osmanthus",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-22 05:10",
+      "latest_organic_position": "Page 3, Pos 15/48",
+      "monthly_search_volume": 10233,
+      "recommended_bid": "0.89",
+      "recommended_bid_range": "0.67-1.11"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "morning star incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-21 17:24",
+      "latest_organic_position": "Page 2, Pos 39/48",
+      "monthly_search_volume": 2037,
+      "recommended_bid": "1.43",
+      "recommended_bid_range": "1.07-1.79"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "osmanthus perfume",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-11 17:28",
+      "latest_organic_position": "Page 2, Pos 45/48",
+      "monthly_search_volume": 79,
+      "recommended_bid": "2.34",
+      "recommended_bid_range": "1.23-2.93"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "dried osmanthus flower",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-18 18:42",
+      "latest_organic_position": "Page 2, Pos 44/48",
+      "monthly_search_volume": 18,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "cleansing incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-20 18:01",
+      "latest_organic_position": "Page 3, Pos 41/48",
+      "monthly_search_volume": 178,
+      "recommended_bid": "0.89",
+      "recommended_bid_range": "0.67-1.11"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "osmanthus flower",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-04 22:26",
+      "latest_organic_position": "Page 3, Pos 37/48",
+      "monthly_search_volume": 4212,
+      "recommended_bid": "0.90",
+      "recommended_bid_range": "0.75-1.09"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

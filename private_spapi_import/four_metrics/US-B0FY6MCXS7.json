@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6MCXS7",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "keyword": "mantra incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 493,
+      "monthlySalesAverage": 1850,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "keyword": "white sage incense sticks",
+      "naturalRank": 141,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 205,
+      "monthlySalesAverage": 768,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "keyword": "white sage incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 396,
+      "monthlySalesAverage": 1486,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "keyword": "natural white sage incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "keyword": "white sage incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "keyword": "long burning white sage incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 84,
+      "monthlySalesAverage": 315,
+      "cprSampleCount": 9
+    }
+  ]
+}

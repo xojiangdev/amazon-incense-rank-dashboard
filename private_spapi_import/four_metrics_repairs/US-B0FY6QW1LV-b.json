@@ -1,0 +1,67 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6QW1LV",
+  "id": "b",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "agarwood incense",
+      "naturalRank": 73,
+      "page": 2,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 185,
+      "monthlySalesAverage": 692,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "coreless incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "incense coreless",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "black agarwood incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 11,
+      "monthlySalesAverage": 43,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "agarwood incense kit",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    }
+  ]
+}

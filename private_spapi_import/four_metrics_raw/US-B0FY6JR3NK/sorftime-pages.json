@@ -1,0 +1,43 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6JR3NK",
+  "pagesFetched": [
+    1,
+    2,
+    3
+  ],
+  "targetKeywords": [
+    "檀香线香",
+    "sandalwood incense sticks natural",
+    "sandalwood incense",
+    "400 count incense sticks",
+    "sandalwood incense sticks",
+    "natural sandalwood incense"
+  ],
+  "organicMatches": {
+    "檀香线香": [
+      999,
+      4
+    ],
+    "sandalwood incense sticks natural": [
+      55,
+      2
+    ],
+    "sandalwood incense": [
+      96,
+      2
+    ],
+    "400 count incense sticks": [
+      999,
+      4
+    ],
+    "sandalwood incense sticks": [
+      143,
+      3
+    ],
+    "natural sandalwood incense": [
+      999,
+      4
+    ]
+  }
+}

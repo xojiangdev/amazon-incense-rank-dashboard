@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "exposure_position": "Organic",
+      "keyword": "hinoki",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-13 17:42",
+      "latest_organic_position": "Page 2, Pos 33/48",
+      "monthly_search_volume": 3688,
+      "recommended_bid": "1.13",
+      "recommended_bid_range": "0.85-1.51"
+    },
+    {
+      "exposure_position": "Ad,Organic",
+      "keyword": "hinoki incense",
+      "latest_ad_exposure_time": "2026-08-20 00:04",
+      "latest_ad_position": "Page 2, Pos 26/70",
+      "latest_organic_exposure_time": "2026-09-18 06:27",
+      "latest_organic_position": "Page 1, Pos 24/52",
+      "monthly_search_volume": 297,
+      "recommended_bid": "0.59",
+      "recommended_bid_range": "0.44-0.74"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "aesop incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-08 15:03",
+      "latest_organic_position": "Page 3, Pos 31/48",
+      "monthly_search_volume": 2715,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "hinoki wood",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-18 20:32",
+      "latest_organic_position": "Page 3, Pos 23/48",
+      "monthly_search_volume": 94,
+      "recommended_bid": "0.55",
+      "recommended_bid_range": "0.36-0.64"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "low smoke incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-02 00:57",
+      "latest_organic_position": "Page 3, Pos 29/48",
+      "monthly_search_volume": 17,
+      "recommended_bid": "1.29",
+      "recommended_bid_range": "0.92-1.51"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

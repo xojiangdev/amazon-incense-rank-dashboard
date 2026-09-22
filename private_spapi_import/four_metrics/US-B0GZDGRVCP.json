@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0GZDGRVCP",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "keyword": "wisteria incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 719,
+      "monthlySalesAverage": 2695,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "keyword": "wisteria incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "keyword": "gonesh wisteria incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "keyword": "coreless japanese incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 49,
+      "monthlySalesAverage": 183,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "keyword": "natural wisteria incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 227,
+      "monthlySalesAverage": 850,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "keyword": "coreless wisteria incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": 104,
+      "monthlySalesAverage": 390,
+      "cprSampleCount": 5
+    }
+  ]
+}

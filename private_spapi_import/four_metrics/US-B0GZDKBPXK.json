@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0GZDKBPXK",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "keyword": "osmanthus incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "keyword": "osmanthus incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 91,
+      "monthlySalesAverage": 343,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "keyword": "natural osmanthus incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "keyword": "coreless osmanthus incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 64,
+      "monthlySalesAverage": 240,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "keyword": "osmanthus incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "keyword": "long burning osmanthus incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense box",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-17 10:44",
+      "latest_organic_position": "Page 1, Pos 10/48",
+      "monthly_search_volume": 663,
+      "recommended_bid": "0.35",
+      "recommended_bid_range": "0.32-0.38"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "porta incienso",
+      "latest_ad_exposure_time": "2026-09-17 14:31",
+      "latest_ad_position": "Page 2, Pos 41/75",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 838,
+      "recommended_bid": "0.45",
+      "recommended_bid_range": "0.36-0.52"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense holder box",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-17 15:01",
+      "latest_organic_position": "Page 1, Pos 34/50",
+      "monthly_search_volume": 527,
+      "recommended_bid": "0.57",
+      "recommended_bid_range": "0.43-0.78"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense storage box",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-18 14:54",
+      "latest_organic_position": "Page 2, Pos 45/48",
+      "monthly_search_volume": 257,
+      "recommended_bid": "0.62",
+      "recommended_bid_range": "0.45-0.73"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "chinese incense burner",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-17 17:40",
+      "latest_organic_position": "Page 2, Pos 30/48",
+      "monthly_search_volume": 85,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense burner box",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-22 06:16",
+      "latest_organic_position": "Page 1, Pos 16/48",
+      "monthly_search_volume": 21,
+      "recommended_bid": "0.46",
+      "recommended_bid_range": "0.34-0.56"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense holder black",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-15 19:49",
+      "latest_organic_position": "Page 3, Pos 7/48",
+      "monthly_search_volume": 97,
+      "recommended_bid": "0.45",
+      "recommended_bid_range": "0.38-0.55"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "black incense holder",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-19 22:18",
+      "latest_organic_position": "Page 3, Pos 47/48",
+      "monthly_search_volume": 102,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense storage",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-27 17:03",
+      "latest_organic_position": "Page 3, Pos 37/48",
+      "monthly_search_volume": 5295,
+      "recommended_bid": "0.39",
+      "recommended_bid_range": "0.32-0.46"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "chinese incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-07 11:13",
+      "latest_organic_position": "Page 2, Pos 13/48",
+      "monthly_search_volume": 156,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense holder wooden",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-16 17:11",
+      "latest_organic_position": "Page 3, Pos 20/48",
+      "monthly_search_volume": 24,
+      "recommended_bid": "0.78",
+      "recommended_bid_range": "0.59-0.98"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

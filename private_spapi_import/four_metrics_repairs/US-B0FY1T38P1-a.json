@@ -1,0 +1,31 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY1T38P1",
+  "id": "a",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "keyword": "incense burner",
+      "naturalRank": 24,
+      "page": 1,
+      "pcAdRank": 999,
+      "pcSbvRank": 17,
+      "cprEstimate": 97,
+      "monthlySalesAverage": 365,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "keyword": "incense holder and storage",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 19,
+      "cprEstimate": 221,
+      "monthlySalesAverage": 829,
+      "cprSampleCount": 7
+    }
+  ]
+}

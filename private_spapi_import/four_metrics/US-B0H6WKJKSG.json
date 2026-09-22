@@ -1,0 +1,90 @@
+{
+  "marketplace": "US",
+  "asin": "B0H6WKJKSG",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "keyword": "incense ceramic stick burner with ash catcher",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 160,
+      "monthlySalesAverage": 600,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "keyword": "incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 221,
+      "monthlySalesAverage": 829,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "keyword": "leave holder for incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "keyword": "incense holder for sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 20,
+      "pcSbvRank": 999,
+      "cprEstimate": 221,
+      "monthlySalesAverage": 829,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "keyword": "leaf incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "keyword": "incense holder with ash catcher",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 144,
+      "monthlySalesAverage": 540,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "keyword": "incense holder for big sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 92,
+      "monthlySalesAverage": 346,
+      "cprSampleCount": 8
+    }
+  ]
+}

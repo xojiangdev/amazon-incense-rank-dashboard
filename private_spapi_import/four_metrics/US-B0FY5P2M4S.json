@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY5P2M4S",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "keyword": "incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 88,
+      "monthlySalesAverage": 330,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "keyword": "incense holder for sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 153,
+      "monthlySalesAverage": 574,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "keyword": "incense stick holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 214,
+      "monthlySalesAverage": 803,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "keyword": "wooden incense holder",
+      "naturalRank": 106,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 45,
+      "monthlySalesAverage": 169,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "keyword": "hanging incense holder",
+      "naturalRank": 138,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "keyword": "incense holder with ash catcher",
+      "naturalRank": 100,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 95,
+      "monthlySalesAverage": 355,
+      "cprSampleCount": 10
+    }
+  ]
+}

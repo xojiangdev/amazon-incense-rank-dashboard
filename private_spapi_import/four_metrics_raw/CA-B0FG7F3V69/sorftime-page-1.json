@@ -1,0 +1,36 @@
+{
+  "doc": {
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. Page X, Pos Y/Z); empty when no exposure."
+  },
+  "data": [
+    {
+      "keyword": "incense stick",
+      "latest_organic_position": "Page 3, Pos 29/48"
+    },
+    {
+      "keyword": "incense cone",
+      "latest_organic_position": "Page 2, Pos 31/48"
+    },
+    {
+      "keyword": "incense cones",
+      "latest_organic_position": "Page 2, Pos 32/48"
+    },
+    {
+      "keyword": "incense sticks",
+      "latest_organic_position": "Page 3, Pos 23/48"
+    },
+    {
+      "keyword": "encens en baton",
+      "latest_organic_position": "Page 2, Pos 30/48"
+    },
+    {
+      "keyword": "pine cones",
+      "latest_organic_position": "Page 2, Pos 5/48"
+    },
+    {
+      "keyword": "pinecones",
+      "latest_organic_position": "Page 1, Pos 45/48"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "query": {
+    "asin": "B0FY67YPSM",
+    "amz_site": "US",
+    "pages": [1, 2, 3]
+  },
+  "responses": [
+    {
+      "page": 1,
+      "status": "success",
+      "raw_response": {
+        "doc": {
+          "keyword": "The reverse-looked-up keyword.",
+          "monthly_search_volume": "Monthly search volume of this keyword.",
+          "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+          "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\".",
+          "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+          "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+          "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+          "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+          "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure."
+        },
+        "data": [
+          {
+            "keyword": "incense burner",
+            "monthly_search_volume": 90221,
+            "recommended_bid": "0.62",
+            "recommended_bid_range": "0.49-0.82",
+            "exposure_position": "Ad",
+            "latest_organic_position": "",
+            "latest_organic_exposure_time": "",
+            "latest_ad_position": "Page 3, Pos 5/73",
+            "latest_ad_exposure_time": "2026-07-30 18:16"
+          },
+          {
+            "keyword": "lotus incense holder",
+            "monthly_search_volume": 1479,
+            "recommended_bid": "0.71",
+            "recommended_bid_range": "0.50-0.89",
+            "exposure_position": "Organic",
+            "latest_organic_position": "Page 3, Pos 48/48",
+            "latest_organic_exposure_time": "2026-09-05 17:32",
+            "latest_ad_position": "",
+            "latest_ad_exposure_time": ""
+          }
+        ]
+      }
+    },
+    {
+      "page": 2,
+      "status": "success_empty",
+      "raw_response": "No relevant data."
+    },
+    {
+      "page": 3,
+      "status": "success_empty",
+      "raw_response": "No relevant data."
+    }
+  ]
+}

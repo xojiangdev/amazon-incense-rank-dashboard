@@ -1,0 +1,29 @@
+[
+  {
+    "asin": "B0GWVLF81Y",
+    "amz_site": "US",
+    "page": 1,
+    "data": [
+      {
+        "keyword": "mugwort incense",
+        "latest_organic_position": "Page 1, Pos 19/48"
+      },
+      {
+        "keyword": "mugwort herb",
+        "latest_organic_position": "Page 3, Pos 26/48"
+      }
+    ]
+  },
+  {
+    "asin": "B0GWVLF81Y",
+    "amz_site": "US",
+    "page": 2,
+    "data": []
+  },
+  {
+    "asin": "B0GWVLF81Y",
+    "amz_site": "US",
+    "page": 3,
+    "data": []
+  }
+]

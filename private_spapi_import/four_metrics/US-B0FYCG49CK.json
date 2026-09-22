@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0FYCG49CK",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "keyword": "palo santo sticks",
+      "naturalRank": 118,
+      "page": 3,
+      "pcAdRank": 12,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "keyword": "palo santo",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "keyword": "palo santo incense sticks",
+      "naturalRank": 75,
+      "page": 2,
+      "pcAdRank": 28,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "keyword": "palo santo incense",
+      "naturalRank": 58,
+      "page": 2,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "keyword": "incense sticks and holder set",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "keyword": "natural palo santo incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 19,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "status": "urgent_repair_merge_valid",
+  "expectedListings": 38,
+  "expectedRows": 294,
+  "repairRows": 19,
+  "finalRows": 294,
+  "changes": [
+    {
+      "marketplace": "US",
+      "asin": "B0FDQ3L67K",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7CCVCB",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H7R483PY",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H7WPJDP1",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5K8HMT",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GDKDTB6C",
+      "rows": 9,
+      "repairCount": 1
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FG7F3V69",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0H6WKJKSG",
+      "rows": 7,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDJVS2P",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDCC4MC",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDTNZWT",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDKBPXK",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDG7K98",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDN4VR8",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDGRVCP",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "rows": 15,
+      "repairCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "rows": 20,
+      "repairCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY5P2M4S",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY59TXJK",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FXW2KHWZ",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JQRB9",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MK2D4",
+      "rows": 11,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY55B96L",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FYCG49CK",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVDR845",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVQTGQT",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6JR3NK",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6HB74X",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6R869L",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MCXS7",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FG7F3V69",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "rows": 20,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "rows": 16,
+      "repairCount": 2
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "rows": 6,
+      "repairCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "rows": 16,
+      "repairCount": 4
+    }
+  ]
+}

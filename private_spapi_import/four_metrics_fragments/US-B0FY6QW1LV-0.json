@@ -1,0 +1,79 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6QW1LV",
+  "index": 0,
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "chinese incense",
+      "naturalRank": 17,
+      "page": 1,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 69,
+      "monthlySalesAverage": 258,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "incense chinese",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "hainan agarwood",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "﻿chinese incense bulk",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "chinese agarwood incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "incienso chino",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 384,
+      "monthlySalesAverage": 1439,
+      "cprSampleCount": 9
+    }
+  ]
+}

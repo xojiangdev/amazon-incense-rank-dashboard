@@ -1,0 +1,68 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY1RZGZH",
+  "start": 5,
+  "end": 10,
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "incense holder with cover",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 429,
+      "monthlySalesAverage": 1610,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "glass incense holder tray",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 393,
+      "monthlySalesAverage": 1475,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "lockable incense burner",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 53,
+      "monthlySalesAverage": 200,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "wooden box incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "keyword": "incense burner with storage",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 47,
+      "monthlySalesAverage": 178,
+      "cprSampleCount": 6
+    }
+  ]
+}

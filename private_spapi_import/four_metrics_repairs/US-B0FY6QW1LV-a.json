@@ -1,0 +1,67 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY6QW1LV",
+  "id": "a",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "￼chinese incense bulk",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "chinese joss sticks incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 680,
+      "monthlySalesAverage": 2550,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "incense sticks agarwood",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "agarwood incense sticks",
+      "naturalRank": 33,
+      "page": 1,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 503,
+      "monthlySalesAverage": 1885,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "keyword": "coreless incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 179,
+      "monthlySalesAverage": 672,
+      "cprSampleCount": 9
+    }
+  ]
+}

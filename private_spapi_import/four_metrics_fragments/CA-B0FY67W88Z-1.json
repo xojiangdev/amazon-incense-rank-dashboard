@@ -1,0 +1,67 @@
+{
+  "marketplace": "CA",
+  "asin": "B0FY67W88Z",
+  "index": 1,
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "keyword": "insense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "keyword": "lotus flower incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "keyword": "brass incense burner",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 4,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "keyword": "agarbatti stand with ash catcher",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "keyword": "ash catcher",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    }
+  ]
+}

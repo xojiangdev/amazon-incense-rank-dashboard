@@ -1,0 +1,55 @@
+{
+  "marketplace": "CA",
+  "asin": "B0FY6HB74X",
+  "id": "a",
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "incense sandalwood",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 4,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "pine incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 13,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "bakhoor incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 4,
+      "cprEstimate": 18,
+      "monthlySalesAverage": 67,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "sandalwood incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 4,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    }
+  ]
+}

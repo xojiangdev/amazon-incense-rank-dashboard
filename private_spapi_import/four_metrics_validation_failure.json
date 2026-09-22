@@ -1,0 +1,76 @@
+{
+  "status": "failed_closed",
+  "complete": false,
+  "stage": "pre_import_worker_failure_gate",
+  "import_performed": false,
+  "reason": "One or more required worker batches failed or were incomplete. Per fail-closed policy, file-level and metric validation was not treated as sufficient and scripts_import_live_four_metrics.ts was not executed.",
+  "reported_worker_failure_count": 13,
+  "worker_failures": [
+    {
+      "marketplace": "US",
+      "asin": "B0GDKDTB6C",
+      "detail": "Required batch incomplete: rank_targets.json has 9 unique target keywords; Sorftime pages 1-3 were fetched successfully, but only 3 of 9 required serial DataForSEO calls completed before execution limit. No metric output file was written."
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "detail": "Incomplete verified collection: Sorftime lookup succeeded for pages 1-3 (pages 2-3 returned no data), but only 4 of 6 required serial DataForSEO keyword calls completed; remaining targets were not queried, so no raw/output metric files were written."
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDN4VR8",
+      "detail": "Required batch incomplete: Sorftime lookup returned data only on page 1 (pages 2-3 returned no relevant data), and only 3 of 6 required serial DataForSEO keyword calls were completed successfully before the collection window ended; no metric output file was written."
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6QW1LV",
+      "detail": "Incomplete batch: 15 unique target terms require serial DataForSEO calls; only 2 were attempted before execution limit, so the required four-metric batch is unverified and no output file was written."
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67YPSM",
+      "detail": "Unverified batch: only 2 of 17 unique target terms received successful serial DataForSEO responses; required per-term metric collection was not completed, so no four-metric output file was written."
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "detail": "Batch incomplete: Sorftime lookup succeeded for pages 1-3 (page 1 returned data; pages 2-3 had no data), but required serial DataForSEO collection was not completed for all 20 unique target keywords; only 4 successful raw responses were preserved. No complete metric output file was written. Raw responses: /home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/four_metrics_raw/US-B0FY1T38P1/"
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1RZGZH",
+      "detail": "Unverified/incomplete batch: only 2 of 20 required unique target keywords received successful serial DataForSEO responses before execution limits; no four_metrics output file was written. Sorftime page 1 succeeded and page 2 returned no relevant data; DataForSEO first call had a transient transport error and succeeded on retry."
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "detail": "DataForSEO collection incomplete: only 1 of 20 required serial keyword calls was completed; no four_metrics output file was written. Sorftime page 1 lookup succeeded and pages 2-3 returned no relevant data."
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY6MK2D4",
+      "detail": "Unverified/incomplete batch: Sorftime page 1 succeeded and pages 2-3 returned no data; only 4 of 11 required unique target keywords received successful serial DataForSEO responses before execution time expired. No metric output file was written."
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY67W88Z",
+      "detail": "Batch failed closed: Sorftime CA lookup returned page 1 only (pages 2-3 had no relevant data), and only 3 of 21 unique target terms received successful serial DataForSEO calls (incense holder, incense burner, agarbatti stand); remaining required terms were not verified, so no four_metrics output was written. Successful raw responses preserved at /home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/four_metrics_raw/CA-B0FY67W88Z/."
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6MK2D4",
+      "detail": "Incomplete required metric collection: Sorftime page 1 succeeded and pages 2-3 returned no data; DataForSEO succeeded for only 4 of 16 unique target keywords before execution limit, so the batch was not complete and no four_metrics output file was written."
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6JR3NK",
+      "detail": "agent task was killed"
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "detail": "Incomplete verified collection: Sorftime page 1 succeeded and pages 2-3 returned no relevant data; only 2 of 16 unique target-term DataForSEO calls completed before execution limit. No four_metrics output file was written."
+    }
+  ],
+  "required_remediation": "Recollect and verify every failed marketplace/ASIN batch, then rerun final validation from the beginning."
+}

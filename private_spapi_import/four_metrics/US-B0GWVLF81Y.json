@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0GWVLF81Y",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "keyword": "mugwort incense",
+      "naturalRank": 19,
+      "page": 1,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "keyword": "mugwort incense for sensitive person",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 237,
+      "monthlySalesAverage": 888,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "keyword": "mugwort incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "keyword": "natural mugwort incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 613,
+      "monthlySalesAverage": 2300,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "keyword": "charcoal free mugwort incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 116,
+      "monthlySalesAverage": 436,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GWVLF81Y",
+      "keyword": "mugwort incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    }
+  ]
+}

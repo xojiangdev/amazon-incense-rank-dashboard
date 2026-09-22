@@ -1,0 +1,68 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY1T38P1",
+  "start": 5,
+  "end": 10,
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "keyword": "incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 85,
+      "monthlySalesAverage": 320,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "keyword": "incense burner with storage",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 265,
+      "monthlySalesAverage": 992,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "keyword": "wooden incense stick holder with ash catcher",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 116,
+      "monthlySalesAverage": 436,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "keyword": "incense holders",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 139,
+      "monthlySalesAverage": 522,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY1T38P1",
+      "keyword": "incense holder and storage",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 99,
+      "monthlySalesAverage": 371,
+      "cprSampleCount": 8
+    }
+  ]
+}

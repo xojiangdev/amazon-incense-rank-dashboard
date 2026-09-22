@@ -1,0 +1,68 @@
+{
+  "marketplace": "CA",
+  "asin": "B0FY6HB74X",
+  "start": 5,
+  "end": 10,
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "citronella incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "pure sandalwood incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "sandalwood incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "sandalwood incense, made in japan",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0FY6HB74X",
+      "keyword": "incense sticks",
+      "naturalRank": 134,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 4
+    }
+  ]
+}

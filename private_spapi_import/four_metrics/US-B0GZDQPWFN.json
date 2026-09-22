@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0GZDQPWFN",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "keyword": "hinoki incense for morning air home purification",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 93,
+      "monthlySalesAverage": 350,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "keyword": "hinoki incense",
+      "naturalRank": 24,
+      "page": 1,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 45,
+      "monthlySalesAverage": 170,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "keyword": "hinoki incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 20,
+      "pcSbvRank": 999,
+      "cprEstimate": 100,
+      "monthlySalesAverage": 375,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "keyword": "natural hinoki incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 16,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "keyword": "hinoki incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDQPWFN",
+      "keyword": "long burning hinoki incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 95,
+      "monthlySalesAverage": 357,
+      "cprSampleCount": 7
+    }
+  ]
+}

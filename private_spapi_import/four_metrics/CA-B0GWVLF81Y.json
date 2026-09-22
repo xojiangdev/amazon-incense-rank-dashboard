@@ -1,0 +1,78 @@
+{
+  "marketplace": "CA",
+  "asin": "B0GWVLF81Y",
+  "results": [
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "keyword": "mugwort",
+      "naturalRank": 41,
+      "page": 1,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "keyword": "mugwort incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 120,
+      "monthlySalesAverage": 450,
+      "cprSampleCount": 5
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "keyword": "mugwort incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 72,
+      "monthlySalesAverage": 270,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "keyword": "non toxic incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 3
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "keyword": "natural mugwort incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 2,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "CA",
+      "asin": "B0GWVLF81Y",
+      "keyword": "charcoal free mugwort incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 17,
+      "monthlySalesAverage": 65,
+      "cprSampleCount": 8
+    }
+  ]
+}

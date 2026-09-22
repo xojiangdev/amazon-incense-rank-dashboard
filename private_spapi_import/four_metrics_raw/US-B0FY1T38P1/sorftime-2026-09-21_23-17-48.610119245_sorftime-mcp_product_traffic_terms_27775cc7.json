@@ -1,0 +1,158 @@
+{
+  "data": [
+    {
+      "exposure_position": "Organic",
+      "keyword": "glass incense holder",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-21 17:02",
+      "latest_organic_position": "Page 3, Pos 42/48",
+      "monthly_search_volume": 4483,
+      "recommended_bid": "0.46",
+      "recommended_bid_range": "0.34-0.55"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "aesop incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-17 01:16",
+      "latest_organic_position": "Page 3, Pos 33/50",
+      "monthly_search_volume": 2715,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "hanging incense holder",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-17 20:51",
+      "latest_organic_position": "Page 3, Pos 42/48",
+      "monthly_search_volume": 389,
+      "recommended_bid": "0.74",
+      "recommended_bid_range": "0.55-0.97"
+    },
+    {
+      "exposure_position": "Ad,Organic",
+      "keyword": "upside down incense holder",
+      "latest_ad_exposure_time": "2026-08-02 00:07",
+      "latest_ad_position": "Page 3, Pos 8/70",
+      "latest_organic_exposure_time": "2026-09-18 21:22",
+      "latest_organic_position": "Page 3, Pos 17/50",
+      "monthly_search_volume": 69,
+      "recommended_bid": "0.79",
+      "recommended_bid_range": "0.60-0.89"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "modern incense holders",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-12 20:52",
+      "latest_organic_position": "Page 3, Pos 17/48",
+      "monthly_search_volume": 76,
+      "recommended_bid": "0.56",
+      "recommended_bid_range": "0.46-0.62"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "ash catcher",
+      "latest_ad_exposure_time": "2026-08-02 00:30",
+      "latest_ad_position": "Page 1, Pos 24/66",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 81,
+      "recommended_bid": "1.05",
+      "recommended_bid_range": "0.63-1.42"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "incense holders",
+      "latest_ad_exposure_time": "2026-08-02 06:45",
+      "latest_ad_position": "Page 2, Pos 36/71",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 21305,
+      "recommended_bid": "0.43",
+      "recommended_bid_range": "0.32-0.56"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "wooden incense holder",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-08 02:01",
+      "latest_organic_position": "Page 3, Pos 10/48",
+      "monthly_search_volume": 122,
+      "recommended_bid": "0.69",
+      "recommended_bid_range": "0.52-0.86"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "ash tray for weed",
+      "latest_ad_exposure_time": "2026-08-05 11:22",
+      "latest_ad_position": "Page 2, Pos 3/65",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 10692,
+      "recommended_bid": "0.35",
+      "recommended_bid_range": "0.32-0.38"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense holder glass",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-23 11:18",
+      "latest_organic_position": "Page 3, Pos 43/50",
+      "monthly_search_volume": 81,
+      "recommended_bid": "0.68",
+      "recommended_bid_range": "0.51-0.85"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense holder with ash catcher",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-07-29 16:55",
+      "latest_organic_position": "Page 3, Pos 4/48",
+      "monthly_search_volume": 40,
+      "recommended_bid": "0.79",
+      "recommended_bid_range": "0.59-0.99"
+    },
+    {
+      "exposure_position": "Ad,Organic",
+      "keyword": "wooden incense holder with glass ash catcher",
+      "latest_ad_exposure_time": "2026-08-01 05:01",
+      "latest_ad_position": "Page 3, Pos 55/56",
+      "latest_organic_exposure_time": "2026-09-04 22:55",
+      "latest_organic_position": "Page 3, Pos 24/50",
+      "monthly_search_volume": 114,
+      "recommended_bid": "0.79",
+      "recommended_bid_range": "0.59-0.87"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense ash catcher",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-03 05:01",
+      "latest_organic_position": "Page 3, Pos 21/48",
+      "monthly_search_volume": 83,
+      "recommended_bid": "0.78",
+      "recommended_bid_range": "0.59-0.98"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

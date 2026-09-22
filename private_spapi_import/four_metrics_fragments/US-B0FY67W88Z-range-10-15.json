@@ -1,0 +1,68 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY67W88Z",
+  "start": 10,
+  "end": 15,
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "incense stick holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 99,
+      "monthlySalesAverage": 372,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "agarbatti holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 104,
+      "monthlySalesAverage": 390,
+      "cprSampleCount": 10
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "agarbatti stand with ash catcher",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 100,
+      "monthlySalesAverage": 375,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "haldi kumkum holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 0
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "sage sticks holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 99,
+      "monthlySalesAverage": 371,
+      "cprSampleCount": 7
+    }
+  ]
+}

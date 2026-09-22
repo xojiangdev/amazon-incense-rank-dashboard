@@ -633,3 +633,134 @@ export async function applyRealRankSnapshots(snapshotDate: string, snapshots: Ra
     alerts: Array.from(alertMap.values()).reduce((sum, rows) => sum + rows.length, 0),
   };
 }
+
+/**
+ * Performs a deliberately scoped four-metric recovery in a single database transaction.
+ * This is reserved for an operator-approved temporary exclusion; the excluded listing is
+ * validated against the live target set so a partial run can never silently broaden scope.
+ */
+export type PartialFourMetricInput = {
+  marketplace: "US" | "CA" | "JP";
+  asin: string;
+  keyword: string;
+  naturalRank: number;
+  page: number;
+  pcAdRank: number;
+  pcSbvRank: number;
+  cprEstimate: number | null;
+  monthlySalesAverage: number | null;
+  cprSampleCount: number;
+};
+
+export async function applyPartialRealFourMetrics(
+  snapshotDate: string,
+  metrics: PartialFourMetricInput[],
+  observedAt: Date,
+  excluded: Array<{ marketplace: "US" | "CA" | "JP"; asin: string }>
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+
+  const liveListings = await db
+    .select()
+    .from(listings)
+    .where(and(eq(listings.fulfillmentChannel, "FBA"), eq(listings.inventoryStatus, "Active"), gt(listings.fbaStock, 0)));
+  const listingById = new Map(liveListings.map(item => [item.id, item] as const));
+  const listingIds = liveListings.map(item => item.id);
+  const coreKeywords = listingIds.length
+    ? await db.select().from(keywords).where(and(inArray(keywords.listingId, listingIds), eq(keywords.isCore, true)))
+    : [];
+  if (!excluded.length || new Set(excluded.map(item => `${item.marketplace}:${item.asin.trim().toUpperCase()}`)).size !== excluded.length) {
+    throw new Error("Partial recovery exclusions must be non-empty and unique");
+  }
+  const excludedKeys = new Set(excluded.map(item => `${item.marketplace}:${item.asin.trim().toUpperCase()}`));
+  const expectedByKey = new Map(coreKeywords.flatMap(keyword => {
+    const listing = listingById.get(keyword.listingId);
+    if (!listing) throw new Error(`Missing Listing for keyword ${keyword.id}`);
+    const listingKey = `${listing.marketplace}:${listing.asin.trim().toUpperCase()}`;
+    return excludedKeys.has(listingKey) ? [] : [[rankTargetKey(listing.marketplace, listing.asin, keyword.keyword), { listing, keyword }] as const];
+  }));
+  const excludedKeywords = coreKeywords.filter(keyword => {
+    const listing = listingById.get(keyword.listingId);
+    return listing && excludedKeys.has(`${listing.marketplace}:${listing.asin.trim().toUpperCase()}`);
+  });
+  if (!excludedKeywords.length) throw new Error("None of the requested temporary exclusions are active FBA core-keyword targets");
+
+  const actualKeys = metrics.map(item => rankTargetKey(item.marketplace, item.asin, item.keyword));
+  if (actualKeys.length !== expectedByKey.size || new Set(actualKeys).size !== actualKeys.length) {
+    throw new Error(`Partial four-metric batch mismatch: expected=${expectedByKey.size}, received=${actualKeys.length}, unique=${new Set(actualKeys).size}`);
+  }
+  const missing = Array.from(expectedByKey.keys()).filter(key => !actualKeys.includes(key));
+  const extra = actualKeys.filter(key => !expectedByKey.has(key));
+  if (missing.length || extra.length) throw new Error(`Partial four-metric target mismatch: missing=${missing.length}, extra=${extra.length}`);
+
+  const prepared = metrics.map(metric => {
+    const target = expectedByKey.get(rankTargetKey(metric.marketplace, metric.asin, metric.keyword));
+    if (!target) throw new Error(`Unknown partial metric target ${metric.marketplace}/${metric.asin}/${metric.keyword}`);
+    const naturalRank = Math.trunc(metric.naturalRank);
+    const page = Math.trunc(metric.page);
+    const pcAdRank = Math.trunc(metric.pcAdRank);
+    const pcSbvRank = Math.trunc(metric.pcSbvRank);
+    const sampleCount = Math.trunc(metric.cprSampleCount);
+    const cprEstimate = metric.cprEstimate === null ? null : Math.trunc(metric.cprEstimate);
+    const monthlySalesAverage = metric.monthlySalesAverage === null ? null : Math.trunc(metric.monthlySalesAverage);
+    if (naturalRank < 1 || naturalRank > 999 || page < 1 || page > 4 || pcAdRank < 1 || pcAdRank > 999 || pcSbvRank < 1 || pcSbvRank > 999) {
+      throw new Error(`Invalid rank metric ${metric.marketplace}/${metric.asin}/${metric.keyword}`);
+    }
+    if (sampleCount < 0 || sampleCount > 10 || (cprEstimate === null && monthlySalesAverage !== null) || (cprEstimate !== null && (cprEstimate < 1 || monthlySalesAverage === null || monthlySalesAverage < 0 || sampleCount < 5))) {
+      throw new Error(`Invalid CPR metric ${metric.marketplace}/${metric.asin}/${metric.keyword}`);
+    }
+    const oldRank = target.keyword.currentRank && target.keyword.currentRank > 0 ? target.keyword.currentRank : 0;
+    const rankChange = oldRank > 0 ? oldRank - naturalRank : 0;
+    const oldBest = target.keyword.bestRank ?? 0;
+    const bestRank = naturalRank < 999 ? (oldBest > 0 ? Math.min(oldBest, naturalRank) : naturalRank) : oldBest;
+    return { ...target, naturalRank, page, pcAdRank, pcSbvRank, sampleCount, cprEstimate, monthlySalesAverage, rankChange, bestRank };
+  });
+
+  await db.transaction(async tx => {
+    const keywordIds = prepared.map(item => item.keyword.id);
+    if (keywordIds.length) {
+      await tx.delete(dailyRankSnapshots).where(and(eq(dailyRankSnapshots.snapshotDate, snapshotDate), inArray(dailyRankSnapshots.keywordId, keywordIds)));
+    }
+    for (const item of prepared) {
+      await tx.update(keywords).set({
+        currentRank: item.naturalRank,
+        previousRank: item.keyword.currentRank && item.keyword.currentRank > 0 ? item.keyword.currentRank : 0,
+        rankChange: item.rankChange,
+        bestRank: item.bestRank,
+        pageNumber: item.page,
+        pcAdRank: item.pcAdRank,
+        pcSbvRank: item.pcSbvRank,
+        cprEstimate: item.cprEstimate,
+        cprMonthlySalesAverage: item.monthlySalesAverage,
+        cprSampleCount: item.sampleCount,
+        cprSource: "dataforseo_amazon_pc_serp",
+        cprUpdatedAt: observedAt,
+        updatedAt: observedAt,
+      }).where(eq(keywords.id, item.keyword.id));
+      await tx.insert(dailyRankSnapshots).values({
+        keywordId: item.keyword.id,
+        listingId: item.listing.id,
+        marketplace: item.listing.marketplace,
+        snapshotDate,
+        rank: item.naturalRank,
+        page: item.page,
+        pcAdRank: item.pcAdRank,
+        pcSbvRank: item.pcSbvRank,
+        changeFromYesterday: item.rankChange,
+        isTop10: item.naturalRank <= 10,
+        isTop50: item.naturalRank <= 50,
+      });
+    }
+  });
+
+  return {
+    snapshotDate,
+    expected: expectedByKey.size,
+    updated: prepared.length,
+    excluded: { listings: excluded, keywords: excludedKeywords.length },
+    rank: { updated: prepared.length, top10: prepared.filter(item => item.naturalRank <= 10).length, top50: prepared.filter(item => item.naturalRank <= 50).length, outsideTopThreePages: prepared.filter(item => item.naturalRank === 999).length },
+    cpr: { updated: prepared.length, calculated: prepared.filter(item => item.cprEstimate !== null).length, insufficientEvidence: prepared.filter(item => item.cprEstimate === null).length },
+    ads: { updated: prepared.length, pcAdFound: prepared.filter(item => item.pcAdRank < 999).length, pcSbvFound: prepared.filter(item => item.pcSbvRank < 999).length, neitherFound: prepared.filter(item => item.pcAdRank === 999 && item.pcSbvRank === 999).length },
+  };
+}

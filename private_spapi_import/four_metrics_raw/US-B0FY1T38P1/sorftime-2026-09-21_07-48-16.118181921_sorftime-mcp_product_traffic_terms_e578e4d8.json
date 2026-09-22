@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "exposure_position": "Ad",
+      "keyword": "bamboo sticks",
+      "latest_ad_exposure_time": "2026-09-19 11:17",
+      "latest_ad_position": "Page 3, Pos 16/73",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 32676,
+      "recommended_bid": "0.96",
+      "recommended_bid_range": "0.72-1.20"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "pooja return gifts",
+      "latest_ad_exposure_time": "2026-09-01 07:21",
+      "latest_ad_position": "Page 2, Pos 68/71",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 5484,
+      "recommended_bid": "0.35",
+      "recommended_bid_range": "0.32-0.44"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "smokeless incense",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-08-27 19:05",
+      "latest_organic_position": "Page 3, Pos 11/48",
+      "monthly_search_volume": 74,
+      "recommended_bid": "0.67",
+      "recommended_bid_range": "0.48-0.90"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in USD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}

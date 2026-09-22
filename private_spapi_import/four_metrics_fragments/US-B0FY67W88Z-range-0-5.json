@@ -1,0 +1,68 @@
+{
+  "marketplace": "US",
+  "asin": "B0FY67W88Z",
+  "start": 0,
+  "end": 5,
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "incense holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 227,
+      "monthlySalesAverage": 850,
+      "cprSampleCount": 8
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "agarbatti stand",
+      "naturalRank": 143,
+      "page": 3,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 138,
+      "monthlySalesAverage": 517,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "portador de incienso",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 127,
+      "monthlySalesAverage": 478,
+      "cprSampleCount": 9
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "sandalwood incense wit burner",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 73,
+      "monthlySalesAverage": 275,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0FY67W88Z",
+      "keyword": "gods agarbatti holder",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 1
+    }
+  ]
+}

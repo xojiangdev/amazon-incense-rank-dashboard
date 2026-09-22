@@ -1,0 +1,78 @@
+{
+  "marketplace": "US",
+  "asin": "B0GZDRB1TX",
+  "results": [
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "keyword": "incense sticks stickless coreless no stick",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 160,
+      "monthlySalesAverage": 600,
+      "cprSampleCount": 7
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "keyword": "bamboo forest incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": 67,
+      "monthlySalesAverage": 250,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "keyword": "bamboo forest incense",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 55,
+      "monthlySalesAverage": 208,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "keyword": "natural bamboo forest incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": null,
+      "monthlySalesAverage": null,
+      "cprSampleCount": 2
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "keyword": "coreless bamboo forest incense sticks",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 1,
+      "pcSbvRank": 999,
+      "cprEstimate": 40,
+      "monthlySalesAverage": 150,
+      "cprSampleCount": 6
+    },
+    {
+      "marketplace": "US",
+      "asin": "B0GZDRB1TX",
+      "keyword": "bamboo forest incense sticks for meditation",
+      "naturalRank": 999,
+      "page": 4,
+      "pcAdRank": 999,
+      "pcSbvRank": 999,
+      "cprEstimate": 29,
+      "monthlySalesAverage": 107,
+      "cprSampleCount": 7
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "data": [
+    {
+      "exposure_position": "Ad,Organic",
+      "keyword": "incense holder",
+      "latest_ad_exposure_time": "2026-09-05 03:18",
+      "latest_ad_position": "Page 1, Pos 67/68",
+      "latest_organic_exposure_time": "2026-09-21 21:38",
+      "latest_organic_position": "Page 2, Pos 8/48",
+      "monthly_search_volume": 15350,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "incense burner",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-22 02:41",
+      "latest_organic_position": "Page 2, Pos 5/48",
+      "monthly_search_volume": 5597,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Ad,Organic",
+      "keyword": "incense stick holder",
+      "latest_ad_exposure_time": "2026-08-28 12:17",
+      "latest_ad_position": "Page 2, Pos 25/69",
+      "latest_organic_exposure_time": "2026-09-18 12:09",
+      "latest_organic_position": "Page 2, Pos 48/48",
+      "monthly_search_volume": 4812,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Ad,Organic",
+      "keyword": "porte encens",
+      "latest_ad_exposure_time": "2026-09-08 19:55",
+      "latest_ad_position": "Page 1, Pos 65/68",
+      "latest_organic_exposure_time": "2026-09-21 18:07",
+      "latest_organic_position": "Page 2, Pos 3/48",
+      "monthly_search_volume": 856,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "lotus decor",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-21 09:44",
+      "latest_organic_position": "Page 2, Pos 21/48",
+      "monthly_search_volume": 513,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Organic",
+      "keyword": "brass decor",
+      "latest_ad_exposure_time": "",
+      "latest_ad_position": "",
+      "latest_organic_exposure_time": "2026-09-21 17:00",
+      "latest_organic_position": "Page 2, Pos 23/48",
+      "monthly_search_volume": 435,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "incense cone holder",
+      "latest_ad_exposure_time": "2026-09-01 15:58",
+      "latest_ad_position": "Page 2, Pos 67/71",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 1247,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    },
+    {
+      "exposure_position": "Ad",
+      "keyword": "dhoop dani",
+      "latest_ad_exposure_time": "2026-08-31 01:21",
+      "latest_ad_position": "Page 1, Pos 28/65",
+      "latest_organic_exposure_time": "",
+      "latest_organic_position": "",
+      "monthly_search_volume": 2296,
+      "recommended_bid": "",
+      "recommended_bid_range": "-1.00--1.00"
+    }
+  ],
+  "doc": {
+    "exposure_position": "Product's exposure position type (organic / ad / both, comma-separated).",
+    "keyword": "The reverse-looked-up keyword.",
+    "latest_ad_exposure_time": "Latest ad exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_ad_position": "Latest ad exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "latest_organic_exposure_time": "Latest organic exposure time (yyyy-MM-dd HH:mm); empty when no exposure.",
+    "latest_organic_position": "Latest organic exposure position text (e.g. \"Page X, Pos Y/Z\"); empty when no exposure.",
+    "monthly_search_volume": "Monthly search volume of this keyword.",
+    "recommended_bid": "Recommended CPC bid for this keyword (string, in CAD).",
+    "recommended_bid_range": "Recommended CPC bid range for this keyword, e.g. \"0.38-0.63\"."
+  }
+}
