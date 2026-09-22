@@ -5,12 +5,14 @@ import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import {
+  scheduledFbaStockRefreshHandler,
   scheduledGitHubCprRefreshHandler,
   scheduledGitHubCprUnavailableHandler,
   scheduledProductMetricsRefreshHandler,
   scheduledProductMetricTargetsHandler,
   scheduledRankRefreshHandler,
   scheduledRankTargetsHandler,
+  scheduledSqpKeywordsRefreshHandler,
 } from "../scheduledRankHandler";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
@@ -50,6 +52,8 @@ async function startServer() {
   app.post("/api/scheduled/refreshProductMetrics", scheduledProductMetricsRefreshHandler);
   app.post("/api/scheduled/githubCpr", scheduledGitHubCprRefreshHandler);
   app.post("/api/scheduled/githubCprUnavailable", scheduledGitHubCprUnavailableHandler);
+  app.post("/api/scheduled/refreshFbaStock", scheduledFbaStockRefreshHandler);
+  app.post("/api/scheduled/refreshSqpKeywords", scheduledSqpKeywordsRefreshHandler);
   // tRPC API
   app.use(
     "/api/trpc",

@@ -229,7 +229,7 @@ export async function getListings(marketplace?: "US" | "CA" | "JP", category?: s
   const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
   const listingRows = await db.select().from(listings).where(whereClause).orderBy(desc(listings.updatedAt));
   if (!listingRows.length) return [];
-  const keywordRows = await db.select().from(keywords).where(inArray(keywords.listingId, listingRows.map(item => item.id)));
+  const keywordRows = await db.select().from(keywords).where(and(inArray(keywords.listingId, listingRows.map(item => item.id)), eq(keywords.isCore, true)));
   const statusWeight = { action_needed: 10000, watch: 7000, optimizing: 4000, normal: 0 } as const;
   const enriched = listingRows
     .map(listing => {
@@ -273,6 +273,330 @@ export async function deactivateListingsMissingFromSync(
   return deactivated;
 }
 
+export type MarketplaceCode = "US" | "CA" | "JP";
+export type TargetIncenseCategory = "incense_sticks" | "incense_burner" | "incense_holder";
+
+export type FbaStockCandidateInput = {
+  marketplace: MarketplaceCode;
+  asin: string;
+  sku: string;
+  title: string;
+  category: TargetIncenseCategory;
+  categoryName: string;
+  imageUrl: string;
+  price: string;
+  currency: string;
+  fbaStock: number;
+  fbaInboundWorking: number;
+  fbaInboundShipped: number;
+  fbaInboundReceiving: number;
+  fbaInboundTotal: number;
+  fulfillmentChannel: "FBA";
+  listingStatus: "Active";
+  sourceReportId: string;
+};
+
+export type FbaStockSnapshotInput = {
+  marketplace: MarketplaceCode;
+  sourceRowCount: number;
+  candidates: FbaStockCandidateInput[];
+};
+
+const normalizeIngestAsin = (asin: string) => asin.trim().toUpperCase();
+const normalizeIngestKeyword = (keyword: string) => keyword.trim().normalize("NFKC").toLowerCase().replace(/\s+/g, " ");
+
+function normalizeIngestPrice(raw: string): string {
+  const match = String(raw || "").replace(/,/g, "").match(/\d+(?:\.\d+)?/);
+  if (!match) throw new Error(`Invalid listing price: ${raw}`);
+  return match[0]!;
+}
+
+/**
+ * Reconciles complete, source-audited FBA listing snapshots. This deliberately
+ * touches only Listing inventory/catalog fields: no keyword, rank snapshot,
+ * desktop-ad, SBV, or CPR field is read or changed.
+ */
+export async function applyFbaStockSnapshots(snapshots: FbaStockSnapshotInput[], observedAt: Date) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  if (!snapshots.length) throw new Error("At least one complete marketplace FBA snapshot is required");
+
+  const snapshotMarkets = snapshots.map(snapshot => snapshot.marketplace);
+  if (new Set(snapshotMarkets).size !== snapshotMarkets.length) {
+    throw new Error("FBA snapshot contains duplicate marketplace batches");
+  }
+  if (!snapshots.some(snapshot => (snapshot.marketplace === "US" || snapshot.marketplace === "CA") && snapshot.candidates.length > 0)) {
+    throw new Error("FBA sync requires at least one retained US or CA candidate; zero-candidate North America batches are rejected");
+  }
+
+  const store = await getStoreSettings();
+  if (!store) throw new Error("Store settings unavailable");
+  const prepared = snapshots.map(snapshot => {
+    if (snapshot.sourceRowCount < snapshot.candidates.length) {
+      throw new Error(`${snapshot.marketplace} sourceRowCount is lower than retained FBA candidate count`);
+    }
+    const keys = snapshot.candidates.map(candidate => `${candidate.marketplace}:${normalizeIngestAsin(candidate.asin)}:${candidate.sku.trim()}`);
+    if (new Set(keys).size !== keys.length) throw new Error(`${snapshot.marketplace} FBA snapshot has duplicate marketplace/ASIN/SKU records`);
+    return {
+      ...snapshot,
+      candidates: snapshot.candidates.map(candidate => {
+        if (candidate.marketplace !== snapshot.marketplace) throw new Error(`Candidate marketplace does not match ${snapshot.marketplace} batch`);
+        if (candidate.fulfillmentChannel !== "FBA" || candidate.listingStatus !== "Active" || candidate.fbaStock <= 0) {
+          throw new Error(`FBA candidate violates FBA/Active/positive-stock contract: ${candidate.marketplace}/${candidate.asin}`);
+        }
+        const inboundTotal = candidate.fbaInboundWorking + candidate.fbaInboundShipped + candidate.fbaInboundReceiving;
+        if (candidate.fbaInboundTotal !== inboundTotal) {
+          throw new Error(`Inbound total mismatch for ${candidate.marketplace}/${candidate.asin}: expected ${inboundTotal}, received ${candidate.fbaInboundTotal}`);
+        }
+        return {
+          ...candidate,
+          asin: normalizeIngestAsin(candidate.asin),
+          sku: candidate.sku.trim(),
+          title: candidate.title.trim(),
+          categoryName: candidate.categoryName.trim(),
+          imageUrl: candidate.imageUrl.trim(),
+          price: normalizeIngestPrice(candidate.price),
+          currency: candidate.currency.trim().toUpperCase(),
+        };
+      }),
+    };
+  });
+
+  const result = {
+    observedAt: observedAt.toISOString(),
+    created: 0,
+    updated: 0,
+    deactivated: 0,
+    retained: 0,
+    marketplaces: [] as Array<{ marketplace: MarketplaceCode; candidates: number; created: number; updated: number; deactivated: number }>,
+  };
+
+  await db.transaction(async tx => {
+    for (const snapshot of prepared) {
+      const current = await tx.select().from(listings).where(eq(listings.marketplace, snapshot.marketplace));
+      const currentByAsin = new Map<string, (typeof current)[number]>();
+      for (const listing of current) {
+        const key = normalizeIngestAsin(listing.asin);
+        if (currentByAsin.has(key)) throw new Error(`Existing duplicate listing records for ${snapshot.marketplace}/${key}`);
+        currentByAsin.set(key, listing);
+      }
+
+      let created = 0;
+      let updated = 0;
+      const activeKeys = new Set<string>();
+      for (const candidate of snapshot.candidates) {
+        const activeKey = `${candidate.asin}:${candidate.sku}`;
+        activeKeys.add(activeKey);
+        const existing = currentByAsin.get(candidate.asin);
+        const listingPayload = {
+          sku: candidate.sku,
+          title: candidate.title,
+          category: candidate.category,
+          categoryName: candidate.categoryName,
+          imageUrl: candidate.imageUrl || null,
+          price: candidate.price,
+          currency: candidate.currency,
+          fulfillmentChannel: "FBA" as const,
+          inventoryStatus: "Active" as const,
+          fbaStock: candidate.fbaStock,
+          fbaInboundWorking: candidate.fbaInboundWorking,
+          fbaInboundShipped: candidate.fbaInboundShipped,
+          fbaInboundReceiving: candidate.fbaInboundReceiving,
+          fbaInboundTotal: candidate.fbaInboundTotal,
+          updatedAt: observedAt,
+        };
+        if (existing) {
+          await tx.update(listings).set(listingPayload).where(eq(listings.id, existing.id));
+          updated += 1;
+        } else {
+          await tx.insert(listings).values({
+            storeId: store.id,
+            marketplace: candidate.marketplace,
+            asin: candidate.asin,
+            ...listingPayload,
+            salesFollowUpStatus: "normal",
+            assignedSales: "销售组",
+            createdAt: observedAt,
+          });
+          created += 1;
+        }
+      }
+
+      let deactivated = 0;
+      for (const listing of current) {
+        const activeKey = `${normalizeIngestAsin(listing.asin)}:${listing.sku ?? ""}`;
+        if (!activeKeys.has(activeKey)) {
+          await tx.update(listings).set({ inventoryStatus: "Inactive", fbaStock: 0, updatedAt: observedAt }).where(eq(listings.id, listing.id));
+          deactivated += 1;
+        }
+      }
+      result.created += created;
+      result.updated += updated;
+      result.deactivated += deactivated;
+      result.retained += snapshot.candidates.length;
+      result.marketplaces.push({ marketplace: snapshot.marketplace, candidates: snapshot.candidates.length, created, updated, deactivated });
+    }
+  });
+  return result;
+}
+
+export type SqpSelectionBasis = "sqp_purchase" | "sqp_cart" | "sqp_click" | "title_fallback";
+export type SqpKeywordSelectionInput = {
+  marketplace: MarketplaceCode;
+  asin: string;
+  searchQuery: string;
+  searchQueryScore: number;
+  searchQueryVolume: number;
+  asinImpressionCount: number;
+  asinClickCount: number;
+  asinCartAddCount: number;
+  asinPurchaseCount: number;
+  asinConversionRate: number;
+  asinPurchaseShare: number;
+  startDate: string;
+  endDate: string;
+  selectionBasis: SqpSelectionBasis;
+};
+
+export type SqpKeywordListingInput = {
+  marketplace: MarketplaceCode;
+  asin: string;
+  terms: SqpKeywordSelectionInput[];
+};
+
+function assertSqpSelectionEvidence(term: SqpKeywordSelectionInput) {
+  const metrics = [
+    term.searchQueryScore,
+    term.searchQueryVolume,
+    term.asinImpressionCount,
+    term.asinClickCount,
+    term.asinCartAddCount,
+    term.asinPurchaseCount,
+    term.asinConversionRate,
+    term.asinPurchaseShare,
+  ];
+  if (metrics.some(value => !Number.isFinite(value) || value < 0)) {
+    throw new Error(`Negative or invalid SQP metric for ${term.marketplace}/${term.asin}/${term.searchQuery}`);
+  }
+  if (term.selectionBasis === "sqp_purchase" && term.asinPurchaseCount <= 0) {
+    throw new Error(`SQP purchase term lacks purchases: ${term.searchQuery}`);
+  }
+  if (term.selectionBasis === "sqp_cart" && (term.asinPurchaseCount > 0 || term.asinCartAddCount <= 0)) {
+    throw new Error(`SQP cart term violates purchase/cart evidence tier: ${term.searchQuery}`);
+  }
+  const clickQualifies = term.asinClickCount >= 2 || (term.asinClickCount >= 1 && term.searchQueryVolume >= 20);
+  if (term.selectionBasis === "sqp_click" && (term.asinPurchaseCount > 0 || term.asinCartAddCount > 0 || !clickQualifies)) {
+    throw new Error(`SQP click term lacks qualifying click evidence: ${term.searchQuery}`);
+  }
+  if (term.selectionBasis === "title_fallback" && (term.asinPurchaseCount !== 0 || term.asinCartAddCount !== 0 || term.asinClickCount !== 0)) {
+    throw new Error(`Title fallback must not be submitted as observed funnel evidence: ${term.searchQuery}`);
+  }
+}
+
+/**
+ * Replaces the active core-keyword set only after receiving one complete,
+ * 6–20-term selection for every live FBA listing. Matching keyword rows retain
+ * all rank, ad, SBV, CPR, and historical snapshot data; retired terms are
+ * marked non-core instead of deleted so this receiver never destroys metrics.
+ */
+export async function applySqpKeywordSelections(input: { listings: SqpKeywordListingInput[]; observedAt: Date }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const liveListings = await getListings();
+  if (!liveListings.length) throw new Error("No active FBA listings available for SQP keyword maintenance");
+
+  const liveByKey = new Map<string, (typeof liveListings)[number]>(liveListings.map(listing => [`${listing.marketplace}:${normalizeIngestAsin(listing.asin)}`, listing]));
+  const receivedKeys = input.listings.map(item => `${item.marketplace}:${normalizeIngestAsin(item.asin)}`);
+  if (receivedKeys.length !== liveByKey.size || new Set(receivedKeys).size !== receivedKeys.length) {
+    throw new Error(`SQP listing batch mismatch: expected ${liveByKey.size}, received ${receivedKeys.length}, unique=${new Set(receivedKeys).size}`);
+  }
+  const missing = Array.from(liveByKey.keys()).filter(key => !receivedKeys.includes(key));
+  const extra = receivedKeys.filter(key => !liveByKey.has(key));
+  if (missing.length || extra.length) throw new Error(`SQP listing targets mismatch: missing=${missing.length}, extra=${extra.length}`);
+
+  const prepared = input.listings.map(item => {
+    const listingKey = `${item.marketplace}:${normalizeIngestAsin(item.asin)}`;
+    const listing = liveByKey.get(listingKey);
+    if (!listing) throw new Error(`Unknown active FBA listing ${listingKey}`);
+    if (item.terms.length < 6 || item.terms.length > 20) {
+      throw new Error(`SQP core term count must be 6–20 for ${listingKey}; received ${item.terms.length}`);
+    }
+    const termKeys = item.terms.map(term => normalizeIngestKeyword(term.searchQuery));
+    if (termKeys.some(key => !key) || new Set(termKeys).size !== termKeys.length) {
+      throw new Error(`SQP term list contains missing or duplicate normalized search queries for ${listingKey}`);
+    }
+    return {
+      listing,
+      terms: item.terms.map(term => {
+        if (term.marketplace !== listing.marketplace || normalizeIngestAsin(term.asin) !== normalizeIngestAsin(listing.asin)) {
+          throw new Error(`SQP term does not belong to ${listingKey}`);
+        }
+        assertSqpSelectionEvidence(term);
+        const selectionBasis = term.selectionBasis;
+        return {
+          ...term,
+          normalizedKeyword: normalizeIngestKeyword(term.searchQuery),
+          source: selectionBasis === "title_fallback" ? "organic_high_value" as const : "sqp_converting" as const,
+          relevanceScore: selectionBasis === "title_fallback" ? 65 : Math.max(1, 101 - Math.min(100, term.searchQueryScore || 100)),
+        };
+      }),
+    };
+  });
+
+  const result = { observedAt: input.observedAt.toISOString(), expectedListings: liveByKey.size, updated: 0, created: 0, retired: 0, totalCoreTerms: 0, byBasis: { sqp_purchase: 0, sqp_cart: 0, sqp_click: 0, title_fallback: 0 } };
+  await db.transaction(async tx => {
+    const listingIds = prepared.map(item => item.listing.id);
+    const existingKeywords = await tx.select().from(keywords).where(inArray(keywords.listingId, listingIds));
+    const existingByKey = new Map<string, (typeof existingKeywords)[number]>();
+    for (const existing of existingKeywords) {
+      const key = `${existing.listingId}:${normalizeIngestKeyword(existing.keyword)}`;
+      if (existingByKey.has(key)) throw new Error(`Existing duplicate keyword rows for ${key}; no SQP update applied`);
+      existingByKey.set(key, existing);
+    }
+
+    for (const existing of existingKeywords.filter(keyword => keyword.isCore)) {
+      await tx.update(keywords).set({ isCore: false, updatedAt: input.observedAt }).where(eq(keywords.id, existing.id));
+      result.retired += 1;
+    }
+
+    for (const item of prepared) {
+      for (const term of item.terms) {
+        const existing = existingByKey.get(`${item.listing.id}:${term.normalizedKeyword}`);
+        const keywordPayload = {
+          keyword: term.normalizedKeyword,
+          searchVolume: Math.trunc(term.searchQueryVolume),
+          historicalConversionCount: Math.trunc(term.asinPurchaseCount),
+          conversionRate: term.asinConversionRate.toFixed(2),
+          relevanceScore: Math.trunc(term.relevanceScore),
+          isCore: true,
+          source: term.source,
+          selectionBasis: term.selectionBasis,
+          updatedAt: input.observedAt,
+        };
+        if (existing) {
+          await tx.update(keywords).set(keywordPayload).where(eq(keywords.id, existing.id));
+          result.updated += 1;
+        } else {
+          await tx.insert(keywords).values({
+            listingId: item.listing.id,
+            ...keywordPayload,
+            currentRank: 0,
+            previousRank: 0,
+            rankChange: 0,
+            bestRank: 0,
+            pageNumber: 0,
+            createdAt: input.observedAt,
+          });
+          result.created += 1;
+        }
+        result.totalCoreTerms += 1;
+        result.byBasis[term.selectionBasis] += 1;
+      }
+    }
+  });
+  return result;
+}
+
 export async function getListingById(id: number) {
   const db = await getDb();
   if (!db) return null;
@@ -283,7 +607,7 @@ export async function getListingById(id: number) {
 export async function getListingKeywords(listingId: number) {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(keywords).where(eq(keywords.listingId, listingId)).orderBy(desc(keywords.isCore), desc(keywords.historicalConversionCount));
+  return db.select().from(keywords).where(and(eq(keywords.listingId, listingId), eq(keywords.isCore, true))).orderBy(desc(keywords.historicalConversionCount));
 }
 
 export async function getRankSnapshots(listingId: number) {
@@ -463,7 +787,7 @@ export async function getDashboardOverview(marketplace?: "US" | "CA" | "JP") {
   const listingIds = allListings.map(l => l.id);
   if (listingIds.length === 0) return empty;
 
-  const allKeywords = await db.select().from(keywords).where(inArray(keywords.listingId, listingIds));
+  const allKeywords = await db.select().from(keywords).where(and(inArray(keywords.listingId, listingIds), eq(keywords.isCore, true)));
   let top10 = 0;
   let top50 = 0;
   let risen = 0;
