@@ -1155,9 +1155,9 @@ export default function Home() {
                                     ) : null}
                                   </div>
                                 </td>
-                                <td className="px-1.5 py-2" title={hasRepositoryCpr(kw) ? `GitHub data/cpr.json：月销均值 ${kw.cprMonthlySalesAverage ?? "—"}；样本 ${kw.cprSampleCount ?? "—"}` : "等待 GitHub 仓库 data/cpr.json 的对应关键词"}>
+                                <td className="px-1.5 py-2" title={hasRepositoryCpr(kw) ? `GitHub data/cpr.json：月销均值 ${kw.cprMonthlySalesAverage ?? "—"}；样本 ${kw.cprSampleCount ?? "—"}` : "该关键词暂无可用市场 CPR 数据"}>
                                   {!hasRepositoryCpr(kw) ? (
-                                    <span className="text-[10px] text-slate-400">待仓库</span>
+                                    <span className="text-[10px] text-slate-400">—</span>
                                   ) : (
                                     <div className="leading-tight">
                                       <span className="font-mono text-xs font-semibold text-cyan-700">{kw.cprEstimate}</span>
@@ -1254,7 +1254,7 @@ export default function Home() {
                               </div>
                               <div>
                                 <p className="text-[10px] text-slate-500">CPR(8天) · GitHub</p>
-                                <p className="mt-0.5 font-mono text-sm font-bold text-cyan-700">{hasRepositoryCpr(kw) ? kw.cprEstimate : "待仓库"}</p>
+                                <p className="mt-0.5 font-mono text-sm font-bold text-cyan-700">{hasRepositoryCpr(kw) ? kw.cprEstimate : "—"}</p>
                               </div>
                               <div>
                                 <p className="text-[10px] text-slate-500">7日自然趋势</p>
