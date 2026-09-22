@@ -26,6 +26,18 @@ export const MANUAL_CATEGORY_EXCEPTIONS: readonly ManualCategoryException[] = [
     label: "眼罩",
     categoryName: "手动豁免 · 眼罩",
   },
+  {
+    marketplace: "US",
+    asin: "B0GZDGRVCP",
+    label: "紫藤线香（断货保护，人工激活）",
+    categoryName: "手动豁免 · 断货激活",
+  },
+  {
+    marketplace: "US",
+    asin: "B0FY6MCXS7",
+    label: "历史listing（人工激活）",
+    categoryName: "手动豁免 · 人工激活",
+  },
 ] as const;
 
 export function getManualCategoryException(marketplace: MarketplaceCode, asin: string) {
