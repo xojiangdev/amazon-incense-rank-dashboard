@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { keepPreviousData } from "@tanstack/react-query";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -192,10 +193,11 @@ export default function Home() {
   );
 
   const overviewQuery = trpc.dashboard.overview.useQuery(
-    marketplace === "ALL" ? undefined : { marketplace }
+    marketplace === "ALL" ? undefined : { marketplace },
+    { staleTime: 60_000, refetchOnWindowFocus: false }
   );
 
-  const listingsQuery = trpc.dashboard.listings.useQuery(listingsInput);
+  const listingsQuery = trpc.dashboard.listings.useQuery(listingsInput, { staleTime: 60_000, refetchOnWindowFocus: false });
   const cprSyncStatusQuery = trpc.dashboard.cprSyncStatus.useQuery();
 
   const refreshMutation = trpc.dashboard.triggerDailyRefresh.useMutation({
@@ -295,7 +297,7 @@ export default function Home() {
     : filteredListings[0]?.id;
   const detailQuery = trpc.dashboard.listingDetail.useQuery(
     { id: effectiveListingId ?? 1 },
-    { enabled: !!effectiveListingId }
+    { enabled: !!effectiveListingId, placeholderData: keepPreviousData, staleTime: 60_000 }
   );
   const currentDetail = detailQuery.data && filteredListings.some(item => item.id === detailQuery.data?.listing.id)
     ? detailQuery.data
@@ -1337,8 +1339,20 @@ export default function Home() {
                 </Card>
               </>
             ) : (
-              <div className="bg-white rounded-xl border border-slate-200 p-12 text-center text-slate-400 text-xs">
-                正在加载数据...
+              <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 space-y-4" aria-label="加载中">
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-lg bg-slate-200 animate-pulse" />
+                  <div className="space-y-2 flex-1">
+                    <div className="h-4 w-2/3 rounded bg-slate-200 animate-pulse" />
+                    <div className="h-3 w-1/3 rounded bg-slate-200 animate-pulse" />
+                  </div>
+                </div>
+                <div className="h-8 w-full rounded bg-slate-100 animate-pulse" />
+                <div className="space-y-2">
+                  {[0, 1, 2, 3, 4].map(i => (
+                    <div key={i} className="h-9 w-full rounded bg-slate-100 animate-pulse" style={{ animationDelay: `${i * 120}ms` }} />
+                  ))}
+                </div>
               </div>
             )}
           </div>

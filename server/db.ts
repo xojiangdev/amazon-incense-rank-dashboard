@@ -98,6 +98,10 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
     return record ? [{ keyword, record }] : [];
   });
 
+  // 权威文档不含的关键词 → 清空CPR(防止已从数据文件移除的词残留旧值)
+  const unmatchedIds = activeCoreKeywords
+    .filter(keyword => !recordByKeyword.has(normalizeCprKeyword(keyword.keyword)))
+    .map(keyword => keyword.id);
   await db.transaction(async tx => {
     for (const item of matched) {
       await tx.update(keywords).set({
@@ -108,6 +112,16 @@ export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observed
         cprUpdatedAt: observedAt,
         updatedAt: observedAt,
       }).where(eq(keywords.id, item.keyword.id));
+    }
+    if (unmatchedIds.length) {
+      await tx.update(keywords).set({
+        cprEstimate: null,
+        cprMonthlySalesAverage: null,
+        cprSampleCount: null,
+        cprSource: null,
+        cprUpdatedAt: observedAt,
+        updatedAt: observedAt,
+      }).where(inArray(keywords.id, unmatchedIds));
     }
     await tx.insert(cprSyncStates).values({
       sourceKey: input.sourceKey,
