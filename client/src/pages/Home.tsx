@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -149,6 +149,15 @@ export default function Home() {
   const [desktopAdFilter, setDesktopAdFilter] = useState<DesktopAdFilter>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedListingId, setSelectedListingId] = useState<number | null>(null);
+  // 移动端体验：选中产品后自动滚动到右侧/下方详情区，免长滑
+  const detailSectionRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (selectedListingId == null) return;
+    const t = window.setTimeout(() => {
+      detailSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 120);
+    return () => window.clearTimeout(t);
+  }, [selectedListingId]);
 
   // Quick Action States
   const [isFollowUpModalOpen, setIsFollowUpModalOpen] = useState(false);
@@ -866,7 +875,7 @@ export default function Home() {
           </div>
 
           {/* Right Column: Keyword Rank Statistics & Sales Action Detail */}
-          <div className="min-w-0 space-y-4">
+          <div ref={detailSectionRef} className="min-w-0 space-y-4 scroll-mt-20">
             {currentDetail ? (
               <>
                 {/* Active Listing Profile Card */}
