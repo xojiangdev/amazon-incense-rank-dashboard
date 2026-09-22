@@ -54,6 +54,13 @@ async function startServer() {
   app.post("/api/scheduled/githubCprUnavailable", scheduledGitHubCprUnavailableHandler);
   app.post("/api/scheduled/refreshFbaStock", scheduledFbaStockRefreshHandler);
   app.post("/api/scheduled/refreshSqpKeywords", scheduledSqpKeywordsRefreshHandler);
+  // `/api/scheduled/*` is reserved by the production gateway for Manus cron
+  // requests and rejects external header-only callers before Express runs.
+  // Keep those routes intact, and expose equivalent non-reserved endpoints for
+  // server-to-server collectors authenticated with SITE_INGEST_TOKEN.
+  app.get("/api/ingest/rankTargets", scheduledRankTargetsHandler);
+  app.post("/api/ingest/refreshFbaStock", scheduledFbaStockRefreshHandler);
+  app.post("/api/ingest/refreshSqpKeywords", scheduledSqpKeywordsRefreshHandler);
   // tRPC API
   app.use(
     "/api/trpc",

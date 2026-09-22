@@ -15,7 +15,7 @@ Existing cron and Manus administrator authentication remain supported. If `SITE_
 
 ## 1. FBA stock snapshot
 
-**Endpoint:** `POST /api/scheduled/refreshFbaStock`
+**Public endpoint:** `POST /api/ingest/refreshFbaStock`
 
 This endpoint accepts a **complete snapshot for each submitted marketplace**. It updates only Listing catalog and inventory fields: FBA sellable inventory, three inbound quantities, total inbound quantity, and Active status. It does not touch keywords, natural ranks, PC/SBV ranks, CPR, or daily rank snapshots.
 
@@ -57,7 +57,7 @@ The accepted candidate fields are the external equivalents of the rows consumed 
 A submitted marketplace is reconciled atomically: matching listings are upserted; listings absent from that **complete** marketplace snapshot are set to `Inactive` with zero FBA stock. Do not submit a partial marketplace snapshot. A zero-candidate US/CA request is rejected as a safety guard; an empty JP snapshot is allowed when its source report supports it.
 
 ```bash
-curl -X POST "https://cpr.yinjiyue.com/api/scheduled/refreshFbaStock" \
+curl -X POST "https://cpr.yinjiyue.com/api/ingest/refreshFbaStock" \
   -H "Content-Type: application/json" \
   -H "x-ingest-token: $SITE_INGEST_TOKEN" \
   --data-binary @fba-snapshot.json
@@ -65,7 +65,7 @@ curl -X POST "https://cpr.yinjiyue.com/api/scheduled/refreshFbaStock" \
 
 ## 2. SQP core-keyword refresh
 
-**Endpoint:** `POST /api/scheduled/refreshSqpKeywords`
+**Public endpoint:** `POST /api/ingest/refreshSqpKeywords`
 
 This endpoint receives the **already-selected** core keyword set for each live FBA Listing. Its fields map directly to the selected rows written by `scripts_import_sqp_keywords.ts`, including `selection_basis`.
 
@@ -134,7 +134,7 @@ The short example above shows two terms only for readability; production payload
 Matching existing keyword rows are updated in place, preserving their natural-rank, PC ad/SBV, CPR, and daily-snapshot data. Newly added terms start with empty rank metrics. Previously core terms that are absent from the new complete set are retained for audit history but changed to non-core, so they are no longer displayed or tracked.
 
 ```bash
-curl -X POST "https://cpr.yinjiyue.com/api/scheduled/refreshSqpKeywords" \
+curl -X POST "https://cpr.yinjiyue.com/api/ingest/refreshSqpKeywords" \
   -H "Content-Type: application/json" \
   -H "x-ingest-token: $SITE_INGEST_TOKEN" \
   --data-binary @sqp-keywords.json
@@ -143,3 +143,5 @@ curl -X POST "https://cpr.yinjiyue.com/api/scheduled/refreshSqpKeywords" \
 ## Responses and safety behavior
 
 A successful response returns `{ "ok": true, "result": ... }` with created, updated, retired, and per-marketplace counts as applicable. Validation errors return HTTP 400 and make **no database changes**. Authentication failures return HTTP 403. Neither endpoint modifies natural rank, advertising rank, SBV rank, CPR, or historical rank snapshots.
+
+> The existing `/api/scheduled/*` routes remain reserved for Manus cron/admin calls. Use `/api/ingest/*` for external server-to-server traffic with `x-ingest-token`. The authenticated target-export endpoint is `GET /api/ingest/rankTargets`.
