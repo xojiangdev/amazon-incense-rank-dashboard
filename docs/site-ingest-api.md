@@ -145,3 +145,13 @@ curl -X POST "https://cpr.yinjiyue.com/api/ingest/refreshSqpKeywords" \
 A successful response returns `{ "ok": true, "result": ... }` with created, updated, retired, and per-marketplace counts as applicable. Validation errors return HTTP 400 and make **no database changes**. Authentication failures return HTTP 403. Neither endpoint modifies natural rank, advertising rank, SBV rank, CPR, or historical rank snapshots.
 
 > The existing `/api/scheduled/*` routes remain reserved for Manus cron/admin calls. Use `/api/ingest/*` for external server-to-server traffic with `x-ingest-token`. The authenticated target-export endpoint is `GET /api/ingest/rankTargets`.
+
+## Additional public mirrors
+
+The following existing scheduled receivers are also available for external, token-authenticated ingestion. Their payload validation and write behavior is exactly the same as the corresponding scheduled handler.
+
+| Public endpoint | Reused receiver |
+|---|---|
+| `POST /api/ingest/refreshDailyRank` | Real natural rank with PC ad and SBV fields |
+| `POST /api/ingest/refreshProductMetrics` | Product rating and review-count refresh |
+| `POST /api/ingest/githubCpr` | Repository-authoritative GitHub CPR document refresh |

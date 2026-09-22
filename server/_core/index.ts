@@ -4,16 +4,7 @@ import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
-import {
-  scheduledFbaStockRefreshHandler,
-  scheduledGitHubCprRefreshHandler,
-  scheduledGitHubCprUnavailableHandler,
-  scheduledProductMetricsRefreshHandler,
-  scheduledProductMetricTargetsHandler,
-  scheduledRankRefreshHandler,
-  scheduledRankTargetsHandler,
-  scheduledSqpKeywordsRefreshHandler,
-} from "../scheduledRankHandler";
+import { registerScheduledAndIngestRoutes } from "../ingestRouteRegistration";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
@@ -46,21 +37,7 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   registerStorageProxy(app);
   registerOAuthRoutes(app);
-  app.get("/api/scheduled/rankTargets", scheduledRankTargetsHandler);
-  app.post("/api/scheduled/refreshDailyRank", scheduledRankRefreshHandler);
-  app.get("/api/scheduled/productMetricTargets", scheduledProductMetricTargetsHandler);
-  app.post("/api/scheduled/refreshProductMetrics", scheduledProductMetricsRefreshHandler);
-  app.post("/api/scheduled/githubCpr", scheduledGitHubCprRefreshHandler);
-  app.post("/api/scheduled/githubCprUnavailable", scheduledGitHubCprUnavailableHandler);
-  app.post("/api/scheduled/refreshFbaStock", scheduledFbaStockRefreshHandler);
-  app.post("/api/scheduled/refreshSqpKeywords", scheduledSqpKeywordsRefreshHandler);
-  // `/api/scheduled/*` is reserved by the production gateway for Manus cron
-  // requests and rejects external header-only callers before Express runs.
-  // Keep those routes intact, and expose equivalent non-reserved endpoints for
-  // server-to-server collectors authenticated with SITE_INGEST_TOKEN.
-  app.get("/api/ingest/rankTargets", scheduledRankTargetsHandler);
-  app.post("/api/ingest/refreshFbaStock", scheduledFbaStockRefreshHandler);
-  app.post("/api/ingest/refreshSqpKeywords", scheduledSqpKeywordsRefreshHandler);
+  registerScheduledAndIngestRoutes(app);
   // tRPC API
   app.use(
     "/api/trpc",
