@@ -38,6 +38,12 @@ export const MANUAL_CATEGORY_EXCEPTIONS: readonly ManualCategoryException[] = [
     label: "历史listing（人工激活）",
     categoryName: "手动豁免 · 人工激活",
   },
+  {
+    marketplace: "US",
+    asin: "B0GDKRTTJ1",
+    label: "倒插香插（断货保护，人工激活）",
+    categoryName: "手动豁免 · 断货激活",
+  },
 ] as const;
 
 export function getManualCategoryException(marketplace: MarketplaceCode, asin: string) {
