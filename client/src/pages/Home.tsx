@@ -1088,6 +1088,8 @@ export default function Home() {
                             <th className="px-1.5 py-2">来源</th>
                             <th className="px-1.5 py-2">月搜</th>
                             <th className="px-1.5 py-2">转化</th>
+                            <th className="px-1.5 py-2" title="关键词广告成交（搜索词报表，不含ASIN定向广告）">广告单</th>
+                            <th className="px-1.5 py-2" title="自然成交 = SQP转化 - 广告单：真正撬动自然排名的数字">自然单</th>
                             <th className="px-1.5 py-2">CVR</th>
                             <th className="px-1.5 py-2">今日自然位</th>
                             <th className="px-1.5 py-2" title="唯一数据源：GitHub 仓库 data/cpr.json；每日 07:35（北京时间）检查更新">CPR(8天)<br/><span className="font-normal text-[9px]">GitHub</span></th>
@@ -1144,6 +1146,14 @@ export default function Home() {
                                 </td>
                                 <td className="px-1.5 py-2 font-mono font-medium text-slate-700">
                                   {kw.historicalConversionCount}
+                                </td>
+                                <td className="px-1.5 py-2 font-mono text-orange-600">
+                                  {kw.adPurchases ?? "—"}
+                                </td>
+                                <td className="px-1.5 py-2 font-mono text-emerald-700">
+                                  {kw.adPurchases != null && kw.historicalConversionCount != null
+                                    ? Math.max(0, kw.historicalConversionCount - kw.adPurchases)
+                                    : "—"}
                                 </td>
                                 <td className="px-1.5 py-2 font-mono text-slate-600">
                                   {kw.conversionRate}%

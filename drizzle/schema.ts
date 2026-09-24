@@ -88,6 +88,7 @@ export const keywords = mysqlTable("keywords", {
   bestRank: int("bestRank").default(0),
   pageNumber: int("pageNumber").default(0),
   cprEstimate: int("cprEstimate"),
+  adPurchases: int("adPurchases"),
   cprMonthlySalesAverage: int("cprMonthlySalesAverage"),
   cprSampleCount: int("cprSampleCount"),
   cprSource: varchar("cprSource", { length: 64 }),

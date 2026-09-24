@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { timingSafeEqual } from "node:crypto";
 import { z } from "zod";
-import { applyFbaStockSnapshots, applyGitHubCprDocument, applyProductReviewMetrics, applyRealRankSnapshots, applySqpKeywordSelections, getListings, getRankTrackingTargets, recordGitHubCprSyncFailure } from "./db";
+import { applyAdOrders, applyFbaStockSnapshots, applyGitHubCprDocument, applyProductReviewMetrics, applyRealRankSnapshots, applySqpKeywordSelections, getListings, getRankTrackingTargets, recordGitHubCprSyncFailure } from "./db";
 import { sdk } from "./_core/sdk";
 import { ENV } from "./_core/env";
 import { GITHUB_CPR_BRANCH, GITHUB_CPR_OWNER, GITHUB_CPR_PATH, GITHUB_CPR_RAW_URL, GITHUB_CPR_REPOSITORY, GITHUB_CPR_SOURCE_KEY, parseGitHubCprDocument } from "../shared/githubCpr";
@@ -323,6 +323,36 @@ export async function scheduledGitHubCprRefreshHandler(req: Request, res: Respon
     }
     return res.status(error?.statusCode || (error instanceof z.ZodError ? 400 : 500)).json({
       error: message,
+      issues: error instanceof z.ZodError ? error.issues : undefined,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+export const adOrdersPayloadSchema = z.object({
+  observedAt: z.string().datetime(),
+  marketplace: z.enum(["US", "CA", "JP"]),
+  terms: z.array(z.object({
+    asin: z.string().trim().regex(/^[A-Z0-9]{10}$/i, "Expected a 10-character ASIN"),
+    keyword: z.string().trim().min(1).max(255),
+    adPurchases: z.number().int().min(0).max(9999),
+  })).min(1).max(2000),
+}).strict();
+
+/**
+ * 关键词广告单(搜索词报表)写入：仅关键词定向广告,ASIN定向广告不产生搜索词,
+ * 天然不在此报表。未出现在报表中的词视为未投放,广告单清空显示"—"。
+ */
+export async function scheduledAdOrdersRefreshHandler(req: Request, res: Response) {
+  try {
+    await authorizeCronOrAdmin(req);
+    const input = adOrdersPayloadSchema.parse(req.body);
+    const result = await applyAdOrders(input.marketplace, input.terms, new Date(input.observedAt));
+    return res.json({ ok: true, result });
+  } catch (error: any) {
+    console.error("[ScheduledTask] Error in ad orders refresh:", error);
+    return res.status(error?.statusCode || (error instanceof z.ZodError ? 400 : 500)).json({
+      error: error?.message || "Internal server error",
       issues: error instanceof z.ZodError ? error.issues : undefined,
       timestamp: new Date().toISOString(),
     });

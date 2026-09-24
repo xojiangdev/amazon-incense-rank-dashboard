@@ -58,6 +58,52 @@ export type GitHubCprSyncInput = {
  * rank collection, it neither reads nor changes organic, ad, SBV, or snapshot
  * fields. A non-new source never writes rows.
  */
+export type AdOrderTerm = { asin: string; keyword: string; adPurchases: number };
+
+/**
+ * 关键词广告单写入(仅关键词定向广告,来自广告搜索词报表)。
+ * 报表不含的词=未投放→清空,与权威文档同语义。
+ */
+export async function applyAdOrders(marketplace: "US" | "CA" | "JP", terms: AdOrderTerm[], observedAt: Date) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  // 部署后首跑自动补列(MySQL 1060 duplicate column 时忽略)
+  await db.execute(`ALTER TABLE keywords ADD COLUMN adPurchases INT NULL`).catch(() => {});
+  const activeListings = await db.select().from(listings).where(and(
+    eq(listings.marketplace, marketplace),
+    eq(listings.fulfillmentChannel, "FBA"),
+    eq(listings.inventoryStatus, "Active")
+  ));
+  const listingByAsin = new Map(activeListings.map(l => [l.asin, l] as const));
+  const activeIds = new Set(activeListings.map(l => l.id));
+  const coreKeywords = await db.select().from(keywords).where(eq(keywords.isCore, true));
+  const kwByKey = new Map(coreKeywords.map(k => [`${k.listingId}:${normalizeCprKeyword(k.keyword)}`, k] as const));
+  let updated = 0;
+  let cleared = 0;
+  await db.transaction(async tx => {
+    const matched = new Set<string>();
+    for (const t of terms) {
+      const listing = listingByAsin.get(t.asin.trim().toUpperCase());
+      if (!listing) continue;
+      const key = `${listing.id}:${normalizeCprKeyword(t.keyword)}`;
+      const kw = kwByKey.get(key);
+      if (!kw) continue;
+      matched.add(key);
+      await tx.update(keywords).set({ adPurchases: t.adPurchases, updatedAt: observedAt }).where(eq(keywords.id, kw.id));
+      updated += 1;
+    }
+    for (const kw of coreKeywords) {
+      if (!activeIds.has(kw.listingId)) continue;
+      const key = `${kw.listingId}:${normalizeCprKeyword(kw.keyword)}`;
+      if (!matched.has(key) && kw.adPurchases !== null && kw.adPurchases !== undefined) {
+        await tx.update(keywords).set({ adPurchases: null, updatedAt: observedAt }).where(eq(keywords.id, kw.id));
+        cleared += 1;
+      }
+    }
+  });
+  return { received: terms.length, updated, cleared };
+}
+
 export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observedAt = new Date()) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
