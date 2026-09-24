@@ -60,6 +60,11 @@ export type GitHubCprSyncInput = {
  */
 export type AdOrderTerm = { asin: string; keyword: string; adPurchases: number };
 
+type ListingKeywordKey = `${number}:${string}`;
+
+const listingKeywordKey = (listingId: number, keyword: string): ListingKeywordKey =>
+  `${listingId}:${normalizeCprKeyword(keyword)}`;
+
 /**
  * 关键词广告单写入(仅关键词定向广告,来自广告搜索词报表)。
  * 报表不含的词=未投放→清空,与权威文档同语义。
@@ -77,7 +82,9 @@ export async function applyAdOrders(marketplace: "US" | "CA" | "JP", terms: AdOr
   const listingByAsin = new Map(activeListings.map(l => [l.asin, l] as const));
   const activeIds = new Set(activeListings.map(l => l.id));
   const coreKeywords = await db.select().from(keywords).where(eq(keywords.isCore, true));
-  const kwByKey = new Map(coreKeywords.map(k => [`${k.listingId}:${normalizeCprKeyword(k.keyword)}`, k] as const));
+  const kwByKey = new Map<ListingKeywordKey, (typeof coreKeywords)[number]>(
+    coreKeywords.map(keyword => [listingKeywordKey(keyword.listingId, keyword.keyword), keyword])
+  );
   let updated = 0;
   let cleared = 0;
   await db.transaction(async tx => {
@@ -85,7 +92,7 @@ export async function applyAdOrders(marketplace: "US" | "CA" | "JP", terms: AdOr
     for (const t of terms) {
       const listing = listingByAsin.get(t.asin.trim().toUpperCase());
       if (!listing) continue;
-      const key = `${listing.id}:${normalizeCprKeyword(t.keyword)}`;
+      const key = listingKeywordKey(listing.id, t.keyword);
       const kw = kwByKey.get(key);
       if (!kw) continue;
       matched.add(key);
@@ -94,7 +101,7 @@ export async function applyAdOrders(marketplace: "US" | "CA" | "JP", terms: AdOr
     }
     for (const kw of coreKeywords) {
       if (!activeIds.has(kw.listingId)) continue;
-      const key = `${kw.listingId}:${normalizeCprKeyword(kw.keyword)}`;
+      const key = listingKeywordKey(kw.listingId, kw.keyword);
       if (!matched.has(key) && kw.adPurchases !== null && kw.adPurchases !== undefined) {
         await tx.update(keywords).set({ adPurchases: null, updatedAt: observedAt }).where(eq(keywords.id, kw.id));
         cleared += 1;

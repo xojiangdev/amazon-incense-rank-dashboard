@@ -1,0 +1,1 @@
+ALTER TABLE `keywords` ADD `adPurchases` int;
