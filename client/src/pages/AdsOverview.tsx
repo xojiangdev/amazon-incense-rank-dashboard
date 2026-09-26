@@ -179,9 +179,15 @@ export default function AdsOverview() {
                                 <Link href={`/?asin=${r.asin}`} className="font-mono text-[10px] text-blue-600 hover:underline">{r.asin} ↗</Link>
                               </div>
                             </td>
-                            <td className={`px-2 py-2 text-right font-mono ${lg === "red" ? "text-red-600 font-semibold" : lg === "yellow" ? "text-amber-600 font-semibold" : "text-slate-700"}`}>{r.cost.toFixed(1)}</td>
-                            <td className="px-2 py-2 text-right font-mono text-slate-500">{pct(acos)}</td>
-                            <td className="px-2 py-2 text-right font-mono text-slate-500">{r.orders.toFixed(1)}</td>
+                            <td className="px-2 py-2 text-center">
+                              <span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] whitespace-nowrap ${CHIP[lg]}`}>{r.cost.toFixed(1)}</span>
+                            </td>
+                            <td className="px-2 py-2 text-center">
+                              <span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] whitespace-nowrap ${CHIP[lg]}`}>{pct(acos)}</span>
+                            </td>
+                            <td className="px-2 py-2 text-center">
+                              <span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] whitespace-nowrap ${CHIP[lg]}`}>{r.orders.toFixed(1)}</span>
+                            </td>
                             {BUCKETS.map(b => {
                               const camps = r.camps.filter(c => (c.bucket ?? "auto") === b.key);
                               const cost = camps.reduce((s, c) => s + c.d7.cost / Math.max(1, c.asins.length), 0);
