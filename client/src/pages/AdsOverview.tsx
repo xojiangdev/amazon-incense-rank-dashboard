@@ -1,5 +1,5 @@
-// 广告总览: 三站 ACTIVE 广告系列 30天日报(数据来自每日 refreshAdCampaigns 推送)
-// 层级: 站点 → 产品类型 → 系列(红绿灯) → 广告组; 点击 ASIN 跳回主看板对应产品
+// 广告矩阵总览: 行=产品(重点/新品/常规/长尾/停售/未跟踪), 列=广告类型(SP自动/关键词/商品/品类, SB, SBV, SD细分)
+// 单元格=7天$花费·ACOS(0销=花钱没单); 点击单元格展开该类型的系列明细(含30天)
 import { Fragment, useMemo, useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
@@ -10,102 +10,125 @@ const MARKETS = [
   { code: "JP", flag: "🇯🇵 日本站", cur: "JPY" },
 ] as const;
 
-const CAT_CN: Record<string, string> = {
-  incense_sticks: "线香类",
-  incense_holder: "香插/香座类",
-  incense_burner: "香炉类",
-  essential_oil: "精油类",
-  eye_mask: "眼罩类",
-  other: "其他/未跟踪",
-};
+const BUCKETS = [
+  { key: "auto", cn: "SP·自动" },
+  { key: "keyword", cn: "SP·关键词" },
+  { key: "product", cn: "SP·商品定向" },
+  { key: "category", cn: "SP·品类定向" },
+  { key: "sb_brand", cn: "SB·品牌" },
+  { key: "sbv_kw", cn: "SBV·关键词" },
+  { key: "sbv_prod", cn: "SBV·商品" },
+  { key: "sbv_cat", cn: "SBV·品类" },
+  { key: "sbv_other", cn: "SBV·其他" },
+  { key: "sd_views", cn: "SD·浏览人群" },
+  { key: "sd_prod", cn: "SD·商品定向" },
+  { key: "sd_cat", cn: "SD·品类" },
+] as const;
 
 type Metrics = { cost: number; sales: number; orders: number; clicks: number; impressions: number };
 type Camp = {
-  marketplace: "US" | "CA" | "JP";
-  campaignId: string;
-  name: string;
-  state: string;
-  budget: string | null;
-  asins: string[];
-  endDate: string;
-  yesterday: Metrics;
-  d7: Metrics;
-  d30: Metrics;
-  acos7: number | null;
-  acos30: number | null;
-  acosPrev7: number | null;
+  campaignId: string; name: string; state: string; budget: string | null;
+  bucket: string | null; asins: string[]; endDate: string;
+  d7: Metrics; d30: Metrics; acos7: number | null; acos30: number | null; acosPrev7: number | null;
   adGroups: Array<{ name: string; d7: Metrics; d30: Metrics }>;
 };
+type Listing = { id: number; asin: string; title: string; marketplace: string; salesCategory: string | null; fbaStock: number | null; inventoryStatus: string | null };
 
-function fmtAcos(v: number | null | undefined) {
+const GROUPS = ["重点产品", "新品", "常规产品", "长尾产品", "停售(DISCONTINUED)", "未跟踪"];
+const GROUP_BADGE: Record<string, string> = {
+  重点产品: "bg-amber-100 text-amber-800", 新品: "bg-sky-100 text-sky-700", 常规产品: "bg-slate-100 text-slate-600",
+  长尾产品: "bg-slate-100 text-slate-500", "停售(DISCONTINUED)": "bg-zinc-200 text-zinc-500", 未跟踪: "bg-rose-50 text-rose-400",
+};
+
+function shortTitle(title: string) {
+  const drop = ["AFENGAU", "Seedlink", "Yinjiyue", "Natural"];
+  let t = title.replace(/[|(,【】]/g, " ");
+  for (const d of drop) t = t.replace(new RegExp(d, "i"), " ");
+  const words = t.split(/\s+/).filter(Boolean);
+  const keep: string[] = [];
+  for (const w of words) {
+    if (/^\d/.test(w)) break;
+    keep.push(w);
+    if (keep.length >= 6) break;
+  }
+  return (keep.join(" ") || title).slice(0, 42);
+}
+
+function pct(v: number | null | undefined) {
   return v == null ? "—" : `${(v * 100).toFixed(0)}%`;
 }
-
-function lightOf(c: { d7: { cost: number; sales: number } ; acos7: number | null }) {
-  if (c.d7.cost <= 0) return { label: "⚪无花费", cls: "bg-slate-100 text-slate-500" };
-  if (c.d7.sales <= 0) return c.d7.cost > 30
-    ? { label: "🔴花钱零单", cls: "bg-red-100 text-red-700" }
-    : { label: "🟡零单低费", cls: "bg-amber-100 text-amber-800" };
-  if (c.acos7 == null) return { label: "⚪", cls: "bg-slate-100 text-slate-500" };
-  if (c.acos7 > 0.5) return { label: "🔴高ACOS", cls: "bg-red-100 text-red-700" };
-  if (c.acos7 > 0.3) return { label: "🟡观察", cls: "bg-amber-100 text-amber-800" };
-  return { label: "🟢健康", cls: "bg-emerald-100 text-emerald-800" };
+function lightOf(cost: number, sales: number, acos: number | null) {
+  if (cost <= 0) return "gray";
+  if (sales <= 0) return cost > 30 ? "red" : "yellow";
+  if (acos == null) return "gray";
+  if (acos > 0.5) return "red";
+  if (acos > 0.3) return "yellow";
+  return "green";
 }
+const CHIP: Record<string, string> = {
+  red: "bg-red-100 text-red-700 border-red-200", yellow: "bg-amber-100 text-amber-800 border-amber-200",
+  green: "bg-emerald-100 text-emerald-800 border-emerald-200", gray: "bg-slate-100 text-slate-400 border-slate-200",
+};
 
 export default function AdsOverview() {
   const [market, setMarket] = useState<"US" | "CA" | "JP">("US");
-  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const [openCell, setOpenCell] = useState<string | null>(null); // `${asin}:${bucket}`
   const campaignsQuery = trpc.dashboard.adCampaigns.useQuery({ marketplace: market });
   const listingsQuery = trpc.dashboard.listings.useQuery(undefined, { staleTime: 300_000 });
 
-  const campaigns: Camp[] = (campaignsQuery.data ?? []) as unknown as Camp[];
-  const asinCat = useMemo(() => {
-    const m = new Map<string, string>();
-    for (const l of listingsQuery.data ?? []) m.set(l.asin, l.category);
-    return m;
-  }, [listingsQuery.data]);
+  const campaigns = (campaignsQuery.data ?? []) as unknown as Camp[];
+  const listings = useMemo(() => (listingsQuery.data ?? []) as unknown as Listing[], [listingsQuery.data]);
 
-  const byCategory = useMemo(() => {
-    const groups = new Map<string, Camp[]>();
+  const rows = useMemo(() => {
+    const metaByAsin = new Map(listings.filter(l => l.marketplace === market).map(l => [l.asin, l]));
+    const per = new Map<string, { camps: Camp[]; cost: number; sales: number; orders: number }>();
+    const add = (asin: string, c: Camp, share: number) => {
+      const e = per.get(asin) ?? { camps: [], cost: 0, sales: 0, orders: 0 };
+      e.camps.push(c);
+      e.cost += c.d7.cost / share;
+      e.sales += c.d7.sales / share;
+      e.orders += c.d7.orders / share;
+      per.set(asin, e);
+    };
     for (const c of campaigns) {
-      const cat = c.asins.map((a: string) => asinCat.get(a)).find(Boolean) ?? "other";
-      if (!groups.has(cat)) groups.set(cat, []);
-      groups.get(cat)!.push(c);
+      const share = Math.max(1, c.asins.length);
+      for (const a of c.asins) add(a, c, share);
     }
-    for (const list of Array.from(groups.values())) list.sort((a, b) => b.d7.cost - a.d7.cost);
-    return Array.from(groups.entries()).sort((a, b) => b[1].length - a[1].length);
-  }, [campaigns, asinCat]);
+    // 网站在售产品全列出(无广告也显示)
+    for (const a of Array.from(metaByAsin.keys())) if (!per.has(a)) per.set(a, { camps: [], cost: 0, sales: 0, orders: 0 });
 
-  const totals = useMemo(() => campaigns.reduce(
-    (acc: { cost: number; sales: number; orders: number }, c: Camp) => ({ cost: acc.cost + c.d7.cost, sales: acc.sales + c.d7.sales, orders: acc.orders + c.d7.orders }),
-    { cost: 0, sales: 0, orders: 0 }
-  ), [campaigns]);
+    const groupOf = (asin: string) => {
+      const m0 = metaByAsin.get(asin);
+      if (!m0) return "未跟踪";
+      if (m0.salesCategory === "discontinued") return "停售(DISCONTINUED)";
+      if ((m0.fbaStock ?? 0) <= 0 || (m0.inventoryStatus && m0.inventoryStatus !== "Active")) return "停售(DISCONTINUED)";
+      return ({ key_product: "重点产品", new_product: "新品", long_tail: "长尾产品", regular: "常规产品" } as Record<string, string>)[m0.salesCategory ?? ""] ?? "常规产品";
+    };
+    const grouped: Record<string, Array<{ asin: string; camps: Camp[]; cost: number; sales: number; orders: number; title: string }>> = {};
+    for (const [asin, e] of Array.from(per.entries())) {
+      const g = groupOf(asin);
+      (grouped[g] ??= []).push({ asin, camps: e.camps, cost: e.cost, sales: e.sales, orders: e.orders, title: metaByAsin.get(asin)?.title ?? asin });
+    }
+    for (const g of Object.keys(grouped)) grouped[g].sort((a, b) => b.cost - a.cost);
+    return grouped;
+  }, [campaigns, listings, market]);
 
-  const endDate = campaigns[0]?.endDate;
   const cur = MARKETS.find(m => m.code === market)!.cur;
-
-  const toggle = (id: string) => setExpanded(prev => {
-    const next = new Set(prev);
-    if (next.has(id)) next.delete(id); else next.add(id);
-    return next;
-  });
+  const totals = campaigns.reduce((acc, c) => ({ cost: acc.cost + c.d7.cost, sales: acc.sales + c.d7.sales, orders: acc.orders + c.d7.orders }), { cost: 0, sales: 0, orders: 0 });
 
   return (
     <div className="space-y-4 p-3 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <h1 className="text-lg font-bold text-slate-900 sm:text-xl">广告总览 · ACTIVE 系列监控</h1>
+          <h1 className="text-lg font-bold text-slate-900 sm:text-xl">广告矩阵总览</h1>
           <p className="text-xs text-slate-500">
-            数据截至 {endDate ?? "—"} · 红线 ACOS&gt;50% 黄&gt;30% · 点击 ASIN 回主看板看关键词
+            单元格 = 该产品×该类型 7天合计（$花费·ACOS%，<span className="text-amber-600">0销=花钱没单</span>）· 红&gt;50% 黄30-50% · 点击单元格展开系列明细
           </p>
         </div>
-        <div className="flex items-center gap-3 text-xs">
+        <div className="flex items-center gap-2 text-xs">
           {MARKETS.map(m => (
-            <button
-              key={m.code}
-              onClick={() => setMarket(m.code)}
-              className={`rounded-md px-3 py-1.5 font-medium ${market === m.code ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
-            >
+            <button key={m.code} onClick={() => { setMarket(m.code); setOpenCell(null); }}
+              className={`rounded-md px-3 py-1.5 font-medium ${market === m.code ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}>
               {m.flag}
             </button>
           ))}
@@ -114,104 +137,94 @@ export default function AdsOverview() {
 
       {campaignsQuery.isLoading ? (
         <div className="py-16 text-center text-sm text-slate-400">加载中…</div>
-      ) : !campaigns.length ? (
-        <div className="rounded-lg border border-amber-200 bg-amber-50 p-6 text-center text-sm text-amber-800">
-          该站点没有推送过来的广告系列数据（无广告，或当日采集未完成）。
-        </div>
       ) : (
         <>
           <div className="flex flex-wrap gap-3 text-xs">
-            <div className="rounded-lg bg-white px-4 py-2 shadow-sm">
-              <div className="text-slate-400">启用系列</div>
-              <div className="text-lg font-bold text-slate-800">{campaigns.length}</div>
-            </div>
-            <div className="rounded-lg bg-white px-4 py-2 shadow-sm">
-              <div className="text-slate-400">7天花费 ({cur})</div>
-              <div className="text-lg font-bold text-slate-800">{totals.cost.toFixed(0)}</div>
-            </div>
-            <div className="rounded-lg bg-white px-4 py-2 shadow-sm">
-              <div className="text-slate-400">7天广告销售 ({cur})</div>
-              <div className="text-lg font-bold text-slate-800">{totals.sales.toFixed(0)}</div>
-            </div>
-            <div className="rounded-lg bg-white px-4 py-2 shadow-sm">
-              <div className="text-slate-400">7天整体 ACOS</div>
-              <div className="text-lg font-bold text-slate-800">{fmtAcos(totals.sales > 0 ? totals.cost / totals.sales : null)}</div>
-            </div>
-            <div className="rounded-lg bg-white px-4 py-2 shadow-sm">
-              <div className="text-slate-400">7天广告单</div>
-              <div className="text-lg font-bold text-slate-800">{totals.orders}</div>
-            </div>
+            <div className="rounded-lg bg-white px-4 py-2 shadow-sm"><div className="text-slate-400">系列数</div><div className="text-lg font-bold text-slate-800">{campaigns.length}</div></div>
+            <div className="rounded-lg bg-white px-4 py-2 shadow-sm"><div className="text-slate-400">7天花费 ({cur})</div><div className="text-lg font-bold text-slate-800">{totals.cost.toFixed(0)}</div></div>
+            <div className="rounded-lg bg-white px-4 py-2 shadow-sm"><div className="text-slate-400">7天广告销售</div><div className="text-lg font-bold text-slate-800">{totals.sales.toFixed(0)}</div></div>
+            <div className="rounded-lg bg-white px-4 py-2 shadow-sm"><div className="text-slate-400">7天整体ACOS</div><div className="text-lg font-bold text-slate-800">{pct(totals.sales > 0 ? totals.cost / totals.sales : null)}</div></div>
+            <div className="rounded-lg bg-white px-4 py-2 shadow-sm"><div className="text-slate-400">7天广告单</div><div className="text-lg font-bold text-slate-800">{totals.orders}</div></div>
           </div>
 
           <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
-            <table className="w-full min-w-[860px] text-left text-xs">
-              <thead className="sticky top-0 bg-slate-50 text-slate-500">
+            <table className="w-full min-w-[1100px] text-left text-xs">
+              <thead className="sticky top-0 z-10 bg-slate-50 text-slate-500">
                 <tr>
-                  <th className="px-3 py-2 font-medium">广告系列 / 广告组</th>
-                  <th className="px-2 py-2 font-medium">投放ASIN</th>
-                  <th className="px-2 py-2 text-right font-medium">预算</th>
-                  <th className="px-2 py-2 text-right font-medium">昨日花费</th>
+                  <th className="sticky left-0 z-20 bg-slate-50 px-3 py-2 font-medium">产品</th>
                   <th className="px-2 py-2 text-right font-medium">7天花费</th>
-                  <th className="px-2 py-2 text-right font-medium">7天单</th>
-                  <th className="px-2 py-2 text-right font-medium">7天ACOS</th>
-                  <th className="px-2 py-2 text-right font-medium">30天ACOS</th>
-                  <th className="px-2 py-2 text-right font-medium">环比</th>
-                  <th className="px-2 py-2 font-medium">红绿灯</th>
+                  <th className="px-2 py-2 text-right font-medium">ACOS</th>
+                  <th className="px-2 py-2 text-right font-medium">单</th>
+                  {BUCKETS.map(b => <th key={b.key} className="px-2 py-2 text-center font-medium whitespace-nowrap">{b.cn}</th>)}
                 </tr>
               </thead>
               <tbody>
-                {byCategory.map(([cat, list]) => (
-                  <Fragment key={cat}>
+                {GROUPS.filter(g => rows[g]?.length).map(g => (
+                  <Fragment key={g}>
                     <tr className="bg-blue-50/60">
-                      <td colSpan={10} className="px-3 py-1.5 font-semibold text-slate-700">
-                        ▸ {CAT_CN[cat] ?? cat}（{list.length} 个系列 · 7天花费 {list.reduce((s: number, c: Camp) => s + c.d7.cost, 0).toFixed(0)} {cur}）
+                      <td colSpan={3 + BUCKETS.length} className="px-3 py-1.5 font-semibold text-slate-700">
+                        <span className={`rounded px-1.5 py-0.5 text-[11px] mr-1 ${GROUP_BADGE[g] ?? ""}`}>{g}</span>
+                        {rows[g].length} 个产品 · 7天花费 {rows[g].reduce((s, r) => s + r.cost, 0).toFixed(0)} {cur}
                       </td>
                     </tr>
-                    {list.map(c => {
-                      const lg = lightOf(c);
-                      const delta = c.acos7 != null && c.acosPrev7 != null ? c.acos7 - c.acosPrev7 : null;
-                      const open = expanded.has(c.campaignId);
+                    {rows[g].map(r => {
+                      const acos = r.sales > 0 ? r.cost / r.sales : null;
+                      const lg = r.camps.length === 0 ? "gray" : lightOf(r.cost, r.sales, acos);
                       return (
-                        <Fragment key={c.campaignId}>
-                          <tr key={c.campaignId} className="border-t border-slate-100 hover:bg-slate-50">
-                            <td className="px-3 py-2">
-                              <button className="text-left font-medium text-slate-800" onClick={() => toggle(c.campaignId)}>
-                                {open ? "▾" : "▸"} {c.name}
-                              </button>
+                        <Fragment key={r.asin}>
+                          <tr className="border-t border-slate-100 hover:bg-slate-50">
+                            <td className="sticky left-0 z-10 bg-white px-3 py-2">
+                              <div className="flex flex-col">
+                                <span className="max-w-[220px] truncate font-medium text-slate-800" title={r.title}>{shortTitle(r.title)}</span>
+                                <Link href={`/?asin=${r.asin}`} className="font-mono text-[10px] text-blue-600 hover:underline">{r.asin} ↗</Link>
+                              </div>
                             </td>
-                            <td className="px-2 py-2">
-                              {c.asins.slice(0, 3).map((a: string) => (
-                                <Link key={a} href={`/?asin=${a}`}>
-                                  <span className="mr-1 font-mono text-[11px] text-blue-600 hover:underline">{a}</span>
-                                </Link>
-                              ))}
-                              {c.asins.length > 3 && <span className="text-slate-400">+{c.asins.length - 3}</span>}
-                            </td>
-                            <td className="px-2 py-2 text-right font-mono">{c.budget ?? "—"}</td>
-                            <td className="px-2 py-2 text-right font-mono">{c.yesterday.cost.toFixed(2)}</td>
-                            <td className="px-2 py-2 text-right font-mono">{c.d7.cost.toFixed(2)}</td>
-                            <td className="px-2 py-2 text-right font-mono">{c.d7.orders}</td>
-                            <td className={`px-2 py-2 text-right font-mono font-semibold ${c.acos7 != null && c.acos7 > 0.5 ? "text-red-600" : c.acos7 != null && c.acos7 > 0.3 ? "text-amber-600" : "text-slate-700"}`}>
-                              {fmtAcos(c.acos7)}
-                            </td>
-                            <td className="px-2 py-2 text-right font-mono text-slate-500">{fmtAcos(c.acos30)}</td>
-                            <td className="px-2 py-2 text-right font-mono text-slate-500">
-                              {delta == null ? "—" : `${delta >= 0 ? "+" : ""}${(delta * 100).toFixed(0)}pp`}
-                            </td>
-                            <td className="px-2 py-2">
-                              <span className={`rounded px-1.5 py-0.5 text-[11px] font-semibold ${lg.cls}`}>{lg.label}</span>
-                            </td>
+                            <td className={`px-2 py-2 text-right font-mono ${lg === "red" ? "text-red-600 font-semibold" : lg === "yellow" ? "text-amber-600 font-semibold" : "text-slate-700"}`}>{r.cost.toFixed(1)}</td>
+                            <td className="px-2 py-2 text-right font-mono text-slate-500">{pct(acos)}</td>
+                            <td className="px-2 py-2 text-right font-mono text-slate-500">{r.orders.toFixed(1)}</td>
+                            {BUCKETS.map(b => {
+                              const camps = r.camps.filter(c => (c.bucket ?? "auto") === b.key);
+                              const cost = camps.reduce((s, c) => s + c.d7.cost / Math.max(1, c.asins.length), 0);
+                              const sales = camps.reduce((s, c) => s + c.d7.sales / Math.max(1, c.asins.length), 0);
+                              const ba = sales > 0 ? cost / sales : null;
+                              const bl = lightOf(cost, sales, ba);
+                              const key = `${r.asin}:${b.key}`;
+                              const open = openCell === key;
+                              return (
+                                <td key={b.key} className="px-1.5 py-2 text-center">
+                                  {camps.length === 0 ? (
+                                    <span className="text-slate-300">—</span>
+                                  ) : (
+                                    <button onClick={() => setOpenCell(open ? null : key)}
+                                      className={`rounded border px-1.5 py-0.5 font-mono text-[11px] whitespace-nowrap ${CHIP[bl]} ${open ? "ring-2 ring-blue-400" : ""}`}>
+                                      {cost > 0 ? `$${cost.toFixed(0)}·${ba != null ? pct(ba) : "0销"}` : "0·—"}
+                                    </button>
+                                  )}
+                                </td>
+                              );
+                            })}
                           </tr>
-                          {open && c.adGroups.map((g: Camp["adGroups"][number]) => (
-                            <tr key={`${c.campaignId}-${g.name}`} className="border-t border-slate-50 bg-slate-50/50 text-[11px] text-slate-500">
-                              <td className="px-3 py-1.5 pl-8">· {g.name}</td>
-                              <td colSpan={4} />
-                              <td className="px-2 py-1.5 text-right font-mono">{g.d7.orders}</td>
-                              <td className="px-2 py-1.5 text-right font-mono">{fmtAcos(g.d7.sales > 0 ? g.d7.cost / g.d7.sales : null)}</td>
-                              <td className="px-2 py-1.5 text-right font-mono">{fmtAcos(g.d30.sales > 0 ? g.d30.cost / g.d30.sales : null)}</td>
-                              <td colSpan={2} />
-                            </tr>
-                          ))}
+                          {openCell && openCell.startsWith(r.asin + ":") && r.camps.filter(c => (c.bucket ?? "auto") === openCell.split(":")[1]).map(c => {
+                            const delta = c.acos7 != null && c.acosPrev7 != null ? c.acos7 - c.acosPrev7 : null;
+                            const ca = c.acos7;
+                            const cl = ca == null ? "text-slate-500" : ca > 0.5 ? "text-red-600 font-semibold" : ca > 0.3 ? "text-amber-600 font-semibold" : "text-emerald-700 font-semibold";
+                            return (
+                              <tr key={c.campaignId + openCell} className="border-t border-slate-50 bg-slate-50/60 text-[11px]">
+                                <td className="px-3 py-1.5 pl-8 text-slate-600" colSpan={3}>
+                                  <span className="mr-1">{c.state !== "ENABLED" ? `(${c.state})` : ""}</span>
+                                  <span className="font-medium">{c.name}</span>
+                                  {c.budget != null && <span className="ml-1 text-slate-400">预算{c.budget}</span>}
+                                </td>
+                                <td className="px-2 py-1.5 text-right font-mono">${c.d7.cost.toFixed(1)}</td>
+                                <td className={`px-2 py-1.5 text-right font-mono ${cl}`}>{pct(ca)}</td>
+                                <td className="px-2 py-1.5 text-right font-mono text-slate-500">{c.d7.orders}单</td>
+                                <td className="px-2 py-1.5 text-slate-500" colSpan={BUCKETS.length - 1}>
+                                  30天 ${c.d30.cost.toFixed(1)}·{pct(c.acos30)} {c.d30.orders}单
+                                  {delta != null && <span className={delta >= 0 ? "ml-2 text-rose-500" : "ml-2 text-emerald-600"}>{delta >= 0 ? "+" : ""}{(delta * 100).toFixed(0)}pp</span>}
+                                </td>
+                              </tr>
+                            );
+                          })}
                         </Fragment>
                       );
                     })}

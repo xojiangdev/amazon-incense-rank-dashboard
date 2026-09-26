@@ -347,6 +347,7 @@ export const adCampaignsPayloadSchema = z.object({
     state: z.string().trim().min(1).max(32),
     budget: z.number().nullable().optional(),
     targetingType: z.string().nullable().optional(),
+    bucket: z.string().trim().max(32).nullable().optional(),
     asins: z.array(z.string().trim().regex(/^[A-Z0-9]{10}$/i)).max(200),
     adGroups: z.array(z.object({
       name: z.string().trim().min(1).max(255),

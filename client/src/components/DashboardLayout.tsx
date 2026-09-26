@@ -33,7 +33,7 @@ const menuItems = [
 ];
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";
-const DEFAULT_WIDTH = 280;
+const DEFAULT_WIDTH = 224;
 const MIN_WIDTH = 200;
 const MAX_WIDTH = 480;
 
@@ -80,8 +80,12 @@ export default function DashboardLayout({
     );
   }
 
+  // 记住侧边栏收起状态(cookie由sidebar组件toggle时写入)
+  const sidebarCollapsedByCookie = typeof document !== "undefined"
+    && document.cookie.split("; ").some(c => c.startsWith("sidebar_state=false"));
   return (
     <SidebarProvider
+      defaultOpen={!sidebarCollapsedByCookie}
       style={
         {
           "--sidebar-width": `${sidebarWidth}px`,

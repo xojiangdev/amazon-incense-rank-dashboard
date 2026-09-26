@@ -118,6 +118,7 @@ export type AdCampaignInput = {
   state: string;
   budget: number | null;
   targetingType: string | null;
+  bucket?: string | null;
   asins: string[];
   adGroups: Array<{ name: string; d7: AdCampaignMetrics; d30: AdCampaignMetrics }>;
   summary: {
@@ -136,6 +137,7 @@ export type AdCampaignInput = {
 export async function applyAdCampaigns(marketplace: "US" | "CA" | "JP", campaigns: AdCampaignInput[], observedAt: Date) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
+  await db.execute(`ALTER TABLE ad_campaigns ADD COLUMN bucket VARCHAR(32) NULL`).catch(() => {});
   await db.execute(`CREATE TABLE IF NOT EXISTS ad_campaigns (
     id INT AUTO_INCREMENT PRIMARY KEY,
     marketplace ENUM('US','CA','JP') NOT NULL,
@@ -144,6 +146,7 @@ export async function applyAdCampaigns(marketplace: "US" | "CA" | "JP", campaign
     state VARCHAR(32) NOT NULL,
     budget DECIMAL(10,2) NULL,
     targetingType VARCHAR(64) NULL,
+    bucket VARCHAR(32) NULL,
     asins TEXT NOT NULL,
     endDate VARCHAR(10) NOT NULL,
     summary TEXT NOT NULL,
@@ -162,6 +165,7 @@ export async function applyAdCampaigns(marketplace: "US" | "CA" | "JP", campaign
         state: c.state.slice(0, 32),
         budget: c.budget === null || c.budget === undefined ? null : String(c.budget),
         targetingType: c.targetingType ? c.targetingType.slice(0, 64) : null,
+        bucket: c.bucket ? c.bucket.slice(0, 32) : null,
         asins: JSON.stringify(c.asins ?? []),
         endDate: c.summary.endDate,
         summary: JSON.stringify(c.summary),
@@ -180,6 +184,7 @@ export type AdCampaignView = {
   state: string;
   budget: string | null;
   targetingType: string | null;
+  bucket: string | null;
   asins: string[];
   endDate: string;
   yesterday: AdCampaignMetrics;
@@ -228,6 +233,7 @@ export async function getAdCampaigns(marketplace?: "US" | "CA" | "JP"): Promise<
       state: r.state,
       budget: r.budget,
       targetingType: r.targetingType,
+      bucket: r.bucket ?? null,
       asins: JSON.parse(r.asins) as string[],
       endDate: summary.endDate,
       yesterday: summary.yesterday,

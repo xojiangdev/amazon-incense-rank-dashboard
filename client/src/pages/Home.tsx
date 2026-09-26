@@ -1148,18 +1148,20 @@ export default function Home() {
                     <div className="hidden overflow-hidden lg:block">
                       <table className="w-full table-fixed text-left text-[11px]">
                         <colgroup>
-                          <col className="w-[15%]" />
-                          <col className="w-[8%]" />
-                          <col className="w-[5%]" />
-                          <col className="w-[5%]" />
-                          <col className="w-[5%]" />
-                          <col className="w-[8%]" />
+                          <col className="w-[13%]" />
                           <col className="w-[6%]" />
+                          <col className="w-[4.5%]" />
+                          <col className="w-[4.5%]" />
+                          <col className="w-[5%]" />
+                          <col className="w-[5%]" />
+                          <col className="w-[4.5%]" />
                           <col className="w-[7%]" />
                           <col className="w-[7%]" />
                           <col className="w-[6%]" />
                           <col className="w-[6%]" />
-                          <col className="w-[12%]" />
+                          <col className="w-[6%] whitespace-nowrap" />
+                          <col className="w-[6%] whitespace-nowrap" />
+                          <col className="w-[11%]" />
                           <col className="w-[5%]" />
                         </colgroup>
                         <thead className="bg-slate-50 border-y border-slate-200 text-slate-600 font-medium">
@@ -1175,8 +1177,8 @@ export default function Home() {
                             <th className="px-1.5 py-2" title="唯一数据源：GitHub 仓库 data/cpr.json；每日 07:35（北京时间）检查更新">CPR(8天)<br/><span className="font-normal text-[9px]">GitHub</span></th>
                             <th className="px-1.5 py-2">广告位<br/><span className="font-normal text-[9px]">PC</span></th>
                             <th className="px-1.5 py-2">SBV 位<br/><span className="font-normal text-[9px]">PC</span></th>
-                            <th className="px-1.5 py-2">昨日自然</th>
-                            <th className="px-1.5 py-2">日变化</th>
+                            <th className="px-1.5 py-2 whitespace-nowrap">昨日自然</th>
+                            <th className="px-1.5 py-2 whitespace-nowrap">日变化</th>
                             <th className="px-1.5 py-2 whitespace-nowrap">7日趋势</th>
                             <th className="px-1.5 py-2">最佳</th>
                           </tr>
@@ -1184,7 +1186,7 @@ export default function Home() {
                         <tbody className="divide-y divide-slate-100">
                           {visibleKeywords.length === 0 ? (
                             <tr>
-                              <td colSpan={13} className="px-4 py-8 text-center text-sm text-slate-500">
+                              <td colSpan={15} className="px-4 py-8 text-center text-sm text-slate-500">
                                 当前筛选下没有符合条件的核心词。
                               </td>
                             </tr>

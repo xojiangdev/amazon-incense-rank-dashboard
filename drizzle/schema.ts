@@ -158,6 +158,7 @@ export const adCampaigns = mysqlTable("ad_campaigns", {
   state: varchar("state", { length: 32 }).notNull(),
   budget: decimal("budget", { precision: 10, scale: 2 }),
   targetingType: varchar("targetingType", { length: 64 }),
+  bucket: varchar("bucket", { length: 32 }),
   asins: text("asins").notNull(),
   endDate: varchar("endDate", { length: 10 }).notNull(),
   summary: text("summary").notNull(),
