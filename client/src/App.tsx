@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
+import { AppNavigation } from "./components/AppNavigation";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -34,7 +35,12 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div className="min-h-screen bg-slate-50 lg:grid lg:grid-cols-[11rem_minmax(0,1fr)]">
+            <AppNavigation />
+            <div className="min-w-0">
+              <Router />
+            </div>
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

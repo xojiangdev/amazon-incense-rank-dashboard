@@ -1,6 +1,6 @@
 import { and, desc, eq, gt, gte, inArray } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { adCampaigns, cprSyncStates, dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
+import { adCampaigns, cprSyncStates, dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users, type AdCampaignRow } from "../drizzle/schema";
 import { buildDateWindow, dateKeyInTimeZone } from "../shared/rankTrend";
 import { githubCprSourceVersion, isNewerGitHubCprVersion, type GitHubCprDocument } from "../shared/githubCpr";
 import { isManualCategoryException } from "../shared/manualCategoryExceptions";
@@ -196,9 +196,29 @@ export type AdCampaignView = {
 export async function getAdCampaigns(marketplace?: "US" | "CA" | "JP"): Promise<AdCampaignView[]> {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
-  const rows = marketplace
-    ? await db.select().from(adCampaigns).where(eq(adCampaigns.marketplace, marketplace))
-    : await db.select().from(adCampaigns);
+  let rows: AdCampaignRow[];
+  try {
+    rows = marketplace
+      ? await db.select().from(adCampaigns).where(eq(adCampaigns.marketplace, marketplace))
+      : await db.select().from(adCampaigns);
+  } catch (error: unknown) {
+    const cause = typeof error === "object" && error !== null && "cause" in error
+      ? (error as { cause?: { code?: unknown; errno?: unknown; message?: unknown } }).cause
+      : undefined;
+    const causeCode = cause?.code;
+    const causeErrno = cause?.errno;
+    const message = `${error instanceof Error ? error.message : String(error)} ${cause?.message ?? ""}`;
+    // The table is intentionally created on the first authenticated ingestion.
+    // Until then, the public overview renders its explicit empty state.
+    if (
+      causeCode === "ER_NO_SUCH_TABLE" ||
+      causeErrno === 1146 ||
+      /ad_campaigns.*doesn't exist/i.test(message)
+    ) {
+      return [];
+    }
+    throw error;
+  }
   return rows.map((r) => {
     const summary = JSON.parse(r.summary);
     return {

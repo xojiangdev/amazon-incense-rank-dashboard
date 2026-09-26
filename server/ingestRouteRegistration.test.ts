@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { RequestHandler } from "express";
 import { registerScheduledAndIngestRoutes, type RegisteredIngestRoute } from "./ingestRouteRegistration";
 import {
+  scheduledAdCampaignsRefreshHandler,
   scheduledGitHubCprRefreshHandler,
   scheduledProductMetricsRefreshHandler,
   scheduledRankRefreshHandler,
@@ -45,6 +46,16 @@ describe("scheduled and public ingest route registration", () => {
       "post:/api/ingest/refreshDailyRank",
       "post:/api/ingest/refreshProductMetrics",
       "post:/api/ingest/githubCpr",
+    ]));
+  });
+
+  it("registers the ad campaign receiver on both scheduled and ingestion paths", () => {
+    const { app, routes } = createRouteApp();
+    registerScheduledAndIngestRoutes(app as never);
+
+    expect(routes).toEqual(expect.arrayContaining([
+      { method: "post", path: "/api/scheduled/refreshAdCampaigns", handler: scheduledAdCampaignsRefreshHandler },
+      { method: "post", path: "/api/ingest/refreshAdCampaigns", handler: scheduledAdCampaignsRefreshHandler },
     ]));
   });
 });
