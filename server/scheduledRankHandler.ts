@@ -338,6 +338,21 @@ const adMetricsSchema = z.object({
   impressions: z.number().int().min(0),
 }).strict();
 
+const adCampaignBucketSchema = z.enum([
+  "auto",
+  "keyword",
+  "product",
+  "category",
+  "sb_brand",
+  "sbv_kw",
+  "sbv_prod",
+  "sbv_cat",
+  "sbv_other",
+  "sd_views",
+  "sd_prod",
+  "sd_cat",
+]);
+
 export const adCampaignsPayloadSchema = z.object({
   observedAt: z.string().datetime(),
   marketplace: z.enum(["US", "CA", "JP"]),
@@ -347,7 +362,7 @@ export const adCampaignsPayloadSchema = z.object({
     state: z.string().trim().min(1).max(32),
     budget: z.number().nullable().optional(),
     targetingType: z.string().nullable().optional(),
-    bucket: z.string().trim().max(32).nullable().optional(),
+    bucket: adCampaignBucketSchema.nullable().optional(),
     asins: z.array(z.string().trim().regex(/^[A-Z0-9]{10}$/i)).max(200),
     adGroups: z.array(z.object({
       name: z.string().trim().min(1).max(255),

@@ -20,6 +20,7 @@ describe("ad campaign ingestion payload", () => {
         state: "ENABLED",
         budget: 20,
         targetingType: "MANUAL",
+        bucket: "sbv_kw",
         asins: ["B0FY1T38P1"],
         adGroups: [{ name: "Exact", d7: metrics, d30: metrics }],
         summary: {
@@ -37,6 +38,7 @@ describe("ad campaign ingestion payload", () => {
 
     expect(parsed.campaigns[0]?.asins).toEqual(["B0FY1T38P1"]);
     expect(parsed.campaigns[0]?.summary.d7.orders).toBe(2);
+    expect(parsed.campaigns[0]?.bucket).toBe("sbv_kw");
   });
 
   it("rejects malformed ASINs and negative metrics", () => {
@@ -58,6 +60,33 @@ describe("ad campaign ingestion payload", () => {
           acos7: null,
           acos30: null,
           acosPrev7: null,
+        },
+      }],
+    });
+
+    expect(result.success).toBe(false);
+  });
+
+  it("rejects buckets outside the advertised SP, SB, SBV, and SD matrix", () => {
+    const result = adCampaignsPayloadSchema.safeParse({
+      observedAt: "2026-09-26T10:00:00.000Z",
+      marketplace: "CA",
+      campaigns: [{
+        campaignId: "67890",
+        name: "Unsupported bucket",
+        state: "ENABLED",
+        bucket: "unknown_bucket",
+        asins: ["B0FY1T38P1"],
+        adGroups: [],
+        summary: {
+          endDate: "2026-09-25",
+          yesterday: metrics,
+          d7: metrics,
+          d30: metrics,
+          acosY: 0.25,
+          acos7: 0.25,
+          acos30: 0.25,
+          acosPrev7: 0.3,
         },
       }],
     });

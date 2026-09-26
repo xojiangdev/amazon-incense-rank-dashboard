@@ -35,9 +35,9 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <div className="min-h-screen bg-slate-50 lg:grid lg:grid-cols-[11rem_minmax(0,1fr)]">
+          <div className="min-h-screen bg-slate-50 lg:flex">
             <AppNavigation />
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <Router />
             </div>
           </div>
