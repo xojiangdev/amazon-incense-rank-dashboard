@@ -1,6 +1,6 @@
 import { and, desc, eq, gt, gte, inArray } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { cprSyncStates, dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
+import { adCampaigns, cprSyncStates, dailyRankSnapshots, InsertUser, keywords, listings, salesLogs, stores, users } from "../drizzle/schema";
 import { buildDateWindow, dateKeyInTimeZone } from "../shared/rankTrend";
 import { githubCprSourceVersion, isNewerGitHubCprVersion, type GitHubCprDocument } from "../shared/githubCpr";
 import { isManualCategoryException } from "../shared/manualCategoryExceptions";
@@ -109,6 +109,118 @@ export async function applyAdOrders(marketplace: "US" | "CA" | "JP", terms: AdOr
     }
   });
   return { received: terms.length, updated, cleared };
+}
+
+export type AdCampaignMetrics = { cost: number; sales: number; orders: number; clicks: number; impressions: number };
+export type AdCampaignInput = {
+  campaignId: string;
+  name: string;
+  state: string;
+  budget: number | null;
+  targetingType: string | null;
+  asins: string[];
+  adGroups: Array<{ name: string; d7: AdCampaignMetrics; d30: AdCampaignMetrics }>;
+  summary: {
+    endDate: string;
+    yesterday: AdCampaignMetrics;
+    d7: AdCampaignMetrics;
+    d30: AdCampaignMetrics;
+    acosY: number | null;
+    acos7: number | null;
+    acos30: number | null;
+    acosPrev7: number | null;
+  };
+};
+
+// 广告系列快照全量替换(每市场): 简单幂等——先清该市场再插入, 数据量<千行
+export async function applyAdCampaigns(marketplace: "US" | "CA" | "JP", campaigns: AdCampaignInput[], observedAt: Date) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  await db.execute(`CREATE TABLE IF NOT EXISTS ad_campaigns (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    marketplace ENUM('US','CA','JP') NOT NULL,
+    campaignId VARCHAR(64) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    state VARCHAR(32) NOT NULL,
+    budget DECIMAL(10,2) NULL,
+    targetingType VARCHAR(64) NULL,
+    asins TEXT NOT NULL,
+    endDate VARCHAR(10) NOT NULL,
+    summary TEXT NOT NULL,
+    adGroups TEXT NOT NULL,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    UNIQUE KEY ad_campaigns_market_campaign_uq (marketplace, campaignId)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`).catch(() => {});
+  await db.transaction(async (tx) => {
+    await tx.delete(adCampaigns).where(eq(adCampaigns.marketplace, marketplace));
+    for (const c of campaigns) {
+      await tx.insert(adCampaigns).values({
+        marketplace,
+        campaignId: c.campaignId,
+        name: c.name.slice(0, 255),
+        state: c.state.slice(0, 32),
+        budget: c.budget === null || c.budget === undefined ? null : String(c.budget),
+        targetingType: c.targetingType ? c.targetingType.slice(0, 64) : null,
+        asins: JSON.stringify(c.asins ?? []),
+        endDate: c.summary.endDate,
+        summary: JSON.stringify(c.summary),
+        adGroups: JSON.stringify(c.adGroups ?? []),
+        updatedAt: observedAt,
+      });
+    }
+  });
+  return { received: campaigns.length, market: marketplace };
+}
+
+export type AdCampaignView = {
+  marketplace: "US" | "CA" | "JP";
+  campaignId: string;
+  name: string;
+  state: string;
+  budget: string | null;
+  targetingType: string | null;
+  asins: string[];
+  endDate: string;
+  yesterday: AdCampaignMetrics;
+  d7: AdCampaignMetrics;
+  d30: AdCampaignMetrics;
+  acosY: number | null;
+  acos7: number | null;
+  acos30: number | null;
+  acosPrev7: number | null;
+  adGroups: Array<{ name: string; d7: AdCampaignMetrics; d30: AdCampaignMetrics }>;
+  updatedAt: string;
+};
+
+export async function getAdCampaigns(marketplace?: "US" | "CA" | "JP"): Promise<AdCampaignView[]> {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const rows = marketplace
+    ? await db.select().from(adCampaigns).where(eq(adCampaigns.marketplace, marketplace))
+    : await db.select().from(adCampaigns);
+  return rows.map((r) => {
+    const summary = JSON.parse(r.summary);
+    return {
+      marketplace: r.marketplace,
+      campaignId: r.campaignId,
+      name: r.name,
+      state: r.state,
+      budget: r.budget,
+      targetingType: r.targetingType,
+      asins: JSON.parse(r.asins) as string[],
+      endDate: summary.endDate,
+      yesterday: summary.yesterday,
+      d7: summary.d7,
+      d30: summary.d30,
+      acosY: summary.acosY ?? null,
+      acos7: summary.acos7 ?? null,
+      acos30: summary.acos30 ?? null,
+      acosPrev7: summary.acosPrev7 ?? null,
+      adGroups: JSON.parse(r.adGroups),
+      updatedAt: r.updatedAt instanceof Date ? r.updatedAt.toISOString() : String(r.updatedAt),
+    };
+  });
 }
 
 export async function applyGitHubCprDocument(input: GitHubCprSyncInput, observedAt = new Date()) {

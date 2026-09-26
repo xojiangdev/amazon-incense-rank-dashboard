@@ -3,14 +3,14 @@
   "markets": {
     "US": {
       "report_rows": 59,
-      "active_listing_rows": 43,
+      "active_listing_rows": 42,
       "fba_inventory_skus": 115,
-      "active_fba_matches": 43,
-      "target_candidates": 36,
+      "active_fba_matches": 42,
+      "target_candidates": 35,
       "excluded_non_target_fba_active": 7,
-      "report_id": "833100020717",
-      "report_document_id": "amzn1.spdoc.1.4.na.2c4ddb63-09de-4a87-b26a-d1509a88f9e7.T3CJF9TTM2WL2E.47700",
-      "raw_report_file": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/us_all_listings_833100020717.tsv"
+      "report_id": "834429020721",
+      "report_document_id": "amzn1.spdoc.1.4.na.25723efd-0567-46ed-8405-750a013b99b8.T1P0IKRDRYJMO5.47700",
+      "raw_report_file": "C:\\Users\\blogg\\.zcode\\workspace\\default\\amazon-incense-rank-dashboard\\private_spapi_import\\us_all_listings_834429020721.tsv"
     },
     "CA": {
       "report_rows": 21,
@@ -19,9 +19,9 @@
       "active_fba_matches": 7,
       "target_candidates": 6,
       "excluded_non_target_fba_active": 1,
-      "report_id": "833101020717",
-      "report_document_id": "amzn1.spdoc.1.4.na.2df354f2-1878-495c-bd34-56d990dc76a6.T3KZEB6GW97NS5.47700",
-      "raw_report_file": "/home/ubuntu/amazon-incense-rank-dashboard/private_spapi_import/ca_all_listings_833101020717.tsv"
+      "report_id": "834431020721",
+      "report_document_id": "amzn1.spdoc.1.4.na.d2548ca8-9dd0-4e0a-a243-b829e20274a1.TNAIZWPIVX8AR.47700",
+      "raw_report_file": "C:\\Users\\blogg\\.zcode\\workspace\\default\\amazon-incense-rank-dashboard\\private_spapi_import\\ca_all_listings_834431020721.tsv"
     }
   }
 }

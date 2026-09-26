@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { timingSafeEqual } from "node:crypto";
 import { z } from "zod";
-import { applyAdOrders, applyFbaStockSnapshots, applyGitHubCprDocument, applyProductReviewMetrics, applyRealRankSnapshots, applySqpKeywordSelections, getListings, getRankTrackingTargets, recordGitHubCprSyncFailure } from "./db";
+import { applyAdCampaigns, applyAdOrders, applyFbaStockSnapshots, applyGitHubCprDocument, applyProductReviewMetrics, applyRealRankSnapshots, applySqpKeywordSelections, getListings, getRankTrackingTargets, recordGitHubCprSyncFailure } from "./db";
 import { sdk } from "./_core/sdk";
 import { ENV } from "./_core/env";
 import { GITHUB_CPR_BRANCH, GITHUB_CPR_OWNER, GITHUB_CPR_PATH, GITHUB_CPR_RAW_URL, GITHUB_CPR_REPOSITORY, GITHUB_CPR_SOURCE_KEY, parseGitHubCprDocument } from "../shared/githubCpr";
@@ -325,6 +325,61 @@ export async function scheduledGitHubCprRefreshHandler(req: Request, res: Respon
       error: message,
       issues: error instanceof z.ZodError ? error.issues : undefined,
       timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+
+const adMetricsSchema = z.object({
+  cost: z.number().min(0),
+  sales: z.number().min(0),
+  orders: z.number().int().min(0),
+  clicks: z.number().int().min(0),
+  impressions: z.number().int().min(0),
+}).strict();
+
+export const adCampaignsPayloadSchema = z.object({
+  observedAt: z.string().datetime(),
+  marketplace: z.enum(["US", "CA", "JP"]),
+  campaigns: z.array(z.object({
+    campaignId: z.string().trim().min(1).max(64),
+    name: z.string().trim().min(1).max(255),
+    state: z.string().trim().min(1).max(32),
+    budget: z.number().nullable().optional(),
+    targetingType: z.string().nullable().optional(),
+    asins: z.array(z.string().trim().regex(/^[A-Z0-9]{10}$/i)).max(200),
+    adGroups: z.array(z.object({
+      name: z.string().trim().min(1).max(255),
+      d7: adMetricsSchema,
+      d30: adMetricsSchema,
+    })).max(200),
+    summary: z.object({
+      endDate: z.string().trim().regex(/^\d{4}-\d{2}-\d{2}$/),
+      yesterday: adMetricsSchema,
+      d7: adMetricsSchema,
+      d30: adMetricsSchema,
+      acosY: z.number().nullable(),
+      acos7: z.number().nullable(),
+      acos30: z.number().nullable(),
+      acosPrev7: z.number().nullable(),
+    }).strict(),
+  })).min(0).max(1000),
+}).strict();
+
+/**
+ * 广告系列监控快照写入(三站 ACTIVE 系列 30天日报聚合)。
+ */
+export async function scheduledAdCampaignsRefreshHandler(req: Request, res: Response) {
+  try {
+    await authorizeCronOrAdmin(req);
+    const input = adCampaignsPayloadSchema.parse(req.body);
+    const result = await applyAdCampaigns(input.marketplace, input.campaigns as never, new Date(input.observedAt));
+    return res.json({ ok: true, result });
+  } catch (error: any) {
+    console.error("[ScheduledTask] Error in ad campaigns refresh:", error);
+    return res.status(error?.statusCode || (error instanceof z.ZodError ? 400 : 500)).json({
+      error: error?.message || "Internal server error",
+      issues: error instanceof z.ZodError ? error.issues : undefined,
     });
   }
 }

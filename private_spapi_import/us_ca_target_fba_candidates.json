@@ -16,7 +16,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -35,7 +35,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -47,14 +47,14 @@
     "image_url": "",
     "price": "19.99",
     "currency": "USD",
-    "fba_stock": 95,
+    "fba_stock": 93,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -73,7 +73,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -85,14 +85,14 @@
     "image_url": "",
     "price": "19.99",
     "currency": "USD",
-    "fba_stock": 17,
+    "fba_stock": 16,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -106,12 +106,12 @@
     "currency": "USD",
     "fba_stock": 70,
     "fba_inbound_working": 0,
-    "fba_inbound_shipped": 125,
+    "fba_inbound_shipped": 50,
     "fba_inbound_receiving": 0,
-    "fba_inbound_total": 125,
+    "fba_inbound_total": 50,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -130,7 +130,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -142,14 +142,14 @@
     "image_url": "",
     "price": "9.99",
     "currency": "USD",
-    "fba_stock": 22,
+    "fba_stock": 21,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -161,14 +161,14 @@
     "image_url": "",
     "price": "19.99",
     "currency": "USD",
-    "fba_stock": 4,
+    "fba_stock": 3,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 20,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 20,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -187,7 +187,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -206,7 +206,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -218,14 +218,14 @@
     "image_url": "",
     "price": "19.99",
     "currency": "USD",
-    "fba_stock": 49,
+    "fba_stock": 47,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -244,7 +244,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -256,14 +256,14 @@
     "image_url": "",
     "price": "19.99",
     "currency": "USD",
-    "fba_stock": 10,
+    "fba_stock": 11,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -282,7 +282,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -301,26 +301,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
-  },
-  {
-    "marketplace": "US",
-    "asin": "B0GZDGRVCP",
-    "sku": "YJY-INC-WISTERIA-60-US",
-    "title": "AFENGAU Wisteria Incense Sticks - 20 Sticks Natural Coreless Floral, Japanese Spring Aromatherapy for Meditation & Relaxation, Premium Gift",
-    "category": "incense_sticks",
-    "category_name": "Incense products",
-    "image_url": "",
-    "price": "19.99",
-    "currency": "USD",
-    "fba_stock": 1,
-    "fba_inbound_working": 0,
-    "fba_inbound_shipped": 21,
-    "fba_inbound_receiving": 0,
-    "fba_inbound_total": 21,
-    "fulfillment_channel": "FBA",
-    "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -332,14 +313,14 @@
     "image_url": "",
     "price": "9.9",
     "currency": "USD",
-    "fba_stock": 77,
+    "fba_stock": 73,
     "fba_inbound_working": 0,
-    "fba_inbound_shipped": 60,
+    "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
-    "fba_inbound_total": 60,
+    "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -358,7 +339,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -377,7 +358,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -389,14 +370,14 @@
     "image_url": "",
     "price": "19.99",
     "currency": "USD",
-    "fba_stock": 22,
+    "fba_stock": 21,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -415,7 +396,26 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
+  },
+  {
+    "marketplace": "US",
+    "asin": "B0GDKRTTJ1",
+    "sku": "incenseholder20cm",
+    "title": "AFENGAU Incense Holder for Sticks with Glass Ash Catcher, Upside Down Anti-Ash Incense Burner, Modern Vertical Incense Stick Holder for Home Decor, Yoga, Meditation Room, and Spa",
+    "category": "incense_holder",
+    "category_name": "Incense products",
+    "image_url": "",
+    "price": "9.99",
+    "currency": "USD",
+    "fba_stock": 2,
+    "fba_inbound_working": 0,
+    "fba_inbound_shipped": 0,
+    "fba_inbound_receiving": 0,
+    "fba_inbound_total": 0,
+    "fulfillment_channel": "FBA",
+    "listing_status": "Active",
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -434,7 +434,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -446,14 +446,14 @@
     "image_url": "",
     "price": "19.99",
     "currency": "USD",
-    "fba_stock": 34,
+    "fba_stock": 32,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -465,14 +465,14 @@
     "image_url": "",
     "price": "5.99",
     "currency": "USD",
-    "fba_stock": 6,
+    "fba_stock": 4,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -484,14 +484,14 @@
     "image_url": "",
     "price": "5.99",
     "currency": "USD",
-    "fba_stock": 28,
+    "fba_stock": 25,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 30,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 30,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -503,14 +503,14 @@
     "image_url": "",
     "price": "9.9",
     "currency": "USD",
-    "fba_stock": 70,
+    "fba_stock": 63,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 450,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 450,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -529,7 +529,7 @@
     "fba_inbound_total": 30,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -541,14 +541,14 @@
     "image_url": "",
     "price": "16.99",
     "currency": "USD",
-    "fba_stock": 45,
+    "fba_stock": 43,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -560,14 +560,14 @@
     "image_url": "",
     "price": "9.99",
     "currency": "USD",
-    "fba_stock": 92,
+    "fba_stock": 87,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -586,7 +586,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -605,7 +605,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -617,14 +617,14 @@
     "image_url": "",
     "price": "19.99",
     "currency": "USD",
-    "fba_stock": 101,
+    "fba_stock": 93,
     "fba_inbound_working": 0,
-    "fba_inbound_shipped": 50,
+    "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
-    "fba_inbound_total": 50,
+    "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -636,14 +636,14 @@
     "image_url": "",
     "price": "9.99",
     "currency": "USD",
-    "fba_stock": 23,
+    "fba_stock": 22,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "US",
@@ -662,26 +662,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833100020717"
-  },
-  {
-    "marketplace": "US",
-    "asin": "B0FY6MCXS7",
-    "sku": "whitesage60",
-    "title": "AFENGAU White Sage Incense Sticks (60 Sticks) for Cleansing Negative Energy | Pure & Natural Aromatherapy Incense for Meditation, Yoga, and Spiritual Purification",
-    "category": "incense_sticks",
-    "category_name": "Incense products",
-    "image_url": "",
-    "price": "19.99",
-    "currency": "USD",
-    "fba_stock": 1,
-    "fba_inbound_working": 0,
-    "fba_inbound_shipped": 0,
-    "fba_inbound_receiving": 0,
-    "fba_inbound_total": 0,
-    "fulfillment_channel": "FBA",
-    "listing_status": "Active",
-    "source_report_id": "833100020717"
+    "source_report_id": "834429020721"
   },
   {
     "marketplace": "CA",
@@ -700,7 +681,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833101020717"
+    "source_report_id": "834431020721"
   },
   {
     "marketplace": "CA",
@@ -712,14 +693,14 @@
     "image_url": "",
     "price": "8.89",
     "currency": "CAD",
-    "fba_stock": 12,
+    "fba_stock": 11,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833101020717"
+    "source_report_id": "834431020721"
   },
   {
     "marketplace": "CA",
@@ -731,14 +712,14 @@
     "image_url": "",
     "price": "13.99",
     "currency": "CAD",
-    "fba_stock": 15,
+    "fba_stock": 14,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 300,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 300,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833101020717"
+    "source_report_id": "834431020721"
   },
   {
     "marketplace": "CA",
@@ -757,7 +738,7 @@
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833101020717"
+    "source_report_id": "834431020721"
   },
   {
     "marketplace": "CA",
@@ -769,14 +750,14 @@
     "image_url": "",
     "price": "27.99",
     "currency": "CAD",
-    "fba_stock": 55,
+    "fba_stock": 49,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 100,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 100,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833101020717"
+    "source_report_id": "834431020721"
   },
   {
     "marketplace": "CA",
@@ -788,13 +769,13 @@
     "image_url": "",
     "price": "13.94",
     "currency": "CAD",
-    "fba_stock": 88,
+    "fba_stock": 87,
     "fba_inbound_working": 0,
     "fba_inbound_shipped": 0,
     "fba_inbound_receiving": 0,
     "fba_inbound_total": 0,
     "fulfillment_channel": "FBA",
     "listing_status": "Active",
-    "source_report_id": "833101020717"
+    "source_report_id": "834431020721"
   }
 ]

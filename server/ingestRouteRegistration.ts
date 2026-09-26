@@ -9,6 +9,7 @@ import {
   scheduledRankTargetsHandler,
   scheduledSqpKeywordsRefreshHandler,
   scheduledAdOrdersRefreshHandler,
+  scheduledAdCampaignsRefreshHandler,
 } from "./scheduledRankHandler";
 
 type RouteApp = Pick<Express, "get" | "post">;
@@ -28,6 +29,7 @@ export function registerScheduledAndIngestRoutes(app: RouteApp) {
   app.post("/api/scheduled/refreshFbaStock", scheduledFbaStockRefreshHandler);
   app.post("/api/scheduled/refreshSqpKeywords", scheduledSqpKeywordsRefreshHandler);
   app.post("/api/scheduled/refreshAdOrders", scheduledAdOrdersRefreshHandler);
+  app.post("/api/scheduled/refreshAdCampaigns", scheduledAdCampaignsRefreshHandler);
 
   app.get("/api/ingest/rankTargets", scheduledRankTargetsHandler);
   app.post("/api/ingest/refreshDailyRank", scheduledRankRefreshHandler);
@@ -36,6 +38,7 @@ export function registerScheduledAndIngestRoutes(app: RouteApp) {
   app.post("/api/ingest/refreshFbaStock", scheduledFbaStockRefreshHandler);
   app.post("/api/ingest/refreshSqpKeywords", scheduledSqpKeywordsRefreshHandler);
   app.post("/api/ingest/refreshAdOrders", scheduledAdOrdersRefreshHandler);
+  app.post("/api/ingest/refreshAdCampaigns", scheduledAdCampaignsRefreshHandler);
 }
 
 export type RegisteredIngestRoute = {

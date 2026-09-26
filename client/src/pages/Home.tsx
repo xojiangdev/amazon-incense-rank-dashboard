@@ -200,6 +200,21 @@ export default function Home() {
   const listingsQuery = trpc.dashboard.listings.useQuery(listingsInput, { staleTime: 60_000, refetchOnWindowFocus: false });
   const cprSyncStatusQuery = trpc.dashboard.cprSyncStatus.useQuery();
 
+  // ?asin= 深链: 广告总览/Excel点击ASIN定位到对应产品(并切到其市场)
+  const [deeplinkDone, setDeeplinkDone] = useState(false);
+  useEffect(() => {
+    if (deeplinkDone || !listingsQuery.data?.length) return;
+    const asin = new URLSearchParams(window.location.search).get("asin");
+    if (asin) {
+      const hit = listingsQuery.data.find(l => l.asin.toUpperCase() === asin.toUpperCase());
+      if (hit) {
+        if (hit.marketplace !== marketplace) setMarketplace(hit.marketplace as MarketplaceFilter);
+        setSelectedListingId(hit.id);
+      }
+    }
+    setDeeplinkDone(true);
+  }, [listingsQuery.data, deeplinkDone]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const refreshMutation = trpc.dashboard.triggerDailyRefresh.useMutation({
     onSuccess: (data) => {
       toast.success(`每日排名更新完毕！已追踪 ${data.listingsTracked} 个Listing，${data.keywordsUpdated} 个核心词`);
@@ -1023,6 +1038,71 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* 广告概况: 该ASIN的启用广告系列(数据来自每日广告采集) */}
+                {(currentDetail as any).adCampaigns !== undefined && (
+                  <Card className="border-slate-200 shadow-xs bg-white">
+                    <CardHeader className="flex flex-col items-start justify-between gap-3 p-3 pb-2 sm:flex-row sm:items-center sm:p-4 sm:pb-2">
+                      <div className="min-w-0">
+                        <CardTitle className="text-sm font-bold text-slate-900">广告概况（启用系列 {((currentDetail as any).adCampaigns as unknown[]).length} 个）</CardTitle>
+                        <CardDescription className="mt-0.5 text-[11px] text-slate-500">
+                          7天ACOS 红线50% 黄线30%；点击系列名跳广告总览看广告组明细
+                        </CardDescription>
+                      </div>
+                      <a href="/ads" className="shrink-0 rounded-md bg-blue-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-700">
+                        广告总览 →
+                      </a>
+                    </CardHeader>
+                    <CardContent className="p-2 sm:p-4 pt-0">
+                      {((currentDetail as any).adCampaigns as Array<{
+                        campaignId: string; name: string; budget: string | null;
+                        d7: { cost: number; sales: number; orders: number };
+                        acos7: number | null; acos30: number | null; acosPrev7: number | null;
+                      }>).length === 0 ? (
+                        <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                          ⚠️ 该ASIN没有启用中的广告系列 —— 若有自然转化词，考虑开关键词广告承接。
+                        </div>
+                      ) : (
+                        <div className="overflow-x-auto">
+                          <table className="w-full min-w-[560px] text-left text-xs">
+                            <thead className="text-slate-500">
+                              <tr>
+                                <th className="px-2 py-1.5 font-medium">系列</th>
+                                <th className="px-2 py-1.5 text-right font-medium">预算</th>
+                                <th className="px-2 py-1.5 text-right font-medium">7天花费</th>
+                                <th className="px-2 py-1.5 text-right font-medium">7天单</th>
+                                <th className="px-2 py-1.5 text-right font-medium">7天ACOS</th>
+                                <th className="px-2 py-1.5 text-right font-medium">环比</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {((currentDetail as any).adCampaigns as Array<{
+                                campaignId: string; name: string; budget: string | null;
+                                d7: { cost: number; sales: number; orders: number };
+                                acos7: number | null; acos30: number | null; acosPrev7: number | null;
+                              }>).map(c => {
+                                const delta = c.acos7 != null && c.acosPrev7 != null ? c.acos7 - c.acosPrev7 : null;
+                                const cls = c.acos7 == null ? "text-slate-500" : c.acos7 > 0.5 ? "text-red-600 font-semibold" : c.acos7 > 0.3 ? "text-amber-600 font-semibold" : "text-emerald-700 font-semibold";
+                                return (
+                                  <tr key={c.campaignId} className="border-t border-slate-100">
+                                    <td className="max-w-[260px] truncate px-2 py-1.5 font-medium text-slate-800" title={c.name}>
+                                      <a href={`/ads`} className="hover:underline">{c.name}</a>
+                                    </td>
+                                    <td className="px-2 py-1.5 text-right font-mono">{c.budget ?? "—"}</td>
+                                    <td className="px-2 py-1.5 text-right font-mono">{c.d7.cost.toFixed(2)}</td>
+                                    <td className="px-2 py-1.5 text-right font-mono">{c.d7.orders}</td>
+                                    <td className={`px-2 py-1.5 text-right font-mono ${cls}`}>{c.acos7 == null ? "—" : `${(c.acos7 * 100).toFixed(0)}%`}</td>
+                                    <td className="px-2 py-1.5 text-right font-mono text-slate-500">{delta == null ? "—" : `${delta >= 0 ? "+" : ""}${(delta * 100).toFixed(0)}pp`}</td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                )}
 
                 {/* Keywords Ranking Statistics Table (Core 6-20) */}
                 <Card className="border-slate-200 shadow-xs bg-white">

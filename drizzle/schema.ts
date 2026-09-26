@@ -1,4 +1,4 @@
-import { boolean, decimal, int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { boolean, decimal, int, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 
 export const users = mysqlTable("users", {
   id: int("id").autoincrement().primaryKey(),
@@ -148,3 +148,24 @@ export const salesLogs = mysqlTable("sales_logs", {
   suggestedAction: text("suggestedAction"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
+
+// 广告系列监控(每日推送的聚合快照; summary/asins 为 JSON 文本)
+export const adCampaigns = mysqlTable("ad_campaigns", {
+  id: int("id").autoincrement().primaryKey(),
+  marketplace: mysqlEnum("marketplace", ["US", "CA", "JP"]).notNull(),
+  campaignId: varchar("campaignId", { length: 64 }).notNull(),
+  name: varchar("name", { length: 255 }).notNull(),
+  state: varchar("state", { length: 32 }).notNull(),
+  budget: decimal("budget", { precision: 10, scale: 2 }),
+  targetingType: varchar("targetingType", { length: 64 }),
+  asins: text("asins").notNull(),
+  endDate: varchar("endDate", { length: 10 }).notNull(),
+  summary: text("summary").notNull(),
+  adGroups: text("adGroups").notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+}, (table) => [
+  uniqueIndex("ad_campaigns_market_campaign_uq").on(table.marketplace, table.campaignId),
+]);
+
+export type AdCampaignRow = typeof adCampaigns.$inferSelect;

@@ -5,6 +5,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import {
   addSalesLog,
+  getAdCampaigns,
   bulkUpdateListingOrganization,
   getGitHubCprSyncState,
   getDashboardOverview,
@@ -65,6 +66,16 @@ export const appRouter = router({
         return getListings(input?.marketplace, input?.category, input?.status);
       }),
 
+    adCampaigns: publicProcedure
+      .input(
+        z
+          .object({ marketplace: z.enum(["US", "CA", "JP"]).optional() })
+          .optional()
+      )
+      .query(async ({ input }) => {
+        return getAdCampaigns(input?.marketplace);
+      }),
+
     listingDetail: publicProcedure
       .input(z.object({ id: z.number() }))
       .query(async ({ input }) => {
@@ -73,11 +84,15 @@ export const appRouter = router({
         const keywordsList = await getListingKeywords(input.id);
         const snapshots = await getRankSnapshots(input.id);
         const logs = await getSalesLogs(input.id);
+        // 该ASIN的启用广告系列(供详情页"广告概况"卡片)
+        const campaigns = await getAdCampaigns(listing.marketplace).catch(() => []);
+        const asinCampaigns = campaigns.filter(c => c.asins.includes(listing.asin));
         return {
           listing,
           keywords: keywordsList,
           snapshots,
           logs,
+          adCampaigns: asinCampaigns,
         };
       }),
 
