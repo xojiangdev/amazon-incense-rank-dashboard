@@ -277,7 +277,10 @@ export default function AdsOverview() {
                         {rows[g].length} 个产品
                       </td>
                     </tr>
-                    {rows[g].map(r => (
+                    {rows[g].map(r => {
+                      const acos = r.sales > 0 ? r.cost / r.sales : null;
+                      const lg = r.camps.length === 0 ? "gray" : lightOf(r.cost, r.sales, acos);
+                      return (
                       <Fragment key={`d-${r.asin}`}>
                         <tr className="bg-slate-100/70">
                           <td className="px-3 py-1.5 font-semibold text-slate-800">
@@ -332,7 +335,8 @@ export default function AdsOverview() {
                           );
                         })}
                       </Fragment>
-                    ))}
+                    );
+                    })}
                   </Fragment>
                 ))}
               </tbody>
