@@ -29,7 +29,8 @@ type Metrics = { cost: number; sales: number; orders: number; clicks: number; im
 type Camp = {
   campaignId: string; name: string; state: string; budget: string | null;
   bucket: string | null; asins: string[]; endDate: string;
-  d7: Metrics; d30: Metrics; acos7: number | null; acos30: number | null; acosPrev7: number | null;
+  yesterday: Metrics; d7: Metrics; d30: Metrics;
+  acosY: number | null; acos7: number | null; acos30: number | null; acosPrev7: number | null;
   adGroups: Array<{ name: string; d7: Metrics; d30: Metrics }>;
 };
 type Listing = { id: number; asin: string; title: string; marketplace: string; salesCategory: string | null; fbaStock: number | null; inventoryStatus: string | null };
@@ -83,13 +84,18 @@ export default function AdsOverview() {
 
   const rows = useMemo(() => {
     const metaByAsin = new Map(listings.filter(l => l.marketplace === market).map(l => [l.asin, l]));
-    const per = new Map<string, { camps: Camp[]; cost: number; sales: number; orders: number }>();
+    const per = new Map<string, { camps: Camp[]; cost: number; sales: number; orders: number; cost30: number; sales30: number; ycost: number; ysales: number; budget: number }>();
     const add = (asin: string, c: Camp, share: number) => {
-      const e = per.get(asin) ?? { camps: [], cost: 0, sales: 0, orders: 0 };
+      const e = per.get(asin) ?? { camps: [], cost: 0, sales: 0, orders: 0, cost30: 0, sales30: 0, ycost: 0, ysales: 0, budget: 0 };
       e.camps.push(c);
       e.cost += c.d7.cost / share;
       e.sales += c.d7.sales / share;
       e.orders += c.d7.orders / share;
+      e.cost30 += c.d30.cost / share;
+      e.sales30 += c.d30.sales / share;
+      e.ycost += (c.yesterday?.cost ?? 0) / share;
+      e.ysales += (c.yesterday?.sales ?? 0) / share;
+      e.budget += (c.budget ? parseFloat(c.budget) : 0) / share;
       per.set(asin, e);
     };
     for (const c of campaigns) {
@@ -97,7 +103,7 @@ export default function AdsOverview() {
       for (const a of c.asins) add(a, c, share);
     }
     // 网站在售产品全列出(无广告也显示)
-    for (const a of Array.from(metaByAsin.keys())) if (!per.has(a)) per.set(a, { camps: [], cost: 0, sales: 0, orders: 0 });
+    for (const a of Array.from(metaByAsin.keys())) if (!per.has(a)) per.set(a, { camps: [], cost: 0, sales: 0, orders: 0, cost30: 0, sales30: 0, ycost: 0, ysales: 0, budget: 0 });
 
     const groupOf = (asin: string) => {
       const m0 = metaByAsin.get(asin);
@@ -106,10 +112,10 @@ export default function AdsOverview() {
       if ((m0.fbaStock ?? 0) <= 0 || (m0.inventoryStatus && m0.inventoryStatus !== "Active")) return "停售(DISCONTINUED)";
       return ({ key_product: "重点产品", new_product: "新品", long_tail: "长尾产品", regular: "常规产品" } as Record<string, string>)[m0.salesCategory ?? ""] ?? "常规产品";
     };
-    const grouped: Record<string, Array<{ asin: string; camps: Camp[]; cost: number; sales: number; orders: number; title: string }>> = {};
+    const grouped: Record<string, Array<{ asin: string; camps: Camp[]; cost: number; sales: number; orders: number; cost30: number; sales30: number; ycost: number; ysales: number; budget: number; title: string }>> = {};
     for (const [asin, e] of Array.from(per.entries())) {
       const g = groupOf(asin);
-      (grouped[g] ??= []).push({ asin, camps: e.camps, cost: e.cost, sales: e.sales, orders: e.orders, title: metaByAsin.get(asin)?.title ?? asin });
+      (grouped[g] ??= []).push({ asin, camps: e.camps, cost: e.cost, sales: e.sales, orders: e.orders, cost30: e.cost30, sales30: e.sales30, ycost: e.ycost, ysales: e.ysales, budget: e.budget, title: metaByAsin.get(asin)?.title ?? asin });
     }
     for (const g of Object.keys(grouped)) grouped[g].sort((a, b) => b.cost - a.cost);
     return grouped;
@@ -273,15 +279,20 @@ export default function AdsOverview() {
                     </tr>
                     {rows[g].map(r => (
                       <Fragment key={`d-${r.asin}`}>
-                        <tr className="bg-slate-50">
-                          <td className="px-3 py-1.5 font-semibold text-slate-800" colSpan={6}>
+                        <tr className="bg-slate-100/70">
+                          <td className="px-3 py-1.5 font-semibold text-slate-800">
                             {shortTitle(r.title)}
                             <Link href={`/?asin=${r.asin}`} className="ml-2 font-mono text-[10px] text-blue-600 hover:underline">{r.asin} ↗</Link>
                           </td>
-                          <td className="px-2 py-1.5 text-right font-mono font-semibold text-slate-700">{r.cost.toFixed(1)}</td>
-                          <td className="px-2 py-1.5 text-right font-mono text-slate-500">{r.orders.toFixed(1)}</td>
-                          <td className="px-2 py-1.5 text-right font-mono text-slate-500">{pct(r.sales > 0 ? r.cost / r.sales : null)}</td>
-                          <td colSpan={2} />
+                          <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg]}`}>{r.camps.length}系列</span></td>
+                          <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg]}`}>{r.budget > 0 ? r.budget.toFixed(0) : "—"}</span></td>
+                          <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lightOf(r.ycost, r.ysales, r.ysales > 0 ? r.ycost / r.ysales : null)]}`}>{r.ycost.toFixed(1)}</span></td>
+                          <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg]}`}>{r.cost.toFixed(1)}</span></td>
+                          <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg]}`}>{r.orders.toFixed(1)}</span></td>
+                          <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg]}`}>{pct(acos)}</span></td>
+                          <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lightOf(r.cost30, r.sales30, r.sales30 > 0 ? r.cost30 / r.sales30 : null)]}`}>{pct(r.sales30 > 0 ? r.cost30 / r.sales30 : null)}</span></td>
+                          <td className="px-2 py-1.5" />
+                          <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 text-[11px] ${CHIP[lg]}`}>{lg === "red" ? "🔴" : lg === "yellow" ? "🟡" : lg === "green" ? "🟢" : "⚪"}</span></td>
                         </tr>
                         {[...r.camps].sort((a, b) => b.d7.cost - a.d7.cost).map(c => {
                           const delta = c.acos7 != null && c.acosPrev7 != null ? c.acos7 - c.acosPrev7 : null;
@@ -297,14 +308,14 @@ export default function AdsOverview() {
                                   </button>
                                 </td>
                                 <td className="px-2 py-1.5 text-slate-500">{c.state !== "ENABLED" ? `(${c.state})` : "启用"}</td>
-                                <td className="px-2 py-1.5 text-right font-mono text-slate-500">{c.budget ?? "—"}</td>
-                                <td className="px-2 py-1.5 text-right font-mono text-slate-400">—</td>
-                                <td className="px-2 py-1.5 text-right font-mono text-slate-700">{c.d7.cost.toFixed(2)}</td>
-                                <td className="px-2 py-1.5 text-right font-mono text-slate-600">{c.d7.orders}</td>
-                                <td className={`px-2 py-1.5 text-right font-mono ${c.acos7 == null ? "text-slate-400" : c.acos7 > 0.5 ? "text-red-600 font-semibold" : c.acos7 > 0.3 ? "text-amber-600 font-semibold" : "text-emerald-700 font-semibold"}`}>{c.acos7 == null ? (c.d7.cost > 0 ? "0销" : "—") : pct(c.acos7)}</td>
-                                <td className="px-2 py-1.5 text-right font-mono text-slate-500">{pct(c.acos30)}</td>
-                                <td className="px-2 py-1.5 text-right font-mono text-slate-500">{delta == null ? "—" : `${delta >= 0 ? "+" : ""}${(delta * 100).toFixed(0)}pp`}</td>
-                                <td className="px-2 py-1.5"><span className={`rounded border px-1.5 py-0.5 font-mono text-[11px] whitespace-nowrap ${CHIP[lg2]}`}>{c.d7.cost > 0 ? "$" + c.d7.cost.toFixed(0) : "0"}</span></td>
+                                <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg2]}`}>{c.budget ?? "—"}</span></td>
+                                <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg2]}`}>{c.yesterday?.cost?.toFixed(2) ?? "—"}</span></td>
+                                <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg2]}`}>{c.d7.cost.toFixed(2)}</span></td>
+                                <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg2]}`}>{c.d7.orders}</span></td>
+                                <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[c.acos7 == null ? (c.d7.cost > 0 ? "yellow" : "gray") : lightOf(c.d7.cost, c.d7.sales, c.acos7)]}`}>{c.acos7 == null ? (c.d7.cost > 0 ? "0销" : "—") : pct(c.acos7)}</span></td>
+                                <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[c.acos30 == null ? "gray" : c.acos30 > 0.5 ? "red" : c.acos30 > 0.3 ? "yellow" : "green"]}`}>{pct(c.acos30)}</span></td>
+                                <td className={`px-2 py-1.5 text-right font-mono ${delta == null ? "text-slate-400" : delta >= 0 ? "text-rose-600 font-semibold" : "text-emerald-600 font-semibold"}`}>{delta == null ? "—" : `${delta >= 0 ? "+" : ""}${(delta * 100).toFixed(0)}pp`}</td>
+                                <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 text-[11px] ${CHIP[lg2]}`}>{lg2 === "red" ? "🔴" : lg2 === "yellow" ? "🟡" : lg2 === "green" ? "🟢" : "⚪"}</span></td>
                               </tr>
                               {open && (c.adGroups ?? []).filter(g0 => g0.d7.cost > 0 || g0.d30.cost > 0).map(g0 => (
                                 <tr key={g0.name + c.campaignId} className="border-t border-slate-50 bg-slate-50/50 text-[11px] text-slate-500">
