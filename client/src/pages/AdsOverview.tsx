@@ -72,7 +72,9 @@ const CHIP: Record<string, string> = {
 
 export default function AdsOverview() {
   const [market, setMarket] = useState<"US" | "CA" | "JP">("US");
+  const [view, setView] = useState<"matrix" | "detail">("matrix");
   const [openCell, setOpenCell] = useState<string | null>(null); // `${asin}:${bucket}`
+  const [openCamp, setOpenCamp] = useState<string | null>(null); // 总表视图展开广告组
   const campaignsQuery = trpc.dashboard.adCampaigns.useQuery({ marketplace: market });
   const listingsQuery = trpc.dashboard.listings.useQuery(undefined, { staleTime: 300_000 });
 
@@ -126,6 +128,10 @@ export default function AdsOverview() {
           </p>
         </div>
         <div className="flex items-center gap-2 text-xs">
+          <div className="mr-2 flex overflow-hidden rounded-md border border-slate-200">
+            <button onClick={() => setView("matrix")} className={`px-3 py-1.5 font-medium ${view === "matrix" ? "bg-slate-800 text-white" : "bg-white text-slate-600 hover:bg-slate-100"}`}>矩阵</button>
+            <button onClick={() => setView("detail")} className={`px-3 py-1.5 font-medium ${view === "detail" ? "bg-slate-800 text-white" : "bg-white text-slate-600 hover:bg-slate-100"}`}>总表</button>
+          </div>
           {MARKETS.map(m => (
             <button key={m.code} onClick={() => { setMarket(m.code); setOpenCell(null); }}
               className={`rounded-md px-3 py-1.5 font-medium ${market === m.code ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}>
@@ -147,7 +153,7 @@ export default function AdsOverview() {
             <div className="rounded-lg bg-white px-4 py-2 shadow-sm"><div className="text-slate-400">7天广告单</div><div className="text-lg font-bold text-slate-800">{totals.orders}</div></div>
           </div>
 
-          <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+          <div className={`overflow-x-auto rounded-lg border border-slate-200 bg-white ${view === "matrix" ? "" : "hidden"}`}>
             <table className="w-full min-w-[1100px] text-left text-xs">
               <thead className="sticky top-0 z-10 bg-slate-50 text-slate-500">
                 <tr>
@@ -239,6 +245,89 @@ export default function AdsOverview() {
               </tbody>
             </table>
           </div>
+        {view === "detail" && (
+          <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+            <table className="w-full min-w-[1000px] text-left text-xs">
+              <thead className="sticky top-0 z-10 bg-slate-50 text-slate-500">
+                <tr>
+                  <th className="px-3 py-2 font-medium">广告系列 / 广告组</th>
+                  <th className="px-2 py-2 font-medium">状态</th>
+                  <th className="px-2 py-2 text-right font-medium">预算</th>
+                  <th className="px-2 py-2 text-right font-medium">昨日花费</th>
+                  <th className="px-2 py-2 text-right font-medium">7天花费</th>
+                  <th className="px-2 py-2 text-right font-medium">7天单</th>
+                  <th className="px-2 py-2 text-right font-medium">7天ACOS</th>
+                  <th className="px-2 py-2 text-right font-medium">30天ACOS</th>
+                  <th className="px-2 py-2 text-right font-medium">环比</th>
+                  <th className="px-2 py-2 font-medium">灯</th>
+                </tr>
+              </thead>
+              <tbody>
+                {GROUPS.filter(g => rows[g]?.length).map(g => (
+                  <Fragment key={`d-${g}`}>
+                    <tr className="bg-blue-50/60">
+                      <td colSpan={10} className="px-3 py-1.5 font-semibold text-slate-700">
+                        <span className={`rounded px-1.5 py-0.5 text-[11px] mr-1 ${GROUP_BADGE[g] ?? ""}`}>{g}</span>
+                        {rows[g].length} 个产品
+                      </td>
+                    </tr>
+                    {rows[g].map(r => (
+                      <Fragment key={`d-${r.asin}`}>
+                        <tr className="bg-slate-50">
+                          <td className="px-3 py-1.5 font-semibold text-slate-800" colSpan={6}>
+                            {shortTitle(r.title)}
+                            <Link href={`/?asin=${r.asin}`} className="ml-2 font-mono text-[10px] text-blue-600 hover:underline">{r.asin} ↗</Link>
+                          </td>
+                          <td className="px-2 py-1.5 text-right font-mono font-semibold text-slate-700">{r.cost.toFixed(1)}</td>
+                          <td className="px-2 py-1.5 text-right font-mono text-slate-500">{r.orders.toFixed(1)}</td>
+                          <td className="px-2 py-1.5 text-right font-mono text-slate-500">{pct(r.sales > 0 ? r.cost / r.sales : null)}</td>
+                          <td colSpan={2} />
+                        </tr>
+                        {[...r.camps].sort((a, b) => b.d7.cost - a.d7.cost).map(c => {
+                          const delta = c.acos7 != null && c.acosPrev7 != null ? c.acos7 - c.acosPrev7 : null;
+                          const lg2 = lightOf(c.d7.cost, c.d7.sales, c.acos7);
+                          const open = openCamp === c.campaignId;
+                          return (
+                            <Fragment key={`d-${c.campaignId}`}>
+                              <tr className="border-t border-slate-100 hover:bg-slate-50">
+                                <td className="px-3 py-1.5 pl-6">
+                                  <button className="text-left font-medium text-slate-700 hover:underline" onClick={() => setOpenCamp(open ? null : c.campaignId)}>
+                                    {open ? "▾" : "▸"} {c.name}
+                                    {c.asins.length > 1 && <span className="ml-1 text-[10px] text-slate-400">(共享{c.asins.length}ASIN)</span>}
+                                  </button>
+                                </td>
+                                <td className="px-2 py-1.5 text-slate-500">{c.state !== "ENABLED" ? `(${c.state})` : "启用"}</td>
+                                <td className="px-2 py-1.5 text-right font-mono text-slate-500">{c.budget ?? "—"}</td>
+                                <td className="px-2 py-1.5 text-right font-mono text-slate-400">—</td>
+                                <td className="px-2 py-1.5 text-right font-mono text-slate-700">{c.d7.cost.toFixed(2)}</td>
+                                <td className="px-2 py-1.5 text-right font-mono text-slate-600">{c.d7.orders}</td>
+                                <td className={`px-2 py-1.5 text-right font-mono ${c.acos7 == null ? "text-slate-400" : c.acos7 > 0.5 ? "text-red-600 font-semibold" : c.acos7 > 0.3 ? "text-amber-600 font-semibold" : "text-emerald-700 font-semibold"}`}>{c.acos7 == null ? (c.d7.cost > 0 ? "0销" : "—") : pct(c.acos7)}</td>
+                                <td className="px-2 py-1.5 text-right font-mono text-slate-500">{pct(c.acos30)}</td>
+                                <td className="px-2 py-1.5 text-right font-mono text-slate-500">{delta == null ? "—" : `${delta >= 0 ? "+" : ""}${(delta * 100).toFixed(0)}pp`}</td>
+                                <td className="px-2 py-1.5"><span className={`rounded border px-1.5 py-0.5 font-mono text-[11px] whitespace-nowrap ${CHIP[lg2]}`}>{c.d7.cost > 0 ? "$" + c.d7.cost.toFixed(0) : "0"}</span></td>
+                              </tr>
+                              {open && (c.adGroups ?? []).filter(g0 => g0.d7.cost > 0 || g0.d30.cost > 0).map(g0 => (
+                                <tr key={g0.name + c.campaignId} className="border-t border-slate-50 bg-slate-50/50 text-[11px] text-slate-500">
+                                  <td className="px-3 py-1 pl-12">· {g0.name}</td>
+                                  <td colSpan={3} />
+                                  <td className="px-2 py-1 text-right font-mono">{g0.d7.cost.toFixed(2)}</td>
+                                  <td className="px-2 py-1 text-right font-mono">{g0.d7.orders}</td>
+                                  <td className="px-2 py-1 text-right font-mono">{g0.d7.sales > 0 ? pct(g0.d7.cost / g0.d7.sales) : "—"}</td>
+                                  <td className="px-2 py-1 text-right font-mono">{g0.d30.sales > 0 ? pct(g0.d30.cost / g0.d30.sales) : "—"}</td>
+                                  <td colSpan={2} />
+                                </tr>
+                              ))}
+                            </Fragment>
+                          );
+                        })}
+                      </Fragment>
+                    ))}
+                  </Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
         </>
       )}
     </div>
