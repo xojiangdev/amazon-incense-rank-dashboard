@@ -76,6 +76,30 @@ export default function AdsOverview() {
   const [view, setView] = useState<"matrix" | "detail">("matrix");
   const [openCell, setOpenCell] = useState<string | null>(null); // `${asin}:${bucket}`
   const [openCamp, setOpenCamp] = useState<string | null>(null); // 总表视图展开广告组
+  const [sortKey, setSortKey] = useState<string | null>(null); // 总表列排序: budget/ycost/cost/orders/acos7/acos30/delta
+  const [sortDir, setSortDir] = useState<1 | -1>(-1);
+  const campVal = (c: Camp, key: string): number => {
+    switch (key) {
+      case "budget": return c.budget ? parseFloat(c.budget) : -1;
+      case "ycost": return c.yesterday?.cost ?? 0;
+      case "orders": return c.d7.orders;
+      case "acos7": return c.acos7 ?? Number.POSITIVE_INFINITY;
+      case "acos30": return c.acos30 ?? Number.POSITIVE_INFINITY;
+      case "delta": return (c.acos7 != null && c.acosPrev7 != null) ? c.acos7 - c.acosPrev7 : Number.NEGATIVE_INFINITY;
+      default: return c.d7.cost;
+    }
+  };
+  const sortCamps = (arr: Camp[]): Camp[] => sortKey
+    ? [...arr].sort((a, b) => (campVal(a, sortKey) - campVal(b, sortKey)) * sortDir)
+    : [...arr].sort((a, b) => b.d7.cost - a.d7.cost);
+  const th = (key: string, label: string, extra = "") => (
+    <th className={`cursor-pointer select-none hover:text-slate-800 ${extra}`} onClick={() => {
+      if (sortKey === key) { if (sortDir === -1) setSortDir(1); else { setSortKey(null); setSortDir(-1); } }
+      else { setSortKey(key); setSortDir(-1); }
+    }}>
+      {label}{sortKey === key ? (sortDir === -1 ? " ▼" : " ▲") : ""}
+    </th>
+  );
   const campaignsQuery = trpc.dashboard.adCampaigns.useQuery({ marketplace: market });
   const listingsQuery = trpc.dashboard.listings.useQuery(undefined, { staleTime: 300_000 });
 
@@ -258,13 +282,13 @@ export default function AdsOverview() {
                 <tr>
                   <th className="px-3 py-2 font-medium">广告系列 / 广告组</th>
                   <th className="px-2 py-2 font-medium">状态</th>
-                  <th className="px-2 py-2 text-right font-medium">预算</th>
-                  <th className="px-2 py-2 text-right font-medium">昨日花费</th>
-                  <th className="px-2 py-2 text-right font-medium">7天花费</th>
-                  <th className="px-2 py-2 text-right font-medium">7天单</th>
-                  <th className="px-2 py-2 text-right font-medium">7天ACOS</th>
-                  <th className="px-2 py-2 text-right font-medium">30天ACOS</th>
-                  <th className="px-2 py-2 text-right font-medium">环比</th>
+                  {th("budget", "预算", "px-2 py-2")}
+                  {th("ycost", "昨日花费", "px-2 py-2")}
+                  {th("cost", "7天花费", "px-2 py-2")}
+                  {th("orders", "7天单", "px-2 py-2")}
+                  {th("acos7", "7天ACOS", "px-2 py-2")}
+                  {th("acos30", "30天ACOS", "px-2 py-2")}
+                  {th("delta", "环比", "px-2 py-2")}
                   <th className="px-2 py-2 font-medium">灯</th>
                 </tr>
               </thead>
@@ -297,7 +321,7 @@ export default function AdsOverview() {
                           <td className="px-2 py-1.5" />
                           <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 text-[11px] ${CHIP[lg]}`}>{lg === "red" ? "🔴" : lg === "yellow" ? "🟡" : lg === "green" ? "🟢" : "⚪"}</span></td>
                         </tr>
-                        {[...r.camps].sort((a, b) => b.d7.cost - a.d7.cost).map(c => {
+                        {sortCamps(r.camps).map(c => {
                           const delta = c.acos7 != null && c.acosPrev7 != null ? c.acos7 - c.acosPrev7 : null;
                           const lg2 = lightOf(c.d7.cost, c.d7.sales, c.acos7);
                           const open = openCamp === c.campaignId;
