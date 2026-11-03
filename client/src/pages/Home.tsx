@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { keepPreviousData } from "@tanstack/react-query";
+import { useSearch } from "wouter";
+import { findDeepLinkedListing, parseListingDeepLink } from "@shared/listingDeepLink";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -144,7 +146,9 @@ function keywordEvidencePresentation(basis: KeywordSelectionBasis) {
 }
 
 export default function Home() {
-  const [marketplace, setMarketplace] = useState<MarketplaceFilter>("ALL");
+  const search = useSearch();
+  const deepLink = useMemo(() => parseListingDeepLink(search), [search]);
+  const [marketplace, setMarketplace] = useState<MarketplaceFilter>(() => deepLink.marketplace ?? "ALL");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [salesCategoryFilter, setSalesCategoryFilter] = useState<SalesCategory | "all">("all");
   const [desktopAdFilter, setDesktopAdFilter] = useState<DesktopAdFilter>("all");
@@ -200,20 +204,43 @@ export default function Home() {
   const listingsQuery = trpc.dashboard.listings.useQuery(listingsInput, { staleTime: 60_000, refetchOnWindowFocus: false });
   const cprSyncStatusQuery = trpc.dashboard.cprSyncStatus.useQuery();
 
-  // ?asin= 深链: 广告总览/Excel点击ASIN定位到对应产品(并切到其市场)
-  const [deeplinkDone, setDeeplinkDone] = useState(false);
+  // Reapply on in-app navigation/back/forward, but don't override later manual selections.
+  const [deepLinkApplied, setDeepLinkApplied] = useState<string | null>(null);
+  const [deepLinkError, setDeepLinkError] = useState<string | null>(null);
   useEffect(() => {
-    if (deeplinkDone || !listingsQuery.data?.length) return;
-    const asin = new URLSearchParams(window.location.search).get("asin");
-    if (asin) {
-      const hit = listingsQuery.data.find(l => l.asin.toUpperCase() === asin.toUpperCase());
-      if (hit) {
-        if (hit.marketplace !== marketplace) setMarketplace(hit.marketplace as MarketplaceFilter);
-        setSelectedListingId(hit.id);
-      }
+    setMarketplace(deepLink.marketplace ?? "ALL");
+    setSelectedListingId(null);
+    setCategoryFilter("all");
+    setSalesCategoryFilter("all");
+    setSearchQuery("");
+    setDeepLinkApplied(null);
+    setDeepLinkError(null);
+  }, [deepLink]);
+
+  useEffect(() => {
+    if (deepLinkApplied === search) return;
+    if (deepLink.invalidMarketplace) {
+      setDeepLinkError("链接中的站点无效，请使用 marketplace=US、CA 或 JP。");
+      setDeepLinkApplied(search);
+      return;
     }
-    setDeeplinkDone(true);
-  }, [listingsQuery.data, deeplinkDone]); // eslint-disable-line react-hooks/exhaustive-deps
+    if (deepLink.marketplace && marketplace !== deepLink.marketplace) return;
+    if (!deepLink.asin) {
+      setDeepLinkApplied(search);
+      return;
+    }
+    // Wait for the requested market's query, including a successful empty result.
+    if (categoryFilter !== "all" || !listingsQuery.isSuccess) return;
+    const hit = findDeepLinkedListing(listingsQuery.data, deepLink);
+    if (hit) {
+      setMarketplace(hit.marketplace);
+      setSelectedListingId(hit.id);
+    } else {
+      setSelectedListingId(null);
+      setDeepLinkError(`${deepLink.marketplace ?? "当前看板"} 未找到 ASIN ${deepLink.asin} 的可展示 Listing；不会跳转到其他站点或产品。`);
+    }
+    setDeepLinkApplied(search);
+  }, [search, deepLink, deepLinkApplied, marketplace, categoryFilter, listingsQuery.data, listingsQuery.isSuccess]);
 
   const refreshMutation = trpc.dashboard.triggerDailyRefresh.useMutation({
     onSuccess: (data) => {
@@ -307,14 +334,16 @@ export default function Home() {
     });
   }, [listingsQuery.data, salesCategoryFilter, searchQuery]);
 
-  const effectiveListingId = selectedListingId && filteredListings.some(item => item.id === selectedListingId)
+  const deepLinkPending = Boolean(deepLink.asin) && deepLinkApplied !== search;
+  const blockDefaultSelection = deepLinkPending || (Boolean(deepLinkError) && selectedListingId === null);
+  const effectiveListingId = blockDefaultSelection ? undefined : selectedListingId && filteredListings.some(item => item.id === selectedListingId)
     ? selectedListingId
     : filteredListings[0]?.id;
   const detailQuery = trpc.dashboard.listingDetail.useQuery(
     { id: effectiveListingId ?? 1 },
     { enabled: !!effectiveListingId, placeholderData: keepPreviousData, staleTime: 60_000 }
   );
-  const currentDetail = detailQuery.data && filteredListings.some(item => item.id === detailQuery.data?.listing.id)
+  const currentDetail = !blockDefaultSelection && detailQuery.data?.listing.id === effectiveListingId && filteredListings.some(item => item.id === detailQuery.data?.listing.id)
     ? detailQuery.data
     : null;
   const visibleKeywords = useMemo(() => {
@@ -575,7 +604,7 @@ export default function Home() {
         {/* Marketplace & Category Bar */}
         <div className="flex flex-col justify-between gap-3 rounded-xl border border-slate-200/80 bg-white p-3 shadow-xs sm:flex-row sm:items-center sm:gap-4 sm:p-4">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <Tabs value={marketplace} onValueChange={(v) => { setMarketplace(v as MarketplaceFilter); setSelectedListingId(null); }} className="w-auto">
+            <Tabs value={marketplace} onValueChange={(v) => { setMarketplace(v as MarketplaceFilter); setSelectedListingId(null); setDeepLinkError(null); }} className="w-auto">
               <TabsList className="h-auto flex-wrap bg-slate-100 p-1">
                 <TabsTrigger value="ALL" className="h-7 px-2 text-[10px] sm:h-8 sm:px-3 sm:text-xs">全部站点</TabsTrigger>
                 <TabsTrigger value="US" className="flex h-7 items-center gap-1 px-2 text-[10px] sm:h-8 sm:gap-1.5 sm:px-3 sm:text-xs">
@@ -1431,7 +1460,11 @@ export default function Home() {
                 </Card>
               </>
             ) : (
-              <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 space-y-4" aria-label="加载中">
+              deepLinkError && !selectedListingId ? (
+                <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900" role="status">
+                  {deepLinkError}
+                </div>
+              ) : <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 space-y-4" aria-label="加载中">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-lg bg-slate-200 animate-pulse" />
                   <div className="space-y-2 flex-1">

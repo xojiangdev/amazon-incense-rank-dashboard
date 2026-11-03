@@ -212,7 +212,7 @@ export default function AdsOverview() {
                             <td className="sticky left-0 z-10 bg-white px-3 py-2">
                               <div className="flex flex-col">
                                 <span className="max-w-[220px] truncate font-medium text-slate-800" title={r.title}>{shortTitle(r.title)}</span>
-                                <Link href={`/?asin=${r.asin}`} className="font-mono text-[10px] text-blue-600 hover:underline">{r.asin} ↗</Link>
+                                <Link href={`/?asin=${r.asin}&marketplace=${market}`} className="font-mono text-[10px] text-blue-600 hover:underline">{r.asin} ↗</Link>
                               </div>
                             </td>
                             <td className="px-2 py-2 text-center">
@@ -309,7 +309,7 @@ export default function AdsOverview() {
                         <tr className="bg-slate-100/70">
                           <td className="px-3 py-1.5 font-semibold text-slate-800">
                             {shortTitle(r.title)}
-                            <Link href={`/?asin=${r.asin}`} className="ml-2 font-mono text-[10px] text-blue-600 hover:underline">{r.asin} ↗</Link>
+                            <Link href={`/?asin=${r.asin}&marketplace=${market}`} className="ml-2 font-mono text-[10px] text-blue-600 hover:underline">{r.asin} ↗</Link>
                           </td>
                           <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg]}`}>{r.camps.length}系列</span></td>
                           <td className="px-2 py-1.5 text-center"><span className={`inline-block rounded border px-1.5 py-0.5 font-mono text-[11px] ${CHIP[lg]}`}>{r.budget > 0 ? r.budget.toFixed(0) : "—"}</span></td>
