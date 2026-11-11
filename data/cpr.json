@@ -1,272 +1,266 @@
 {
   "meta": {
-    "generated_at": "2026-11-10T23:11:24+00:00",
+    "generated_at": "2026-11-11T23:11:57+00:00",
     "calib": 1.0,
     "source": "sellersprite spr (primary) + sorftime positions 21-30 avg /30*8 (fallback)"
   },
   "data": [
     {
-      "keyword": "lavender incense",
-      "cpr": 451,
-      "avg_monthly_sales": 1688,
+      "keyword": "mugwort incense",
+      "cpr": 529,
+      "avg_monthly_sales": 1983,
       "samples": 10
     },
     {
       "keyword": "lavender incense sticks",
-      "cpr": 445,
-      "avg_monthly_sales": 1666,
+      "cpr": 473,
+      "avg_monthly_sales": 1771,
       "samples": 10
     },
     {
-      "keyword": "mugwort incense",
-      "cpr": 513,
-      "avg_monthly_sales": 1923,
-      "samples": 10
-    },
-    {
-      "keyword": "hinoki incense",
-      "cpr": 464,
-      "avg_monthly_sales": 1740,
+      "keyword": "lavender incense",
+      "cpr": 441,
+      "avg_monthly_sales": 1651,
       "samples": 10
     },
     {
       "keyword": "japanese incense",
-      "cpr": 558,
-      "avg_monthly_sales": 2090,
+      "cpr": 571,
+      "avg_monthly_sales": 2139,
       "samples": 10
     },
     {
-      "keyword": "incense holder",
-      "cpr": 833,
-      "avg_monthly_sales": 3122,
+      "keyword": "hinoki incense",
+      "cpr": 440,
+      "avg_monthly_sales": 1649,
       "samples": 10
     },
     {
       "keyword": "incense holder for sticks",
-      "cpr": 365,
-      "avg_monthly_sales": 1366,
+      "cpr": 364,
+      "avg_monthly_sales": 1363,
+      "samples": 10
+    },
+    {
+      "keyword": "incense holder",
+      "cpr": 868,
+      "avg_monthly_sales": 3253,
       "samples": 10
     },
     {
       "keyword": "natural incense",
-      "cpr": 648,
-      "avg_monthly_sales": 2427,
+      "cpr": 673,
+      "avg_monthly_sales": 2523,
       "samples": 10
     },
     {
       "keyword": "natural incense sticks",
-      "cpr": 597,
-      "avg_monthly_sales": 2236,
+      "cpr": 618,
+      "avg_monthly_sales": 2315,
       "samples": 10
     },
     {
       "keyword": "incense sticks",
-      "cpr": 717,
-      "avg_monthly_sales": 2688,
+      "cpr": 770,
+      "avg_monthly_sales": 2884,
+      "samples": 10
+    },
+    {
+      "keyword": "chinese incense",
+      "cpr": 384,
+      "avg_monthly_sales": 1436,
       "samples": 10
     },
     {
       "keyword": "agarwood incense",
+      "cpr": 207,
+      "avg_monthly_sales": 774,
+      "samples": 10
+    },
+    {
+      "keyword": "incense cone burner",
+      "cpr": 208,
+      "avg_monthly_sales": 779,
+      "samples": 10
+    },
+    {
+      "keyword": "incense burner",
+      "cpr": 404,
+      "avg_monthly_sales": 1515,
+      "samples": 10
+    },
+    {
+      "keyword": "incense stick holder",
+      "cpr": 426,
+      "avg_monthly_sales": 1596,
+      "samples": 10
+    },
+    {
+      "keyword": "incense holders",
+      "cpr": 254,
+      "avg_monthly_sales": 952,
+      "samples": 10
+    },
+    {
+      "keyword": "cone incense burner",
+      "cpr": 226,
+      "avg_monthly_sales": 845,
+      "samples": 10
+    },
+    {
+      "keyword": "lotus incense holder",
+      "cpr": 57,
+      "avg_monthly_sales": 210,
+      "samples": 10
+    },
+    {
+      "keyword": "incense cones holder",
+      "cpr": 242,
+      "avg_monthly_sales": 907,
+      "samples": 10
+    },
+    {
+      "keyword": "brass incense holder",
+      "cpr": 155,
+      "avg_monthly_sales": 581,
+      "samples": 10
+    },
+    {
+      "keyword": "incense stick burner",
+      "cpr": 272,
+      "avg_monthly_sales": 1020,
+      "samples": 10
+    },
+    {
+      "keyword": "incense holder box",
+      "cpr": 201,
+      "avg_monthly_sales": 752,
+      "samples": 10
+    },
+    {
+      "keyword": "japanese incense holder",
+      "cpr": 221,
+      "avg_monthly_sales": 828,
+      "samples": 10
+    },
+    {
+      "keyword": "glass incense holder",
+      "cpr": 157,
+      "avg_monthly_sales": 588,
+      "samples": 10
+    },
+    {
+      "keyword": "hanging incense holder",
       "cpr": 200,
       "avg_monthly_sales": 748,
       "samples": 10
     },
     {
-      "keyword": "chinese incense",
-      "cpr": 417,
-      "avg_monthly_sales": 1562,
-      "samples": 10
-    },
-    {
-      "keyword": "incense burner",
-      "cpr": 405,
-      "avg_monthly_sales": 1516,
-      "samples": 10
-    },
-    {
-      "keyword": "incense cones holder",
-      "cpr": 244,
-      "avg_monthly_sales": 913,
-      "samples": 10
-    },
-    {
-      "keyword": "incense holders",
-      "cpr": 252,
-      "avg_monthly_sales": 945,
-      "samples": 10
-    },
-    {
-      "keyword": "cone incense burner",
-      "cpr": 216,
-      "avg_monthly_sales": 809,
-      "samples": 10
-    },
-    {
-      "keyword": "incense cone burner",
-      "cpr": 217,
-      "avg_monthly_sales": 813,
-      "samples": 10
-    },
-    {
-      "keyword": "incense stick holder",
-      "cpr": 430,
-      "avg_monthly_sales": 1612,
-      "samples": 10
-    },
-    {
-      "keyword": "brass incense holder",
-      "cpr": 144,
-      "avg_monthly_sales": 536,
-      "samples": 10
-    },
-    {
-      "keyword": "lotus incense holder",
-      "cpr": 56,
-      "avg_monthly_sales": 207,
-      "samples": 10
-    },
-    {
-      "keyword": "incense stick burner",
-      "cpr": 252,
-      "avg_monthly_sales": 945,
-      "samples": 10
-    },
-    {
-      "keyword": "incense holder box",
-      "cpr": 205,
-      "avg_monthly_sales": 767,
-      "samples": 10
-    },
-    {
-      "keyword": "japanese incense holder",
-      "cpr": 222,
-      "avg_monthly_sales": 830,
-      "samples": 10
-    },
-    {
-      "keyword": "glass incense holder",
-      "cpr": 164,
-      "avg_monthly_sales": 615,
-      "samples": 10
-    },
-    {
-      "keyword": "hanging incense holder",
-      "cpr": 203,
-      "avg_monthly_sales": 759,
-      "samples": 10
-    },
-    {
       "keyword": "wooden incense holder",
-      "cpr": 178,
-      "avg_monthly_sales": 664,
+      "cpr": 173,
+      "avg_monthly_sales": 647,
+      "samples": 10
+    },
+    {
+      "keyword": "agarbatti stand",
+      "cpr": 194,
+      "avg_monthly_sales": 726,
+      "samples": 10
+    },
+    {
+      "keyword": "incense",
+      "cpr": 762,
+      "avg_monthly_sales": 2855,
       "samples": 10
     },
     {
       "keyword": "haldi kumkum holder",
       "cpr": 2,
-      "avg_monthly_sales": 7,
-      "samples": 10
-    },
-    {
-      "keyword": "agarbatti stand",
-      "cpr": 198,
-      "avg_monthly_sales": 742,
-      "samples": 10
-    },
-    {
-      "keyword": "incense",
-      "cpr": 713,
-      "avg_monthly_sales": 2670,
-      "samples": 10
-    },
-    {
-      "keyword": "palo santo sticks",
-      "cpr": 378,
-      "avg_monthly_sales": 1417,
-      "samples": 10
-    },
-    {
-      "keyword": "palo santo",
-      "cpr": 763,
-      "avg_monthly_sales": 2858,
-      "samples": 10
-    },
-    {
-      "keyword": "palo santo incense",
-      "cpr": 452,
-      "avg_monthly_sales": 1693,
+      "avg_monthly_sales": 6,
       "samples": 10
     },
     {
       "keyword": "palo santo incense sticks",
-      "cpr": 501,
-      "avg_monthly_sales": 1877,
+      "cpr": 451,
+      "avg_monthly_sales": 1689,
+      "samples": 10
+    },
+    {
+      "keyword": "palo santo",
+      "cpr": 777,
+      "avg_monthly_sales": 2911,
+      "samples": 10
+    },
+    {
+      "keyword": "palo santo incense",
+      "cpr": 391,
+      "avg_monthly_sales": 1465,
+      "samples": 10
+    },
+    {
+      "keyword": "palo santo sticks",
+      "cpr": 312,
+      "avg_monthly_sales": 1169,
       "samples": 10
     },
     {
       "keyword": "pine incense sticks",
-      "cpr": 402,
-      "avg_monthly_sales": 1507,
+      "cpr": 423,
+      "avg_monthly_sales": 1586,
       "samples": 10
     },
     {
       "keyword": "sandalwood incense sticks",
-      "cpr": 510,
-      "avg_monthly_sales": 1909,
+      "cpr": 491,
+      "avg_monthly_sales": 1841,
       "samples": 10
     },
     {
       "keyword": "sandalwood incense",
-      "cpr": 430,
-      "avg_monthly_sales": 1609,
-      "samples": 10
-    },
-    {
-      "keyword": "线香",
-      "cpr": 533,
-      "avg_monthly_sales": 1997,
+      "cpr": 428,
+      "avg_monthly_sales": 1603,
       "samples": 10
     },
     {
       "keyword": "sage stick",
-      "cpr": 362,
-      "avg_monthly_sales": 1356,
+      "cpr": 404,
+      "avg_monthly_sales": 1514,
       "samples": 10
     },
     {
       "keyword": "sage spray for cleansing negative energy and protection",
-      "cpr": 297,
-      "avg_monthly_sales": 1110,
+      "cpr": 247,
+      "avg_monthly_sales": 924,
       "samples": 10
     },
     {
       "keyword": "sage sticks for cleansing negative energy",
-      "cpr": 337,
-      "avg_monthly_sales": 1260,
-      "samples": 10
-    },
-    {
-      "keyword": "white sage incense sticks",
-      "cpr": 539,
-      "avg_monthly_sales": 2019,
+      "cpr": 334,
+      "avg_monthly_sales": 1250,
       "samples": 10
     },
     {
       "keyword": "white sage incense",
-      "cpr": 289,
-      "avg_monthly_sales": 1082,
+      "cpr": 284,
+      "avg_monthly_sales": 1064,
+      "samples": 10
+    },
+    {
+      "keyword": "white sage incense sticks",
+      "cpr": 566,
+      "avg_monthly_sales": 2120,
       "samples": 10
     },
     {
       "keyword": "mugwort",
       "cpr": 17,
-      "avg_monthly_sales": 61,
+      "avg_monthly_sales": 63,
       "samples": 10
     },
     {
       "keyword": "sandalwood incense, made in japan",
-      "cpr": 24,
-      "avg_monthly_sales": 87,
+      "cpr": 21,
+      "avg_monthly_sales": 76,
       "samples": 10
     },
     {
@@ -277,56 +271,56 @@
     },
     {
       "keyword": "essential oil",
-      "cpr": 4785,
-      "avg_monthly_sales": 17942,
+      "cpr": 4751,
+      "avg_monthly_sales": 17814,
       "samples": 10
     },
     {
       "keyword": "sandalwood essential oil",
-      "cpr": 1006,
-      "avg_monthly_sales": 3771,
-      "samples": 10
-    },
-    {
-      "keyword": "sleep mask",
-      "cpr": 2140,
-      "avg_monthly_sales": 8022,
-      "samples": 10
-    },
-    {
-      "keyword": "weighted eye mask",
-      "cpr": 1882,
-      "avg_monthly_sales": 7056,
+      "cpr": 997,
+      "avg_monthly_sales": 3738,
       "samples": 10
     },
     {
       "keyword": "eye mask sleeping",
-      "cpr": 1838,
-      "avg_monthly_sales": 6890,
+      "cpr": 1814,
+      "avg_monthly_sales": 6802,
       "samples": 10
     },
     {
-      "keyword": "incent holder",
-      "cpr": 254,
-      "avg_monthly_sales": 952,
+      "keyword": "weighted eye mask",
+      "cpr": 1877,
+      "avg_monthly_sales": 7037,
+      "samples": 10
+    },
+    {
+      "keyword": "sleep mask",
+      "cpr": 1968,
+      "avg_monthly_sales": 7379,
       "samples": 10
     },
     {
       "keyword": "porta inciensos elegantes",
-      "cpr": 118,
-      "avg_monthly_sales": 439,
+      "cpr": 115,
+      "avg_monthly_sales": 428,
       "samples": 10
     },
     {
       "keyword": "incense holder cute",
-      "cpr": 179,
-      "avg_monthly_sales": 669,
+      "cpr": 178,
+      "avg_monthly_sales": 665,
+      "samples": 10
+    },
+    {
+      "keyword": "incent holder",
+      "cpr": 256,
+      "avg_monthly_sales": 959,
       "samples": 10
     },
     {
       "keyword": "upside down incense holder",
-      "cpr": 105,
-      "avg_monthly_sales": 392,
+      "cpr": 101,
+      "avg_monthly_sales": 378,
       "samples": 10
     },
     {
@@ -378,25 +372,19 @@
       "samples": 0
     },
     {
-      "keyword": "hinoki incense sticks for meditation",
-      "cpr": 5,
-      "avg_monthly_sales": 19,
-      "samples": 0
-    },
-    {
       "keyword": "hinoki incense sticks",
       "cpr": 5,
       "avg_monthly_sales": 19,
       "samples": 0
     },
     {
-      "keyword": "mugwort incense resin",
-      "cpr": 4,
-      "avg_monthly_sales": 15,
+      "keyword": "hinoki incense sticks for meditation",
+      "cpr": 5,
+      "avg_monthly_sales": 19,
       "samples": 0
     },
     {
-      "keyword": "mugwort incense / mugwort smudge stick / mugwort incense sticks",
+      "keyword": "mugwort incense sticks",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
@@ -408,7 +396,13 @@
       "samples": 0
     },
     {
-      "keyword": "mugwort incense sticks",
+      "keyword": "mugwort incense / mugwort smudge stick / mugwort incense sticks",
+      "cpr": 4,
+      "avg_monthly_sales": 15,
+      "samples": 0
+    },
+    {
+      "keyword": "mugwort incense resin",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
@@ -426,7 +420,7 @@
       "samples": 0
     },
     {
-      "keyword": "cherry blossom incense",
+      "keyword": "cherry blossom incense sticks",
       "cpr": 5,
       "avg_monthly_sales": 19,
       "samples": 0
@@ -438,7 +432,7 @@
       "samples": 0
     },
     {
-      "keyword": "cherry blossom incense sticks",
+      "keyword": "cherry blossom incense",
       "cpr": 5,
       "avg_monthly_sales": 19,
       "samples": 0
@@ -456,12 +450,6 @@
       "samples": 0
     },
     {
-      "keyword": "incense sticks agarwood",
-      "cpr": 279,
-      "avg_monthly_sales": 1046,
-      "samples": 0
-    },
-    {
       "keyword": "agarwood incense kit",
       "cpr": 8,
       "avg_monthly_sales": 30,
@@ -471,6 +459,18 @@
       "keyword": "agarwood incense sticks",
       "cpr": 8,
       "avg_monthly_sales": 30,
+      "samples": 0
+    },
+    {
+      "keyword": "incense sticks agarwood",
+      "cpr": 279,
+      "avg_monthly_sales": 1046,
+      "samples": 0
+    },
+    {
+      "keyword": "agarbatti stand with ash catcher",
+      "cpr": 14,
+      "avg_monthly_sales": 52,
       "samples": 0
     },
     {
@@ -486,15 +486,39 @@
       "samples": 0
     },
     {
-      "keyword": "agarbatti stand with ash catcher",
-      "cpr": 14,
-      "avg_monthly_sales": 52,
+      "keyword": "incense holder storage box",
+      "cpr": 220,
+      "avg_monthly_sales": 825,
       "samples": 0
     },
     {
       "keyword": "incense box burner",
       "cpr": 4,
       "avg_monthly_sales": 15,
+      "samples": 0
+    },
+    {
+      "keyword": "incense burner box chinese",
+      "cpr": 27,
+      "avg_monthly_sales": 101,
+      "samples": 0
+    },
+    {
+      "keyword": "wooden incense holder box with storage",
+      "cpr": 3,
+      "avg_monthly_sales": 11,
+      "samples": 0
+    },
+    {
+      "keyword": "incense box holder",
+      "cpr": 4,
+      "avg_monthly_sales": 15,
+      "samples": 0
+    },
+    {
+      "keyword": "incense burner stick",
+      "cpr": 27,
+      "avg_monthly_sales": 101,
       "samples": 0
     },
     {
@@ -510,39 +534,27 @@
       "samples": 0
     },
     {
-      "keyword": "incense burner box chinese",
-      "cpr": 27,
-      "avg_monthly_sales": 101,
-      "samples": 0
-    },
-    {
       "keyword": "incense burner with storage",
       "cpr": 27,
       "avg_monthly_sales": 101,
       "samples": 0
     },
     {
-      "keyword": "incense holder storage box",
+      "keyword": "incense holder with cover",
       "cpr": 220,
       "avg_monthly_sales": 825,
       "samples": 0
     },
     {
-      "keyword": "incense box holder",
+      "keyword": "incense box green",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
     },
     {
-      "keyword": "wooden incense holder box with storage",
-      "cpr": 3,
-      "avg_monthly_sales": 11,
-      "samples": 0
-    },
-    {
-      "keyword": "incense burner stick",
-      "cpr": 27,
-      "avg_monthly_sales": 101,
+      "keyword": "incense burner holder box black and gold",
+      "cpr": 6,
+      "avg_monthly_sales": 22,
       "samples": 0
     },
     {
@@ -564,7 +576,7 @@
       "samples": 0
     },
     {
-      "keyword": "incense box green",
+      "keyword": "incense stick burner box",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
@@ -576,33 +588,15 @@
       "samples": 0
     },
     {
-      "keyword": "incense holder with cover",
-      "cpr": 220,
-      "avg_monthly_sales": 825,
-      "samples": 0
-    },
-    {
-      "keyword": "incense burner holder box black and gold",
-      "cpr": 6,
-      "avg_monthly_sales": 22,
-      "samples": 0
-    },
-    {
-      "keyword": "incense stick burner box",
-      "cpr": 4,
-      "avg_monthly_sales": 15,
-      "samples": 0
-    },
-    {
       "keyword": "murphys mosquito repellent incense holder",
       "cpr": 34,
       "avg_monthly_sales": 128,
       "samples": 0
     },
     {
-      "keyword": "incense holder indian style",
-      "cpr": 220,
-      "avg_monthly_sales": 825,
+      "keyword": "sage sticks holder",
+      "cpr": 223,
+      "avg_monthly_sales": 836,
       "samples": 0
     },
     {
@@ -618,9 +612,9 @@
       "samples": 0
     },
     {
-      "keyword": "sage sticks holder",
-      "cpr": 223,
-      "avg_monthly_sales": 836,
+      "keyword": "incense holder indian style",
+      "cpr": 220,
+      "avg_monthly_sales": 825,
       "samples": 0
     },
     {
@@ -630,13 +624,7 @@
       "samples": 0
     },
     {
-      "keyword": "mugwort incense sticks from japanese",
-      "cpr": 4,
-      "avg_monthly_sales": 15,
-      "samples": 0
-    },
-    {
-      "keyword": "mugwort incense satya",
+      "keyword": "mugwort incense cones",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
@@ -648,19 +636,25 @@
       "samples": 0
     },
     {
-      "keyword": "mugwort incense cones",
+      "keyword": "mugwort incense satya",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
     },
     {
-      "keyword": "mugwort incense for sensitive person",
+      "keyword": "mugwort incense sticks from japanese",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
     },
     {
       "keyword": "mugwort incense sticks for meditation",
+      "cpr": 4,
+      "avg_monthly_sales": 15,
+      "samples": 0
+    },
+    {
+      "keyword": "mugwort incense for sensitive person",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
@@ -696,15 +690,15 @@
       "samples": 0
     },
     {
-      "keyword": "natural incense sticks non toxic",
-      "cpr": 10,
-      "avg_monthly_sales": 38,
-      "samples": 0
-    },
-    {
       "keyword": "incense cones mugwort",
       "cpr": 70,
       "avg_monthly_sales": 262,
+      "samples": 0
+    },
+    {
+      "keyword": "natural incense sticks non toxic",
+      "cpr": 10,
+      "avg_monthly_sales": 38,
       "samples": 0
     },
     {
@@ -714,13 +708,13 @@
       "samples": 0
     },
     {
-      "keyword": "incense stick sandalwood",
+      "keyword": "incense stick gonesh",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
     },
     {
-      "keyword": "incense stick gonesh",
+      "keyword": "incense stick sandalwood",
       "cpr": 4,
       "avg_monthly_sales": 15,
       "samples": 0
@@ -738,12 +732,6 @@
       "samples": 0
     },
     {
-      "keyword": "incense burner upside down glass base",
-      "cpr": 27,
-      "avg_monthly_sales": 101,
-      "samples": 0
-    },
-    {
       "keyword": "incent holder for long sticks",
       "cpr": 11,
       "avg_monthly_sales": 41,
@@ -756,16 +744,28 @@
       "samples": 0
     },
     {
+      "keyword": "incense holder for car",
+      "cpr": 220,
+      "avg_monthly_sales": 825,
+      "samples": 0
+    },
+    {
       "keyword": "incense stick holder orange",
       "cpr": 13,
       "avg_monthly_sales": 49,
       "samples": 0
     },
     {
-      "keyword": "incense holder for car",
-      "cpr": 220,
-      "avg_monthly_sales": 825,
+      "keyword": "incense burner upside down glass base",
+      "cpr": 27,
+      "avg_monthly_sales": 101,
       "samples": 0
+    },
+    {
+      "keyword": "线香",
+      "cpr": 533,
+      "avg_monthly_sales": 1997,
+      "samples": 10
     },
     {
       "keyword": "incense sandalwood",
